@@ -14,6 +14,7 @@ any Connext application.
 - [Included IDL files](#included-idl-files)
 - [Included packages](#included-packages)
 - [Unsupported types](#unsupported-types)
+- [Other useful resources](#other-useful-resources)
 
 ## How to use `connext_msgs`
 
@@ -126,3 +127,10 @@ visualization_msgs/msg/InteractiveMarkerUpdate
 visualization_msgs/msg/Marker
 visualization_msgs/msg/MarkerArray
 ```
+
+## Other useful resources
+
+- [`rticonnextdds-ros2-demos`](https://github.com/asorbini/rticonnextdds-ros2-msgs)
+  - Collection of example hybrid ROS 2/Connext applications.
+- [`rticonnextdds-ros2-helpers`](https://github.com/asorbini/rticonnextdds-ros2-helpers)
+  - Collection of utilities to built ROS 2 applications with RTI Connext DDS.
