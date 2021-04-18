@@ -112,6 +112,12 @@ cmake ../connext_msgs
 cmake --build . -- -j4
 ```
 
+If you prefer to clone `rticonnextdds-ros2-helpers` somewhere else, you can specify
+its location using variable `CONNEXT_ROS2_HELPERS_DIR`.
+
+You can also force the build system to avoid using ROS 2 facilities even if they
+are available by setting `BUILD_STANDALONE` to `true`.
+
 ## Included IDL files
 
 Package `connext_msg` contains a collection of IDL files extracted from the
@@ -141,6 +147,14 @@ libstatistics_collector  sensor_msgs      unique_identifier_msgs
 lifecycle_msgs           shape_msgs       visualization_msgs
 map_msgs                 statistics_msgs
 ```
+
+The list of included message packages can be restricted by specifying variable
+`MESSAGE_PACKAGES`, e.g. `-DMESSAGE_PACKAGES="std_msgs;builtin_interfaces"`, in
+which case only messages from the specified packages will be included.
+
+You can further customize the list of messages included in the generated
+library using variables `MESSAGE_INCLUDE` and `MESSAGE_EXCLUDE`. Messages must
+be specified as `<pkg>/msg/<type>`, and exclusions take precedence over includes.
 
 ## Unsupported types
 

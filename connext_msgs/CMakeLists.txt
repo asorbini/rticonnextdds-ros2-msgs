@@ -55,32 +55,49 @@ else()
     get_filename_component(CONNEXT_NODE_HELPERS_DIR
       "${CMAKE_CURRENT_SOURCE_DIR}/../rticonnextdds-ros2-helpers/connext_node_helpers"
       REALPATH)
+  else()
+    set("${CONNEXT_ROS2_HELPERS_DIR}/connext_node_helpers")
   endif()
 
   include(${CONNEXT_NODE_HELPERS_DIR}/cmake/connext_node_helpers.cmake)
 endif()
 
-# Load all message packages
-set(MESSAGES_BROKEN
-  actionlib_msgs/GoalStatusArray
-  map_msgs/ProjectedMap
-  nav_msgs/OccupancyGrid
-  nav_msgs/Odometry
-  sensor_msgs/MultiDOFJointState
-  test_msgs/Arrays
-  test_msgs/BoundedSequences
-  test_msgs/Defaults
-  test_msgs/MultiNested
-  test_msgs/UnboundedSequences
-  trajectory_msgs/MultiDOFJointTrajectory
-  trajectory_msgs/MultiDOFJointTrajectoryPoint
-  visualization_msgs/InteractiveMarker
-  visualization_msgs/InteractiveMarkerControl
-  visualization_msgs/InteractiveMarkerFeedback
-  visualization_msgs/InteractiveMarkerInit
-  visualization_msgs/InteractiveMarkerUpdate
-  visualization_msgs/Marker
-  visualization_msgs/MarkerArray)
+# List of types that don't build with rtiddsgen
+set(MESSAGE_BROKEN
+  actionlib_msgs/msg/GoalStatusArray
+  map_msgs/msg/ProjectedMap
+  nav_msgs/msg/OccupancyGrid
+  nav_msgs/msg/Odometry
+  sensor_msgs/msg/MultiDOFJointState
+  test_msgs/msg/Arrays
+  test_msgs/msg/BoundedSequences
+  test_msgs/msg/Defaults
+  test_msgs/msg/MultiNested
+  test_msgs/msg/UnboundedSequences
+  trajectory_msgs/msg/MultiDOFJointTrajectory
+  trajectory_msgs/msg/MultiDOFJointTrajectoryPoint
+  visualization_msgs/msg/InteractiveMarker
+  visualization_msgs/msg/InteractiveMarkerControl
+  visualization_msgs/msg/InteractiveMarkerFeedback
+  visualization_msgs/msg/InteractiveMarkerInit
+  visualization_msgs/msg/InteractiveMarkerUpdate
+  visualization_msgs/msg/Marker
+  visualization_msgs/msg/MarkerArray
+  CACHE LIST "Messages which cannot be compiled with rtiddsgen")
+
+set(MESSAGE_PACKAGES  ${MESSAGE_PACKAGES}
+  CACHE LIST "Message packages to include in the library (all if empty)")
+
+set(MESSAGE_INCLUDE  ${MESSAGE_INCLUDE}
+  CACHE LIST "Message which should be included in the library (all if empty)")
+
+set(MESSAGE_EXCLUDE  ${MESSAGE_EXCLUDE}
+  CACHE LIST "Message which should not be included in the library")
+
+message(STATUS "Included packages: ${MESSAGE_PACKAGES}")
+message(STATUS "Included messages: ${MESSAGE_INCLUDE}")
+message(STATUS "Excluded messages: ${MESSAGE_EXCLUDE}")
+message(STATUS "Broken messages: ${MESSAGE_BROKEN}")
 
 get_filename_component(pkg_msg_dir "${${pkg}_DIR}/../msg" REALPATH)
 file(GLOB_RECURSE idl_files "${CMAKE_CURRENT_SOURCE_DIR}/idl/*.idl")
@@ -93,12 +110,34 @@ foreach(f ${idl_files})
   get_filename_component(idl_name_ext "${idl_rel}" NAME)
   string(REGEX REPLACE "[.]idl$" "" idl_name "${idl_name_ext}")
 
-  list(FIND MESSAGES_BROKEN "${idl_pkg}/${idl_name}" idl_skip)
+  if(MESSAGE_PACKAGES)
+    list(FIND MESSAGE_PACKAGES "${idl_pkg}" idl_skip)
+    if(idl_skip LESS 0)
+      message(STATUS "package disabled: ${idl_pkg_msg}/${idl_name}")
+      continue()
+    endif()
+  endif()
 
-  if(idl_skip GREATER -1)
-    message(STATUS "skipped: ${idl_pkg}/${idl_name}")
+  list(FIND MESSAGE_BROKEN "${idl_pkg_msg}/${idl_name}" idl_skip)
+  if(idl_skip GREATER_EQUAL 0)
+    message(STATUS "unsupported: ${idl_pkg_msg}/${idl_name}")
     continue()
   endif()
+
+  list(FIND MESSAGE_EXCLUDE "${idl_pkg_msg}/${idl_name}" idl_skip)
+  if(idl_skip GREATER_EQUAL 0)
+    message(STATUS "excluded: ${idl_pkg_msg}/${idl_name}")
+    continue()
+  endif()
+
+  if(MESSAGE_INCLUDE)
+    list(FIND MESSAGE_INCLUDE "${idl_pkg_msg}/${idl_name}" idl_skip)
+    if(idl_skip LESS 0)
+      message(STATUS "not included: ${idl_pkg_msg}/${idl_name}")
+      continue()
+    endif()
+  endif()
+
   list(APPEND idl_input "${f}@${idl_pkg_msg}")
 endforeach()
 
