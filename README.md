@@ -6,30 +6,16 @@ with RTI Connext DDS.
 
 The package is built with the help of [`rticonnextdds-ros2-helpers`](https://github.com/asorbini/rticonnextdds-ros2-helpers).
 
-- [Package `connext_msgs`](#package-connext_msgs)
-- [Use DDS types in a ROS 2 application](#use-dds-types-in-a-ros-2-application)
-- [Included packages](#included-packages)
-- [Unsupported types](#unsupported-types)
-
-## Package `connext_msgs`
-
-Package `connext_msg` contains a collection of IDL files extracted from the
-ROS 2 Rolling distribution, and modified to compile with `rtiddsgen` so that
-they may be compiled into a single, ready-to-use shared library.
-
-Only IDL files for message types are included.
-
-The IDL files can be updated using script `copy_idls.sh`.
-
-The script will scan a ROS 2 installation, and it will copy all IDL files
-to the `./idl` directory. It will also perform some lightweight processing on
-the files to remove some incompatibilities.
-
-This package takes inspiration from repository [`rticommunity/ros-data-types`](https://github.com/rticommunity/ros-data-types),
+This repository takes inspiration from [`rticommunity/ros-data-types`](https://github.com/rticommunity/ros-data-types),
 which offers a similar library that provides easy access to ROS 2 data types to
 any Connext application.
 
-## Use DDS types in a ROS 2 application
+- [How to use `connext_msgs`](#how-to-use-connext_msgs)
+- [Included IDL files](#included-idl-files)
+- [Included packages](#included-packages)
+- [Unsupported types](#unsupported-types)
+
+## How to use `connext_msgs`
 
 Since `connext_msgs` is a regular ROS 2 package, you can just add it to your
 `package.xml` dependencies, and load it in your `CMakeLists.txt` like any other
@@ -82,6 +68,20 @@ For example, in order to use type `sensor_msgs::msg::PointCloud`:
 // DDS type include
 #include "sensor_msgs/msg/PointCloud.hpp"
 ```
+
+## Included IDL files
+
+Package `connext_msg` contains a collection of IDL files extracted from the
+ROS 2 Rolling distribution, and modified to compile with `rtiddsgen` so that
+they may be compiled into a single, ready-to-use shared library.
+
+Only IDL files for message types are included.
+
+The IDL files can be updated using script `copy_idls.sh`.
+
+The script will scan a ROS 2 installation, and it will copy all IDL files
+to the `./idl` directory. It will also perform some lightweight processing on
+the files to remove some incompatibilities.
 
 ## Included packages
 
