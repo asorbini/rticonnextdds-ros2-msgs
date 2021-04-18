@@ -130,7 +130,7 @@ visualization_msgs/msg/MarkerArray
 
 ## Other useful resources
 
-- [`rticonnextdds-ros2-demos`](https://github.com/asorbini/rticonnextdds-ros2-msgs)
+- [`rticonnextdds-ros2-demos`](https://github.com/asorbini/rticonnextdds-ros2-demos)
   - Collection of example hybrid ROS 2/Connext applications.
 - [`rticonnextdds-ros2-helpers`](https://github.com/asorbini/rticonnextdds-ros2-helpers)
   - Collection of utilities to built ROS 2 applications with RTI Connext DDS.
