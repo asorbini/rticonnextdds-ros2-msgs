@@ -101,8 +101,9 @@ map_msgs                 statistics_msgs
 
 ## Unsupported types
 
-The following types are currently unsupported, typically because their IDL files
-contain multiple nested `#include`'s of the same file:
+The following types are currently unsupported, typically because their IDL
+contains multiple nested `#include`'s of the same file which is not
+supported by `rtiddsgen`.
 
 ```txt
 actionlib_msgs/GoalStatusArray
