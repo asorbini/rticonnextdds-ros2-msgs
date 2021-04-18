@@ -29,22 +29,24 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-if(NOT BUILD_STANDALONE)
+if(NOT MESSAGE_STANDALONE)
   # Try to load ROS' build system.
   find_package(ament_cmake)
 
   if(NOT ament_cmake_FOUND)
     if(DEFINED ROS_DISTRO)
       message(FATAL_ERROR "ament_cmake not FOUND. "
-        "ROS 2 seems to be loaded in the environment. Set BUILD_STANDALONE "
+        "ROS 2 seems to be loaded in the environment. Set MESSAGE_STANDALONE "
         "if you would like to build this package without ROS.")
     else()
-      set(BUILD_STANDALONE true)
+      set(MESSAGE_STANDALONE true)
     endif()
   endif()
 endif()
 
-if(NOT BUILD_STANDALONE)
+set(LIB_NAME    "${PROJECT_NAME}")
+
+if(NOT MESSAGE_STANDALONE)
   # Since we're building with ROS, load `connext_node_helpers` as a dependency.
   find_package(connext_node_helpers REQUIRED)
 else()
@@ -60,29 +62,36 @@ else()
   endif()
 
   include(${CONNEXT_NODE_HELPERS_DIR}/cmake/connext_node_helpers.cmake)
+
+  if(MESSAGE_LIBRARY)
+    set(LIB_NAME    "${MESSAGE_LIBRARY}")
+  endif()
 endif()
 
-# List of types that don't build with rtiddsgen
-set(MESSAGE_BROKEN
-  actionlib_msgs/msg/GoalStatusArray
-  map_msgs/msg/ProjectedMap
-  nav_msgs/msg/OccupancyGrid
-  nav_msgs/msg/Odometry
-  sensor_msgs/msg/MultiDOFJointState
-  test_msgs/msg/Arrays
-  test_msgs/msg/BoundedSequences
-  test_msgs/msg/Defaults
-  test_msgs/msg/MultiNested
-  test_msgs/msg/UnboundedSequences
-  trajectory_msgs/msg/MultiDOFJointTrajectory
-  trajectory_msgs/msg/MultiDOFJointTrajectoryPoint
-  visualization_msgs/msg/InteractiveMarker
-  visualization_msgs/msg/InteractiveMarkerControl
-  visualization_msgs/msg/InteractiveMarkerFeedback
-  visualization_msgs/msg/InteractiveMarkerInit
-  visualization_msgs/msg/InteractiveMarkerUpdate
-  visualization_msgs/msg/Marker
-  visualization_msgs/msg/MarkerArray
+if(NOT MESSAGE_BROKEN)
+  set(MESSAGE_BROKEN
+    actionlib_msgs/msg/GoalStatusArray
+    map_msgs/msg/ProjectedMap
+    nav_msgs/msg/OccupancyGrid
+    nav_msgs/msg/Odometry
+    sensor_msgs/msg/MultiDOFJointState
+    test_msgs/msg/Arrays
+    test_msgs/msg/BoundedSequences
+    test_msgs/msg/Defaults
+    test_msgs/msg/MultiNested
+    test_msgs/msg/UnboundedSequences
+    trajectory_msgs/msg/MultiDOFJointTrajectory
+    trajectory_msgs/msg/MultiDOFJointTrajectoryPoint
+    visualization_msgs/msg/InteractiveMarker
+    visualization_msgs/msg/InteractiveMarkerControl
+    visualization_msgs/msg/InteractiveMarkerFeedback
+    visualization_msgs/msg/InteractiveMarkerInit
+    visualization_msgs/msg/InteractiveMarkerUpdate
+    visualization_msgs/msg/Marker
+    visualization_msgs/msg/MarkerArray)
+endif()
+
+set(MESSAGE_BROKEN ${MESSAGE_BROKEN}
   CACHE LIST "Messages which cannot be compiled with rtiddsgen")
 
 set(MESSAGE_PACKAGES  ${MESSAGE_PACKAGES}
@@ -94,10 +103,29 @@ set(MESSAGE_INCLUDE  ${MESSAGE_INCLUDE}
 set(MESSAGE_EXCLUDE  ${MESSAGE_EXCLUDE}
   CACHE LIST "Message which should not be included in the library")
 
-message(STATUS "Included packages: ${MESSAGE_PACKAGES}")
-message(STATUS "Included messages: ${MESSAGE_INCLUDE}")
-message(STATUS "Excluded messages: ${MESSAGE_EXCLUDE}")
-message(STATUS "Broken messages: ${MESSAGE_BROKEN}")
+if(MESSAGE_PACKAGES)
+  message(STATUS "Included packages: ${MESSAGE_PACKAGES}")
+else()
+  message(STATUS "Included packages: all")
+endif()
+
+if(MESSAGE_INCLUDE)
+  message(STATUS "Included messages: ${MESSAGE_INCLUDE}")
+else()
+  message(STATUS "Included messages: all")
+endif()
+
+if(MESSAGE_EXLUDE)
+  message(STATUS "Excluded messages: ${MESSAGE_EXCLUDE}")
+else()
+  message(STATUS "Excluded messages: none")
+endif()
+
+if(MESSAGE_BROKEN)
+  message(STATUS "Broken messages: ${MESSAGE_BROKEN}")
+else()
+  message(STATUS "Broken packages: none")
+endif()
 
 get_filename_component(pkg_msg_dir "${${pkg}_DIR}/../msg" REALPATH)
 file(GLOB_RECURSE idl_files "${CMAKE_CURRENT_SOURCE_DIR}/idl/*.idl")
@@ -141,12 +169,12 @@ foreach(f ${idl_files})
   list(APPEND idl_input "${f}@${idl_pkg_msg}")
 endforeach()
 
-connext_generate_typesupport_library(${PROJECT_NAME}
+connext_generate_typesupport_library(${LIB_NAME}
   IDLS ${idl_input}
   INCLUDES ${CMAKE_CURRENT_SOURCE_DIR}/idl
   ZEROCOPY)
 
-if(NOT BUILD_STANDALONE)
+if(NOT MESSAGE_STANDALONE)
   ament_export_libraries(${PROJECT_NAME})
   ament_export_targets(idl_${PROJECT_NAME})
 
@@ -156,4 +184,9 @@ if(NOT BUILD_STANDALONE)
   endif()
 
   ament_package()
+else()
+  install(EXPORT idl_${PROJECT_NAME}
+    FILE connext_msgs.cmake
+    NAMESPACE connext_msgs::
+    DESTINATION cmake)
 endif()

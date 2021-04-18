@@ -107,16 +107,22 @@ mkdir build
 
 cd build
 
-cmake ../connext_msgs
+cmake ../connext_msgs -DCMAKE_INSTALL_PREFIX=../install
 
-cmake --build . -- -j4
+cmake --build . -- -j4 install
 ```
+
+The library will be installed under `${CMAKE_INSTALL_PREFIX}/lib` while all
+header files will be placed under `${CMAKE_INSTALL_PREFIX}/include`.
+
+By default, the library will be named `connext_msgs`, but you can customize
+this name with variable `MESSAGE_LIBRARY`.
 
 If you prefer to clone `rticonnextdds-ros2-helpers` somewhere else, you can specify
 its location using variable `CONNEXT_ROS2_HELPERS_DIR`.
 
 You can also force the build system to avoid using ROS 2 facilities even if they
-are available by setting `BUILD_STANDALONE` to `true`.
+are available by setting `MESSAGE_STANDALONE` to `true`.
 
 ## Included IDL files
 
