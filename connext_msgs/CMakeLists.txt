@@ -29,9 +29,36 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# find dependencies
-find_package(ament_cmake REQUIRED)
-find_package(connext_node_helpers REQUIRED)
+if(NOT BUILD_STANDALONE)
+  # Try to load ROS' build system.
+  find_package(ament_cmake)
+
+  if(NOT ament_cmake_FOUND)
+    if(DEFINED ROS_DISTRO)
+      message(FATAL_ERROR "ament_cmake not FOUND. "
+        "ROS 2 seems to be loaded in the environment. Set BUILD_STANDALONE "
+        "if you would like to build this package without ROS.")
+    else()
+      set(BUILD_STANDALONE true)
+    endif()
+  endif()
+endif()
+
+if(NOT BUILD_STANDALONE)
+  # Since we're building with ROS, load `connext_node_helpers` as a dependency.
+  find_package(connext_node_helpers REQUIRED)
+else()
+  # If we are not building as a ROS 2 package, then we expect the helpers
+  # repository to be specified via CONNEXT_ROS2_HELPERS_DIR.
+  # If unspecified, we resort to looking for a clone in the current source dir.
+  if(NOT DEFINED CONNEXT_ROS2_HELPERS_DIR)
+    get_filename_component(CONNEXT_NODE_HELPERS_DIR
+      "${CMAKE_CURRENT_SOURCE_DIR}/../rticonnextdds-ros2-helpers/connext_node_helpers"
+      REALPATH)
+  endif()
+
+  include(${CONNEXT_NODE_HELPERS_DIR}/cmake/connext_node_helpers.cmake)
+endif()
 
 # Load all message packages
 set(MESSAGES_BROKEN
@@ -80,12 +107,14 @@ connext_generate_typesupport_library(${PROJECT_NAME}
   INCLUDES ${CMAKE_CURRENT_SOURCE_DIR}/idl
   ZEROCOPY)
 
-ament_export_libraries(${PROJECT_NAME})
-ament_export_targets(idl_${PROJECT_NAME})
+if(NOT BUILD_STANDALONE)
+  ament_export_libraries(${PROJECT_NAME})
+  ament_export_targets(idl_${PROJECT_NAME})
 
-if(BUILD_TESTING)
-  find_package(ament_lint_auto REQUIRED)
-  ament_lint_auto_find_test_dependencies()
+  if(BUILD_TESTING)
+    find_package(ament_lint_auto REQUIRED)
+    ament_lint_auto_find_test_dependencies()
+  endif()
+
+  ament_package()
 endif()
-
-ament_package()
