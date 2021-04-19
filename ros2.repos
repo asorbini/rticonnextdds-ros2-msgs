@@ -1,0 +1,10 @@
+repositories:
+  rti/rticonnextdds-ros2-msgs:
+    type: git
+    url: https://github.com/asorbini/rticonnextdds-ros2-msgs.git
+    version: master
+  
+  rti/rticonnextdds-ros2-helpers:
+    type: git
+    url: https://github.com/asorbini/rticonnextdds-ros2-helpers.git
+    version: master

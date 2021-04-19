@@ -59,11 +59,10 @@ package and library:
 
   ```
 
- Make sure to clone the repository, along with the `rticonnextdds-ros2-helpers`,
- in your workspace, and `colcon build` will automatically build everything as
- needed:
+Make sure to clone the repository to your workspace, along with `rticonnextdds-ros2-helpers`,
+and `colcon build` will automatically build everything a needed:
 
- ```sh
+```sh
 cd my-workspace/
 
 git clone https://github.com/asorbini/rticonnextdds-ros2-msgs
@@ -71,7 +70,18 @@ git clone https://github.com/asorbini/rticonnextdds-ros2-msgs
 git clone https://github.com/asorbini/rticonnextdds-ros2-helpers
 
 colcon build
- ```
+```
+
+You can also use the include `ros2.repos` file to clone all required repositories
+with `vcs`:
+
+```sh
+cd my-workspace/
+
+wget https://raw.githubusercontent.com/asorbini/rticonnextdds-ros2-msgs/master/ros2.repos
+
+vcs import < ros2.repos
+```
 
 In order to use the types, you must `#include` the appropriate file in your C++
 code. The path is slightly different from the one used for standard ROS 2 messages,
