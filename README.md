@@ -131,8 +131,8 @@ this name with variable `MESSAGE_LIBRARY`.
 If you prefer to clone `rticonnextdds-ros2-helpers` somewhere else, you can specify
 its location using variable `CONNEXT_ROS2_HELPERS_DIR`.
 
-You can also force the build system to avoid using ROS 2 facilities even if they
-are available by setting `MESSAGE_STANDALONE` to `true`.
+You can also force the library to be built in standalone mode by setting
+`MESSAGE_STANDALONE` to `true`.
 
 ## Included IDL files
 
