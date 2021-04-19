@@ -72,7 +72,7 @@ git clone https://github.com/asorbini/rticonnextdds-ros2-helpers
 colcon build
 ```
 
-You can also use the include `ros2.repos` file to clone all required repositories
+You can also use the included `ros2.repos` file to clone all required repositories
 with `vcs`:
 
 ```sh
