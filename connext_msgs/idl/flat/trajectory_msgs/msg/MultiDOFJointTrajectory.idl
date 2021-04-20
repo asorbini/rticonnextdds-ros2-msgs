@@ -26,7 +26,7 @@ module trajectory_msgs {
 
 
 
-      char joint_names[100][255 + 1];
+      wchar joint_names[100][255 + 1];
 
       flat::trajectory_msgs::msg::MultiDOFJointTrajectoryPoint points[100];
     };

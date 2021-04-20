@@ -30,7 +30,7 @@ module test_msgs {
 
       wstring bounded_sequence_of_wstrings[ 3];
 
-      wchar unbounded_sequence_of_wstrings[100][255 + 1];
+      char unbounded_sequence_of_wstrings[100][255 + 1];
     };
   };
 };

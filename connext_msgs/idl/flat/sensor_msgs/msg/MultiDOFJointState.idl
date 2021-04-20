@@ -47,7 +47,7 @@ module sensor_msgs {
     struct MultiDOFJointState {
       flat::std_msgs::msg::Header header;
 
-      char joint_names[100][255 + 1];
+      wchar joint_names[100][255 + 1];
 
       flat::geometry_msgs::msg::Transform transforms[100];
 

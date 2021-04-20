@@ -49,7 +49,7 @@ module test_msgs {
 
       uint64 uint64_values[100];
 
-      char string_values[100][255 + 1];
+      wchar string_values[100][255 + 1];
 
       flat::test_msgs::msg::BasicTypes basic_types_values[100];
 
@@ -97,7 +97,7 @@ module test_msgs {
       uint64 uint64_values_default[100];
 
       @default (value="('', 'max value', 'min value')")
-      char string_values_default[100][255 + 1];
+      wchar string_values_default[100][255 + 1];
 
       
 

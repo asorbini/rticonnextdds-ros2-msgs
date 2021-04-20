@@ -11,12 +11,12 @@ module rcl_interfaces {
     @final
     @transfer_mode(SHMEM_REF)
     struct ListParametersResult {
-      char names[100][255 + 1];
+      wchar names[100][255 + 1];
 
       
 
 
-      char prefixes[100][255 + 1];
+      wchar prefixes[100][255 + 1];
     };
   };
 };

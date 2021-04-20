@@ -186,11 +186,14 @@ gen_alt_idl()
     if echo "${annotations}" | grep -q SHMEM_REF ||
       echo "${annotations}" | grep -q FLAT_DATA; then
       sed -i -r \
+        -e "s:wstring ([a-zA-Z].*);$:wchar \1[${IDL_STRING_MAX_LEN} + 1];:g" \
+        -e "s:wstring<([^>]+)> ([a-zA-Z].*);$:wchar \2[\1 + 1];:g" \
         -e "s:string ([a-zA-Z].*);$:char \1[${IDL_STRING_MAX_LEN} + 1];:g" \
         -e "s:string<([^>]+)> ([a-zA-Z].*);$:char \2[\1 + 1];:g" \
         -e "s:sequence<([^,]+)> ([a-zA-Z].*);$:\1 \2[${IDL_SEQUENCE_MAX_LEN}];:g" \
         -e "s:sequence<([^,]+),([^>]+)> ([a-zA-Z].*);$:\1 \3[\2];:g" \
-        -e "s:string ([a-zA-Z].*)(\[[0-9]*\]);$:char \1[${IDL_SEQUENCE_MAX_LEN}][${IDL_STRING_MAX_LEN} + 1];:g" \
+        -e "s:wstring ([a-zA-Z].*)(\[[0-9]*\]);$:char \1[${IDL_SEQUENCE_MAX_LEN}][${IDL_STRING_MAX_LEN} + 1];:g" \
+        -e "s:string ([a-zA-Z].*)(\[[0-9]*\]);$:wchar \1[${IDL_SEQUENCE_MAX_LEN}][${IDL_STRING_MAX_LEN} + 1];:g" \
         ${f}
     fi
     for p in ${idl_pkgs}; do

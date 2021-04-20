@@ -12,7 +12,7 @@ module rcl_interfaces {
     @final
     @language_binding(FLAT_DATA)
     struct GetParameterTypes_Request {
-      char names[100][255 + 1];
+      wchar names[100][255 + 1];
     };
     
 
