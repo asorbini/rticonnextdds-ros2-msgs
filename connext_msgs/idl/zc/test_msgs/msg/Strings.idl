@@ -7,7 +7,7 @@ module zc {
 module test_msgs {
   module msg {
     module Strings_Constants {
-      const char STRING_CONST = "Hello world!"[255 + 1];
+
     };
     @final
     @transfer_mode(SHMEM_REF)

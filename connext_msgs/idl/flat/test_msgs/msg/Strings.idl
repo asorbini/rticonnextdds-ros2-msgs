@@ -7,7 +7,7 @@ module flat {
 module test_msgs {
   module msg {
     module Strings_Constants {
-      const char STRING_CONST = "Hello world!"[255 + 1];
+
     };
     @final
     @language_binding(FLAT_DATA)

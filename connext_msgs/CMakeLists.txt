@@ -83,6 +83,12 @@ if(NOT MESSAGE_BROKEN)
       list(APPEND MESSAGE_BROKEN "${alt}/${msg}")
     endforeach()
   endforeach()
+
+  foreach(alt flat flat_zc zc xcdr2 flat_mut flat_zc_mut zc_mut xcdr2_mut)
+    foreach(msg test_msgs/msg/Strings)
+      list(APPEND MESSAGE_BROKEN "${alt}/${msg}")
+    endforeach()
+  endforeach()
 endif()
 
 set(MESSAGE_BROKEN ${MESSAGE_BROKEN}

@@ -188,6 +188,13 @@ gen_alt_idl()
     if echo "${annotations}" | grep -qE "^@final"  &&
       (echo "${annotations}" | grep -q SHMEM_REF ||
       echo "${annotations}" | grep -q FLAT_DATA); then
+
+      # Delete string and wstring constants      
+      sed -i -r \
+        -e "s:[ ]+const wstring [^\n]*::g" \
+        -e "s:[ ]+const string [^\n]*::g" \
+        ${f}
+
       sed -i -r \
         -e "s:wstring ([a-zA-Z].*);$:wchar \1[${IDL_STRING_MAX_LEN} + 1];:g" \
         -e "s:wstring<([^>]+)> ([a-zA-Z].*);$:wchar \2[\1 + 1];:g" \
