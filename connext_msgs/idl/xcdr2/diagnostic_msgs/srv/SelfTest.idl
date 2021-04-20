@@ -1,0 +1,29 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from diagnostic_msgs/srv/SelfTest.srv
+// generated code does not contain a copyright notice
+
+#ifndef diagnostic_msgs_msg_DiagnosticStatus_idl
+#define diagnostic_msgs_msg_DiagnosticStatus_idl
+#include "xcdr2/diagnostic_msgs/msg/DiagnosticStatus.idl"
+#endif  // diagnostic_msgs_msg_DiagnosticStatus_idl
+
+module xcdr2 {
+module diagnostic_msgs {
+  module srv {
+    @final
+    @allowed_data_representation(XCDR2)
+    struct SelfTest_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    @final
+    @allowed_data_representation(XCDR2)
+    struct SelfTest_Response {
+      string id;
+
+      octet passed;
+
+      sequence<xcdr2::diagnostic_msgs::msg::DiagnosticStatus> status;
+    };
+  };
+};
+};

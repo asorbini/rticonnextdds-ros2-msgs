@@ -1,0 +1,53 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from action_msgs/srv/CancelGoal.srv
+// generated code does not contain a copyright notice
+
+#ifndef action_msgs_msg_GoalInfo_idl
+#define action_msgs_msg_GoalInfo_idl
+#include "flat/action_msgs/msg/GoalInfo.idl"
+#endif  // action_msgs_msg_GoalInfo_idl
+
+module flat {
+module action_msgs {
+  module srv {
+    
+
+
+
+
+
+
+
+
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct CancelGoal_Request {
+      
+
+      flat::action_msgs::msg::GoalInfo goal_info;
+    };
+    module CancelGoal_Response_Constants {
+      const int8 ERROR_NONE = 0;
+      const int8 ERROR_REJECTED = 1;
+      const int8 ERROR_UNKNOWN_GOAL_ID = 2;
+      const int8 ERROR_GOAL_TERMINATED = 3;
+    };
+    
+
+
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct CancelGoal_Response {
+      
+
+      int8 return_code;
+
+      
+
+      flat::action_msgs::msg::GoalInfo goals_canceling[100];
+    };
+  };
+};
+};

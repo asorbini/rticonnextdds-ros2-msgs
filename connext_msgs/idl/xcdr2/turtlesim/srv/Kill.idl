@@ -1,0 +1,21 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from turtlesim/srv/Kill.srv
+// generated code does not contain a copyright notice
+
+
+module xcdr2 {
+module turtlesim {
+  module srv {
+    @final
+    @allowed_data_representation(XCDR2)
+    struct Kill_Request {
+      string name;
+    };
+    @final
+    @allowed_data_representation(XCDR2)
+    struct Kill_Response {
+      uint8 structure_needs_at_least_one_member;
+    };
+  };
+};
+};

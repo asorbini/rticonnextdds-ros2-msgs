@@ -1,0 +1,20 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from turtlesim/msg/Color.msg
+// generated code does not contain a copyright notice
+
+
+module zc {
+module turtlesim {
+  module msg {
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct Color {
+      uint8 r;
+
+      uint8 g;
+
+      uint8 b;
+    };
+  };
+};
+};

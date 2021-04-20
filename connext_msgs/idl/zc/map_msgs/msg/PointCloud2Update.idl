@@ -1,0 +1,34 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from map_msgs/msg/PointCloud2Update.msg
+// generated code does not contain a copyright notice
+
+#ifndef sensor_msgs_msg_PointCloud2_idl
+#define sensor_msgs_msg_PointCloud2_idl
+#include "zc/sensor_msgs/msg/PointCloud2.idl"
+#endif  // sensor_msgs_msg_PointCloud2_idl
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
+#include "zc/std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
+
+module zc {
+module map_msgs {
+  module msg {
+    module PointCloud2Update_Constants {
+      const uint32 ADD = 0;
+      const uint32 DELETE = 1;
+    };
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct PointCloud2Update {
+      zc::std_msgs::msg::Header header;
+
+      
+
+      uint32 type;
+
+      zc::sensor_msgs::msg::PointCloud2 points;
+    };
+  };
+};
+};

@@ -1,0 +1,41 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from sensor_msgs/srv/SetCameraInfo.srv
+// generated code does not contain a copyright notice
+
+#ifndef sensor_msgs_msg_CameraInfo_idl
+#define sensor_msgs_msg_CameraInfo_idl
+#include "xcdr2/sensor_msgs/msg/CameraInfo.idl"
+#endif  // sensor_msgs_msg_CameraInfo_idl
+
+module xcdr2 {
+module sensor_msgs {
+  module srv {
+    
+
+
+
+
+
+
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct SetCameraInfo_Request {
+      
+
+      xcdr2::sensor_msgs::msg::CameraInfo camera_info;
+    };
+    @final
+    @allowed_data_representation(XCDR2)
+    struct SetCameraInfo_Response {
+      
+
+      boolean success;
+
+      
+
+      string status_message;
+    };
+  };
+};
+};

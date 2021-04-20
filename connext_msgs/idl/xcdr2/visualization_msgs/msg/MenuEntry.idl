@@ -1,0 +1,70 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from visualization_msgs/msg/MenuEntry.msg
+// generated code does not contain a copyright notice
+
+
+module xcdr2 {
+module visualization_msgs {
+  module msg {
+    module MenuEntry_Constants {
+      const uint8 FEEDBACK = 0;
+      const uint8 ROSRUN = 1;
+      const uint8 ROSLAUNCH = 2;
+    };
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct MenuEntry {
+      
+
+
+      uint32 id;
+
+      
+
+
+      uint32 parent_id;
+
+      
+
+      string title;
+
+      
+
+      string command;
+
+      uint8 command_type;
+    };
+  };
+};
+};

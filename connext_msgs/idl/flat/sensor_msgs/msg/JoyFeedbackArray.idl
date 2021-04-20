@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from sensor_msgs/msg/JoyFeedbackArray.msg
+// generated code does not contain a copyright notice
+
+#ifndef sensor_msgs_msg_JoyFeedback_idl
+#define sensor_msgs_msg_JoyFeedback_idl
+#include "flat/sensor_msgs/msg/JoyFeedback.idl"
+#endif  // sensor_msgs_msg_JoyFeedback_idl
+
+module flat {
+module sensor_msgs {
+  module msg {
+    
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct JoyFeedbackArray {
+      flat::sensor_msgs::msg::JoyFeedback array[100];
+    };
+  };
+};
+};

@@ -1,0 +1,24 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from map_msgs/msg/ProjectedMap.msg
+// generated code does not contain a copyright notice
+
+#ifndef nav_msgs_msg_OccupancyGrid_idl
+#define nav_msgs_msg_OccupancyGrid_idl
+#include "zc/nav_msgs/msg/OccupancyGrid.idl"
+#endif  // nav_msgs_msg_OccupancyGrid_idl
+
+module zc {
+module map_msgs {
+  module msg {
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct ProjectedMap {
+      zc::nav_msgs::msg::OccupancyGrid map;
+
+      double min_z;
+
+      double max_z;
+    };
+  };
+};
+};

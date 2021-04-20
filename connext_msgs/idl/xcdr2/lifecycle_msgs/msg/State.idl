@@ -1,0 +1,38 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from lifecycle_msgs/msg/State.msg
+// generated code does not contain a copyright notice
+
+
+module xcdr2 {
+module lifecycle_msgs {
+  module msg {
+    module State_Constants {
+      const uint8 PRIMARY_STATE_UNKNOWN = 0;
+      const uint8 PRIMARY_STATE_UNCONFIGURED = 1;
+      const uint8 PRIMARY_STATE_INACTIVE = 2;
+      const uint8 PRIMARY_STATE_ACTIVE = 3;
+      const uint8 PRIMARY_STATE_FINALIZED = 4;
+      const uint8 TRANSITION_STATE_CONFIGURING = 10;
+      const uint8 TRANSITION_STATE_CLEANINGUP = 11;
+      const uint8 TRANSITION_STATE_SHUTTINGDOWN = 12;
+      const uint8 TRANSITION_STATE_ACTIVATING = 13;
+      const uint8 TRANSITION_STATE_DEACTIVATING = 14;
+      const uint8 TRANSITION_STATE_ERRORPROCESSING = 15;
+    };
+    
+
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct State {
+      
+
+      uint8 id;
+
+      
+
+      string label;
+    };
+  };
+};
+};

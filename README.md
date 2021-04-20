@@ -18,6 +18,7 @@ any Connext application.
 - [Included IDL files](#included-idl-files)
 - [Included packages](#included-packages)
 - [Unsupported types](#unsupported-types)
+- [Alternative message variants](#alternative-message-variants)
 - [Other useful resources](#other-useful-resources)
 
 ## Use `connext_msgs` in a ROS 2 package
@@ -186,6 +187,35 @@ test_msgs/msg/UnboundedSequences
 test_msgs/msg/Defaults
 test_msgs/srv/Arrays
 ```
+
+## Alternative message variants
+
+The repository contains automatically generated variants for each type to use
+it with the Flat-Data and Zero-Copy features.
+
+These variants are not built by default, and they must be explicitly enabled
+with cmake options (`MESSAGE_VARIANT_<NAME>`, e.g. `MESSAGE_VARIANT_FLAT`).
+
+All types in the variants are placed in separate packages to distinguish them
+from the originals:
+
+- `flat`: Flat-Data versions.
+- `flat_zc`: Flat-Data/Zero-Copy versions.
+- `zc`: Zero-Copy versions.
+- `xcdr2`:versions forcing use of XCDR2 serialization format.
+
+These types might not be compatible with their original versions, because of
+changes applied to them to make them conform
+with the limitation of the features, particularly with respect to lack of support
+for strings and sequences:
+
+- All strings are converted to an array of characters.
+- All sequences are converted to an array.
+
+For unbounded members some arbitrary maximum values will be used (255 for strings,
+100 for sequences). These values can be customized when running the `copy_idls.sh`
+script.
+
 
 ## Other useful resources
 

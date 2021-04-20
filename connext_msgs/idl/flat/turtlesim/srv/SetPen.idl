@@ -1,0 +1,29 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from turtlesim/srv/SetPen.srv
+// generated code does not contain a copyright notice
+
+
+module flat {
+module turtlesim {
+  module srv {
+    @final
+    @language_binding(FLAT_DATA)
+    struct SetPen_Request {
+      uint8 r;
+
+      uint8 g;
+
+      uint8 b;
+
+      uint8 width;
+
+      uint8 off;
+    };
+    @final
+    @language_binding(FLAT_DATA)
+    struct SetPen_Response {
+      uint8 structure_needs_at_least_one_member;
+    };
+  };
+};
+};

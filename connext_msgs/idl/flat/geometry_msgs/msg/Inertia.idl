@@ -1,0 +1,45 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from geometry_msgs/msg/Inertia.msg
+// generated code does not contain a copyright notice
+
+#ifndef geometry_msgs_msg_Vector3_idl
+#define geometry_msgs_msg_Vector3_idl
+#include "flat/geometry_msgs/msg/Vector3.idl"
+#endif  // geometry_msgs_msg_Vector3_idl
+
+module flat {
+module geometry_msgs {
+  module msg {
+    
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct Inertia {
+      double m;
+
+      
+
+      
+      flat::geometry_msgs::msg::Vector3 com;
+
+      
+
+
+
+
+      
+      double ixx;
+
+      double ixy;
+
+      double ixz;
+
+      double iyy;
+
+      double iyz;
+
+      double izz;
+    };
+  };
+};
+};

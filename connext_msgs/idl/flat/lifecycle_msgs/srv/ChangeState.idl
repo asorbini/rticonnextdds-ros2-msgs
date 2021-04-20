@@ -1,0 +1,31 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from lifecycle_msgs/srv/ChangeState.srv
+// generated code does not contain a copyright notice
+
+#ifndef lifecycle_msgs_msg_Transition_idl
+#define lifecycle_msgs_msg_Transition_idl
+#include "flat/lifecycle_msgs/msg/Transition.idl"
+#endif  // lifecycle_msgs_msg_Transition_idl
+
+module flat {
+module lifecycle_msgs {
+  module srv {
+    
+
+
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct ChangeState_Request {
+      flat::lifecycle_msgs::msg::Transition transition;
+    };
+    @final
+    @language_binding(FLAT_DATA)
+    struct ChangeState_Response {
+      
+
+      boolean success;
+    };
+  };
+};
+};

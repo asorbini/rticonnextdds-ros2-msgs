@@ -1,0 +1,23 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from example_interfaces/srv/AddTwoInts.srv
+// generated code does not contain a copyright notice
+
+
+module flat {
+module example_interfaces {
+  module srv {
+    @final
+    @language_binding(FLAT_DATA)
+    struct AddTwoInts_Request {
+      int64 a;
+
+      int64 b;
+    };
+    @final
+    @language_binding(FLAT_DATA)
+    struct AddTwoInts_Response {
+      int64 sum;
+    };
+  };
+};
+};

@@ -1,0 +1,23 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from turtlesim/srv/TeleportRelative.srv
+// generated code does not contain a copyright notice
+
+
+module flat {
+module turtlesim {
+  module srv {
+    @final
+    @language_binding(FLAT_DATA)
+    struct TeleportRelative_Request {
+      float linear;
+
+      float angular;
+    };
+    @final
+    @language_binding(FLAT_DATA)
+    struct TeleportRelative_Response {
+      uint8 structure_needs_at_least_one_member;
+    };
+  };
+};
+};

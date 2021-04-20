@@ -1,0 +1,23 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from logging_demo/srv/ConfigLogger.srv
+// generated code does not contain a copyright notice
+
+
+module xcdr2 {
+module logging_demo {
+  module srv {
+    @final
+    @allowed_data_representation(XCDR2)
+    struct ConfigLogger_Request {
+      string logger_name;
+
+      string level;
+    };
+    @final
+    @allowed_data_representation(XCDR2)
+    struct ConfigLogger_Response {
+      boolean success;
+    };
+  };
+};
+};

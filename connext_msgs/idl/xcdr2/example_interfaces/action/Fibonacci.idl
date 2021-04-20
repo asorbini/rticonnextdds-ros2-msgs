@@ -1,0 +1,32 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from example_interfaces/action/Fibonacci.action
+// generated code does not contain a copyright notice
+
+
+module xcdr2 {
+module example_interfaces {
+  module action {
+    
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct Fibonacci_Goal {
+      int32 order;
+    };
+    @final
+    @allowed_data_representation(XCDR2)
+    struct Fibonacci_Result {
+      
+
+      sequence<int32> sequence;
+    };
+    @final
+    @allowed_data_representation(XCDR2)
+    struct Fibonacci_Feedback {
+      
+
+      sequence<int32> sequence;
+    };
+  };
+};
+};

@@ -1,0 +1,29 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from nav_msgs/srv/GetMap.srv
+// generated code does not contain a copyright notice
+
+#ifndef nav_msgs_msg_OccupancyGrid_idl
+#define nav_msgs_msg_OccupancyGrid_idl
+#include "flat/nav_msgs/msg/OccupancyGrid.idl"
+#endif  // nav_msgs_msg_OccupancyGrid_idl
+
+module flat {
+module nav_msgs {
+  module srv {
+    
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct GetMap_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct GetMap_Response {
+      flat::nav_msgs::msg::OccupancyGrid map;
+    };
+  };
+};
+};

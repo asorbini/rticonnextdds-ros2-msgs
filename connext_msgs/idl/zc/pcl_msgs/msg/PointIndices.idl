@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from pcl_msgs/msg/PointIndices.msg
+// generated code does not contain a copyright notice
+
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
+#include "zc/std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
+
+module zc {
+module pcl_msgs {
+  module msg {
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct PointIndices {
+      zc::std_msgs::msg::Header header;
+
+      int32 indices[100];
+    };
+  };
+};
+};

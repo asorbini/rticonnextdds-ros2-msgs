@@ -1,0 +1,83 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from visualization_msgs/msg/InteractiveMarkerControl.msg
+// generated code does not contain a copyright notice
+
+#ifndef geometry_msgs_msg_Quaternion_idl
+#define geometry_msgs_msg_Quaternion_idl
+#include "zc/geometry_msgs/msg/Quaternion.idl"
+#endif  // geometry_msgs_msg_Quaternion_idl
+#ifndef visualization_msgs_msg_Marker_idl
+#define visualization_msgs_msg_Marker_idl
+#include "zc/visualization_msgs/msg/Marker.idl"
+#endif  // visualization_msgs_msg_Marker_idl
+
+module zc {
+module visualization_msgs {
+  module msg {
+    module InteractiveMarkerControl_Constants {
+      const uint8 INHERIT = 0;
+      const uint8 FIXED = 1;
+      const uint8 VIEW_FACING = 2;
+      const uint8 NONE = 0;
+      const uint8 MENU = 1;
+      const uint8 BUTTON = 2;
+      const uint8 MOVE_AXIS = 3;
+      const uint8 MOVE_PLANE = 4;
+      const uint8 ROTATE_AXIS = 5;
+      const uint8 MOVE_ROTATE = 6;
+      const uint8 MOVE_3D = 7;
+      const uint8 ROTATE_3D = 8;
+      const uint8 MOVE_ROTATE_3D = 9;
+    };
+    
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct InteractiveMarkerControl {
+      
+
+
+
+      char name[255 + 1];
+
+      
+
+
+
+      zc::geometry_msgs::msg::Quaternion orientation;
+
+      uint8 orientation_mode;
+
+      uint8 interaction_mode;
+
+      
+
+
+      boolean always_visible;
+
+      
+
+
+
+
+
+
+
+
+      zc::visualization_msgs::msg::Marker markers[100];
+
+      
+
+
+
+      boolean independent_marker_orientation;
+
+      
+
+
+
+      char description[255 + 1];
+    };
+  };
+};
+};

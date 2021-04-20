@@ -1,0 +1,32 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from diagnostic_msgs/msg/DiagnosticArray.msg
+// generated code does not contain a copyright notice
+
+#ifndef diagnostic_msgs_msg_DiagnosticStatus_idl
+#define diagnostic_msgs_msg_DiagnosticStatus_idl
+#include "zc/diagnostic_msgs/msg/DiagnosticStatus.idl"
+#endif  // diagnostic_msgs_msg_DiagnosticStatus_idl
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
+#include "zc/std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
+
+module zc {
+module diagnostic_msgs {
+  module msg {
+    
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct DiagnosticArray {
+      
+
+      zc::std_msgs::msg::Header header;
+
+      
+
+      zc::diagnostic_msgs::msg::DiagnosticStatus status[100];
+    };
+  };
+};
+};

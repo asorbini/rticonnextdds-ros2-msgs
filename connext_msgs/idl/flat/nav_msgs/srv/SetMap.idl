@@ -1,0 +1,39 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from nav_msgs/srv/SetMap.srv
+// generated code does not contain a copyright notice
+
+#ifndef geometry_msgs_msg_PoseWithCovarianceStamped_idl
+#define geometry_msgs_msg_PoseWithCovarianceStamped_idl
+#include "flat/geometry_msgs/msg/PoseWithCovarianceStamped.idl"
+#endif  // geometry_msgs_msg_PoseWithCovarianceStamped_idl
+#ifndef nav_msgs_msg_OccupancyGrid_idl
+#define nav_msgs_msg_OccupancyGrid_idl
+#include "flat/nav_msgs/msg/OccupancyGrid.idl"
+#endif  // nav_msgs_msg_OccupancyGrid_idl
+
+module flat {
+module nav_msgs {
+  module srv {
+    
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct SetMap_Request {
+      
+
+      flat::nav_msgs::msg::OccupancyGrid map;
+
+      
+
+      flat::geometry_msgs::msg::PoseWithCovarianceStamped initial_pose;
+    };
+    @final
+    @language_binding(FLAT_DATA)
+    struct SetMap_Response {
+      
+
+      boolean success;
+    };
+  };
+};
+};

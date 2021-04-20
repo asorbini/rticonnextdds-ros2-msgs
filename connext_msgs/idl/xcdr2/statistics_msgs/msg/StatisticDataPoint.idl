@@ -1,0 +1,40 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from statistics_msgs/msg/StatisticDataPoint.msg
+// generated code does not contain a copyright notice
+
+
+module xcdr2 {
+module statistics_msgs {
+  module msg {
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct StatisticDataPoint {
+      
+
+
+      uint8 data_type;
+
+      
+
+      double data;
+    };
+  };
+};
+};

@@ -1,0 +1,67 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from rcl_interfaces/msg/ParameterDescriptor.msg
+// generated code does not contain a copyright notice
+
+#ifndef rcl_interfaces_msg_FloatingPointRange_idl
+#define rcl_interfaces_msg_FloatingPointRange_idl
+#include "xcdr2/rcl_interfaces/msg/FloatingPointRange.idl"
+#endif  // rcl_interfaces_msg_FloatingPointRange_idl
+#ifndef rcl_interfaces_msg_IntegerRange_idl
+#define rcl_interfaces_msg_IntegerRange_idl
+#include "xcdr2/rcl_interfaces/msg/IntegerRange.idl"
+#endif  // rcl_interfaces_msg_IntegerRange_idl
+
+module xcdr2 {
+module rcl_interfaces {
+  module msg {
+    
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct ParameterDescriptor {
+      
+
+      string name;
+
+      
+
+      uint8 type;
+
+      
+
+      string description;
+
+      
+
+
+
+
+
+
+      string additional_constraints;
+
+      
+
+      @default (value=FALSE)
+      boolean read_only;
+
+      
+
+      @default (value=FALSE)
+      boolean dynamic_typing;
+
+      
+
+
+
+
+
+      sequence<xcdr2::rcl_interfaces::msg::FloatingPointRange, 1> floating_point_range;
+
+      
+
+      sequence<xcdr2::rcl_interfaces::msg::IntegerRange, 1> integer_range;
+    };
+  };
+};
+};

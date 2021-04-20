@@ -1,0 +1,42 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from nav_msgs/srv/LoadMap.srv
+// generated code does not contain a copyright notice
+
+#ifndef nav_msgs_msg_OccupancyGrid_idl
+#define nav_msgs_msg_OccupancyGrid_idl
+#include "xcdr2/nav_msgs/msg/OccupancyGrid.idl"
+#endif  // nav_msgs_msg_OccupancyGrid_idl
+
+module xcdr2 {
+module nav_msgs {
+  module srv {
+    
+
+
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct LoadMap_Request {
+      string map_url;
+    };
+    module LoadMap_Response_Constants {
+      const uint8 RESULT_SUCCESS = 0;
+      const uint8 RESULT_MAP_DOES_NOT_EXIST = 1;
+      const uint8 RESULT_INVALID_MAP_DATA = 2;
+      const uint8 RESULT_INVALID_MAP_METADATA = 3;
+      const uint8 RESULT_UNDEFINED_FAILURE = 255;
+    };
+    
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct LoadMap_Response {
+      
+
+      xcdr2::nav_msgs::msg::OccupancyGrid map;
+
+      uint8 result;
+    };
+  };
+};
+};

@@ -1,0 +1,33 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from example_interfaces/srv/SetBool.srv
+// generated code does not contain a copyright notice
+
+
+module xcdr2 {
+module example_interfaces {
+  module srv {
+    
+
+
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct SetBool_Request {
+      
+
+      boolean data;
+    };
+    @final
+    @allowed_data_representation(XCDR2)
+    struct SetBool_Response {
+      
+
+      boolean success;
+
+      
+
+      string message;
+    };
+  };
+};
+};

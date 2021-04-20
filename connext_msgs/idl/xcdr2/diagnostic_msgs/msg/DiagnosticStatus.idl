@@ -1,0 +1,46 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from diagnostic_msgs/msg/DiagnosticStatus.msg
+// generated code does not contain a copyright notice
+
+#ifndef diagnostic_msgs_msg_KeyValue_idl
+#define diagnostic_msgs_msg_KeyValue_idl
+#include "xcdr2/diagnostic_msgs/msg/KeyValue.idl"
+#endif  // diagnostic_msgs_msg_KeyValue_idl
+
+module xcdr2 {
+module diagnostic_msgs {
+  module msg {
+    module DiagnosticStatus_Constants {
+      const octet OK = 0;
+      const octet WARN = 1;
+      const octet ERROR = 2;
+      const octet STALE = 3;
+    };
+    
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct DiagnosticStatus {
+      
+
+      octet level;
+
+      
+
+      string name;
+
+      
+
+      string message;
+
+      
+
+      string hardware_id;
+
+      
+
+      sequence<xcdr2::diagnostic_msgs::msg::KeyValue> values;
+    };
+  };
+};
+};

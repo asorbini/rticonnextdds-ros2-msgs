@@ -1,0 +1,33 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from statistics_msgs/msg/StatisticDataType.msg
+// generated code does not contain a copyright notice
+
+
+module xcdr2 {
+module statistics_msgs {
+  module msg {
+    module StatisticDataType_Constants {
+      const uint8 STATISTICS_DATA_TYPE_UNINITIALIZED = 0;
+      const uint8 STATISTICS_DATA_TYPE_AVERAGE = 1;
+      const uint8 STATISTICS_DATA_TYPE_MINIMUM = 2;
+      const uint8 STATISTICS_DATA_TYPE_MAXIMUM = 3;
+      const uint8 STATISTICS_DATA_TYPE_STDDEV = 4;
+      const uint8 STATISTICS_DATA_TYPE_SAMPLE_COUNT = 5;
+    };
+    
+
+
+
+
+
+
+
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct StatisticDataType {
+      uint8 structure_needs_at_least_one_member;
+    };
+  };
+};
+};

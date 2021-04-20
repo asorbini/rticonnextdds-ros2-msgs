@@ -1,0 +1,29 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from rcl_interfaces/srv/GetParameterTypes.srv
+// generated code does not contain a copyright notice
+
+
+module flat {
+module rcl_interfaces {
+  module srv {
+    
+
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct GetParameterTypes_Request {
+      char names[100][255 + 1];
+    };
+    
+
+
+
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct GetParameterTypes_Response {
+      uint8 types[100];
+    };
+  };
+};
+};

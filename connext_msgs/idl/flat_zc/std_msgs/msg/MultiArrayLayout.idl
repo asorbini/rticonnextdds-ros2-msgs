@@ -1,0 +1,55 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from std_msgs/msg/MultiArrayLayout.msg
+// generated code does not contain a copyright notice
+
+#ifndef std_msgs_msg_MultiArrayDimension_idl
+#define std_msgs_msg_MultiArrayDimension_idl
+#include "flat_zc/std_msgs/msg/MultiArrayDimension.idl"
+#endif  // std_msgs_msg_MultiArrayDimension_idl
+
+module flat_zc {
+module std_msgs {
+  module msg {
+    
+
+
+
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct MultiArrayLayout {
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      flat_zc::std_msgs::msg::MultiArrayDimension dim[100];
+
+      
+
+      uint32 data_offset;
+    };
+  };
+};
+};

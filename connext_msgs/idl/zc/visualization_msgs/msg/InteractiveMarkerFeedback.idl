@@ -1,0 +1,71 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from visualization_msgs/msg/InteractiveMarkerFeedback.msg
+// generated code does not contain a copyright notice
+
+#ifndef geometry_msgs_msg_Point_idl
+#define geometry_msgs_msg_Point_idl
+#include "zc/geometry_msgs/msg/Point.idl"
+#endif  // geometry_msgs_msg_Point_idl
+#ifndef geometry_msgs_msg_Pose_idl
+#define geometry_msgs_msg_Pose_idl
+#include "zc/geometry_msgs/msg/Pose.idl"
+#endif  // geometry_msgs_msg_Pose_idl
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
+#include "zc/std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
+
+module zc {
+module visualization_msgs {
+  module msg {
+    module InteractiveMarkerFeedback_Constants {
+      const uint8 KEEP_ALIVE = 0;
+      const uint8 POSE_UPDATE = 1;
+      const uint8 MENU_SELECT = 2;
+      const uint8 BUTTON_CLICK = 3;
+      const uint8 MOUSE_DOWN = 4;
+      const uint8 MOUSE_UP = 5;
+    };
+    
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct InteractiveMarkerFeedback {
+      zc::std_msgs::msg::Header header;
+
+      
+
+      char client_id[255 + 1];
+
+      
+
+
+
+      char marker_name[255 + 1];
+
+      char control_name[255 + 1];
+
+      uint8 event_type;
+
+      
+
+
+      zc::geometry_msgs::msg::Pose pose;
+
+      
+
+
+      uint32 menu_entry_id;
+
+      
+
+
+
+
+      zc::geometry_msgs::msg::Point mouse_point;
+
+      boolean mouse_point_valid;
+    };
+  };
+};
+};

@@ -1,0 +1,21 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from pcl_msgs/srv/UpdateFilename.srv
+// generated code does not contain a copyright notice
+
+
+module zc {
+module pcl_msgs {
+  module srv {
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct UpdateFilename_Request {
+      char filename[255 + 1];
+    };
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct UpdateFilename_Response {
+      boolean success;
+    };
+  };
+};
+};

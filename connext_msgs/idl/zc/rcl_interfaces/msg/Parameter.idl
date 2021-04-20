@@ -1,0 +1,30 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from rcl_interfaces/msg/Parameter.msg
+// generated code does not contain a copyright notice
+
+#ifndef rcl_interfaces_msg_ParameterValue_idl
+#define rcl_interfaces_msg_ParameterValue_idl
+#include "zc/rcl_interfaces/msg/ParameterValue.idl"
+#endif  // rcl_interfaces_msg_ParameterValue_idl
+
+module zc {
+module rcl_interfaces {
+  module msg {
+    
+
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct Parameter {
+      
+
+      char name[255 + 1];
+
+      
+
+
+      zc::rcl_interfaces::msg::ParameterValue value;
+    };
+  };
+};
+};

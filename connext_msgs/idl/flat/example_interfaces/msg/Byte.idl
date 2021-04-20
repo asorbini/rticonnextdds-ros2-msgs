@@ -1,0 +1,21 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from example_interfaces/msg/Byte.msg
+// generated code does not contain a copyright notice
+
+
+module flat {
+module example_interfaces {
+  module msg {
+    
+
+
+
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct Byte {
+      octet data;
+    };
+  };
+};
+};

@@ -1,0 +1,27 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from map_msgs/srv/SaveMap.srv
+// generated code does not contain a copyright notice
+
+#ifndef std_msgs_msg_String_idl
+#define std_msgs_msg_String_idl
+#include "zc/std_msgs/msg/String.idl"
+#endif  // std_msgs_msg_String_idl
+
+module zc {
+module map_msgs {
+  module srv {
+    
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct SaveMap_Request {
+      zc::std_msgs::msg::String filename;
+    };
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct SaveMap_Response {
+      uint8 structure_needs_at_least_one_member;
+    };
+  };
+};
+};

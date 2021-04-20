@@ -1,0 +1,35 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from rcl_interfaces/srv/SetParametersAtomically.srv
+// generated code does not contain a copyright notice
+
+#ifndef rcl_interfaces_msg_Parameter_idl
+#define rcl_interfaces_msg_Parameter_idl
+#include "zc/rcl_interfaces/msg/Parameter.idl"
+#endif  // rcl_interfaces_msg_Parameter_idl
+#ifndef rcl_interfaces_msg_SetParametersResult_idl
+#define rcl_interfaces_msg_SetParametersResult_idl
+#include "zc/rcl_interfaces/msg/SetParametersResult.idl"
+#endif  // rcl_interfaces_msg_SetParametersResult_idl
+
+module zc {
+module rcl_interfaces {
+  module srv {
+    
+
+
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct SetParametersAtomically_Request {
+      zc::rcl_interfaces::msg::Parameter parameters[100];
+    };
+    
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct SetParametersAtomically_Response {
+      zc::rcl_interfaces::msg::SetParametersResult result;
+    };
+  };
+};
+};

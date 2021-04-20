@@ -1,0 +1,59 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from test_msgs/action/NestedMessage.action
+// generated code does not contain a copyright notice
+
+#ifndef builtin_interfaces_msg_Time_idl
+#define builtin_interfaces_msg_Time_idl
+#include "flat_zc/builtin_interfaces/msg/Time.idl"
+#endif  // builtin_interfaces_msg_Time_idl
+#ifndef test_msgs_msg_BasicTypes_idl
+#define test_msgs_msg_BasicTypes_idl
+#include "flat_zc/test_msgs/msg/BasicTypes.idl"
+#endif  // test_msgs_msg_BasicTypes_idl
+#ifndef test_msgs_msg_Builtins_idl
+#define test_msgs_msg_Builtins_idl
+#include "flat_zc/test_msgs/msg/Builtins.idl"
+#endif  // test_msgs_msg_Builtins_idl
+
+module flat_zc {
+module test_msgs {
+  module action {
+    
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct NestedMessage_Goal {
+      flat_zc::test_msgs::msg::Builtins nested_field_no_pkg;
+
+      flat_zc::test_msgs::msg::BasicTypes nested_field;
+
+      flat_zc::builtin_interfaces::msg::Time nested_different_pkg;
+    };
+    @final
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct NestedMessage_Result {
+      
+
+      flat_zc::test_msgs::msg::Builtins nested_field_no_pkg;
+
+      flat_zc::test_msgs::msg::BasicTypes nested_field;
+
+      flat_zc::builtin_interfaces::msg::Time nested_different_pkg;
+    };
+    @final
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct NestedMessage_Feedback {
+      
+
+      flat_zc::test_msgs::msg::Builtins nested_field_no_pkg;
+
+      flat_zc::test_msgs::msg::BasicTypes nested_field;
+
+      flat_zc::builtin_interfaces::msg::Time nested_different_pkg;
+    };
+  };
+};
+};

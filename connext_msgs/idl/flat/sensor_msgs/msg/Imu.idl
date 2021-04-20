@@ -1,0 +1,61 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from sensor_msgs/msg/Imu.msg
+// generated code does not contain a copyright notice
+
+#ifndef geometry_msgs_msg_Quaternion_idl
+#define geometry_msgs_msg_Quaternion_idl
+#include "flat/geometry_msgs/msg/Quaternion.idl"
+#endif  // geometry_msgs_msg_Quaternion_idl
+#ifndef geometry_msgs_msg_Vector3_idl
+#define geometry_msgs_msg_Vector3_idl
+#include "flat/geometry_msgs/msg/Vector3.idl"
+#endif  // geometry_msgs_msg_Vector3_idl
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
+#include "flat/std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
+
+module flat {
+module sensor_msgs {
+  module msg {
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct Imu {
+      flat::std_msgs::msg::Header header;
+
+      flat::geometry_msgs::msg::Quaternion orientation;
+
+      
+
+      double orientation_covariance[9];
+
+      flat::geometry_msgs::msg::Vector3 angular_velocity;
+
+      
+
+      double angular_velocity_covariance[9];
+
+      flat::geometry_msgs::msg::Vector3 linear_acceleration;
+
+      
+
+      double linear_acceleration_covariance[9];
+    };
+  };
+};
+};

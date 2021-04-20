@@ -1,0 +1,25 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from builtin_interfaces/msg/Time.msg
+// generated code does not contain a copyright notice
+
+
+module zc {
+module builtin_interfaces {
+  module msg {
+    
+
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct Time {
+      
+
+      int32 sec;
+
+      
+
+      uint32 nanosec;
+    };
+  };
+};
+};

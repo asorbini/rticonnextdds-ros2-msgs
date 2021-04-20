@@ -1,0 +1,40 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from statistics_msgs/msg/StatisticDataPoint.msg
+// generated code does not contain a copyright notice
+
+
+module zc {
+module statistics_msgs {
+  module msg {
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct StatisticDataPoint {
+      
+
+
+      uint8 data_type;
+
+      
+
+      double data;
+    };
+  };
+};
+};

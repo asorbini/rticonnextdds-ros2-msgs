@@ -1,0 +1,34 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from visualization_msgs/srv/GetInteractiveMarkers.srv
+// generated code does not contain a copyright notice
+
+#ifndef visualization_msgs_msg_InteractiveMarker_idl
+#define visualization_msgs_msg_InteractiveMarker_idl
+#include "flat/visualization_msgs/msg/InteractiveMarker.idl"
+#endif  // visualization_msgs_msg_InteractiveMarker_idl
+
+module flat {
+module visualization_msgs {
+  module srv {
+    @final
+    @language_binding(FLAT_DATA)
+    struct GetInteractiveMarkers_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    
+
+
+
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct GetInteractiveMarkers_Response {
+      uint64 sequence_number;
+
+      
+
+      flat::visualization_msgs::msg::InteractiveMarker markers[100];
+    };
+  };
+};
+};

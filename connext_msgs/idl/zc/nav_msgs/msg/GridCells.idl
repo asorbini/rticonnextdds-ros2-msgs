@@ -1,0 +1,38 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from nav_msgs/msg/GridCells.msg
+// generated code does not contain a copyright notice
+
+#ifndef geometry_msgs_msg_Point_idl
+#define geometry_msgs_msg_Point_idl
+#include "zc/geometry_msgs/msg/Point.idl"
+#endif  // geometry_msgs_msg_Point_idl
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
+#include "zc/std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
+
+module zc {
+module nav_msgs {
+  module msg {
+    
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct GridCells {
+      zc::std_msgs::msg::Header header;
+
+      
+
+      float cell_width;
+
+      
+
+      float cell_height;
+
+      
+
+      zc::geometry_msgs::msg::Point cells[100];
+    };
+  };
+};
+};

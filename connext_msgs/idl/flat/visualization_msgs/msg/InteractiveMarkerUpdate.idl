@@ -1,0 +1,52 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from visualization_msgs/msg/InteractiveMarkerUpdate.msg
+// generated code does not contain a copyright notice
+
+#ifndef visualization_msgs_msg_InteractiveMarker_idl
+#define visualization_msgs_msg_InteractiveMarker_idl
+#include "flat/visualization_msgs/msg/InteractiveMarker.idl"
+#endif  // visualization_msgs_msg_InteractiveMarker_idl
+#ifndef visualization_msgs_msg_InteractiveMarkerPose_idl
+#define visualization_msgs_msg_InteractiveMarkerPose_idl
+#include "flat/visualization_msgs/msg/InteractiveMarkerPose.idl"
+#endif  // visualization_msgs_msg_InteractiveMarkerPose_idl
+
+module flat {
+module visualization_msgs {
+  module msg {
+    module InteractiveMarkerUpdate_Constants {
+      const uint8 KEEP_ALIVE = 0;
+      const uint8 UPDATE = 1;
+    };
+    @final
+    @language_binding(FLAT_DATA)
+    struct InteractiveMarkerUpdate {
+      
+
+
+      char server_id[255 + 1];
+
+      
+
+
+      uint64 seq_num;
+
+      uint8 type;
+
+      
+
+
+
+      flat::visualization_msgs::msg::InteractiveMarker markers[100];
+
+      
+
+      flat::visualization_msgs::msg::InteractiveMarkerPose poses[100];
+
+      
+
+      char erases[100][255 + 1];
+    };
+  };
+};
+};

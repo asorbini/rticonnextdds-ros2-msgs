@@ -1,0 +1,23 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from diagnostic_msgs/msg/KeyValue.msg
+// generated code does not contain a copyright notice
+
+
+module flat_zc {
+module diagnostic_msgs {
+  module msg {
+    
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct KeyValue {
+      char key[255 + 1];
+
+      
+
+      char value[255 + 1];
+    };
+  };
+};
+};

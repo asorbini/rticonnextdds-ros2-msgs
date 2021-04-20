@@ -74,10 +74,15 @@ if(NOT MESSAGE_BROKEN)
     test_msgs/msg/UnboundedSequences
     test_msgs/msg/Defaults
     test_msgs/srv/Arrays
-    
     action_tutorials_interfaces/action/Fibonacci
     example_interfaces/action/Fibonacci
     test_msgs/action/Fibonacci)
+
+  foreach(alt flat flat_zc zc xcdr2)
+    foreach(msg ${MESSAGE_BROKEN})
+      list(APPEND MESSAGE_BROKEN "${alt}/${msg}")
+    endforeach()
+  endforeach()
 endif()
 
 set(MESSAGE_BROKEN ${MESSAGE_BROKEN}
@@ -97,6 +102,32 @@ set(MESSAGE_EXCLUDE  ${MESSAGE_EXCLUDE}
 
 set(MESSAGE_EXCLUDE_REGEX  ${MESSAGE_EXCLUDE_REGEX}
   CACHE LIST "Regex to select message which should be excluded from the library (all if empty)")
+
+if(NOT DEFINED MESSAGE_VARIANT_ALL)
+  set(MESSAGE_VARIANT_ALL OFF)
+endif()
+if(NOT DEFINED MESSAGE_VARIANT_FLAT)
+  set(MESSAGE_VARIANT_FLAT ${MESSAGE_VARIANT_ALL})
+endif()
+if(NOT DEFINED MESSAGE_VARIANT_FLAT_ZC)
+  set(MESSAGE_VARIANT_FLAT_ZC ${MESSAGE_VARIANT_ALL})
+endif()
+if(NOT DEFINED MESSAGE_VARIANT_ZC)
+  set(MESSAGE_VARIANT_ZC ${MESSAGE_VARIANT_ALL})
+endif()
+if(NOT DEFINED MESSAGE_VARIANT_XCDR2)
+  set(MESSAGE_VARIANT_XCDR2 ${MESSAGE_VARIANT_ALL})
+endif()
+set(MESSAGE_VARIANT_ALL    ${MESSAGE_VARIANT_ALL}
+  CACHE BOOL "Whether to build the all available variants")
+set(MESSAGE_VARIANT_FLAT    ${MESSAGE_VARIANT_FLAT}
+  CACHE BOOL "Whether to build the flat data variants")
+set(MESSAGE_VARIANT_FLAT_ZC    ${MESSAGE_VARIANT_FLAT_ZC}
+  CACHE BOOL "Whether to build the flat data/zero copy variants")
+set(MESSAGE_VARIANT_ZC    ${MESSAGE_VARIANT_ZC}
+  CACHE BOOL "Whether to build the zero copy variants")
+set(MESSAGE_VARIANT_XCDR2    ${MESSAGE_VARIANT_XCDR2}
+  CACHE BOOL "Whether to build the xcdr2 variants")
 
 if(MESSAGE_PACKAGES)
   message(STATUS "Included packages: ${MESSAGE_PACKAGES}")
@@ -134,8 +165,24 @@ else()
   message(STATUS "Broken packages: none")
 endif()
 
+file(GLOB_RECURSE idl_files_zc "${CMAKE_CURRENT_SOURCE_DIR}/idl/zc/*.idl")
+file(GLOB_RECURSE idl_files_flat_zc "${CMAKE_CURRENT_SOURCE_DIR}/idl/flat_zc/*.idl")
+file(GLOB_RECURSE idl_files_flat "${CMAKE_CURRENT_SOURCE_DIR}/idl/flat/*.idl")
+file(GLOB_RECURSE idl_files_xcdr2 "${CMAKE_CURRENT_SOURCE_DIR}/idl/xcdr2/*.idl")
 
 file(GLOB_RECURSE idl_files "${CMAKE_CURRENT_SOURCE_DIR}/idl/*.idl")
+if(NOT MESSAGE_VARIANT_FLAT)
+  list(REMOVE_ITEM idl_files ${idl_files_flat})
+endif()
+if(NOT MESSAGE_VARIANT_FLAT_ZC)
+  list(REMOVE_ITEM idl_files ${idl_files_flat_zc})
+endif()
+if(NOT MESSAGE_VARIANT_ZC)
+  list(REMOVE_ITEM idl_files ${idl_files_zc})
+endif()
+if(NOT MESSAGE_VARIANT_XCDR2)
+  list(REMOVE_ITEM idl_files ${idl_files_xcdr2})
+endif()
 
 set(idl_input)
 foreach(f ${idl_files})

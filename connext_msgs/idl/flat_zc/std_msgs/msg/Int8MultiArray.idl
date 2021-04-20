@@ -1,0 +1,34 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from std_msgs/msg/Int8MultiArray.msg
+// generated code does not contain a copyright notice
+
+#ifndef std_msgs_msg_MultiArrayLayout_idl
+#define std_msgs_msg_MultiArrayLayout_idl
+#include "flat_zc/std_msgs/msg/MultiArrayLayout.idl"
+#endif  // std_msgs_msg_MultiArrayLayout_idl
+
+module flat_zc {
+module std_msgs {
+  module msg {
+    
+
+
+
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct Int8MultiArray {
+      
+
+
+
+      flat_zc::std_msgs::msg::MultiArrayLayout layout;
+
+      
+
+      int8 data[100];
+    };
+  };
+};
+};

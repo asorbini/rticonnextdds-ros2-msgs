@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from std_msgs/msg/Byte.msg
+// generated code does not contain a copyright notice
+
+
+module flat_zc {
+module std_msgs {
+  module msg {
+    
+
+
+
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct Byte {
+      octet data;
+    };
+  };
+};
+};

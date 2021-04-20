@@ -1,0 +1,21 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from std_msgs/msg/UInt16.msg
+// generated code does not contain a copyright notice
+
+
+module flat {
+module std_msgs {
+  module msg {
+    
+
+
+
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct UInt16 {
+      uint16 data;
+    };
+  };
+};
+};

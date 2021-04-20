@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from shape_msgs/msg/MeshTriangle.msg
+// generated code does not contain a copyright notice
+
+
+module xcdr2 {
+module shape_msgs {
+  module msg {
+    
+    
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct MeshTriangle {
+      uint32 vertex_indices[3];
+    };
+  };
+};
+};

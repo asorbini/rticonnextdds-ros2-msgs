@@ -1,0 +1,31 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from geometry_msgs/msg/TwistWithCovariance.msg
+// generated code does not contain a copyright notice
+
+#ifndef geometry_msgs_msg_Twist_idl
+#define geometry_msgs_msg_Twist_idl
+#include "flat_zc/geometry_msgs/msg/Twist.idl"
+#endif  // geometry_msgs_msg_Twist_idl
+
+module flat_zc {
+module geometry_msgs {
+  module msg {
+    
+    
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct TwistWithCovariance {
+      flat_zc::geometry_msgs::msg::Twist twist;
+
+      
+
+
+
+
+      double covariance[36];
+    };
+  };
+};
+};

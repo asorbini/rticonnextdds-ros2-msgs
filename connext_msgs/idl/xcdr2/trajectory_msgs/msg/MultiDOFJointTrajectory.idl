@@ -1,0 +1,35 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from trajectory_msgs/msg/MultiDOFJointTrajectory.msg
+// generated code does not contain a copyright notice
+
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
+#include "xcdr2/std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
+#ifndef trajectory_msgs_msg_MultiDOFJointTrajectoryPoint_idl
+#define trajectory_msgs_msg_MultiDOFJointTrajectoryPoint_idl
+#include "xcdr2/trajectory_msgs/msg/MultiDOFJointTrajectoryPoint.idl"
+#endif  // trajectory_msgs_msg_MultiDOFJointTrajectoryPoint_idl
+
+module xcdr2 {
+module trajectory_msgs {
+  module msg {
+    
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct MultiDOFJointTrajectory {
+      xcdr2::std_msgs::msg::Header header;
+
+      
+
+
+
+
+      sequence<string> joint_names;
+
+      sequence<xcdr2::trajectory_msgs::msg::MultiDOFJointTrajectoryPoint> points;
+    };
+  };
+};
+};

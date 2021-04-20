@@ -18,14 +18,19 @@
 # be fed to `rtiddsgen` and built into a single library.
 ################################################################################
 
+set -e
+
 defaults()
 {
   : ${SH:=$(basename ${0})}
   : ${ROS_DISTRO:=rolling}
   : ${ROS_DIR:=/opt/ros/${ROS_DISTRO}}
   : ${IDL_DIR:=./idl}
+  : ${IDL_FLAT_DIR:=./idl/flat}
+  : ${IDL_FLAT_ZC_DIR:=./idl/flat_zc}
+  : ${IDL_ZC_DIR:=./idl/zc}
+  : ${IDL_2_DIR:=./idl/xcdr2}
   : ${ARRAY_MAX_LEN:=100}
-  : ${CLEAN_IDL:=}
 }
 
 help()
@@ -46,7 +51,6 @@ help()
   var_help ROS_DISTRO "ROS 2 version identifier"
   var_help ROS_DIR "ROS 2 installation directory"
   var_help ARRAY_MAX_LEN "maximum length of arrays for typedef substitution"
-  var_help CLEAN_IDL "delete IDL directory before copying if set"
   printf "\n"
 }
 
@@ -57,10 +61,12 @@ if [ $# -gt 0 ]; then
   exit 0
 fi
 
-if [ -n "${CLEAN_IDL}" ]; then
-  printf -- "-- deleting IDL directory: %s\n" "${IDL_DIR}"
-  rm -rf ${IDL_DIR}
-fi
+printf -- "-- deleting IDL directories...\n"
+rm -rf ${IDL_DIR} \
+       ${IDL_FLAT_DIR} \
+       ${IDL_FLAT_ZC_DIR} \
+       ${IDL_ZC_DIR} \
+       ${IDL_2_DIR}
 
 printf -- "-- copying ROS 2 %s IDL files from %s\n" \
   "${ROS_DISTRO}" \
@@ -120,7 +126,7 @@ for t in \
 done
 
 ################################################################################
-Process each file for some more substitution/removals
+# Process each file for some more substitution/removals
 ################################################################################
 for f in $(find ${IDL_DIR} -mindepth 1 -name "*\.idl"); do
   printf -- "-- processing: %s\n" "${f}"
@@ -146,3 +152,80 @@ done
 ################################################################################
 # sed -r -i -e "s:@default \(value=-50\):@default (value=50):" \
 #   "${IDL_DIR}/test_msgs/msg/Defaults.idl"
+
+################################################################################
+# Helper function to generate alternative versions of the IDLs
+################################################################################
+idl_pkgs=$(ls ${IDL_DIR})
+
+: "${IDL_STRING_MAX_LEN:=255}"
+: "${IDL_SEQUENCE_MAX_LEN:=100}"
+
+gen_alt_idl()
+{
+  local ns="${1}" \
+        dst_dir="${2}" \
+        annotations="${3}"
+
+  rm -rf ${IDL_DIR}/.tmp-idl
+  mkdir -p ${IDL_DIR}/.tmp-idl
+
+  (
+    cd ${IDL_DIR}
+    cp -a ${idl_pkgs} .tmp-idl/
+  )
+
+  mv ${IDL_DIR}/.tmp-idl ${dst_dir}/
+
+  for f in $(find ${dst_dir} -name "*\.idl"); do
+    sed -i -r \
+      -e "s:([ ]*)(struct [A-Za-z].*)$:\1${annotations}\n\1\2:" \
+      -e "s:^(module .*)$:module ${ns} {\n\1:" \
+      -e 's:^};$:};\n};:' \
+      ${f}
+    if echo "${annotations}" | grep -q SHMEM_REF ||
+      echo "${annotations}" | grep -q FLAT_DATA; then
+      sed -i -r \
+        -e "s:string ([a-zA-Z].*);$:char \1[${IDL_STRING_MAX_LEN} + 1];:g" \
+        -e "s:string<([^>]+)> ([a-zA-Z].*);$:char \2[\1 + 1];:g" \
+        -e "s:sequence<([^,]+)> ([a-zA-Z].*);$:\1 \2[${IDL_SEQUENCE_MAX_LEN}];:g" \
+        -e "s:sequence<([^,]+),([^>]+)> ([a-zA-Z].*);$:\1 \3[\2];:g" \
+        -e "s:string ([a-zA-Z].*)(\[[0-9]*\]);$:char \1[${IDL_SEQUENCE_MAX_LEN}][${IDL_STRING_MAX_LEN} + 1];:g" \
+        ${f}
+    fi
+    for p in ${idl_pkgs}; do
+      sed -i -r \
+        -e "s/${p}::/${ns}::${p}::/g" \
+        -e "s:#include \"${p}/:#include \"${ns}/${p}/:g" \
+        ${f}
+    done
+  done
+}
+################################################################################
+# Generate "flat-data" versions
+################################################################################
+printf -- "-- generating flat data types...\n"
+gen_alt_idl flat "${IDL_FLAT_DIR}" \
+  "@final\n\1@language_binding(FLAT_DATA)"
+
+################################################################################
+# Generate "flat-data/zero-copy" versions
+################################################################################
+printf -- "-- generating flat data/zero copy types...\n"
+gen_alt_idl flat_zc "${IDL_FLAT_ZC_DIR}" \
+  "@final\n\1@transfer_mode(SHMEM_REF)\n\1@language_binding(FLAT_DATA)"
+
+################################################################################
+# Generate "zero-copy" versions
+################################################################################
+printf -- "-- generating zero copy types...\n"
+gen_alt_idl zc "${IDL_ZC_DIR}" \
+  "@final\n\1@transfer_mode(SHMEM_REF)"
+
+################################################################################
+# Generate "xcdr2" versions
+################################################################################
+printf -- "-- generating xcdr2 types...\n"
+gen_alt_idl xcdr2 "${IDL_2_DIR}" \
+  "@final\n\1@allowed_data_representation(XCDR2)"
+

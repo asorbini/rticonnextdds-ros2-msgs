@@ -1,0 +1,46 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from nav_msgs/srv/GetPlan.srv
+// generated code does not contain a copyright notice
+
+#ifndef geometry_msgs_msg_PoseStamped_idl
+#define geometry_msgs_msg_PoseStamped_idl
+#include "flat_zc/geometry_msgs/msg/PoseStamped.idl"
+#endif  // geometry_msgs_msg_PoseStamped_idl
+#ifndef nav_msgs_msg_Path_idl
+#define nav_msgs_msg_Path_idl
+#include "flat_zc/nav_msgs/msg/Path.idl"
+#endif  // nav_msgs_msg_Path_idl
+
+module flat_zc {
+module nav_msgs {
+  module srv {
+    
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct GetPlan_Request {
+      
+
+      flat_zc::geometry_msgs::msg::PoseStamped start;
+
+      
+
+      flat_zc::geometry_msgs::msg::PoseStamped goal;
+
+      
+
+
+      float tolerance;
+    };
+    
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct GetPlan_Response {
+      flat_zc::nav_msgs::msg::Path plan;
+    };
+  };
+};
+};
