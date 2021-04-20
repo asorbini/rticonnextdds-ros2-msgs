@@ -2,7 +2,10 @@
 // with input from geometry_msgs/msg/AccelWithCovariance.msg
 // generated code does not contain a copyright notice
 
+#ifndef geometry_msgs_msg_Accel_idl
+#define geometry_msgs_msg_Accel_idl
 #include "geometry_msgs/msg/Accel.idl"
+#endif  // geometry_msgs_msg_Accel_idl
 
 module geometry_msgs {
   module msg {

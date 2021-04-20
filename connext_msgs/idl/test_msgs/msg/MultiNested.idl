@@ -2,9 +2,18 @@
 // with input from test_msgs/msg/MultiNested.msg
 // generated code does not contain a copyright notice
 
+#ifndef test_msgs_msg_Arrays_idl
+#define test_msgs_msg_Arrays_idl
 #include "test_msgs/msg/Arrays.idl"
+#endif  // test_msgs_msg_Arrays_idl
+#ifndef test_msgs_msg_BoundedSequences_idl
+#define test_msgs_msg_BoundedSequences_idl
 #include "test_msgs/msg/BoundedSequences.idl"
+#endif  // test_msgs_msg_BoundedSequences_idl
+#ifndef test_msgs_msg_UnboundedSequences_idl
+#define test_msgs_msg_UnboundedSequences_idl
 #include "test_msgs/msg/UnboundedSequences.idl"
+#endif  // test_msgs_msg_UnboundedSequences_idl
 
 module test_msgs {
   module msg {

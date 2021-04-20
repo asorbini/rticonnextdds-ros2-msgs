@@ -2,7 +2,10 @@
 // with input from visualization_msgs/msg/MarkerArray.msg
 // generated code does not contain a copyright notice
 
+#ifndef visualization_msgs_msg_Marker_idl
+#define visualization_msgs_msg_Marker_idl
 #include "visualization_msgs/msg/Marker.idl"
+#endif  // visualization_msgs_msg_Marker_idl
 
 module visualization_msgs {
   module msg {

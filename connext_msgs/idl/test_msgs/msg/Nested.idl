@@ -2,7 +2,10 @@
 // with input from test_msgs/msg/Nested.msg
 // generated code does not contain a copyright notice
 
+#ifndef test_msgs_msg_BasicTypes_idl
+#define test_msgs_msg_BasicTypes_idl
 #include "test_msgs/msg/BasicTypes.idl"
+#endif  // test_msgs_msg_BasicTypes_idl
 
 module test_msgs {
   module msg {

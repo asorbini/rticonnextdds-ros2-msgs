@@ -2,7 +2,10 @@
 // with input from rmw_dds_common/msg/NodeEntitiesInfo.msg
 // generated code does not contain a copyright notice
 
+#ifndef rmw_dds_common_msg_Gid_idl
+#define rmw_dds_common_msg_Gid_idl
 #include "rmw_dds_common/msg/Gid.idl"
+#endif  // rmw_dds_common_msg_Gid_idl
 
 module rmw_dds_common {
   module msg {

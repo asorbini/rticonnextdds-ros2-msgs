@@ -2,8 +2,14 @@
 // with input from geometry_msgs/msg/PoseStamped.msg
 // generated code does not contain a copyright notice
 
+#ifndef geometry_msgs_msg_Pose_idl
+#define geometry_msgs_msg_Pose_idl
 #include "geometry_msgs/msg/Pose.idl"
+#endif  // geometry_msgs_msg_Pose_idl
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
 #include "std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
 
 module geometry_msgs {
   module msg {

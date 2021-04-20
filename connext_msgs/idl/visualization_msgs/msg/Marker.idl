@@ -2,12 +2,30 @@
 // with input from visualization_msgs/msg/Marker.msg
 // generated code does not contain a copyright notice
 
+#ifndef builtin_interfaces_msg_Duration_idl
+#define builtin_interfaces_msg_Duration_idl
 #include "builtin_interfaces/msg/Duration.idl"
+#endif  // builtin_interfaces_msg_Duration_idl
+#ifndef geometry_msgs_msg_Point_idl
+#define geometry_msgs_msg_Point_idl
 #include "geometry_msgs/msg/Point.idl"
+#endif  // geometry_msgs_msg_Point_idl
+#ifndef geometry_msgs_msg_Pose_idl
+#define geometry_msgs_msg_Pose_idl
 #include "geometry_msgs/msg/Pose.idl"
+#endif  // geometry_msgs_msg_Pose_idl
+#ifndef geometry_msgs_msg_Vector3_idl
+#define geometry_msgs_msg_Vector3_idl
 #include "geometry_msgs/msg/Vector3.idl"
+#endif  // geometry_msgs_msg_Vector3_idl
+#ifndef std_msgs_msg_ColorRGBA_idl
+#define std_msgs_msg_ColorRGBA_idl
 #include "std_msgs/msg/ColorRGBA.idl"
+#endif  // std_msgs_msg_ColorRGBA_idl
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
 #include "std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
 
 module visualization_msgs {
   module msg {

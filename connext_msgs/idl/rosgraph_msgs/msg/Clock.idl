@@ -2,7 +2,10 @@
 // with input from rosgraph_msgs/msg/Clock.msg
 // generated code does not contain a copyright notice
 
+#ifndef builtin_interfaces_msg_Time_idl
+#define builtin_interfaces_msg_Time_idl
 #include "builtin_interfaces/msg/Time.idl"
+#endif  // builtin_interfaces_msg_Time_idl
 
 module rosgraph_msgs {
   module msg {

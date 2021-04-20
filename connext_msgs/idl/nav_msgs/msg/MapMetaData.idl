@@ -2,8 +2,14 @@
 // with input from nav_msgs/msg/MapMetaData.msg
 // generated code does not contain a copyright notice
 
+#ifndef builtin_interfaces_msg_Time_idl
+#define builtin_interfaces_msg_Time_idl
 #include "builtin_interfaces/msg/Time.idl"
+#endif  // builtin_interfaces_msg_Time_idl
+#ifndef geometry_msgs_msg_Pose_idl
+#define geometry_msgs_msg_Pose_idl
 #include "geometry_msgs/msg/Pose.idl"
+#endif  // geometry_msgs_msg_Pose_idl
 
 module nav_msgs {
   module msg {

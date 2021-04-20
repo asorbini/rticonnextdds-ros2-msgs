@@ -2,7 +2,10 @@
 // with input from rcl_interfaces/msg/Parameter.msg
 // generated code does not contain a copyright notice
 
+#ifndef rcl_interfaces_msg_ParameterValue_idl
+#define rcl_interfaces_msg_ParameterValue_idl
 #include "rcl_interfaces/msg/ParameterValue.idl"
+#endif  // rcl_interfaces_msg_ParameterValue_idl
 
 module rcl_interfaces {
   module msg {

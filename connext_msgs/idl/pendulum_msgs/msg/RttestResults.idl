@@ -2,9 +2,18 @@
 // with input from pendulum_msgs/msg/RttestResults.msg
 // generated code does not contain a copyright notice
 
+#ifndef builtin_interfaces_msg_Time_idl
+#define builtin_interfaces_msg_Time_idl
 #include "builtin_interfaces/msg/Time.idl"
+#endif  // builtin_interfaces_msg_Time_idl
+#ifndef pendulum_msgs_msg_JointCommand_idl
+#define pendulum_msgs_msg_JointCommand_idl
 #include "pendulum_msgs/msg/JointCommand.idl"
+#endif  // pendulum_msgs_msg_JointCommand_idl
+#ifndef pendulum_msgs_msg_JointState_idl
+#define pendulum_msgs_msg_JointState_idl
 #include "pendulum_msgs/msg/JointState.idl"
+#endif  // pendulum_msgs_msg_JointState_idl
 
 module pendulum_msgs {
   module msg {

@@ -2,8 +2,14 @@
 // with input from sensor_msgs/msg/TimeReference.msg
 // generated code does not contain a copyright notice
 
-
+#ifndef builtin_interfaces_msg_Time_idl
+#define builtin_interfaces_msg_Time_idl
+#include "builtin_interfaces/msg/Time.idl"
+#endif  // builtin_interfaces_msg_Time_idl
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
 #include "std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
 
 module sensor_msgs {
   module msg {

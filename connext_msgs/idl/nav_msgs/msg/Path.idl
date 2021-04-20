@@ -2,8 +2,14 @@
 // with input from nav_msgs/msg/Path.msg
 // generated code does not contain a copyright notice
 
+#ifndef geometry_msgs_msg_PoseStamped_idl
+#define geometry_msgs_msg_PoseStamped_idl
 #include "geometry_msgs/msg/PoseStamped.idl"
-
+#endif  // geometry_msgs_msg_PoseStamped_idl
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
+#include "std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
 
 module nav_msgs {
   module msg {

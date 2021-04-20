@@ -1,0 +1,54 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from tf2_msgs/action/LookupTransform.action
+// generated code does not contain a copyright notice
+
+#ifndef builtin_interfaces_msg_Duration_idl
+#define builtin_interfaces_msg_Duration_idl
+#include "builtin_interfaces/msg/Duration.idl"
+#endif  // builtin_interfaces_msg_Duration_idl
+#ifndef builtin_interfaces_msg_Time_idl
+#define builtin_interfaces_msg_Time_idl
+#include "builtin_interfaces/msg/Time.idl"
+#endif  // builtin_interfaces_msg_Time_idl
+#ifndef geometry_msgs_msg_TransformStamped_idl
+#define geometry_msgs_msg_TransformStamped_idl
+#include "geometry_msgs/msg/TransformStamped.idl"
+#endif  // geometry_msgs_msg_TransformStamped_idl
+#ifndef tf2_msgs_msg_TF2Error_idl
+#define tf2_msgs_msg_TF2Error_idl
+#include "tf2_msgs/msg/TF2Error.idl"
+#endif  // tf2_msgs_msg_TF2Error_idl
+
+module tf2_msgs {
+  module action {
+    @verbatim (language="comment", text=
+      "Simple API")
+    struct LookupTransform_Goal {
+      string target_frame;
+
+      string source_frame;
+
+      builtin_interfaces::msg::Time source_time;
+
+      builtin_interfaces::msg::Duration timeout;
+
+      @verbatim (language="comment", text=
+        "Advanced API")
+      builtin_interfaces::msg::Time target_time;
+
+      string fixed_frame;
+
+      @verbatim (language="comment", text=
+        "Whether or not to use the advanced API")
+      boolean advanced;
+    };
+    struct LookupTransform_Result {
+      geometry_msgs::msg::TransformStamped transform;
+
+      tf2_msgs::msg::TF2Error error;
+    };
+    struct LookupTransform_Feedback {
+      uint8 structure_needs_at_least_one_member;
+    };
+  };
+};

@@ -2,7 +2,10 @@
 // with input from geometry_msgs/msg/PoseWithCovariance.msg
 // generated code does not contain a copyright notice
 
+#ifndef geometry_msgs_msg_Pose_idl
+#define geometry_msgs_msg_Pose_idl
 #include "geometry_msgs/msg/Pose.idl"
+#endif  // geometry_msgs_msg_Pose_idl
 
 module geometry_msgs {
   module msg {

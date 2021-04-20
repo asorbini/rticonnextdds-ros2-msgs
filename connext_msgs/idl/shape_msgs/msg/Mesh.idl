@@ -2,8 +2,14 @@
 // with input from shape_msgs/msg/Mesh.msg
 // generated code does not contain a copyright notice
 
+#ifndef geometry_msgs_msg_Point_idl
+#define geometry_msgs_msg_Point_idl
 #include "geometry_msgs/msg/Point.idl"
+#endif  // geometry_msgs_msg_Point_idl
+#ifndef shape_msgs_msg_MeshTriangle_idl
+#define shape_msgs_msg_MeshTriangle_idl
 #include "shape_msgs/msg/MeshTriangle.idl"
+#endif  // shape_msgs_msg_MeshTriangle_idl
 
 module shape_msgs {
   module msg {

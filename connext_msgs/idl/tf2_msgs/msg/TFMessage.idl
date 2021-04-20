@@ -2,7 +2,10 @@
 // with input from tf2_msgs/msg/TFMessage.msg
 // generated code does not contain a copyright notice
 
+#ifndef geometry_msgs_msg_TransformStamped_idl
+#define geometry_msgs_msg_TransformStamped_idl
 #include "geometry_msgs/msg/TransformStamped.idl"
+#endif  // geometry_msgs_msg_TransformStamped_idl
 
 module tf2_msgs {
   module msg {

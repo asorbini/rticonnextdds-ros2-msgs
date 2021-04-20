@@ -2,8 +2,14 @@
 // with input from visualization_msgs/msg/InteractiveMarkerUpdate.msg
 // generated code does not contain a copyright notice
 
+#ifndef visualization_msgs_msg_InteractiveMarker_idl
+#define visualization_msgs_msg_InteractiveMarker_idl
 #include "visualization_msgs/msg/InteractiveMarker.idl"
+#endif  // visualization_msgs_msg_InteractiveMarker_idl
+#ifndef visualization_msgs_msg_InteractiveMarkerPose_idl
+#define visualization_msgs_msg_InteractiveMarkerPose_idl
 #include "visualization_msgs/msg/InteractiveMarkerPose.idl"
+#endif  // visualization_msgs_msg_InteractiveMarkerPose_idl
 
 module visualization_msgs {
   module msg {

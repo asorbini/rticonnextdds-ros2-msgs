@@ -2,8 +2,14 @@
 // with input from rcl_interfaces/msg/ParameterEvent.msg
 // generated code does not contain a copyright notice
 
+#ifndef builtin_interfaces_msg_Time_idl
+#define builtin_interfaces_msg_Time_idl
 #include "builtin_interfaces/msg/Time.idl"
+#endif  // builtin_interfaces_msg_Time_idl
+#ifndef rcl_interfaces_msg_Parameter_idl
+#define rcl_interfaces_msg_Parameter_idl
 #include "rcl_interfaces/msg/Parameter.idl"
+#endif  // rcl_interfaces_msg_Parameter_idl
 
 module rcl_interfaces {
   module msg {

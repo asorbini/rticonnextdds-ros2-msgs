@@ -2,7 +2,10 @@
 // with input from trajectory_msgs/msg/JointTrajectoryPoint.msg
 // generated code does not contain a copyright notice
 
+#ifndef builtin_interfaces_msg_Duration_idl
+#define builtin_interfaces_msg_Duration_idl
 #include "builtin_interfaces/msg/Duration.idl"
+#endif  // builtin_interfaces_msg_Duration_idl
 
 module trajectory_msgs {
   module msg {

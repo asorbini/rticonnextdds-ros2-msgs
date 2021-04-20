@@ -2,8 +2,14 @@
 // with input from rcl_interfaces/msg/ParameterDescriptor.msg
 // generated code does not contain a copyright notice
 
+#ifndef rcl_interfaces_msg_FloatingPointRange_idl
+#define rcl_interfaces_msg_FloatingPointRange_idl
 #include "rcl_interfaces/msg/FloatingPointRange.idl"
+#endif  // rcl_interfaces_msg_FloatingPointRange_idl
+#ifndef rcl_interfaces_msg_IntegerRange_idl
+#define rcl_interfaces_msg_IntegerRange_idl
 #include "rcl_interfaces/msg/IntegerRange.idl"
+#endif  // rcl_interfaces_msg_IntegerRange_idl
 
 module rcl_interfaces {
   module msg {

@@ -2,9 +2,18 @@
 // with input from test_msgs/msg/BoundedSequences.msg
 // generated code does not contain a copyright notice
 
+#ifndef test_msgs_msg_BasicTypes_idl
+#define test_msgs_msg_BasicTypes_idl
 #include "test_msgs/msg/BasicTypes.idl"
+#endif  // test_msgs_msg_BasicTypes_idl
+#ifndef test_msgs_msg_Constants_idl
+#define test_msgs_msg_Constants_idl
 #include "test_msgs/msg/Constants.idl"
+#endif  // test_msgs_msg_Constants_idl
+#ifndef test_msgs_msg_Defaults_idl
+#define test_msgs_msg_Defaults_idl
 #include "test_msgs/msg/Defaults.idl"
+#endif  // test_msgs_msg_Defaults_idl
 
 module test_msgs {
   module msg {

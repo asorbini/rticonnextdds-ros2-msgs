@@ -2,7 +2,10 @@
 // with input from sensor_msgs/msg/JoyFeedbackArray.msg
 // generated code does not contain a copyright notice
 
+#ifndef sensor_msgs_msg_JoyFeedback_idl
+#define sensor_msgs_msg_JoyFeedback_idl
 #include "sensor_msgs/msg/JoyFeedback.idl"
+#endif  // sensor_msgs_msg_JoyFeedback_idl
 
 module sensor_msgs {
   module msg {

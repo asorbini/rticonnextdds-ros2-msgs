@@ -140,8 +140,6 @@ Package `connext_msg` contains a collection of IDL files extracted from the
 ROS 2 Rolling distribution, and modified to compile with `rtiddsgen` so that
 they may be compiled into a single, ready-to-use shared library.
 
-Only IDL files for message types are included.
-
 The IDL files can be updated using script `copy_idls.sh`.
 
 The script will scan a ROS 2 installation, and it will copy all IDL files
@@ -153,15 +151,16 @@ the files to remove some incompatibilities.
 Types from the following packages are currently included in the library:
 
 ```txt
-actionlib_msgs           nav_msgs         std_msgs
-action_msgs              pcl_msgs         stereo_msgs
-builtin_interfaces       pendulum_msgs    test_msgs
-diagnostic_msgs          rcl_interfaces   tf2_msgs
-example_interfaces       rmw_dds_common   trajectory_msgs
-geometry_msgs            rosgraph_msgs    turtlesim
-libstatistics_collector  sensor_msgs      unique_identifier_msgs
-lifecycle_msgs           shape_msgs       visualization_msgs
-map_msgs                 statistics_msgs
+actionlib_msgs               logging_demo    statistics_msgs
+action_msgs                  map_msgs        std_msgs
+action_tutorials_interfaces  nav_msgs        std_srvs
+builtin_interfaces           pcl_msgs        stereo_msgs
+composition_interfaces       pendulum_msgs   test_msgs
+diagnostic_msgs              rcl_interfaces  tf2_msgs
+example_interfaces           rmw_dds_common  trajectory_msgs
+geometry_msgs                rosgraph_msgs   turtlesim
+libstatistics_collector      sensor_msgs     unique_identifier_msgs
+lifecycle_msgs               shape_msgs      visualization_msgs
 ```
 
 The list of included message packages can be restricted by specifying variable
@@ -174,30 +173,18 @@ be specified as `<pkg>/msg/<type>`, and exclusions take precedence over includes
 
 ## Unsupported types
 
-The following types are currently unsupported, typically because their IDL
-contains multiple nested `#include`'s of the same file which is not
-supported by `rtiddsgen`.
+The following types are currently unsupported:
 
 ```txt
-actionlib_msgs/msg/GoalStatusArray
-map_msgs/msg/ProjectedMap
-nav_msgs/msg/OccupancyGrid
-nav_msgs/msg/Odometry
-sensor_msgs/msg/MultiDOFJointState
+action_tutorials_interfaces/action/Fibonacci
+example_interfaces/action/Fibonacci
+test_msgs/action/Fibonacci
 test_msgs/msg/Arrays
 test_msgs/msg/BoundedSequences
-test_msgs/msg/Defaults
 test_msgs/msg/MultiNested
 test_msgs/msg/UnboundedSequences
-trajectory_msgs/msg/MultiDOFJointTrajectory
-trajectory_msgs/msg/MultiDOFJointTrajectoryPoint
-visualization_msgs/msg/InteractiveMarker
-visualization_msgs/msg/InteractiveMarkerControl
-visualization_msgs/msg/InteractiveMarkerFeedback
-visualization_msgs/msg/InteractiveMarkerInit
-visualization_msgs/msg/InteractiveMarkerUpdate
-visualization_msgs/msg/Marker
-visualization_msgs/msg/MarkerArray
+test_msgs/msg/Defaults
+test_msgs/srv/Arrays
 ```
 
 ## Other useful resources

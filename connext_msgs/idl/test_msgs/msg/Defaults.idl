@@ -21,7 +21,7 @@ module test_msgs {
       @default (value=1.125)
       double float64_value;
 
-      @default (value=-50)
+      @default (value=50)
       int8 int8_value;
 
       @default (value=200)

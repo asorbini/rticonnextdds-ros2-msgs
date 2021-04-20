@@ -2,7 +2,10 @@
 // with input from geometry_msgs/msg/Polygon.msg
 // generated code does not contain a copyright notice
 
+#ifndef geometry_msgs_msg_Point32_idl
+#define geometry_msgs_msg_Point32_idl
 #include "geometry_msgs/msg/Point32.idl"
+#endif  // geometry_msgs_msg_Point32_idl
 
 module geometry_msgs {
   module msg {

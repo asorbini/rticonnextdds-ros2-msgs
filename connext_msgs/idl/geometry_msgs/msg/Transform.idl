@@ -2,8 +2,14 @@
 // with input from geometry_msgs/msg/Transform.msg
 // generated code does not contain a copyright notice
 
+#ifndef geometry_msgs_msg_Quaternion_idl
+#define geometry_msgs_msg_Quaternion_idl
 #include "geometry_msgs/msg/Quaternion.idl"
+#endif  // geometry_msgs_msg_Quaternion_idl
+#ifndef geometry_msgs_msg_Vector3_idl
+#define geometry_msgs_msg_Vector3_idl
 #include "geometry_msgs/msg/Vector3.idl"
+#endif  // geometry_msgs_msg_Vector3_idl
 
 module geometry_msgs {
   module msg {

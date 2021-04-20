@@ -2,7 +2,10 @@
 // with input from geometry_msgs/msg/Inertia.msg
 // generated code does not contain a copyright notice
 
+#ifndef geometry_msgs_msg_Vector3_idl
+#define geometry_msgs_msg_Vector3_idl
 #include "geometry_msgs/msg/Vector3.idl"
+#endif  // geometry_msgs_msg_Vector3_idl
 
 module geometry_msgs {
   module msg {

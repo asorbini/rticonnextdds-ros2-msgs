@@ -2,8 +2,14 @@
 // with input from statistics_msgs/msg/MetricsMessage.msg
 // generated code does not contain a copyright notice
 
+#ifndef builtin_interfaces_msg_Time_idl
+#define builtin_interfaces_msg_Time_idl
 #include "builtin_interfaces/msg/Time.idl"
+#endif  // builtin_interfaces_msg_Time_idl
+#ifndef statistics_msgs_msg_StatisticDataPoint_idl
+#define statistics_msgs_msg_StatisticDataPoint_idl
 #include "statistics_msgs/msg/StatisticDataPoint.idl"
+#endif  // statistics_msgs_msg_StatisticDataPoint_idl
 
 module statistics_msgs {
   module msg {

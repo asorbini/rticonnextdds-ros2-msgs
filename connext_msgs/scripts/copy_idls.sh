@@ -66,7 +66,8 @@ printf -- "-- copying ROS 2 %s IDL files from %s\n" \
   "${ROS_DISTRO}" \
   "${ROS_DIR}"
 for idl in $(find ${ROS_DIR} \
-  -name "*.idl" -path "*/msg/*" ! -path "*/dds_connext/*"); do
+  -name "*.idl" ! -path "*/dds_connext/*"); do
+  # -name "*.idl" -path "*/msg/*" ! -path "*/dds_connext/*"); do
   idl_rel="${idl#${ROS_DIR}/share/}"
   p="${IDL_DIR}/$(dirname ${idl_rel})"
   [ -d "${p}" ] || mkdir -p ${p}
@@ -94,66 +95,46 @@ done
 ################################################################################
 printf -- "-- replacing primitive array typedefs up to [%d]\n" "${ARRAY_MAX_LEN}"
 for t in \
-  uint8 \
-  uint16 \
-  uint32 \
-  uint64 \
-  int8 \
-  int16 \
-  int32 \
-  int64 \
-  float \
-  double \
-  boolean \
-  octet \
-  string; do
-  for i in $(seq 0 ${ARRAY_MAX_LEN}); do
-    for f in $(grep -rEH "typedef ${t} ${t}__${i}\[${i}\];" idl | cut -d: -f1); do
-      printf -- "---- rm typedef [%s/%s] %s\n" "${t}" "${i}" "${f}"
-      sed -i -r -e "s/typedef ${t} ${t}__${i}\[${i}\];//g" ${f}
-      sed -i -r -e "s/${t}__${i} ([a-zA-Z0-9_]+);/${t} \1[${i}];/g" ${f}
+    uint8 \
+    uint16 \
+    uint32 \
+    uint64 \
+    int8 \
+    int16 \
+    int32 \
+    int64 \
+    float \
+    double \
+    boolean \
+    octet \
+    string; do
+  for f in $(grep -rEH "typedef ${t} ${t}__[1-9][0-9]*\[[1-9][0-9]*];" ${IDL_DIR} | cut -d: -f1); do
+    for i in $(seq 0 ${ARRAY_MAX_LEN}); do
+      if grep -qE "typedef ${t} ${t}__${i}\[${i}\];" ${f}; then
+        printf -- "---- rm typedef [%s/%s] %s\n" "${t}" "${i}" "${f}"
+        sed -i -r -e "s/typedef ${t} ${t}__${i}\[${i}\];//g" ${f}
+        sed -i -r -e "s/${t}__${i} ([a-zA-Z0-9_]+);/${t} \1[${i}];/g" ${f}
+      fi
     done
   done
 done
 
 ################################################################################
-# Several types cannot be compiled by rtiddsgen because they end up including
-# the same IDL file multiple times, which isn't supported.
-# Files which only have one duplicate `#include`, and the duplicate is in the
-# file itself (and not nested in one of its included files) can be fixed by
-# removing the duplicate from the top-level file.
+# Add header guards to all #include's
 ################################################################################
-printf -- "-- removing redudant #include's...\n"
-remove_include()
-{
-  local idl="${1}" \
-        inc="${2}"
-  local idl_file="idl/${idl}.idl" \
-        inc_file="${inc}.idl"
-  printf -- "---- rm #include [%s] %s\n" "${inc_file}" "${idl_file}"
-  sed -i -r -e "s:^#include \"${inc_file}\"$::g" ${idl_file}
-}
+for f in $(find ${IDL_DIR} -mindepth 1 -name "*\.idl"); do
+  printf -- "-- add include guards: %s\n" "${f}"
+  for inc_line in $(grep -E '^#include "' ${f} | cut -d\" -f2 | sort | uniq); do
+    inc_guard=$(echo ${inc_line} | tr '/' '_' | tr '.' '_')
 
-remove_include \
-  "rmw_dds_common/msg/ParticipantEntitiesInfo" \
-  "rmw_dds_common/msg/Gid"
+    sed -i -r -e \
+      "s:^(#include \"${inc_line}\")$:#ifndef ${inc_guard}\n#define ${inc_guard}\n\1\n#endif  // ${inc_guard}:g" \
+      "${f}"
+  done
+done
 
-remove_include \
-  "map_msgs/msg/PointCloud2Update" \
-  "std_msgs/msg/Header"
-
-remove_include \
-  "nav_msgs/msg/Path" \
-  "std_msgs/msg/Header"
-
-remove_include \
-  "pcl_msgs/msg/PolygonMesh" \
-  "std_msgs/msg/Header"
-
-remove_include \
-  "sensor_msgs/msg/TimeReference" \
-  "builtin_interfaces/msg/Time"
-
-remove_include \
-  "stereo_msgs/msg/DisparityImage" \
-  "std_msgs/msg/Header"
+################################################################################
+# Fix some issues with annotation bugs (currently disabled)
+################################################################################
+# sed -r -i -e "s:@default \(value=-50\):@default (value=50):" \
+#   "${IDL_DIR}/test_msgs/msg/Defaults.idl"

@@ -2,7 +2,10 @@
 // with input from std_msgs/msg/Float64MultiArray.msg
 // generated code does not contain a copyright notice
 
+#ifndef std_msgs_msg_MultiArrayLayout_idl
+#define std_msgs_msg_MultiArrayLayout_idl
 #include "std_msgs/msg/MultiArrayLayout.idl"
+#endif  // std_msgs_msg_MultiArrayLayout_idl
 
 module std_msgs {
   module msg {

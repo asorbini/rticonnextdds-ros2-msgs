@@ -2,7 +2,10 @@
 // with input from actionlib_msgs/msg/GoalStatus.msg
 // generated code does not contain a copyright notice
 
+#ifndef actionlib_msgs_msg_GoalID_idl
+#define actionlib_msgs_msg_GoalID_idl
 #include "actionlib_msgs/msg/GoalID.idl"
+#endif  // actionlib_msgs_msg_GoalID_idl
 
 module actionlib_msgs {
   module msg {

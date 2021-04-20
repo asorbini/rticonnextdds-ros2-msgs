@@ -2,7 +2,10 @@
 // with input from example_interfaces/msg/Int32MultiArray.msg
 // generated code does not contain a copyright notice
 
+#ifndef example_interfaces_msg_MultiArrayLayout_idl
+#define example_interfaces_msg_MultiArrayLayout_idl
 #include "example_interfaces/msg/MultiArrayLayout.idl"
+#endif  // example_interfaces_msg_MultiArrayLayout_idl
 
 module example_interfaces {
   module msg {
