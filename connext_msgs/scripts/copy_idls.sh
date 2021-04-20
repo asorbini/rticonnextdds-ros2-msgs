@@ -120,10 +120,12 @@ for t in \
 done
 
 ################################################################################
-# Add header guards to all #include's
+Process each file for some more substitution/removals
 ################################################################################
 for f in $(find ${IDL_DIR} -mindepth 1 -name "*\.idl"); do
-  printf -- "-- add include guards: %s\n" "${f}"
+  printf -- "-- processing: %s\n" "${f}"
+
+  # Add header guards to every include
   for inc_line in $(grep -E '^#include "' ${f} | cut -d\" -f2 | sort | uniq); do
     inc_guard=$(echo ${inc_line} | tr '/' '_' | tr '.' '_')
 
@@ -131,6 +133,12 @@ for f in $(find ${IDL_DIR} -mindepth 1 -name "*\.idl"); do
       "s:^(#include \"${inc_line}\")$:#ifndef ${inc_guard}\n#define ${inc_guard}\n\1\n#endif  // ${inc_guard}:g" \
       "${f}"
   done
+
+  # Remove comments and other unsupported annotations
+  sed -i -r -e 's:@verbatim[ ]*\(language="comment", text=$::g' \
+            -e 's:^[ ]+".*$::g' \
+            -e 's:@unit[ ]*\(.*$::g' \
+            ${f}
 done
 
 ################################################################################
