@@ -21,8 +21,8 @@
 
 module tf2_msgs {
   module action {
-    @verbatim (language="comment", text=
-      "Simple API")
+    
+
     struct LookupTransform_Goal {
       string target_frame;
 
@@ -32,14 +32,14 @@ module tf2_msgs {
 
       builtin_interfaces::msg::Duration timeout;
 
-      @verbatim (language="comment", text=
-        "Advanced API")
+      
+
       builtin_interfaces::msg::Time target_time;
 
       string fixed_frame;
 
-      @verbatim (language="comment", text=
-        "Whether or not to use the advanced API")
+      
+
       boolean advanced;
     };
     struct LookupTransform_Result {

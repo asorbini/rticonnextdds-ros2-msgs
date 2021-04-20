@@ -5,13 +5,13 @@
 
 module diagnostic_msgs {
   module msg {
-    @verbatim (language="comment", text=
-      " What to label this value when viewing.")
+    
+
     struct KeyValue {
       string key;
 
-      @verbatim (language="comment", text=
-        " A value to track over time.")
+      
+
       string value;
     };
   };

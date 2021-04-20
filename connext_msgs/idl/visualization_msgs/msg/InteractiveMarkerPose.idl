@@ -14,17 +14,17 @@
 module visualization_msgs {
   module msg {
     struct InteractiveMarkerPose {
-      @verbatim (language="comment", text=
-        " Time/frame info.")
+      
+
       std_msgs::msg::Header header;
 
-      @verbatim (language="comment", text=
-        " Initial pose. Also, defines the pivot point for rotations.")
+      
+
       geometry_msgs::msg::Pose pose;
 
-      @verbatim (language="comment", text=
-        " Identifying string. Must be globally unique in" "\n"
-        " the topic that this message is sent through.")
+      
+
+
       string name;
     };
   };

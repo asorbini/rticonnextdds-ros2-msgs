@@ -15,25 +15,25 @@ module sensor_msgs {
       const uint8 FLOAT32 = 7;
       const uint8 FLOAT64 = 8;
     };
-    @verbatim (language="comment", text=
-      " This message holds the description of one point entry in the" "\n"
-      " PointCloud2 message format.")
+    
+
+
     struct PointField {
-      @verbatim (language="comment", text=
-        " Common PointField names are x, y, z, intensity, rgb, rgba" "\n"
-        " Name of field")
+      
+
+
       string name;
 
-      @verbatim (language="comment", text=
-        " Offset from start of point struct")
+      
+
       uint32 offset;
 
-      @verbatim (language="comment", text=
-        " Datatype enumeration, see above")
+      
+
       uint8 datatype;
 
-      @verbatim (language="comment", text=
-        " How many elements in the field")
+      
+
       uint32 count;
     };
   };

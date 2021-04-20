@@ -17,17 +17,17 @@
 
 module pcl_msgs {
   module msg {
-    @verbatim (language="comment", text=
-      " Separate header for the polygonal surface")
+    
+
     struct PolygonMesh {
       std_msgs::msg::Header header;
 
-      @verbatim (language="comment", text=
-        " Vertices of the mesh as a point cloud")
+      
+
       sensor_msgs::msg::PointCloud2 cloud;
 
-      @verbatim (language="comment", text=
-        " List of polygons")
+      
+
       sequence<pcl_msgs::msg::Vertices> polygons;
     };
   };

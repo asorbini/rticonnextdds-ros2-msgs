@@ -13,15 +13,15 @@ module statistics_msgs {
       const uint8 STATISTICS_DATA_TYPE_STDDEV = 4;
       const uint8 STATISTICS_DATA_TYPE_SAMPLE_COUNT = 5;
     };
-    @verbatim (language="comment", text=
-      "############################################" "\n"
-      " This file contains the commonly used constants for the statistics data type." "\n"
-      "" "\n"
-      " The value 0 is reserved for unitialized statistic message data type." "\n"
-      " Range of values: [0, 255]." "\n"
-      " Unallowed values: any value that is not specified in this file." "\n"
-      "" "\n"
-      "############################################")
+    
+
+
+
+
+
+
+
+
     struct StatisticDataType {
       uint8 structure_needs_at_least_one_member;
     };

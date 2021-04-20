@@ -18,18 +18,18 @@ module action_msgs {
       const int8 STATUS_CANCELED = 5;
       const int8 STATUS_ABORTED = 6;
     };
-    @verbatim (language="comment", text=
-      " An action goal can be in one of these states after it is accepted by an action" "\n"
-      " server." "\n"
-      "" "\n"
-      " For more information, see http://design.ros2.org/articles/actions.html")
+    
+
+
+
+
     struct GoalStatus {
-      @verbatim (language="comment", text=
-        " Goal info (contains ID and timestamp).")
+      
+
       action_msgs::msg::GoalInfo goal_info;
 
-      @verbatim (language="comment", text=
-        " Action goal state-machine status.")
+      
+
       int8 status;
     };
   };

@@ -6,13 +6,13 @@
 module shape_msgs {
   module msg {
     
-    @verbatim (language="comment", text=
-      " Representation of a plane, using the plane equation ax + by + cz + d = 0." "\n"
-      "" "\n"
-      " a := coef[0]" "\n"
-      " b := coef[1]" "\n"
-      " c := coef[2]" "\n"
-      " d := coef[3]")
+    
+
+
+
+
+
+
     struct Plane {
       double coef[4];
     };

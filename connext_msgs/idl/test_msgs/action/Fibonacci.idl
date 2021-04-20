@@ -5,19 +5,19 @@
 
 module test_msgs {
   module action {
-    @verbatim (language="comment", text=
-      "goal definition")
+    
+
     struct Fibonacci_Goal {
       int32 order;
     };
     struct Fibonacci_Result {
-      @verbatim (language="comment", text=
-        "result definition")
+      
+
       sequence<int32> sequence;
     };
     struct Fibonacci_Feedback {
-      @verbatim (language="comment", text=
-        "feedback")
+      
+
       sequence<int32> sequence;
     };
   };

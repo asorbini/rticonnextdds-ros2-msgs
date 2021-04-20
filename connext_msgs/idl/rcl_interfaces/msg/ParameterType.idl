@@ -17,8 +17,8 @@ module rcl_interfaces {
       const uint8 PARAMETER_DOUBLE_ARRAY = 8;
       const uint8 PARAMETER_STRING_ARRAY = 9;
     };
-    @verbatim (language="comment", text=
-      " These types correspond to the value that is set in the ParameterValue message.")
+    
+
     struct ParameterType {
       uint8 structure_needs_at_least_one_member;
     };

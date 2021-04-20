@@ -16,20 +16,20 @@ module map_msgs {
 
       double z;
 
-      @verbatim (language="comment", text=
-        " if != 0, circular ROI of radius r")
+      
+
       double r;
 
-      @verbatim (language="comment", text=
-        " if r == 0, length of AABB on x")
+      
+
       double l_x;
 
-      @verbatim (language="comment", text=
-        " if r == 0, length of AABB on y")
+      
+
       double l_y;
 
-      @verbatim (language="comment", text=
-        " if r == 0, length of AABB on z")
+      
+
       double l_z;
     };
     struct GetPointMapROI_Response {

@@ -13,9 +13,9 @@
 
 module actionlib_msgs {
   module msg {
-    @verbatim (language="comment", text=
-      " Stores the statuses for goals that are currently being tracked" "\n"
-      " by an action server")
+    
+
+
     struct GoalStatusArray {
       std_msgs::msg::Header header;
 

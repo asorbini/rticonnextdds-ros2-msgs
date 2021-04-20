@@ -6,8 +6,8 @@
 module shape_msgs {
   module msg {
     
-    @verbatim (language="comment", text=
-      " Definition of a triangle's vertices.")
+    
+
     struct MeshTriangle {
       uint32 vertex_indices[3];
     };

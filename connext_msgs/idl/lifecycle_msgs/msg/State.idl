@@ -18,16 +18,16 @@ module lifecycle_msgs {
       const uint8 TRANSITION_STATE_DEACTIVATING = 14;
       const uint8 TRANSITION_STATE_ERRORPROCESSING = 15;
     };
-    @verbatim (language="comment", text=
-      " Primary state definitions as depicted in:" "\n"
-      " http://design.ros2.org/articles/node_lifecycle.html")
+    
+
+
     struct State {
-      @verbatim (language="comment", text=
-        " The state id value from the above definitions.")
+      
+
       uint8 id;
 
-      @verbatim (language="comment", text=
-        " A text label of the state.")
+      
+
       string label;
     };
   };

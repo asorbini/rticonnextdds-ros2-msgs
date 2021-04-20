@@ -9,8 +9,8 @@
 
 module map_msgs {
   module srv {
-    @verbatim (language="comment", text=
-      " Get the map as a sensor_msgs/PointCloud2")
+    
+
     struct GetPointMap_Request {
       uint8 structure_needs_at_least_one_member;
     };

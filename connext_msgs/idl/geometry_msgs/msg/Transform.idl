@@ -13,8 +13,8 @@
 
 module geometry_msgs {
   module msg {
-    @verbatim (language="comment", text=
-      " This represents the transform between two coordinate frames in free space.")
+    
+
     struct Transform {
       geometry_msgs::msg::Vector3 translation;
 

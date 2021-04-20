@@ -13,15 +13,15 @@
 
 module diagnostic_msgs {
   module msg {
-    @verbatim (language="comment", text=
-      " This message is used to send diagnostic information about the state of the robot.")
+    
+
     struct DiagnosticArray {
-      @verbatim (language="comment", text=
-        " for timestamp")
+      
+
       std_msgs::msg::Header header;
 
-      @verbatim (language="comment", text=
-        " an array of components being reported on")
+      
+
       sequence<diagnostic_msgs::msg::DiagnosticStatus> status;
     };
   };

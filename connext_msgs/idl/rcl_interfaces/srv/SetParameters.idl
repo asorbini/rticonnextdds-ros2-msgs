@@ -13,13 +13,13 @@
 
 module rcl_interfaces {
   module srv {
-    @verbatim (language="comment", text=
-      " A list of parameters to set.")
+    
+
     struct SetParameters_Request {
       sequence<rcl_interfaces::msg::Parameter> parameters;
     };
-    @verbatim (language="comment", text=
-      " Indicates whether setting each parameter succeeded or not and why.")
+    
+
     struct SetParameters_Response {
       sequence<rcl_interfaces::msg::SetParametersResult> results;
     };

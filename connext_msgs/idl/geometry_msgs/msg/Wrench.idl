@@ -9,8 +9,8 @@
 
 module geometry_msgs {
   module msg {
-    @verbatim (language="comment", text=
-      " This represents force in free space, separated into its linear and angular parts.")
+    
+
     struct Wrench {
       geometry_msgs::msg::Vector3 force;
 

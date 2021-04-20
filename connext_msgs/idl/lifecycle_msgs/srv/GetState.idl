@@ -12,8 +12,8 @@ module lifecycle_msgs {
     struct GetState_Request {
       uint8 structure_needs_at_least_one_member;
     };
-    @verbatim (language="comment", text=
-      " The current state-machine state of the node.")
+    
+
     struct GetState_Response {
       lifecycle_msgs::msg::State current_state;
     };

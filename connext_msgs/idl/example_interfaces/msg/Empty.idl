@@ -5,9 +5,9 @@
 
 module example_interfaces {
   module msg {
-    @verbatim (language="comment", text=
-      " If you want to test with this that's fine, but if you are deploying" "\n"
-      " it into a system you should create a semantically meaningful message type.")
+    
+
+
     struct Empty {
       uint8 structure_needs_at_least_one_member;
     };

@@ -5,19 +5,19 @@
 
 module example_interfaces {
   module action {
-    @verbatim (language="comment", text=
-      " Goal")
+    
+
     struct Fibonacci_Goal {
       int32 order;
     };
     struct Fibonacci_Result {
-      @verbatim (language="comment", text=
-        " Result")
+      
+
       sequence<int32> sequence;
     };
     struct Fibonacci_Feedback {
-      @verbatim (language="comment", text=
-        " Feedback")
+      
+
       sequence<int32> sequence;
     };
   };

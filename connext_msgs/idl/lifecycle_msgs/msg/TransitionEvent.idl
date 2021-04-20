@@ -13,21 +13,21 @@
 
 module lifecycle_msgs {
   module msg {
-    @verbatim (language="comment", text=
-      " The time point at which this event occurred.")
+    
+
     struct TransitionEvent {
       uint64 timestamp;
 
-      @verbatim (language="comment", text=
-        " The id and label of this transition event.")
+      
+
       lifecycle_msgs::msg::Transition transition;
 
-      @verbatim (language="comment", text=
-        " The starting state from which this event transitioned.")
+      
+
       lifecycle_msgs::msg::State start_state;
 
-      @verbatim (language="comment", text=
-        " The end state of this transition event.")
+      
+
       lifecycle_msgs::msg::State goal_state;
     };
   };

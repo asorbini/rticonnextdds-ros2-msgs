@@ -5,8 +5,8 @@
 
 module pcl_msgs {
   module msg {
-    @verbatim (language="comment", text=
-      " List of point indices")
+    
+
     struct Vertices {
       sequence<uint32> vertices;
     };

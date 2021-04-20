@@ -5,14 +5,14 @@
 
 module rcl_interfaces {
   module msg {
-    @verbatim (language="comment", text=
-      " The resulting parameters under the given prefixes.")
+    
+
     struct ListParametersResult {
       sequence<string> names;
 
-      @verbatim (language="comment", text=
-        " The resulting prefixes under the given prefixes." "\n"
-        " TODO(wjwwood): link to prefix definition and rules.")
+      
+
+
       sequence<string> prefixes;
     };
   };

@@ -9,13 +9,13 @@
 
 module nav_msgs {
   module srv {
-    @verbatim (language="comment", text=
-      " Get the map as a nav_msgs/OccupancyGrid")
+    
+
     struct GetMap_Request {
       uint8 structure_needs_at_least_one_member;
     };
-    @verbatim (language="comment", text=
-      " The current map hosted by this map service.")
+    
+
     struct GetMap_Response {
       nav_msgs::msg::OccupancyGrid map;
     };

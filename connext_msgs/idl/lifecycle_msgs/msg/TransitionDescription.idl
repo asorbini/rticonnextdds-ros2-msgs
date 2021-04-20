@@ -13,17 +13,17 @@
 
 module lifecycle_msgs {
   module msg {
-    @verbatim (language="comment", text=
-      " The transition id and label of this description.")
+    
+
     struct TransitionDescription {
       lifecycle_msgs::msg::Transition transition;
 
-      @verbatim (language="comment", text=
-        " The current state from which this transition transitions.")
+      
+
       lifecycle_msgs::msg::State start_state;
 
-      @verbatim (language="comment", text=
-        " The desired target state of this transition.")
+      
+
       lifecycle_msgs::msg::State goal_state;
     };
   };

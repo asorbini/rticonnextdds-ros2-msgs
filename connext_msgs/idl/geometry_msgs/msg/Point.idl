@@ -5,8 +5,8 @@
 
 module geometry_msgs {
   module msg {
-    @verbatim (language="comment", text=
-      " This contains the position of a point in free space")
+    
+
     struct Point {
       double x;
 

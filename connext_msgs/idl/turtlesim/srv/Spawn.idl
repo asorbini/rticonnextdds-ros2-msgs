@@ -12,8 +12,8 @@ module turtlesim {
 
       float theta;
 
-      @verbatim (language="comment", text=
-        " Optional.  A unique name will be created and returned if this is empty")
+      
+
       string name;
     };
     struct Spawn_Response {

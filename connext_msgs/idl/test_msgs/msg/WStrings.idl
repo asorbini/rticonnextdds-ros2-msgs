@@ -18,10 +18,10 @@ module test_msgs {
       @default (value="ハローワールド")
       wstring wstring_value_default3;
 
-      @verbatim (language="comment", text=
-        "wstring WSTRING_CONST=\"Hello world!\"" "\n"
-        "wstring<=22 bounded_wstring_value" "\n"
-        "wstring<=22 bounded_wstring_value_default1 \"Hello world!\"")
+      
+
+
+
       wstring__3 array_of_wstrings;
 
       sequence<wstring, 3> bounded_sequence_of_wstrings;

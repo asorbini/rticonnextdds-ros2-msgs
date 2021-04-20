@@ -26,8 +26,8 @@ module actionlib_msgs {
 
       uint8 status;
 
-      @verbatim (language="comment", text=
-        " Allow for the user to associate a string with GoalStatus for debugging.")
+      
+
       string text;
     };
   };

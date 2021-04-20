@@ -15,12 +15,12 @@ module sensor_msgs {
       const uint16 SERVICE_COMPASS = 4;
       const uint16 SERVICE_GALILEO = 8;
     };
-    @verbatim (language="comment", text=
-      " Navigation Satellite fix status for any Global Navigation Satellite System." "\n"
-      "" "\n"
-      " Whether to output an augmented fix is determined by both the fix" "\n"
-      " type and the last time differential corrections were received.  A" "\n"
-      " fix is valid when status >= STATUS_FIX.")
+    
+
+
+
+
+
     struct NavSatStatus {
       int8 status;
 

@@ -9,8 +9,8 @@
 
 module geometry_msgs {
   module msg {
-    @verbatim (language="comment", text=
-      " This expresses acceleration in free space broken into its linear and angular parts.")
+    
+
     struct Accel {
       geometry_msgs::msg::Vector3 linear;
 

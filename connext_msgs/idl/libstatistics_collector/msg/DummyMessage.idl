@@ -9,9 +9,9 @@
 
 module libstatistics_collector {
   module msg {
-    @verbatim (language="comment", text=
-      " This is a dummy message type with a `Header` field." "\n"
-      " It is intended for use in topic statistics tests.")
+    
+
+
     struct DummyMessage {
       std_msgs::msg::Header header;
     };

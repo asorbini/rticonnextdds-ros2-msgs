@@ -13,13 +13,13 @@
 
 module action_msgs {
   module msg {
-    @verbatim (language="comment", text=
-      " Goal ID")
+    
+
     struct GoalInfo {
       unique_identifier_msgs::msg::UUID goal_id;
 
-      @verbatim (language="comment", text=
-        " Time when the goal was accepted")
+      
+
       builtin_interfaces::msg::Time stamp;
     };
   };

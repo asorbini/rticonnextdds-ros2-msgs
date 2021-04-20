@@ -9,10 +9,10 @@
 
 module rcl_interfaces {
   module msg {
-    @verbatim (language="comment", text=
-      " This message contains descriptors of a parameter event." "\n"
-      " It was an atomic update." "\n"
-      " A specific parameter name can only be in one of the three sets.")
+    
+
+
+
     struct ParameterEventDescriptors {
       sequence<rcl_interfaces::msg::ParameterDescriptor> new_parameters;
 

@@ -9,8 +9,8 @@
 
 module action_msgs {
   module msg {
-    @verbatim (language="comment", text=
-      " An array of goal statuses.")
+    
+
     struct GoalStatusArray {
       sequence<action_msgs::msg::GoalStatus> status_list;
     };

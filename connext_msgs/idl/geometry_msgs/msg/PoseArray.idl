@@ -13,8 +13,8 @@
 
 module geometry_msgs {
   module msg {
-    @verbatim (language="comment", text=
-      " An array of poses with a header for global reference.")
+    
+
     struct PoseArray {
       std_msgs::msg::Header header;
 

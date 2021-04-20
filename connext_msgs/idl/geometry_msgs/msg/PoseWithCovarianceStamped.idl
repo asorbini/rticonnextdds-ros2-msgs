@@ -13,8 +13,8 @@
 
 module geometry_msgs {
   module msg {
-    @verbatim (language="comment", text=
-      " This expresses an estimated pose with a reference coordinate frame and timestamp")
+    
+
     struct PoseWithCovarianceStamped {
       std_msgs::msg::Header header;
 

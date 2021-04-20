@@ -20,8 +20,8 @@ module map_msgs {
     struct PointCloud2Update {
       std_msgs::msg::Header header;
 
-      @verbatim (language="comment", text=
-        " type of update, one of ADD or DELETE")
+      
+
       uint32 type;
 
       sensor_msgs::msg::PointCloud2 points;

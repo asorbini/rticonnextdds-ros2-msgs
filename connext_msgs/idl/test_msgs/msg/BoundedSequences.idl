@@ -17,8 +17,8 @@
 
 module test_msgs {
   module msg {
-    @verbatim (language="comment", text=
-      " Bounded sequences of different types")
+    
+
     struct BoundedSequences {
       sequence<boolean, 3> bool_values;
 
@@ -96,8 +96,8 @@ module test_msgs {
       @default (value="('', 'max value', 'min value')")
       sequence<string, 3> string_values_default;
 
-      @verbatim (language="comment", text=
-        " Regression test: check alignment of basic field after a sequence field is correct")
+      
+
       int32 alignment_check;
     };
   };

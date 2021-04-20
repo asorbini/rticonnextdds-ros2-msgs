@@ -12,8 +12,8 @@ module lifecycle_msgs {
     struct GetAvailableStates_Request {
       uint8 structure_needs_at_least_one_member;
     };
-    @verbatim (language="comment", text=
-      " Array of possible states that can be transitioned to.")
+    
+
     struct GetAvailableStates_Response {
       sequence<lifecycle_msgs::msg::State> available_states;
     };

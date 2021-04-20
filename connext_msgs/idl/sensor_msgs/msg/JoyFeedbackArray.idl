@@ -9,8 +9,8 @@
 
 module sensor_msgs {
   module msg {
-    @verbatim (language="comment", text=
-      " This message publishes values for multiple feedback at once.")
+    
+
     struct JoyFeedbackArray {
       sequence<sensor_msgs::msg::JoyFeedback> array;
     };

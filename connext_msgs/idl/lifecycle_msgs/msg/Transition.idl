@@ -37,19 +37,19 @@ module lifecycle_msgs {
       const uint8 TRANSITION_CALLBACK_FAILURE = 98;
       const uint8 TRANSITION_CALLBACK_ERROR = 99;
     };
-    @verbatim (language="comment", text=
-      " Default values for transitions as described in:" "\n"
-      " http://design.ros2.org/articles/node_lifecycle.html")
+    
+
+
     struct Transition {
-      @verbatim (language="comment", text=
-        "#" "\n"
-        "# Fields" "\n"
-        "#" "\n"
-        " The transition id from above definitions.")
+      
+
+
+
+
       uint8 id;
 
-      @verbatim (language="comment", text=
-        " A text label of the transition.")
+      
+
       string label;
     };
   };

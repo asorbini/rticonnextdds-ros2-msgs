@@ -9,10 +9,10 @@
 
 module nav_msgs {
   module srv {
-    @verbatim (language="comment", text=
-      " URL of map resource" "\n"
-      " Can be an absolute path to a file: file:///path/to/maps/floor1.yaml" "\n"
-      " Or, relative to a ROS package: package://my_ros_package/maps/floor2.yaml")
+    
+
+
+
     struct LoadMap_Request {
       string map_url;
     };
@@ -23,11 +23,11 @@ module nav_msgs {
       const uint8 RESULT_INVALID_MAP_METADATA = 3;
       const uint8 RESULT_UNDEFINED_FAILURE = 255;
     };
-    @verbatim (language="comment", text=
-      " Result code defintions")
+    
+
     struct LoadMap_Response {
-      @verbatim (language="comment", text=
-        " Returned map is only valid if result equals RESULT_SUCCESS")
+      
+
       nav_msgs::msg::OccupancyGrid map;
 
       uint8 result;
