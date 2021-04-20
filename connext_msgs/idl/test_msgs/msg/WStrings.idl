@@ -5,7 +5,7 @@
 
 module test_msgs {
   module msg {
-    typedef wstring wstring__3[3];
+    
     struct WStrings {
       wstring wstring_value;
 
@@ -22,7 +22,7 @@ module test_msgs {
 
 
 
-      wstring__3 array_of_wstrings;
+      wstring array_of_wstrings[3];
 
       sequence<wstring, 3> bounded_sequence_of_wstrings;
 

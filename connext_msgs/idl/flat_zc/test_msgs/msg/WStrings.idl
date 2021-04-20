@@ -6,31 +6,28 @@
 module flat_zc {
 module test_msgs {
   module msg {
-    typedef wchar wstring__3[3][255 + 1];
+    
     @final
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct WStrings {
       wchar wstring_value[255 + 1];
 
-      @default (value="Hello world!")
       wchar wstring_value_default1[255 + 1];
 
-      @default (value="Hellö wörld!")
       wchar wstring_value_default2[255 + 1];
 
-      @default (value="ハローワールド")
       wchar wstring_value_default3[255 + 1];
 
       
 
 
 
-      wstring__3 array_of_wstrings;
+      wchar array_of_wstrings[3][255 + 1];
 
-      wstring bounded_sequence_of_wstrings[ 3];
+      wchar bounded_sequence_of_wstrings[100][255 + 1];
 
-      char unbounded_sequence_of_wstrings[100][255 + 1];
+      wchar unbounded_sequence_of_wstrings[100][255 + 1];
     };
   };
 };

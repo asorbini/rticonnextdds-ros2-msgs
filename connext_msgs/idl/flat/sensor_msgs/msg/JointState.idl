@@ -34,7 +34,7 @@ module sensor_msgs {
     struct JointState {
       flat::std_msgs::msg::Header header;
 
-      wchar name[100][255 + 1];
+      char name[100][255 + 1];
 
       double position[100];
 

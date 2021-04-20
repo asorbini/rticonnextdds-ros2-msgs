@@ -55,7 +55,7 @@ module rcl_interfaces {
 
       
 
-      wchar string_array_value[100][255 + 1];
+      char string_array_value[100][255 + 1];
     };
   };
 };

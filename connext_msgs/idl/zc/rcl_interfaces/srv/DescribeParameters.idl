@@ -15,7 +15,7 @@ module rcl_interfaces {
     @final
     @transfer_mode(SHMEM_REF)
     struct DescribeParameters_Request {
-      wchar names[100][255 + 1];
+      char names[100][255 + 1];
     };
     
 

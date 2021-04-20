@@ -209,12 +209,14 @@ changes applied to them to make them conform
 with the limitation of the features, particularly with respect to lack of support
 for strings and sequences:
 
-- All strings are converted to an array of characters.
-- All sequences are converted to an array.
-
-For unbounded members some arbitrary maximum values will be used (255 for strings,
-100 for sequences). These values can be customized when running the `copy_idls.sh`
-script.
+- All `string` (and `wstring`) field is converted to an array of `char` (or `wchar`).
+  Any `@default()` annotation will be discarded, since they are not supported on
+  array fields. If the field is unbounded, the array will be assigned an arbitrary
+  maximum length (by default: 255).
+- All sequences are converted to an array of the contained type. Sequences of
+  `string` (or `wstring`) will be further expanded into multi-dimensional arrays
+  of `char` (or `wchar`). For example `sequence<string, 10> foo` will be converted
+  into `char foo[10][MAX_STR_LEN]`. If the field is unbounded, the array will be assigned an arbitrary maximum length (by default: 100).
 
 
 ## Other useful resources

@@ -43,7 +43,7 @@ module composition_interfaces {
 
 
 
-      wchar remap_rules[100][255 + 1];
+      char remap_rules[100][255 + 1];
 
       
 

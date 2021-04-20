@@ -6,7 +6,7 @@
 module xcdr2 {
 module test_msgs {
   module msg {
-    typedef wstring wstring__3[3];
+    
     @final
     @allowed_data_representation(XCDR2)
     struct WStrings {
@@ -25,7 +25,7 @@ module test_msgs {
 
 
 
-      wstring__3 array_of_wstrings;
+      wstring array_of_wstrings[3];
 
       sequence<wstring, 3> bounded_sequence_of_wstrings;
 

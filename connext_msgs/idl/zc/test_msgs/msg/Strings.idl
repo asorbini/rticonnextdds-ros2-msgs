@@ -14,36 +14,26 @@ module test_msgs {
     struct Strings {
       char string_value[255 + 1];
 
-      @default (value="Hello world!")
       char string_value_default1[255 + 1];
 
-      @default (value="Hello'world!")
       char string_value_default2[255 + 1];
 
-      @default (value="Hello\"world!")
       char string_value_default3[255 + 1];
 
-      @default (value="Hello'world!")
       char string_value_default4[255 + 1];
 
-      @default (value="Hello\"world!")
       char string_value_default5[255 + 1];
 
       char bounded_string_value[22 + 1];
 
-      @default (value="Hello world!")
       char bounded_string_value_default1[22 + 1];
 
-      @default (value="Hello'world!")
       char bounded_string_value_default2[22 + 1];
 
-      @default (value="Hello\"world!")
       char bounded_string_value_default3[22 + 1];
 
-      @default (value="Hello'world!")
       char bounded_string_value_default4[22 + 1];
 
-      @default (value="Hello\"world!")
       char bounded_string_value_default5[22 + 1];
     };
   };

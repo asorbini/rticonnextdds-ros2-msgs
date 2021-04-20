@@ -26,7 +26,7 @@ module trajectory_msgs {
 
 
 
-      wchar joint_names[100][255 + 1];
+      char joint_names[100][255 + 1];
 
       zc::trajectory_msgs::msg::MultiDOFJointTrajectoryPoint points[100];
     };

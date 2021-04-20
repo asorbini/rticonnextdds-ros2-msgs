@@ -50,7 +50,7 @@ module test_msgs {
 
       uint64 uint64_values[ 3];
 
-      string string_values[ 3];
+      char string_values[100][255 + 1];
 
       flat_zc::test_msgs::msg::BasicTypes basic_types_values[ 3];
 
@@ -97,8 +97,7 @@ module test_msgs {
       @default (value="(0, 1, 18446744073709551615)")
       uint64 uint64_values_default[ 3];
 
-      @default (value="('', 'max value', 'min value')")
-      string string_values_default[ 3];
+      char string_values_default[100][255 + 1];
 
       
 

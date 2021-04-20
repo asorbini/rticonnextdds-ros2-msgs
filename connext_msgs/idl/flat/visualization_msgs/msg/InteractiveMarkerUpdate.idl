@@ -45,7 +45,7 @@ module visualization_msgs {
 
       
 
-      wchar erases[100][255 + 1];
+      char erases[100][255 + 1];
     };
   };
 };

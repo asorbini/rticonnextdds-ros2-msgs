@@ -20,7 +20,7 @@ module rcl_interfaces {
     struct ListParameters_Request {
       
 
-      wchar prefixes[100][255 + 1];
+      char prefixes[100][255 + 1];
 
       
 

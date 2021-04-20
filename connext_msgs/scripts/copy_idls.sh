@@ -113,7 +113,8 @@ for t in \
     double \
     boolean \
     octet \
-    string; do
+    string \
+    wstring; do
   for f in $(grep -rEH "typedef ${t} ${t}__[1-9][0-9]*\[[1-9][0-9]*];" ${IDL_DIR} | cut -d: -f1); do
     for i in $(seq 0 ${ARRAY_MAX_LEN}); do
       if grep -qE "typedef ${t} ${t}__${i}\[${i}\];" ${f}; then
@@ -183,8 +184,10 @@ gen_alt_idl()
       -e "s:^(module .*)$:module ${ns} {\n\1:" \
       -e 's:^};$:};\n};:' \
       ${f}
-    if echo "${annotations}" | grep -q SHMEM_REF ||
-      echo "${annotations}" | grep -q FLAT_DATA; then
+    # Adjust types if types are @final with either SHMEM_REF or FLAT_DATA
+    if echo "${annotations}" | grep -qE "^@final"  &&
+      (echo "${annotations}" | grep -q SHMEM_REF ||
+      echo "${annotations}" | grep -q FLAT_DATA); then
       sed -i -r \
         -e "s:wstring ([a-zA-Z].*);$:wchar \1[${IDL_STRING_MAX_LEN} + 1];:g" \
         -e "s:wstring<([^>]+)> ([a-zA-Z].*);$:wchar \2[\1 + 1];:g" \
@@ -192,9 +195,23 @@ gen_alt_idl()
         -e "s:string<([^>]+)> ([a-zA-Z].*);$:char \2[\1 + 1];:g" \
         -e "s:sequence<([^,]+)> ([a-zA-Z].*);$:\1 \2[${IDL_SEQUENCE_MAX_LEN}];:g" \
         -e "s:sequence<([^,]+),([^>]+)> ([a-zA-Z].*);$:\1 \3[\2];:g" \
-        -e "s:wstring ([a-zA-Z].*)(\[[0-9]*\]);$:char \1[${IDL_SEQUENCE_MAX_LEN}][${IDL_STRING_MAX_LEN} + 1];:g" \
-        -e "s:string ([a-zA-Z].*)(\[[0-9]*\]);$:wchar \1[${IDL_SEQUENCE_MAX_LEN}][${IDL_STRING_MAX_LEN} + 1];:g" \
+        -e "s:wstring ([a-zA-Z].*)(\[[0-9 ]*\]);$:wchar \1[${IDL_SEQUENCE_MAX_LEN}][${IDL_STRING_MAX_LEN} + 1];:g" \
+        -e "s:string ([a-zA-Z].*)(\[[0-9 ]*\]);$:char \1[${IDL_SEQUENCE_MAX_LEN}][${IDL_STRING_MAX_LEN} + 1];:g" \
         ${f}
+      
+      # Remove default declarations for strings and wstrings. Do this iteratively
+      # because only one line is removed by each sed invocation.
+      while grep -A 1 -E "[ ]+@default [^\n]+" ${f} | grep -q "wchar "; do
+        sed -i -z -r \
+          -e 's:@default [^\n]+\n[ ]+(wchar [a-zA-Z0-9_]+\[[^\]+\];):\1:g' \
+          ${f}
+      done
+
+      while grep -A 1 -E "[ ]+@default [^\n]+" ${f} | grep -q "char "; do
+        sed -i -z -r \
+          -e 's:@default [^\n]+\n[ ]+(char [a-zA-Z0-9_]+\[[^\]+\];):\1:g' \
+          ${f}
+      done
     fi
     for p in ${idl_pkgs}; do
       sed -i -r \
@@ -208,27 +225,28 @@ gen_alt_idl()
 # Generate "flat-data" versions
 ################################################################################
 printf -- "-- generating flat data types...\n"
-gen_alt_idl flat "${IDL_FLAT_DIR}" \
+gen_alt_idl flat "${IDL_DIR}/flat" \
   "@final\n\1@language_binding(FLAT_DATA)"
 
 ################################################################################
 # Generate "flat-data/zero-copy" versions
 ################################################################################
 printf -- "-- generating flat data/zero copy types...\n"
-gen_alt_idl flat_zc "${IDL_FLAT_ZC_DIR}" \
+gen_alt_idl flat_zc "${IDL_DIR}/flat_zc" \
   "@final\n\1@transfer_mode(SHMEM_REF)\n\1@language_binding(FLAT_DATA)"
 
 ################################################################################
 # Generate "zero-copy" versions
 ################################################################################
 printf -- "-- generating zero copy types...\n"
-gen_alt_idl zc "${IDL_ZC_DIR}" \
+gen_alt_idl zc "${IDL_DIR}/zc" \
   "@final\n\1@transfer_mode(SHMEM_REF)"
 
 ################################################################################
 # Generate "xcdr2" versions
 ################################################################################
 printf -- "-- generating xcdr2 types...\n"
-gen_alt_idl xcdr2 "${IDL_2_DIR}" \
+gen_alt_idl xcdr2 "${IDL_DIR}/xcdr2" \
   "@final\n\1@allowed_data_representation(XCDR2)"
+
 
