@@ -1,0 +1,34 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from sensor_msgs/msg/JoyFeedback.msg
+// generated code does not contain a copyright notice
+
+
+module ros2 { module flat {
+module sensor_msgs {
+  module msg {
+    module JoyFeedback_Constants {
+      const uint8 TYPE_LED = 0;
+      const uint8 TYPE_RUMBLE = 1;
+      const uint8 TYPE_BUZZER = 2;
+    };
+    
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct JoyFeedback {
+      uint8 type;
+
+      
+
+
+      uint8 id;
+
+      
+
+
+      float intensity;
+    };
+  };
+};
+};
+};

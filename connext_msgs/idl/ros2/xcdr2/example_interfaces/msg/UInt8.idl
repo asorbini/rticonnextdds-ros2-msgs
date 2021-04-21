@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from example_interfaces/msg/UInt8.msg
+// generated code does not contain a copyright notice
+
+
+module ros2 { module xcdr2 {
+module example_interfaces {
+  module msg {
+    
+
+
+
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct UInt8 {
+      uint8 data;
+    };
+  };
+};
+};
+};

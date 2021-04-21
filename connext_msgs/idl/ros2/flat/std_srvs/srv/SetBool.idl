@@ -1,0 +1,30 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from std_srvs/srv/SetBool.srv
+// generated code does not contain a copyright notice
+
+
+module ros2 { module flat {
+module std_srvs {
+  module srv {
+    @final
+    @language_binding(FLAT_DATA)
+    struct SetBool_Request {
+      
+
+      boolean data;
+    };
+    @final
+    @language_binding(FLAT_DATA)
+    struct SetBool_Response {
+      
+
+      boolean success;
+
+      
+
+      char message[255 + 1];
+    };
+  };
+};
+};
+};

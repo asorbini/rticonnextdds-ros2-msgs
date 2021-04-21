@@ -1,0 +1,34 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from std_msgs/msg/UInt16MultiArray.msg
+// generated code does not contain a copyright notice
+
+#ifndef std_msgs_msg_MultiArrayLayout_idl
+#define std_msgs_msg_MultiArrayLayout_idl
+#include "ros2/zc/std_msgs/msg/MultiArrayLayout.idl"
+#endif  // std_msgs_msg_MultiArrayLayout_idl
+
+module ros2 { module zc {
+module std_msgs {
+  module msg {
+    
+
+
+
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct UInt16MultiArray {
+      
+
+
+
+      zc::std_msgs::msg::MultiArrayLayout layout;
+
+      
+
+      uint16 data[100];
+    };
+  };
+};
+};
+};

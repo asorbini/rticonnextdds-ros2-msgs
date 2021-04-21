@@ -1,0 +1,130 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from visualization_msgs/msg/Marker.msg
+// generated code does not contain a copyright notice
+
+#ifndef builtin_interfaces_msg_Duration_idl
+#define builtin_interfaces_msg_Duration_idl
+#include "ros2/flat/builtin_interfaces/msg/Duration.idl"
+#endif  // builtin_interfaces_msg_Duration_idl
+#ifndef geometry_msgs_msg_Point_idl
+#define geometry_msgs_msg_Point_idl
+#include "ros2/flat/geometry_msgs/msg/Point.idl"
+#endif  // geometry_msgs_msg_Point_idl
+#ifndef geometry_msgs_msg_Pose_idl
+#define geometry_msgs_msg_Pose_idl
+#include "ros2/flat/geometry_msgs/msg/Pose.idl"
+#endif  // geometry_msgs_msg_Pose_idl
+#ifndef geometry_msgs_msg_Vector3_idl
+#define geometry_msgs_msg_Vector3_idl
+#include "ros2/flat/geometry_msgs/msg/Vector3.idl"
+#endif  // geometry_msgs_msg_Vector3_idl
+#ifndef std_msgs_msg_ColorRGBA_idl
+#define std_msgs_msg_ColorRGBA_idl
+#include "ros2/flat/std_msgs/msg/ColorRGBA.idl"
+#endif  // std_msgs_msg_ColorRGBA_idl
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
+#include "ros2/flat/std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
+
+module ros2 { module flat {
+module visualization_msgs {
+  module msg {
+    module Marker_Constants {
+      const int32 ARROW = 0;
+      const int32 CUBE = 1;
+      const int32 SPHERE = 2;
+      const int32 CYLINDER = 3;
+      const int32 LINE_STRIP = 4;
+      const int32 LINE_LIST = 5;
+      const int32 CUBE_LIST = 6;
+      const int32 SPHERE_LIST = 7;
+      const int32 POINTS = 8;
+      const int32 TEXT_VIEW_FACING = 9;
+      const int32 MESH_RESOURCE = 10;
+      const int32 TRIANGLE_LIST = 11;
+      const int32 ADD = 0;
+      const int32 MODIFY = 0;
+      const int32 DELETE = 2;
+      const int32 DELETEALL = 3;
+    };
+    
+
+
+
+
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct Marker {
+      
+
+      flat::std_msgs::msg::Header header;
+
+      
+
+
+      char ns[255 + 1];
+
+      
+
+      int32 id;
+
+      
+
+      int32 type;
+
+      
+
+
+
+
+
+      int32 action;
+
+      
+
+      flat::geometry_msgs::msg::Pose pose;
+
+      
+
+      flat::geometry_msgs::msg::Vector3 scale;
+
+      
+
+      
+      flat::std_msgs::msg::ColorRGBA color;
+
+      
+
+
+      flat::builtin_interfaces::msg::Duration lifetime;
+
+      
+
+      boolean frame_locked;
+
+      
+
+      flat::geometry_msgs::msg::Point points[100];
+
+      
+
+
+
+      flat::std_msgs::msg::ColorRGBA colors[100];
+
+      
+
+      char text[255 + 1];
+
+      
+
+      char mesh_resource[255 + 1];
+
+      boolean mesh_use_embedded_materials;
+    };
+  };
+};
+};
+};

@@ -66,48 +66,55 @@ else()
   endif()
 endif()
 
-if(NOT MESSAGE_BROKEN)
-  set(MESSAGE_BROKEN
-    test_msgs/msg/Arrays
-    test_msgs/msg/BoundedSequences
-    test_msgs/msg/MultiNested
-    test_msgs/msg/UnboundedSequences
-    test_msgs/msg/Defaults
-    test_msgs/srv/Arrays
-    action_tutorials_interfaces/action/Fibonacci
-    example_interfaces/action/Fibonacci
-    test_msgs/action/Fibonacci)
+set(MESSAGE_BROKEN
+  test_msgs/msg/Arrays
+  test_msgs/msg/BoundedSequences
+  test_msgs/msg/MultiNested
+  test_msgs/msg/UnboundedSequences
+  test_msgs/msg/Defaults
+  test_msgs/srv/Arrays
+  action_tutorials_interfaces/action/Fibonacci
+  example_interfaces/action/Fibonacci
+  test_msgs/action/Fibonacci)
 
-  foreach(alt flat flat_zc zc xcdr2 flat_mut flat_zc_mut zc_mut xcdr2_mut)
-    foreach(msg ${MESSAGE_BROKEN})
-      list(APPEND MESSAGE_BROKEN "${alt}/${msg}")
-    endforeach()
+foreach(alt flat flat_zc zc xcdr2)
+  foreach(msg ${MESSAGE_BROKEN})
+    list(APPEND MESSAGE_BROKEN "ros2/${alt}/${msg}")
   endforeach()
+endforeach()
 
-  foreach(alt flat flat_zc zc xcdr2 flat_mut flat_zc_mut zc_mut xcdr2_mut)
-    foreach(msg test_msgs/msg/Strings)
-      list(APPEND MESSAGE_BROKEN "${alt}/${msg}")
-    endforeach()
+foreach(alt flat flat_zc zc xcdr2)
+  foreach(msg test_msgs/msg/Strings)
+    list(APPEND MESSAGE_BROKEN "ros2/${alt}/${msg}")
   endforeach()
-endif()
+endforeach()
+
+foreach(alt flat flat_zc)
+  foreach(msg
+    visualization_msgs/msg/InteractiveMarkerInit
+    visualization_msgs/msg/InteractiveMarkerUpdate
+    visualization_msgs/srv/GetInteractiveMarkers)
+    list(APPEND MESSAGE_BROKEN "ros2/${alt}/${msg}")
+  endforeach()
+endforeach()
 
 set(MESSAGE_BROKEN ${MESSAGE_BROKEN}
-  CACHE LIST "List of messages which cannot be compiled with rtiddsgen")
+  CACHE INTERNAL "List of messages which cannot be compiled with rtiddsgen")
 
 set(MESSAGE_PACKAGES  ${MESSAGE_PACKAGES}
-  CACHE LIST "List of packages to include in the library (all if empty)")
+  CACHE INTERNAL "List of packages to include in the library (all if empty)")
 
 set(MESSAGE_INCLUDE  ${MESSAGE_INCLUDE}
-  CACHE LIST "List of messages which should be included in the library (all if empty)")
+  CACHE INTERNAL "List of messages which should be included in the library (all if empty)")
 
 set(MESSAGE_INCLUDE_REGEX  ${MESSAGE_INCLUDE_REGEX}
-  CACHE LIST "Regex to select message which should be included in the library (all if empty)")
+  CACHE INTERNAL "Regex to select message which should be included in the library (all if empty)")
 
 set(MESSAGE_EXCLUDE  ${MESSAGE_EXCLUDE}
-  CACHE LIST "List of messages which should not be excluded from the library")
+  CACHE INTERNAL "List of messages which should not be excluded from the library")
 
 set(MESSAGE_EXCLUDE_REGEX  ${MESSAGE_EXCLUDE_REGEX}
-  CACHE LIST "Regex to select message which should be excluded from the library (all if empty)")
+  CACHE INTERNAL "Regex to select message which should be excluded from the library (all if empty)")
 
 if(NOT DEFINED MESSAGE_VARIANT_ALL)
   set(MESSAGE_VARIANT_ALL OFF)
@@ -284,7 +291,9 @@ connext_generate_typesupport_library(${LIB_NAME}
   IDLS ${idl_input}
   INCLUDES ${CMAKE_CURRENT_SOURCE_DIR}/idl
   ZEROCOPY
-  SERVER)
+  SERVER
+  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/idl
+  EXPORT_TYPES_LIST MESSAGE_TYPES)
 
 if(NOT MESSAGE_STANDALONE)
   ament_export_libraries(${PROJECT_NAME})
@@ -295,7 +304,7 @@ if(NOT MESSAGE_STANDALONE)
     ament_lint_auto_find_test_dependencies()
   endif()
 
-  ament_package()
+  ament_package(CONFIG_EXTRAS_POST "${PROJECT_NAME}-extras.cmake.in")
 else()
   install(EXPORT idl_${PROJECT_NAME}
     FILE connext_msgs.cmake

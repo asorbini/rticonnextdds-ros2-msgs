@@ -1,0 +1,37 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from visualization_msgs/msg/InteractiveMarkerInit.msg
+// generated code does not contain a copyright notice
+
+#ifndef visualization_msgs_msg_InteractiveMarker_idl
+#define visualization_msgs_msg_InteractiveMarker_idl
+#include "ros2/zc/visualization_msgs/msg/InteractiveMarker.idl"
+#endif  // visualization_msgs_msg_InteractiveMarker_idl
+
+module ros2 { module zc {
+module visualization_msgs {
+  module msg {
+    
+
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct InteractiveMarkerInit {
+      char server_id[255 + 1];
+
+      
+
+
+
+
+
+
+      uint64 seq_num;
+
+      
+
+      zc::visualization_msgs::msg::InteractiveMarker markers[100];
+    };
+  };
+};
+};
+};

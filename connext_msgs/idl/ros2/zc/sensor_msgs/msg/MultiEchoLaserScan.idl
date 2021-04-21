@@ -1,0 +1,90 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from sensor_msgs/msg/MultiEchoLaserScan.msg
+// generated code does not contain a copyright notice
+
+#ifndef sensor_msgs_msg_LaserEcho_idl
+#define sensor_msgs_msg_LaserEcho_idl
+#include "ros2/zc/sensor_msgs/msg/LaserEcho.idl"
+#endif  // sensor_msgs_msg_LaserEcho_idl
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
+#include "ros2/zc/std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
+
+module ros2 { module zc {
+module sensor_msgs {
+  module msg {
+    
+
+
+
+
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct MultiEchoLaserScan {
+      
+
+
+
+
+
+
+      zc::std_msgs::msg::Header header;
+
+      
+
+      
+      float angle_min;
+
+      
+
+      
+      float angle_max;
+
+      
+
+      
+      float angle_increment;
+
+      
+
+
+
+      
+      float time_increment;
+
+      
+
+      
+      float scan_time;
+
+      
+
+      
+      float range_min;
+
+      
+
+      
+      float range_max;
+
+      
+
+
+
+
+      
+      zc::sensor_msgs::msg::LaserEcho ranges[100];
+
+      
+
+
+
+      
+      zc::sensor_msgs::msg::LaserEcho intensities[100];
+    };
+  };
+};
+};
+};

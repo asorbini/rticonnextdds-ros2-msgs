@@ -1,0 +1,34 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from shape_msgs/msg/Mesh.msg
+// generated code does not contain a copyright notice
+
+#ifndef geometry_msgs_msg_Point_idl
+#define geometry_msgs_msg_Point_idl
+#include "ros2/flat_zc/geometry_msgs/msg/Point.idl"
+#endif  // geometry_msgs_msg_Point_idl
+#ifndef shape_msgs_msg_MeshTriangle_idl
+#define shape_msgs_msg_MeshTriangle_idl
+#include "ros2/flat_zc/shape_msgs/msg/MeshTriangle.idl"
+#endif  // shape_msgs_msg_MeshTriangle_idl
+
+module ros2 { module flat_zc {
+module shape_msgs {
+  module msg {
+    
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct Mesh {
+      
+
+      flat_zc::shape_msgs::msg::MeshTriangle triangles[100];
+
+      
+
+      flat_zc::geometry_msgs::msg::Point vertices[100];
+    };
+  };
+};
+};
+};

@@ -1,0 +1,106 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from sensor_msgs/msg/BatteryState.msg
+// generated code does not contain a copyright notice
+
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
+#include "ros2/flat/std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
+
+module ros2 { module flat {
+module sensor_msgs {
+  module msg {
+    module BatteryState_Constants {
+      const uint8 POWER_SUPPLY_STATUS_UNKNOWN = 0;
+      const uint8 POWER_SUPPLY_STATUS_CHARGING = 1;
+      const uint8 POWER_SUPPLY_STATUS_DISCHARGING = 2;
+      const uint8 POWER_SUPPLY_STATUS_NOT_CHARGING = 3;
+      const uint8 POWER_SUPPLY_STATUS_FULL = 4;
+      const uint8 POWER_SUPPLY_HEALTH_UNKNOWN = 0;
+      const uint8 POWER_SUPPLY_HEALTH_GOOD = 1;
+      const uint8 POWER_SUPPLY_HEALTH_OVERHEAT = 2;
+      const uint8 POWER_SUPPLY_HEALTH_DEAD = 3;
+      const uint8 POWER_SUPPLY_HEALTH_OVERVOLTAGE = 4;
+      const uint8 POWER_SUPPLY_HEALTH_UNSPEC_FAILURE = 5;
+      const uint8 POWER_SUPPLY_HEALTH_COLD = 6;
+      const uint8 POWER_SUPPLY_HEALTH_WATCHDOG_TIMER_EXPIRE = 7;
+      const uint8 POWER_SUPPLY_HEALTH_SAFETY_TIMER_EXPIRE = 8;
+      const uint8 POWER_SUPPLY_TECHNOLOGY_UNKNOWN = 0;
+      const uint8 POWER_SUPPLY_TECHNOLOGY_NIMH = 1;
+      const uint8 POWER_SUPPLY_TECHNOLOGY_LION = 2;
+      const uint8 POWER_SUPPLY_TECHNOLOGY_LIPO = 3;
+      const uint8 POWER_SUPPLY_TECHNOLOGY_LIFE = 4;
+      const uint8 POWER_SUPPLY_TECHNOLOGY_NICD = 5;
+      const uint8 POWER_SUPPLY_TECHNOLOGY_LIMN = 6;
+    };
+    @final
+    @language_binding(FLAT_DATA)
+    struct BatteryState {
+      flat::std_msgs::msg::Header header;
+
+      
+
+      float voltage;
+
+      
+
+      float temperature;
+
+      
+
+      float current;
+
+      
+
+      float charge;
+
+      
+
+      float capacity;
+
+      
+
+      float design_capacity;
+
+      
+
+      float percentage;
+
+      
+
+      uint8 power_supply_status;
+
+      
+
+      uint8 power_supply_health;
+
+      
+
+      uint8 power_supply_technology;
+
+      
+
+      boolean present;
+
+      
+
+
+      float cell_voltage[100];
+
+      
+
+
+      float cell_temperature[100];
+
+      
+
+      char location[255 + 1];
+
+      
+
+      char serial_number[255 + 1];
+    };
+  };
+};
+};
+};

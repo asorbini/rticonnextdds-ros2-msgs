@@ -1,0 +1,45 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from nav_msgs/srv/GetPlan.srv
+// generated code does not contain a copyright notice
+
+#ifndef geometry_msgs_msg_PoseStamped_idl
+#define geometry_msgs_msg_PoseStamped_idl
+#include "ros2/xcdr2/geometry_msgs/msg/PoseStamped.idl"
+#endif  // geometry_msgs_msg_PoseStamped_idl
+#ifndef nav_msgs_msg_Path_idl
+#define nav_msgs_msg_Path_idl
+#include "ros2/xcdr2/nav_msgs/msg/Path.idl"
+#endif  // nav_msgs_msg_Path_idl
+
+module ros2 { module xcdr2 {
+module nav_msgs {
+  module srv {
+    
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct GetPlan_Request {
+      
+
+      xcdr2::geometry_msgs::msg::PoseStamped start;
+
+      
+
+      xcdr2::geometry_msgs::msg::PoseStamped goal;
+
+      
+
+
+      float tolerance;
+    };
+    
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct GetPlan_Response {
+      xcdr2::nav_msgs::msg::Path plan;
+    };
+  };
+};
+};
+};

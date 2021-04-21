@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from example_interfaces/msg/Int32.msg
+// generated code does not contain a copyright notice
+
+
+module ros2 { module zc {
+module example_interfaces {
+  module msg {
+    
+
+
+
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct Int32 {
+      int32 data;
+    };
+  };
+};
+};
+};

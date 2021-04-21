@@ -1,0 +1,17 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from pendulum_msgs/msg/JointCommand.msg
+// generated code does not contain a copyright notice
+
+
+module ros2 { module zc {
+module pendulum_msgs {
+  module msg {
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct JointCommand {
+      double position;
+    };
+  };
+};
+};
+};

@@ -1,0 +1,30 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from geometry_msgs/msg/PointStamped.msg
+// generated code does not contain a copyright notice
+
+#ifndef geometry_msgs_msg_Point_idl
+#define geometry_msgs_msg_Point_idl
+#include "ros2/flat_zc/geometry_msgs/msg/Point.idl"
+#endif  // geometry_msgs_msg_Point_idl
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
+#include "ros2/flat_zc/std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
+
+module ros2 { module flat_zc {
+module geometry_msgs {
+  module msg {
+    
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct PointStamped {
+      flat_zc::std_msgs::msg::Header header;
+
+      flat_zc::geometry_msgs::msg::Point point;
+    };
+  };
+};
+};
+};

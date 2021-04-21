@@ -1,0 +1,26 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from turtlesim/srv/TeleportAbsolute.srv
+// generated code does not contain a copyright notice
+
+
+module ros2 { module xcdr2 {
+module turtlesim {
+  module srv {
+    @final
+    @allowed_data_representation(XCDR2)
+    struct TeleportAbsolute_Request {
+      float x;
+
+      float y;
+
+      float theta;
+    };
+    @final
+    @allowed_data_representation(XCDR2)
+    struct TeleportAbsolute_Response {
+      uint8 structure_needs_at_least_one_member;
+    };
+  };
+};
+};
+};

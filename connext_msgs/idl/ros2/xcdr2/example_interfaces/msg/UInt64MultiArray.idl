@@ -1,0 +1,33 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from example_interfaces/msg/UInt64MultiArray.msg
+// generated code does not contain a copyright notice
+
+#ifndef example_interfaces_msg_MultiArrayLayout_idl
+#define example_interfaces_msg_MultiArrayLayout_idl
+#include "ros2/xcdr2/example_interfaces/msg/MultiArrayLayout.idl"
+#endif  // example_interfaces_msg_MultiArrayLayout_idl
+
+module ros2 { module xcdr2 {
+module example_interfaces {
+  module msg {
+    
+
+
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct UInt64MultiArray {
+      
+
+
+
+      xcdr2::example_interfaces::msg::MultiArrayLayout layout;
+
+      
+
+      sequence<uint64> data;
+    };
+  };
+};
+};
+};

@@ -1,0 +1,42 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from sensor_msgs/srv/SetCameraInfo.srv
+// generated code does not contain a copyright notice
+
+#ifndef sensor_msgs_msg_CameraInfo_idl
+#define sensor_msgs_msg_CameraInfo_idl
+#include "ros2/flat/sensor_msgs/msg/CameraInfo.idl"
+#endif  // sensor_msgs_msg_CameraInfo_idl
+
+module ros2 { module flat {
+module sensor_msgs {
+  module srv {
+    
+
+
+
+
+
+
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct SetCameraInfo_Request {
+      
+
+      flat::sensor_msgs::msg::CameraInfo camera_info;
+    };
+    @final
+    @language_binding(FLAT_DATA)
+    struct SetCameraInfo_Response {
+      
+
+      boolean success;
+
+      
+
+      char status_message[255 + 1];
+    };
+  };
+};
+};
+};

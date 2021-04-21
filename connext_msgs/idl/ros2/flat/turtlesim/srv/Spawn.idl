@@ -1,0 +1,30 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from turtlesim/srv/Spawn.srv
+// generated code does not contain a copyright notice
+
+
+module ros2 { module flat {
+module turtlesim {
+  module srv {
+    @final
+    @language_binding(FLAT_DATA)
+    struct Spawn_Request {
+      float x;
+
+      float y;
+
+      float theta;
+
+      
+
+      char name[255 + 1];
+    };
+    @final
+    @language_binding(FLAT_DATA)
+    struct Spawn_Response {
+      char name[255 + 1];
+    };
+  };
+};
+};
+};

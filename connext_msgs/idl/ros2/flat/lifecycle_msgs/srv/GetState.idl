@@ -1,0 +1,28 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from lifecycle_msgs/srv/GetState.srv
+// generated code does not contain a copyright notice
+
+#ifndef lifecycle_msgs_msg_State_idl
+#define lifecycle_msgs_msg_State_idl
+#include "ros2/flat/lifecycle_msgs/msg/State.idl"
+#endif  // lifecycle_msgs_msg_State_idl
+
+module ros2 { module flat {
+module lifecycle_msgs {
+  module srv {
+    @final
+    @language_binding(FLAT_DATA)
+    struct GetState_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct GetState_Response {
+      flat::lifecycle_msgs::msg::State current_state;
+    };
+  };
+};
+};
+};

@@ -1,0 +1,24 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from turtlesim/srv/Kill.srv
+// generated code does not contain a copyright notice
+
+
+module ros2 { module flat_zc {
+module turtlesim {
+  module srv {
+    @final
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct Kill_Request {
+      char name[255 + 1];
+    };
+    @final
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct Kill_Response {
+      uint8 structure_needs_at_least_one_member;
+    };
+  };
+};
+};
+};

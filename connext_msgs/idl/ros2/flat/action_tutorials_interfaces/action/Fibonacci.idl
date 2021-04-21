@@ -1,0 +1,27 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from action_tutorials_interfaces/action/Fibonacci.action
+// generated code does not contain a copyright notice
+
+
+module ros2 { module flat {
+module action_tutorials_interfaces {
+  module action {
+    @final
+    @language_binding(FLAT_DATA)
+    struct Fibonacci_Goal {
+      int32 order;
+    };
+    @final
+    @language_binding(FLAT_DATA)
+    struct Fibonacci_Result {
+      int32 sequence[100];
+    };
+    @final
+    @language_binding(FLAT_DATA)
+    struct Fibonacci_Feedback {
+      int32 partial_sequence[100];
+    };
+  };
+};
+};
+};

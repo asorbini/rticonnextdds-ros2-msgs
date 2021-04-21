@@ -1,0 +1,21 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from turtlesim/msg/Color.msg
+// generated code does not contain a copyright notice
+
+
+module ros2 { module xcdr2 {
+module turtlesim {
+  module msg {
+    @final
+    @allowed_data_representation(XCDR2)
+    struct Color {
+      uint8 r;
+
+      uint8 g;
+
+      uint8 b;
+    };
+  };
+};
+};
+};

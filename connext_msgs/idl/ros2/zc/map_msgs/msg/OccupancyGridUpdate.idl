@@ -1,0 +1,31 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from map_msgs/msg/OccupancyGridUpdate.msg
+// generated code does not contain a copyright notice
+
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
+#include "ros2/zc/std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
+
+module ros2 { module zc {
+module map_msgs {
+  module msg {
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct OccupancyGridUpdate {
+      zc::std_msgs::msg::Header header;
+
+      int32 x;
+
+      int32 y;
+
+      uint32 width;
+
+      uint32 height;
+
+      int8 data[100];
+    };
+  };
+};
+};
+};

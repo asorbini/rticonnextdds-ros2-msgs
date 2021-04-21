@@ -1,0 +1,42 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from nav_msgs/srv/SetMap.srv
+// generated code does not contain a copyright notice
+
+#ifndef geometry_msgs_msg_PoseWithCovarianceStamped_idl
+#define geometry_msgs_msg_PoseWithCovarianceStamped_idl
+#include "ros2/flat_zc/geometry_msgs/msg/PoseWithCovarianceStamped.idl"
+#endif  // geometry_msgs_msg_PoseWithCovarianceStamped_idl
+#ifndef nav_msgs_msg_OccupancyGrid_idl
+#define nav_msgs_msg_OccupancyGrid_idl
+#include "ros2/flat_zc/nav_msgs/msg/OccupancyGrid.idl"
+#endif  // nav_msgs_msg_OccupancyGrid_idl
+
+module ros2 { module flat_zc {
+module nav_msgs {
+  module srv {
+    
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct SetMap_Request {
+      
+
+      flat_zc::nav_msgs::msg::OccupancyGrid map;
+
+      
+
+      flat_zc::geometry_msgs::msg::PoseWithCovarianceStamped initial_pose;
+    };
+    @final
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct SetMap_Response {
+      
+
+      boolean success;
+    };
+  };
+};
+};
+};

@@ -1,0 +1,47 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from diagnostic_msgs/msg/DiagnosticStatus.msg
+// generated code does not contain a copyright notice
+
+#ifndef diagnostic_msgs_msg_KeyValue_idl
+#define diagnostic_msgs_msg_KeyValue_idl
+#include "ros2/zc/diagnostic_msgs/msg/KeyValue.idl"
+#endif  // diagnostic_msgs_msg_KeyValue_idl
+
+module ros2 { module zc {
+module diagnostic_msgs {
+  module msg {
+    module DiagnosticStatus_Constants {
+      const octet OK = 0;
+      const octet WARN = 1;
+      const octet ERROR = 2;
+      const octet STALE = 3;
+    };
+    
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct DiagnosticStatus {
+      
+
+      octet level;
+
+      
+
+      char name[255 + 1];
+
+      
+
+      char message[255 + 1];
+
+      
+
+      char hardware_id[255 + 1];
+
+      
+
+      zc::diagnostic_msgs::msg::KeyValue values[100];
+    };
+  };
+};
+};
+};

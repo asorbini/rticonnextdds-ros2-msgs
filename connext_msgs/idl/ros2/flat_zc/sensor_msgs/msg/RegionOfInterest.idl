@@ -1,0 +1,48 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from sensor_msgs/msg/RegionOfInterest.msg
+// generated code does not contain a copyright notice
+
+
+module ros2 { module flat_zc {
+module sensor_msgs {
+  module msg {
+    
+
+
+
+
+
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct RegionOfInterest {
+      
+
+
+      uint32 x_offset;
+
+      
+
+
+      uint32 y_offset;
+
+      
+
+      uint32 height;
+
+      
+
+      uint32 width;
+
+      
+
+
+
+
+      boolean do_rectify;
+    };
+  };
+};
+};
+};

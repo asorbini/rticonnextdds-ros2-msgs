@@ -1,0 +1,31 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from std_msgs/msg/Header.msg
+// generated code does not contain a copyright notice
+
+#ifndef builtin_interfaces_msg_Time_idl
+#define builtin_interfaces_msg_Time_idl
+#include "ros2/zc/builtin_interfaces/msg/Time.idl"
+#endif  // builtin_interfaces_msg_Time_idl
+
+module ros2 { module zc {
+module std_msgs {
+  module msg {
+    
+
+
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct Header {
+      
+
+      zc::builtin_interfaces::msg::Time stamp;
+
+      
+
+      char frame_id[255 + 1];
+    };
+  };
+};
+};
+};

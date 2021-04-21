@@ -1,0 +1,34 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from example_interfaces/msg/Float64MultiArray.msg
+// generated code does not contain a copyright notice
+
+#ifndef example_interfaces_msg_MultiArrayLayout_idl
+#define example_interfaces_msg_MultiArrayLayout_idl
+#include "ros2/flat_zc/example_interfaces/msg/MultiArrayLayout.idl"
+#endif  // example_interfaces_msg_MultiArrayLayout_idl
+
+module ros2 { module flat_zc {
+module example_interfaces {
+  module msg {
+    
+
+
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct Float64MultiArray {
+      
+
+
+
+      flat_zc::example_interfaces::msg::MultiArrayLayout layout;
+
+      
+
+      double data[100];
+    };
+  };
+};
+};
+};

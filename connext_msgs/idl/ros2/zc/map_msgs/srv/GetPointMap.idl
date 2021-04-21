@@ -1,0 +1,28 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from map_msgs/srv/GetPointMap.srv
+// generated code does not contain a copyright notice
+
+#ifndef sensor_msgs_msg_PointCloud2_idl
+#define sensor_msgs_msg_PointCloud2_idl
+#include "ros2/zc/sensor_msgs/msg/PointCloud2.idl"
+#endif  // sensor_msgs_msg_PointCloud2_idl
+
+module ros2 { module zc {
+module map_msgs {
+  module srv {
+    
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct GetPointMap_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct GetPointMap_Response {
+      zc::sensor_msgs::msg::PointCloud2 map;
+    };
+  };
+};
+};
+};

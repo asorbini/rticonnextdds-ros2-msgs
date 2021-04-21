@@ -26,11 +26,9 @@ defaults()
   : ${ROS_DISTRO:=rolling}
   : ${ROS_DIR:=/opt/ros/${ROS_DISTRO}}
   : ${IDL_DIR:=./idl}
-  : ${IDL_FLAT_DIR:=./idl/flat}
-  : ${IDL_FLAT_ZC_DIR:=./idl/flat_zc}
-  : ${IDL_ZC_DIR:=./idl/zc}
-  : ${IDL_2_DIR:=./idl/xcdr2}
   : ${ARRAY_MAX_LEN:=100}
+  : ${IDL_STRING_MAX_LEN:=255}
+  : ${IDL_SEQUENCE_MAX_LEN:=100}
 }
 
 help()
@@ -159,8 +157,7 @@ done
 ################################################################################
 idl_pkgs=$(ls ${IDL_DIR})
 
-: "${IDL_STRING_MAX_LEN:=255}"
-: "${IDL_SEQUENCE_MAX_LEN:=100}"
+
 
 gen_alt_idl()
 {
@@ -176,13 +173,15 @@ gen_alt_idl()
     cp -a ${idl_pkgs} .tmp-idl/
   )
 
-  mv ${IDL_DIR}/.tmp-idl ${dst_dir}/
+  mkdir -p ${dst_dir}/
+  mv ${IDL_DIR}/.tmp-idl/* ${dst_dir}/
+  rm -r ${IDL_DIR}/.tmp-idl
 
   for f in $(find ${dst_dir} -name "*\.idl"); do
     sed -i -r \
       -e "s:([ ]*)(struct [A-Za-z].*)$:\1${annotations}\n\1\2:" \
-      -e "s:^(module .*)$:module ${ns} {\n\1:" \
-      -e 's:^};$:};\n};:' \
+      -e "s:^(module .*)$:module ros2 { module ${ns} {\n\1:" \
+      -e 's:^};$:};\n};\n};:' \
       ${f}
     # Adjust types if types are @final with either SHMEM_REF or FLAT_DATA
     if echo "${annotations}" | grep -qE "^@final"  &&
@@ -220,10 +219,12 @@ gen_alt_idl()
           ${f}
       done
     fi
+
+    # Add prefix to #include's
     for p in ${idl_pkgs}; do
       sed -i -r \
         -e "s/${p}::/${ns}::${p}::/g" \
-        -e "s:#include \"${p}/:#include \"${ns}/${p}/:g" \
+        -e "s:#include \"${p}/:#include \"ros2/${ns}/${p}/:g" \
         ${f}
     done
   done
@@ -232,28 +233,28 @@ gen_alt_idl()
 # Generate "flat-data" versions
 ################################################################################
 printf -- "-- generating flat data types...\n"
-gen_alt_idl flat "${IDL_DIR}/flat" \
+gen_alt_idl flat "${IDL_DIR}/ros2/flat" \
   "@final\n\1@language_binding(FLAT_DATA)"
 
 ################################################################################
 # Generate "flat-data/zero-copy" versions
 ################################################################################
 printf -- "-- generating flat data/zero copy types...\n"
-gen_alt_idl flat_zc "${IDL_DIR}/flat_zc" \
+gen_alt_idl flat_zc "${IDL_DIR}/ros2/flat_zc" \
   "@final\n\1@transfer_mode(SHMEM_REF)\n\1@language_binding(FLAT_DATA)"
 
 ################################################################################
 # Generate "zero-copy" versions
 ################################################################################
 printf -- "-- generating zero copy types...\n"
-gen_alt_idl zc "${IDL_DIR}/zc" \
+gen_alt_idl zc "${IDL_DIR}/ros2/zc" \
   "@final\n\1@transfer_mode(SHMEM_REF)"
 
 ################################################################################
 # Generate "xcdr2" versions
 ################################################################################
 printf -- "-- generating xcdr2 types...\n"
-gen_alt_idl xcdr2 "${IDL_DIR}/xcdr2" \
+gen_alt_idl xcdr2 "${IDL_DIR}/ros2/xcdr2" \
   "@final\n\1@allowed_data_representation(XCDR2)"
 
 

@@ -1,0 +1,41 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from shape_msgs/msg/SolidPrimitive.msg
+// generated code does not contain a copyright notice
+
+
+module ros2 { module flat {
+module shape_msgs {
+  module msg {
+    module SolidPrimitive_Constants {
+      const uint8 BOX = 1;
+      const uint8 SPHERE = 2;
+      const uint8 CYLINDER = 3;
+      const uint8 CONE = 4;
+      const uint8 BOX_X = 0;
+      const uint8 BOX_Y = 1;
+      const uint8 BOX_Z = 2;
+      const uint8 SPHERE_RADIUS = 0;
+      const uint8 CYLINDER_HEIGHT = 0;
+      const uint8 CYLINDER_RADIUS = 1;
+      const uint8 CONE_HEIGHT = 0;
+      const uint8 CONE_RADIUS = 1;
+    };
+    
+
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct SolidPrimitive {
+      
+
+      uint8 type;
+
+      
+
+
+      double dimensions[ 3];
+    };
+  };
+};
+};
+};

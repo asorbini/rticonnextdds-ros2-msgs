@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from std_msgs/msg/Char.msg
+// generated code does not contain a copyright notice
+
+
+module ros2 { module zc {
+module std_msgs {
+  module msg {
+    
+
+
+
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct Char {
+      uint8 data;
+    };
+  };
+};
+};
+};

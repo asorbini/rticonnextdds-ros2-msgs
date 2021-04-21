@@ -1,0 +1,23 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from sensor_msgs/msg/JoyFeedbackArray.msg
+// generated code does not contain a copyright notice
+
+#ifndef sensor_msgs_msg_JoyFeedback_idl
+#define sensor_msgs_msg_JoyFeedback_idl
+#include "ros2/xcdr2/sensor_msgs/msg/JoyFeedback.idl"
+#endif  // sensor_msgs_msg_JoyFeedback_idl
+
+module ros2 { module xcdr2 {
+module sensor_msgs {
+  module msg {
+    
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct JoyFeedbackArray {
+      sequence<xcdr2::sensor_msgs::msg::JoyFeedback> array;
+    };
+  };
+};
+};
+};

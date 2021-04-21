@@ -1,0 +1,23 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from std_msgs/msg/ColorRGBA.msg
+// generated code does not contain a copyright notice
+
+
+module ros2 { module xcdr2 {
+module std_msgs {
+  module msg {
+    @final
+    @allowed_data_representation(XCDR2)
+    struct ColorRGBA {
+      float r;
+
+      float g;
+
+      float b;
+
+      float a;
+    };
+  };
+};
+};
+};

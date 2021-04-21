@@ -1,0 +1,23 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from example_interfaces/msg/UInt64.msg
+// generated code does not contain a copyright notice
+
+
+module ros2 { module flat_zc {
+module example_interfaces {
+  module msg {
+    
+
+
+
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct UInt64 {
+      uint64 data;
+    };
+  };
+};
+};
+};

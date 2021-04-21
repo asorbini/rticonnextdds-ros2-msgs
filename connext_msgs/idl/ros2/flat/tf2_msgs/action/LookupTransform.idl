@@ -1,0 +1,63 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from tf2_msgs/action/LookupTransform.action
+// generated code does not contain a copyright notice
+
+#ifndef builtin_interfaces_msg_Duration_idl
+#define builtin_interfaces_msg_Duration_idl
+#include "ros2/flat/builtin_interfaces/msg/Duration.idl"
+#endif  // builtin_interfaces_msg_Duration_idl
+#ifndef builtin_interfaces_msg_Time_idl
+#define builtin_interfaces_msg_Time_idl
+#include "ros2/flat/builtin_interfaces/msg/Time.idl"
+#endif  // builtin_interfaces_msg_Time_idl
+#ifndef geometry_msgs_msg_TransformStamped_idl
+#define geometry_msgs_msg_TransformStamped_idl
+#include "ros2/flat/geometry_msgs/msg/TransformStamped.idl"
+#endif  // geometry_msgs_msg_TransformStamped_idl
+#ifndef tf2_msgs_msg_TF2Error_idl
+#define tf2_msgs_msg_TF2Error_idl
+#include "ros2/flat/tf2_msgs/msg/TF2Error.idl"
+#endif  // tf2_msgs_msg_TF2Error_idl
+
+module ros2 { module flat {
+module tf2_msgs {
+  module action {
+    
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct LookupTransform_Goal {
+      char target_frame[255 + 1];
+
+      char source_frame[255 + 1];
+
+      flat::builtin_interfaces::msg::Time source_time;
+
+      flat::builtin_interfaces::msg::Duration timeout;
+
+      
+
+      flat::builtin_interfaces::msg::Time target_time;
+
+      char fixed_frame[255 + 1];
+
+      
+
+      boolean advanced;
+    };
+    @final
+    @language_binding(FLAT_DATA)
+    struct LookupTransform_Result {
+      flat::geometry_msgs::msg::TransformStamped transform;
+
+      flat::tf2_msgs::msg::TF2Error error;
+    };
+    @final
+    @language_binding(FLAT_DATA)
+    struct LookupTransform_Feedback {
+      uint8 structure_needs_at_least_one_member;
+    };
+  };
+};
+};
+};

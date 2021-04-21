@@ -1,0 +1,46 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from geometry_msgs/msg/TransformStamped.msg
+// generated code does not contain a copyright notice
+
+#ifndef geometry_msgs_msg_Transform_idl
+#define geometry_msgs_msg_Transform_idl
+#include "ros2/xcdr2/geometry_msgs/msg/Transform.idl"
+#endif  // geometry_msgs_msg_Transform_idl
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
+#include "ros2/xcdr2/std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
+
+module ros2 { module xcdr2 {
+module geometry_msgs {
+  module msg {
+    
+
+
+
+
+
+
+
+
+
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct TransformStamped {
+      
+
+      xcdr2::std_msgs::msg::Header header;
+
+      
+
+      string child_frame_id;
+
+      
+
+      xcdr2::geometry_msgs::msg::Transform transform;
+    };
+  };
+};
+};
+};

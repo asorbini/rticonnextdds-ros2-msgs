@@ -1,0 +1,71 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from visualization_msgs/msg/MenuEntry.msg
+// generated code does not contain a copyright notice
+
+
+module ros2 { module flat {
+module visualization_msgs {
+  module msg {
+    module MenuEntry_Constants {
+      const uint8 FEEDBACK = 0;
+      const uint8 ROSRUN = 1;
+      const uint8 ROSLAUNCH = 2;
+    };
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct MenuEntry {
+      
+
+
+      uint32 id;
+
+      
+
+
+      uint32 parent_id;
+
+      
+
+      char title[255 + 1];
+
+      
+
+      char command[255 + 1];
+
+      uint8 command_type;
+    };
+  };
+};
+};
+};

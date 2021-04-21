@@ -1,0 +1,23 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from sensor_msgs/msg/JoyFeedbackArray.msg
+// generated code does not contain a copyright notice
+
+#ifndef sensor_msgs_msg_JoyFeedback_idl
+#define sensor_msgs_msg_JoyFeedback_idl
+#include "ros2/zc/sensor_msgs/msg/JoyFeedback.idl"
+#endif  // sensor_msgs_msg_JoyFeedback_idl
+
+module ros2 { module zc {
+module sensor_msgs {
+  module msg {
+    
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct JoyFeedbackArray {
+      zc::sensor_msgs::msg::JoyFeedback array[100];
+    };
+  };
+};
+};
+};

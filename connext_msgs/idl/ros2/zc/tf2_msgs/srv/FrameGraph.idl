@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from tf2_msgs/srv/FrameGraph.srv
+// generated code does not contain a copyright notice
+
+
+module ros2 { module zc {
+module tf2_msgs {
+  module srv {
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct FrameGraph_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct FrameGraph_Response {
+      char frame_yaml[255 + 1];
+    };
+  };
+};
+};
+};

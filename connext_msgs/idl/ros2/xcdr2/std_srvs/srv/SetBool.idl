@@ -1,0 +1,30 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from std_srvs/srv/SetBool.srv
+// generated code does not contain a copyright notice
+
+
+module ros2 { module xcdr2 {
+module std_srvs {
+  module srv {
+    @final
+    @allowed_data_representation(XCDR2)
+    struct SetBool_Request {
+      
+
+      boolean data;
+    };
+    @final
+    @allowed_data_representation(XCDR2)
+    struct SetBool_Response {
+      
+
+      boolean success;
+
+      
+
+      string message;
+    };
+  };
+};
+};
+};

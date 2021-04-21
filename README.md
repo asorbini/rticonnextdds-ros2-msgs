@@ -15,10 +15,12 @@ any Connext application.
 
 - [Use `connext_msgs` in a ROS 2 package](#use-connext_msgs-in-a-ros-2-package)
 - [Use `connext_msgs` in any DDS application](#use-connext_msgs-in-any-dds-application)
+- [Example applications](#example-applications)
 - [Included IDL files](#included-idl-files)
 - [Included packages](#included-packages)
 - [Unsupported types](#unsupported-types)
 - [Alternative message variants](#alternative-message-variants)
+- [CMake options](#cmake-options)
 - [Other useful resources](#other-useful-resources)
 
 ## Use `connext_msgs` in a ROS 2 package
@@ -135,6 +137,20 @@ its location using variable `CONNEXT_ROS2_HELPERS_DIR`.
 You can also force the library to be built in standalone mode by setting
 `MESSAGE_STANDALONE` to `true`.
 
+## Example applications
+
+Package `connext_msgs_examples` contains some example applications that link
+`connext_msgs` and use types from the library.
+
+The applications require `rmw_connextdds` to run:
+
+```sh
+source install/setup.bash
+export RMW_IMPLEMENTATION=rmw_connextdds
+ros2 run connext_msgs_examples listener &
+ros2 run connext_msgs_examples talker
+```
+
 ## Included IDL files
 
 Package `connext_msg` contains a collection of IDL files extracted from the
@@ -199,10 +215,10 @@ with cmake options (`MESSAGE_VARIANT_<NAME>`, e.g. `MESSAGE_VARIANT_FLAT`).
 All types in the variants are placed in separate packages to distinguish them
 from the originals:
 
-- `flat`: Flat-Data versions.
-- `flat_zc`: Flat-Data/Zero-Copy versions.
-- `zc`: Zero-Copy versions.
-- `xcdr2`:versions forcing use of XCDR2 serialization format.
+- `ros2::flat`: Flat-Data versions.
+- `ros2::flat_zc`: Flat-Data/Zero-Copy versions.
+- `ros2::zc`: Zero-Copy versions.
+- `ros2::xcdr2`:versions forcing use of XCDR2 serialization format.
 
 These types might not be compatible with their original versions, because of
 changes applied to them to make them conform
@@ -217,6 +233,22 @@ for strings and sequences:
   `string` (or `wstring`) will be further expanded into multi-dimensional arrays
   of `char` (or `wchar`). For example `sequence<string, 10> foo` will be converted
   into `char foo[10][MAX_STR_LEN]`. If the field is unbounded, the array will be assigned an arbitrary maximum length (by default: 100).
+
+## CMake options
+
+| Variable  | Default | Description |
+|-----------|---------|-------------|
+|`MESSAGE_BROKEN`|See `CMakeLists.txt`|List of messages that cannot be built by `rtiddsgen`|
+|`MESSAGE_EXCLUDE`|Empty list (no message)|List of messages to be excluded from the build|
+|`MESSAGE_EXCLUDE_REGEX`|`""` (no message)|Regex to match messages that should be excluded from the build|
+|`MESSAGE_INCLUDE`|Empty list (all messages)|List of messages to be included in the build|
+|`MESSAGE_INCLUDE_REGEX`|`""` (all messages)|Regex to match messages that should be included in the build|
+|`MESSAGE_PACKAGES`|Empty list (all packages)|List of packages to be included in the build|
+|`MESSAGE_VARIANT_ALL`|`OFF`|Generate all possible type variants|
+|`MESSAGE_VARIANT_FLAT`|`OFF`|Generate Flat-Data variants|
+|`MESSAGE_VARIANT_FLAT_ZC`|`OFF`|Generate Flat-Data/Zero-Copy variants|
+|`MESSAGE_VARIANT_ZC`|`OFF`|Generate Zero-Copy variants|
+|`MESSAGE_VARIANT_XCDR2`|`OFF`|Generate XCDR2 variants|
 
 
 ## Other useful resources

@@ -1,0 +1,31 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from geometry_msgs/msg/TwistWithCovariance.msg
+// generated code does not contain a copyright notice
+
+#ifndef geometry_msgs_msg_Twist_idl
+#define geometry_msgs_msg_Twist_idl
+#include "ros2/xcdr2/geometry_msgs/msg/Twist.idl"
+#endif  // geometry_msgs_msg_Twist_idl
+
+module ros2 { module xcdr2 {
+module geometry_msgs {
+  module msg {
+    
+    
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct TwistWithCovariance {
+      xcdr2::geometry_msgs::msg::Twist twist;
+
+      
+
+
+
+
+      double covariance[36];
+    };
+  };
+};
+};
+};

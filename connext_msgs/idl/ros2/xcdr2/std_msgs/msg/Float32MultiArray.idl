@@ -1,0 +1,34 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from std_msgs/msg/Float32MultiArray.msg
+// generated code does not contain a copyright notice
+
+#ifndef std_msgs_msg_MultiArrayLayout_idl
+#define std_msgs_msg_MultiArrayLayout_idl
+#include "ros2/xcdr2/std_msgs/msg/MultiArrayLayout.idl"
+#endif  // std_msgs_msg_MultiArrayLayout_idl
+
+module ros2 { module xcdr2 {
+module std_msgs {
+  module msg {
+    
+
+
+
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct Float32MultiArray {
+      
+
+
+
+      xcdr2::std_msgs::msg::MultiArrayLayout layout;
+
+      
+
+      sequence<float> data;
+    };
+  };
+};
+};
+};

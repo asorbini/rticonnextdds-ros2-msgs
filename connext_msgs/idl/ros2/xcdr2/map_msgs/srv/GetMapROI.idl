@@ -1,0 +1,32 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from map_msgs/srv/GetMapROI.srv
+// generated code does not contain a copyright notice
+
+#ifndef nav_msgs_msg_OccupancyGrid_idl
+#define nav_msgs_msg_OccupancyGrid_idl
+#include "ros2/xcdr2/nav_msgs/msg/OccupancyGrid.idl"
+#endif  // nav_msgs_msg_OccupancyGrid_idl
+
+module ros2 { module xcdr2 {
+module map_msgs {
+  module srv {
+    @final
+    @allowed_data_representation(XCDR2)
+    struct GetMapROI_Request {
+      double x;
+
+      double y;
+
+      double l_x;
+
+      double l_y;
+    };
+    @final
+    @allowed_data_representation(XCDR2)
+    struct GetMapROI_Response {
+      xcdr2::nav_msgs::msg::OccupancyGrid sub_map;
+    };
+  };
+};
+};
+};

@@ -1,0 +1,21 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from pendulum_msgs/msg/JointState.msg
+// generated code does not contain a copyright notice
+
+
+module ros2 { module flat {
+module pendulum_msgs {
+  module msg {
+    @final
+    @language_binding(FLAT_DATA)
+    struct JointState {
+      double position;
+
+      double velocity;
+
+      double effort;
+    };
+  };
+};
+};
+};

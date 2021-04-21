@@ -1,0 +1,33 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from turtlesim/action/RotateAbsolute.action
+// generated code does not contain a copyright notice
+
+
+module ros2 { module flat {
+module turtlesim {
+  module action {
+    
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct RotateAbsolute_Goal {
+      float theta;
+    };
+    @final
+    @language_binding(FLAT_DATA)
+    struct RotateAbsolute_Result {
+      
+
+      float delta;
+    };
+    @final
+    @language_binding(FLAT_DATA)
+    struct RotateAbsolute_Feedback {
+      
+
+      float remaining;
+    };
+  };
+};
+};
+};

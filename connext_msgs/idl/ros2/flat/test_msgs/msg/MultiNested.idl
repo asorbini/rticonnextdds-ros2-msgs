@@ -1,0 +1,53 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from test_msgs/msg/MultiNested.msg
+// generated code does not contain a copyright notice
+
+#ifndef test_msgs_msg_Arrays_idl
+#define test_msgs_msg_Arrays_idl
+#include "ros2/flat/test_msgs/msg/Arrays.idl"
+#endif  // test_msgs_msg_Arrays_idl
+#ifndef test_msgs_msg_BoundedSequences_idl
+#define test_msgs_msg_BoundedSequences_idl
+#include "ros2/flat/test_msgs/msg/BoundedSequences.idl"
+#endif  // test_msgs_msg_BoundedSequences_idl
+#ifndef test_msgs_msg_UnboundedSequences_idl
+#define test_msgs_msg_UnboundedSequences_idl
+#include "ros2/flat/test_msgs/msg/UnboundedSequences.idl"
+#endif  // test_msgs_msg_UnboundedSequences_idl
+
+module ros2 { module flat {
+module test_msgs {
+  module msg {
+    typedef flat::test_msgs::msg::Arrays test_msgs__msg__Arrays;
+    typedef test_msgs__msg__Arrays test_msgs__msg__Arrays__3[3];
+    typedef flat::test_msgs::msg::BoundedSequences test_msgs__msg__BoundedSequences;
+    typedef test_msgs__msg__BoundedSequences test_msgs__msg__BoundedSequences__3[3];
+    typedef flat::test_msgs::msg::UnboundedSequences test_msgs__msg__UnboundedSequences;
+    typedef test_msgs__msg__UnboundedSequences test_msgs__msg__UnboundedSequences__3[3];
+    
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct MultiNested {
+      test_msgs__msg__Arrays__3 array_of_arrays;
+
+      test_msgs__msg__BoundedSequences__3 array_of_bounded_sequences;
+
+      test_msgs__msg__UnboundedSequences__3 array_of_unbounded_sequences;
+
+      flat::test_msgs::msg::Arrays bounded_sequence_of_arrays[ 3];
+
+      flat::test_msgs::msg::BoundedSequences bounded_sequence_of_bounded_sequences[ 3];
+
+      flat::test_msgs::msg::UnboundedSequences bounded_sequence_of_unbounded_sequences[ 3];
+
+      flat::test_msgs::msg::Arrays unbounded_sequence_of_arrays[100];
+
+      flat::test_msgs::msg::BoundedSequences unbounded_sequence_of_bounded_sequences[100];
+
+      flat::test_msgs::msg::UnboundedSequences unbounded_sequence_of_unbounded_sequences[100];
+    };
+  };
+};
+};
+};

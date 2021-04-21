@@ -1,0 +1,77 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from composition_interfaces/srv/LoadNode.srv
+// generated code does not contain a copyright notice
+
+#ifndef rcl_interfaces_msg_Parameter_idl
+#define rcl_interfaces_msg_Parameter_idl
+#include "ros2/xcdr2/rcl_interfaces/msg/Parameter.idl"
+#endif  // rcl_interfaces_msg_Parameter_idl
+
+module ros2 { module xcdr2 {
+module composition_interfaces {
+  module srv {
+    
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct LoadNode_Request {
+      string package_name;
+
+      
+
+      string plugin_name;
+
+      
+
+
+      string node_name;
+
+      
+
+
+      string node_namespace;
+
+      
+
+
+      uint8 log_level;
+
+      
+
+
+
+
+
+      sequence<string> remap_rules;
+
+      
+
+      sequence<xcdr2::rcl_interfaces::msg::Parameter> parameters;
+
+      
+
+      sequence<xcdr2::rcl_interfaces::msg::Parameter> extra_arguments;
+    };
+    
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct LoadNode_Response {
+      boolean success;
+
+      
+
+      string error_message;
+
+      
+
+      string full_node_name;
+
+      
+
+      uint64 unique_id;
+    };
+  };
+};
+};
+};

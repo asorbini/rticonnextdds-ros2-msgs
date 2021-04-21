@@ -1,0 +1,23 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from diagnostic_msgs/msg/KeyValue.msg
+// generated code does not contain a copyright notice
+
+
+module ros2 { module xcdr2 {
+module diagnostic_msgs {
+  module msg {
+    
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct KeyValue {
+      string key;
+
+      
+
+      string value;
+    };
+  };
+};
+};
+};

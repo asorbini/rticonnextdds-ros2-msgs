@@ -1,0 +1,30 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from std_srvs/srv/Trigger.srv
+// generated code does not contain a copyright notice
+
+
+module ros2 { module flat_zc {
+module std_srvs {
+  module srv {
+    @final
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct Trigger_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    @final
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct Trigger_Response {
+      
+
+      boolean success;
+
+      
+
+      char message[255 + 1];
+    };
+  };
+};
+};
+};
