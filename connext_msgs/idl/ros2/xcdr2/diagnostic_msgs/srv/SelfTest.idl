@@ -7,8 +7,7 @@
 #include "ros2/xcdr2/diagnostic_msgs/msg/DiagnosticStatus.idl"
 #endif  // diagnostic_msgs_msg_DiagnosticStatus_idl
 
-module ros2 { module xcdr2 {
-module diagnostic_msgs {
+module ros2 { module xcdr2 { module diagnostic_msgs {
   module srv {
     @final
     @allowed_data_representation(XCDR2)
@@ -22,9 +21,7 @@ module diagnostic_msgs {
 
       octet passed;
 
-      sequence<xcdr2::diagnostic_msgs::msg::DiagnosticStatus> status;
+      sequence<ros2::xcdr2::diagnostic_msgs::msg::DiagnosticStatus> status;
     };
   };
-};
-};
-};
+}; }; };

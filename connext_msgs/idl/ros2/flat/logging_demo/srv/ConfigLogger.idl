@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat {
-module logging_demo {
+module ros2 { module flat { module logging_demo {
   module srv {
     @final
     @language_binding(FLAT_DATA)
@@ -19,6 +18,4 @@ module logging_demo {
       boolean success;
     };
   };
-};
-};
-};
+}; }; };

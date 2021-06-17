@@ -7,8 +7,7 @@
 #include "ros2/flat/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module flat {
-module sensor_msgs {
+module ros2 { module flat { module sensor_msgs {
   module msg {
     
 
@@ -17,7 +16,7 @@ module sensor_msgs {
     struct Joy {
       
 
-      flat::std_msgs::msg::Header header;
+      ros2::flat::std_msgs::msg::Header header;
 
       
 
@@ -28,6 +27,4 @@ module sensor_msgs {
       int32 buttons[100];
     };
   };
-};
-};
-};
+}; }; };

@@ -7,8 +7,7 @@
 #include "ros2/flat/visualization_msgs/msg/InteractiveMarker.idl"
 #endif  // visualization_msgs_msg_InteractiveMarker_idl
 
-module ros2 { module flat {
-module visualization_msgs {
+module ros2 { module flat { module visualization_msgs {
   module msg {
     
 
@@ -29,9 +28,7 @@ module visualization_msgs {
 
       
 
-      flat::visualization_msgs::msg::InteractiveMarker markers[100];
+      ros2::flat::visualization_msgs::msg::InteractiveMarker markers[100];
     };
   };
-};
-};
-};
+}; }; };

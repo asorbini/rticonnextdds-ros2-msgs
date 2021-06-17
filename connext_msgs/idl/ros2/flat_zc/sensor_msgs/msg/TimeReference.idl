@@ -11,29 +11,26 @@
 #include "ros2/flat_zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module flat_zc {
-module sensor_msgs {
+module ros2 { module flat_zc { module sensor_msgs {
   module msg {
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct TimeReference {
       
 
 
-      flat_zc::std_msgs::msg::Header header;
+      ros2::flat_zc::std_msgs::msg::Header header;
 
       
 
-      flat_zc::builtin_interfaces::msg::Time time_ref;
+      ros2::flat_zc::builtin_interfaces::msg::Time time_ref;
 
       
 
-      char source[255 + 1];
+      string<255> source;
     };
   };
-};
-};
-};
+}; }; };

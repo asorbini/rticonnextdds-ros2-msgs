@@ -11,8 +11,7 @@
 #include "ros2/zc/visualization_msgs/msg/Marker.idl"
 #endif  // visualization_msgs_msg_Marker_idl
 
-module ros2 { module zc {
-module visualization_msgs {
+module ros2 { module zc { module visualization_msgs {
   module msg {
     module InteractiveMarkerControl_Constants {
       const uint8 INHERIT = 0;
@@ -44,7 +43,7 @@ module visualization_msgs {
 
 
 
-      zc::geometry_msgs::msg::Quaternion orientation;
+      ros2::zc::geometry_msgs::msg::Quaternion orientation;
 
       uint8 orientation_mode;
 
@@ -64,7 +63,7 @@ module visualization_msgs {
 
 
 
-      zc::visualization_msgs::msg::Marker markers[100];
+      ros2::zc::visualization_msgs::msg::Marker markers[100];
 
       
 
@@ -79,6 +78,4 @@ module visualization_msgs {
       char description[255 + 1];
     };
   };
-};
-};
-};
+}; }; };

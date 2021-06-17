@@ -7,17 +7,14 @@
 #include "ros2/xcdr2/action_msgs/msg/GoalStatus.idl"
 #endif  // action_msgs_msg_GoalStatus_idl
 
-module ros2 { module xcdr2 {
-module action_msgs {
+module ros2 { module xcdr2 { module action_msgs {
   module msg {
     
 
     @final
     @allowed_data_representation(XCDR2)
     struct GoalStatusArray {
-      sequence<xcdr2::action_msgs::msg::GoalStatus> status_list;
+      sequence<ros2::xcdr2::action_msgs::msg::GoalStatus> status_list;
     };
   };
-};
-};
-};
+}; }; };

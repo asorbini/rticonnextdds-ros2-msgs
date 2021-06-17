@@ -7,8 +7,7 @@
 #include "ros2/flat/builtin_interfaces/msg/Time.idl"
 #endif  // builtin_interfaces_msg_Time_idl
 
-module ros2 { module flat {
-module actionlib_msgs {
+module ros2 { module flat { module actionlib_msgs {
   module msg {
     @final
     @language_binding(FLAT_DATA)
@@ -17,7 +16,7 @@ module actionlib_msgs {
 
 
 
-      flat::builtin_interfaces::msg::Time stamp;
+      ros2::flat::builtin_interfaces::msg::Time stamp;
 
       
 
@@ -26,6 +25,4 @@ module actionlib_msgs {
       char id[255 + 1];
     };
   };
-};
-};
-};
+}; }; };

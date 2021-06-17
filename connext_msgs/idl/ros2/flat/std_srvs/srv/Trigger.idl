@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat {
-module std_srvs {
+module ros2 { module flat { module std_srvs {
   module srv {
     @final
     @language_binding(FLAT_DATA)
@@ -23,6 +22,4 @@ module std_srvs {
       char message[255 + 1];
     };
   };
-};
-};
-};
+}; }; };

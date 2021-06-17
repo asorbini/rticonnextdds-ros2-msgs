@@ -7,30 +7,29 @@
 #include "ros2/flat_zc/rcl_interfaces/msg/Parameter.idl"
 #endif  // rcl_interfaces_msg_Parameter_idl
 
-module ros2 { module flat_zc {
-module composition_interfaces {
+module ros2 { module flat_zc { module composition_interfaces {
   module srv {
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct LoadNode_Request {
-      char package_name[255 + 1];
+      string<255> package_name;
 
       
 
-      char plugin_name[255 + 1];
-
-      
-
-
-      char node_name[255 + 1];
+      string<255> plugin_name;
 
       
 
 
-      char node_namespace[255 + 1];
+      string<255> node_name;
+
+      
+
+
+      string<255> node_namespace;
 
       
 
@@ -43,19 +42,19 @@ module composition_interfaces {
 
 
 
-      char remap_rules[100][255 + 1];
+      sequence<string<255>, 100> remap_rules;
 
       
 
-      flat_zc::rcl_interfaces::msg::Parameter parameters[100];
+      sequence<ros2::flat_zc::rcl_interfaces::msg::Parameter, 100> parameters;
 
       
 
-      flat_zc::rcl_interfaces::msg::Parameter extra_arguments[100];
+      sequence<ros2::flat_zc::rcl_interfaces::msg::Parameter, 100> extra_arguments;
     };
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct LoadNode_Response {
@@ -63,17 +62,15 @@ module composition_interfaces {
 
       
 
-      char error_message[255 + 1];
+      string<255> error_message;
 
       
 
-      char full_node_name[255 + 1];
+      string<255> full_node_name;
 
       
 
       uint64 unique_id;
     };
   };
-};
-};
-};
+}; }; };

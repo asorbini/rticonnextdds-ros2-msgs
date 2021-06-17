@@ -15,8 +15,7 @@
 #include "ros2/zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module zc {
-module sensor_msgs {
+module ros2 { module zc { module sensor_msgs {
   module msg {
     
     
@@ -36,27 +35,25 @@ module sensor_msgs {
     @final
     @transfer_mode(SHMEM_REF)
     struct Imu {
-      zc::std_msgs::msg::Header header;
+      ros2::zc::std_msgs::msg::Header header;
 
-      zc::geometry_msgs::msg::Quaternion orientation;
+      ros2::zc::geometry_msgs::msg::Quaternion orientation;
 
       
 
       double orientation_covariance[9];
 
-      zc::geometry_msgs::msg::Vector3 angular_velocity;
+      ros2::zc::geometry_msgs::msg::Vector3 angular_velocity;
 
       
 
       double angular_velocity_covariance[9];
 
-      zc::geometry_msgs::msg::Vector3 linear_acceleration;
+      ros2::zc::geometry_msgs::msg::Vector3 linear_acceleration;
 
       
 
       double linear_acceleration_covariance[9];
     };
   };
-};
-};
-};
+}; }; };

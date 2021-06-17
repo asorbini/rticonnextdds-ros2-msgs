@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module xcdr2 {
-module shape_msgs {
+module ros2 { module xcdr2 { module shape_msgs {
   module msg {
     
     
@@ -20,6 +19,4 @@ module shape_msgs {
       double coef[4];
     };
   };
-};
-};
-};
+}; }; };

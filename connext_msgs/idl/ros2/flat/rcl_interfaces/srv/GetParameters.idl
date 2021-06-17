@@ -7,8 +7,7 @@
 #include "ros2/flat/rcl_interfaces/msg/ParameterValue.idl"
 #endif  // rcl_interfaces_msg_ParameterValue_idl
 
-module ros2 { module flat {
-module rcl_interfaces {
+module ros2 { module flat { module rcl_interfaces {
   module srv {
     
 
@@ -31,9 +30,7 @@ module rcl_interfaces {
     @final
     @language_binding(FLAT_DATA)
     struct GetParameters_Response {
-      flat::rcl_interfaces::msg::ParameterValue values[100];
+      ros2::flat::rcl_interfaces::msg::ParameterValue values[100];
     };
   };
-};
-};
-};
+}; }; };

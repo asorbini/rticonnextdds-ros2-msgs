@@ -11,8 +11,7 @@
 #include "ros2/xcdr2/visualization_msgs/msg/InteractiveMarkerPose.idl"
 #endif  // visualization_msgs_msg_InteractiveMarkerPose_idl
 
-module ros2 { module xcdr2 {
-module visualization_msgs {
+module ros2 { module xcdr2 { module visualization_msgs {
   module msg {
     module InteractiveMarkerUpdate_Constants {
       const uint8 KEEP_ALIVE = 0;
@@ -37,17 +36,15 @@ module visualization_msgs {
 
 
 
-      sequence<xcdr2::visualization_msgs::msg::InteractiveMarker> markers;
+      sequence<ros2::xcdr2::visualization_msgs::msg::InteractiveMarker> markers;
 
       
 
-      sequence<xcdr2::visualization_msgs::msg::InteractiveMarkerPose> poses;
+      sequence<ros2::xcdr2::visualization_msgs::msg::InteractiveMarkerPose> poses;
 
       
 
       sequence<string> erases;
     };
   };
-};
-};
-};
+}; }; };

@@ -7,8 +7,7 @@
 #include "ros2/zc/builtin_interfaces/msg/Time.idl"
 #endif  // builtin_interfaces_msg_Time_idl
 
-module ros2 { module zc {
-module rosgraph_msgs {
+module ros2 { module zc { module rosgraph_msgs {
   module msg {
     
 
@@ -17,9 +16,7 @@ module rosgraph_msgs {
     @final
     @transfer_mode(SHMEM_REF)
     struct Clock {
-      zc::builtin_interfaces::msg::Time clock;
+      ros2::zc::builtin_interfaces::msg::Time clock;
     };
   };
-};
-};
-};
+}; }; };

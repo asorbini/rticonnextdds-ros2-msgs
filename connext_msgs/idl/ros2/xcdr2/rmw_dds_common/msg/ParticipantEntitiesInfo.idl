@@ -11,17 +11,14 @@
 #include "ros2/xcdr2/rmw_dds_common/msg/NodeEntitiesInfo.idl"
 #endif  // rmw_dds_common_msg_NodeEntitiesInfo_idl
 
-module ros2 { module xcdr2 {
-module rmw_dds_common {
+module ros2 { module xcdr2 { module rmw_dds_common {
   module msg {
     @final
     @allowed_data_representation(XCDR2)
     struct ParticipantEntitiesInfo {
-      xcdr2::rmw_dds_common::msg::Gid gid;
+      ros2::xcdr2::rmw_dds_common::msg::Gid gid;
 
-      sequence<xcdr2::rmw_dds_common::msg::NodeEntitiesInfo> node_entities_info_seq;
+      sequence<ros2::xcdr2::rmw_dds_common::msg::NodeEntitiesInfo> node_entities_info_seq;
     };
   };
-};
-};
-};
+}; }; };

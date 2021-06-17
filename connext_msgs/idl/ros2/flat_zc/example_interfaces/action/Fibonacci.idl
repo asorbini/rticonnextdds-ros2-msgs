@@ -3,34 +3,31 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module example_interfaces {
+module ros2 { module flat_zc { module example_interfaces {
   module action {
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct Fibonacci_Goal {
       int32 order;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct Fibonacci_Result {
       
 
-      int32 sequence[100];
+      sequence<int32, 100> sequence;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct Fibonacci_Feedback {
       
 
-      int32 sequence[100];
+      sequence<int32, 100> sequence;
     };
   };
-};
-};
-};
+}; }; };

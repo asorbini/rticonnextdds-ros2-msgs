@@ -11,8 +11,7 @@
 #include "ros2/xcdr2/shape_msgs/msg/MeshTriangle.idl"
 #endif  // shape_msgs_msg_MeshTriangle_idl
 
-module ros2 { module xcdr2 {
-module shape_msgs {
+module ros2 { module xcdr2 { module shape_msgs {
   module msg {
     
 
@@ -21,13 +20,11 @@ module shape_msgs {
     struct Mesh {
       
 
-      sequence<xcdr2::shape_msgs::msg::MeshTriangle> triangles;
+      sequence<ros2::xcdr2::shape_msgs::msg::MeshTriangle> triangles;
 
       
 
-      sequence<xcdr2::geometry_msgs::msg::Point> vertices;
+      sequence<ros2::xcdr2::geometry_msgs::msg::Point> vertices;
     };
   };
-};
-};
-};
+}; }; };

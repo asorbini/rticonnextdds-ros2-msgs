@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module zc {
-module turtlesim {
+module ros2 { module zc { module turtlesim {
   module action {
     
 
@@ -28,6 +27,4 @@ module turtlesim {
       float remaining;
     };
   };
-};
-};
-};
+}; }; };

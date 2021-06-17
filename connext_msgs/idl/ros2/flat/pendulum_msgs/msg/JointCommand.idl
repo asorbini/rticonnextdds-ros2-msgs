@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat {
-module pendulum_msgs {
+module ros2 { module flat { module pendulum_msgs {
   module msg {
     @final
     @language_binding(FLAT_DATA)
@@ -12,6 +11,4 @@ module pendulum_msgs {
       double position;
     };
   };
-};
-};
-};
+}; }; };

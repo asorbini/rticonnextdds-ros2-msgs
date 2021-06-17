@@ -27,8 +27,7 @@
 #include "ros2/flat_zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module flat_zc {
-module visualization_msgs {
+module ros2 { module flat_zc { module visualization_msgs {
   module msg {
     module Marker_Constants {
       const int32 ARROW = 0;
@@ -54,18 +53,18 @@ module visualization_msgs {
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct Marker {
       
 
-      flat_zc::std_msgs::msg::Header header;
+      ros2::flat_zc::std_msgs::msg::Header header;
 
       
 
 
-      char ns[255 + 1];
+      string<255> ns;
 
       
 
@@ -85,21 +84,21 @@ module visualization_msgs {
 
       
 
-      flat_zc::geometry_msgs::msg::Pose pose;
+      ros2::flat_zc::geometry_msgs::msg::Pose pose;
 
       
 
-      flat_zc::geometry_msgs::msg::Vector3 scale;
+      ros2::flat_zc::geometry_msgs::msg::Vector3 scale;
 
       
 
       
-      flat_zc::std_msgs::msg::ColorRGBA color;
+      ros2::flat_zc::std_msgs::msg::ColorRGBA color;
 
       
 
 
-      flat_zc::builtin_interfaces::msg::Duration lifetime;
+      ros2::flat_zc::builtin_interfaces::msg::Duration lifetime;
 
       
 
@@ -107,25 +106,23 @@ module visualization_msgs {
 
       
 
-      flat_zc::geometry_msgs::msg::Point points[100];
+      sequence<ros2::flat_zc::geometry_msgs::msg::Point, 100> points;
 
       
 
 
 
-      flat_zc::std_msgs::msg::ColorRGBA colors[100];
+      sequence<ros2::flat_zc::std_msgs::msg::ColorRGBA, 100> colors;
 
       
 
-      char text[255 + 1];
+      string<255> text;
 
       
 
-      char mesh_resource[255 + 1];
+      string<255> mesh_resource;
 
       boolean mesh_use_embedded_materials;
     };
   };
-};
-};
-};
+}; }; };

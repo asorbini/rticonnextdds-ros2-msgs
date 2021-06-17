@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module geometry_msgs {
+module ros2 { module flat_zc { module geometry_msgs {
   module msg {
     
 
@@ -14,7 +13,7 @@ module geometry_msgs {
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct Point32 {
@@ -25,6 +24,4 @@ module geometry_msgs {
       float z;
     };
   };
-};
-};
-};
+}; }; };

@@ -19,8 +19,7 @@
 #include "ros2/xcdr2/visualization_msgs/msg/MenuEntry.idl"
 #endif  // visualization_msgs_msg_MenuEntry_idl
 
-module ros2 { module xcdr2 {
-module visualization_msgs {
+module ros2 { module xcdr2 { module visualization_msgs {
   module msg {
     
 
@@ -32,11 +31,11 @@ module visualization_msgs {
     @final
     @allowed_data_representation(XCDR2)
     struct InteractiveMarker {
-      xcdr2::std_msgs::msg::Header header;
+      ros2::xcdr2::std_msgs::msg::Header header;
 
       
 
-      xcdr2::geometry_msgs::msg::Pose pose;
+      ros2::xcdr2::geometry_msgs::msg::Pose pose;
 
       
 
@@ -53,13 +52,11 @@ module visualization_msgs {
 
       
 
-      sequence<xcdr2::visualization_msgs::msg::MenuEntry> menu_entries;
+      sequence<ros2::xcdr2::visualization_msgs::msg::MenuEntry> menu_entries;
 
       
 
-      sequence<xcdr2::visualization_msgs::msg::InteractiveMarkerControl> controls;
+      sequence<ros2::xcdr2::visualization_msgs::msg::InteractiveMarkerControl> controls;
     };
   };
-};
-};
-};
+}; }; };

@@ -293,7 +293,11 @@ connext_generate_typesupport_library(${LIB_NAME}
   ZEROCOPY
   SERVER
   WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/idl
-  EXPORT_TYPES_LIST MESSAGE_TYPES)
+  EXPORT_TYPES_LIST MESSAGE_TYPES
+  # Avoid adding each file's directory to the include path,
+  # since we don't need it and it might end up generating
+  # too long a command line which can't be parsed by `rtiddsgen`.
+  NO_DEFAULT_INCLUDES)
 
 if(NOT MESSAGE_STANDALONE)
   ament_export_libraries(${PROJECT_NAME})

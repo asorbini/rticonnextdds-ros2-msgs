@@ -7,8 +7,7 @@
 #include "ros2/xcdr2/nav_msgs/msg/OccupancyGrid.idl"
 #endif  // nav_msgs_msg_OccupancyGrid_idl
 
-module ros2 { module xcdr2 {
-module nav_msgs {
+module ros2 { module xcdr2 { module nav_msgs {
   module srv {
     
 
@@ -22,9 +21,7 @@ module nav_msgs {
     @final
     @allowed_data_representation(XCDR2)
     struct GetMap_Response {
-      xcdr2::nav_msgs::msg::OccupancyGrid map;
+      ros2::xcdr2::nav_msgs::msg::OccupancyGrid map;
     };
   };
-};
-};
-};
+}; }; };

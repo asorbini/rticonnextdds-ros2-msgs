@@ -3,10 +3,9 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module test_msgs {
+module ros2 { module flat_zc { module test_msgs {
   module srv {
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct BasicTypes_Request {
@@ -36,9 +35,9 @@ module test_msgs {
 
       uint64 uint64_value;
 
-      char string_value[255 + 1];
+      string<255> string_value;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct BasicTypes_Response {
@@ -68,9 +67,7 @@ module test_msgs {
 
       uint64 uint64_value;
 
-      char string_value[255 + 1];
+      string<255> string_value;
     };
   };
-};
-};
-};
+}; }; };

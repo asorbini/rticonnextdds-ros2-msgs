@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module xcdr2 {
-module turtlesim {
+module ros2 { module xcdr2 { module turtlesim {
   module srv {
     @final
     @allowed_data_representation(XCDR2)
@@ -19,6 +18,4 @@ module turtlesim {
       uint8 structure_needs_at_least_one_member;
     };
   };
-};
-};
-};
+}; }; };

@@ -15,29 +15,26 @@
 #include "ros2/xcdr2/geometry_msgs/msg/Twist.idl"
 #endif  // geometry_msgs_msg_Twist_idl
 
-module ros2 { module xcdr2 {
-module trajectory_msgs {
+module ros2 { module xcdr2 { module trajectory_msgs {
   module msg {
     
 
     @final
     @allowed_data_representation(XCDR2)
     struct MultiDOFJointTrajectoryPoint {
-      sequence<xcdr2::geometry_msgs::msg::Transform> transforms;
+      sequence<ros2::xcdr2::geometry_msgs::msg::Transform> transforms;
 
       
 
-      sequence<xcdr2::geometry_msgs::msg::Twist> velocities;
+      sequence<ros2::xcdr2::geometry_msgs::msg::Twist> velocities;
 
       
 
-      sequence<xcdr2::geometry_msgs::msg::Twist> accelerations;
+      sequence<ros2::xcdr2::geometry_msgs::msg::Twist> accelerations;
 
       
 
-      xcdr2::builtin_interfaces::msg::Duration time_from_start;
+      ros2::xcdr2::builtin_interfaces::msg::Duration time_from_start;
     };
   };
-};
-};
-};
+}; }; };

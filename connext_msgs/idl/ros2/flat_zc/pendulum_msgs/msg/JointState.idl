@@ -3,10 +3,9 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module pendulum_msgs {
+module ros2 { module flat_zc { module pendulum_msgs {
   module msg {
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct JointState {
@@ -17,6 +16,4 @@ module pendulum_msgs {
       double effort;
     };
   };
-};
-};
-};
+}; }; };

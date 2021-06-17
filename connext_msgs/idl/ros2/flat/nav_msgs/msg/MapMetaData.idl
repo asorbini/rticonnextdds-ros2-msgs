@@ -11,8 +11,7 @@
 #include "ros2/flat/geometry_msgs/msg/Pose.idl"
 #endif  // geometry_msgs_msg_Pose_idl
 
-module ros2 { module flat {
-module nav_msgs {
+module ros2 { module flat { module nav_msgs {
   module msg {
     
 
@@ -21,7 +20,7 @@ module nav_msgs {
     struct MapMetaData {
       
 
-      flat::builtin_interfaces::msg::Time map_load_time;
+      ros2::flat::builtin_interfaces::msg::Time map_load_time;
 
       
 
@@ -41,9 +40,7 @@ module nav_msgs {
       
 
 
-      flat::geometry_msgs::msg::Pose origin;
+      ros2::flat::geometry_msgs::msg::Pose origin;
     };
   };
-};
-};
-};
+}; }; };

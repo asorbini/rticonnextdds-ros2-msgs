@@ -19,8 +19,7 @@
 #include "ros2/flat/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module flat {
-module visualization_msgs {
+module ros2 { module flat { module visualization_msgs {
   module msg {
     module ImageMarker_Constants {
       const int32 CIRCLE = 0;
@@ -34,7 +33,7 @@ module visualization_msgs {
     @final
     @language_binding(FLAT_DATA)
     struct ImageMarker {
-      flat::std_msgs::msg::Header header;
+      ros2::flat::std_msgs::msg::Header header;
 
       
 
@@ -54,7 +53,7 @@ module visualization_msgs {
 
       
 
-      flat::geometry_msgs::msg::Point position;
+      ros2::flat::geometry_msgs::msg::Point position;
 
       
 
@@ -62,7 +61,7 @@ module visualization_msgs {
 
       
 
-      flat::std_msgs::msg::ColorRGBA outline_color;
+      ros2::flat::std_msgs::msg::ColorRGBA outline_color;
 
       
 
@@ -71,22 +70,20 @@ module visualization_msgs {
       
 
       
-      flat::std_msgs::msg::ColorRGBA fill_color;
+      ros2::flat::std_msgs::msg::ColorRGBA fill_color;
 
       
 
 
-      flat::builtin_interfaces::msg::Duration lifetime;
+      ros2::flat::builtin_interfaces::msg::Duration lifetime;
 
       
 
-      flat::geometry_msgs::msg::Point points[100];
+      ros2::flat::geometry_msgs::msg::Point points[100];
 
       
 
-      flat::std_msgs::msg::ColorRGBA outline_colors[100];
+      ros2::flat::std_msgs::msg::ColorRGBA outline_colors[100];
     };
   };
-};
-};
-};
+}; }; };

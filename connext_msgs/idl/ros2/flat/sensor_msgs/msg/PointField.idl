@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat {
-module sensor_msgs {
+module ros2 { module flat { module sensor_msgs {
   module msg {
     module PointField_Constants {
       const uint8 INT8 = 1;
@@ -40,6 +39,4 @@ module sensor_msgs {
       uint32 count;
     };
   };
-};
-};
-};
+}; }; };

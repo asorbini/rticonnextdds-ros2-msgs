@@ -7,8 +7,7 @@
 #include "ros2/xcdr2/example_interfaces/msg/MultiArrayDimension.idl"
 #endif  // example_interfaces_msg_MultiArrayDimension_idl
 
-module ros2 { module xcdr2 {
-module example_interfaces {
+module ros2 { module xcdr2 { module example_interfaces {
   module msg {
     
 
@@ -42,13 +41,11 @@ module example_interfaces {
 
 
 
-      sequence<xcdr2::example_interfaces::msg::MultiArrayDimension> dim;
+      sequence<ros2::xcdr2::example_interfaces::msg::MultiArrayDimension> dim;
 
       
 
       uint32 data_offset;
     };
   };
-};
-};
-};
+}; }; };

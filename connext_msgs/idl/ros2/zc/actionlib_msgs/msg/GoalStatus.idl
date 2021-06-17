@@ -7,8 +7,7 @@
 #include "ros2/zc/actionlib_msgs/msg/GoalID.idl"
 #endif  // actionlib_msgs_msg_GoalID_idl
 
-module ros2 { module zc {
-module actionlib_msgs {
+module ros2 { module zc { module actionlib_msgs {
   module msg {
     module GoalStatus_Constants {
       const uint8 PENDING = 0;
@@ -25,7 +24,7 @@ module actionlib_msgs {
     @final
     @transfer_mode(SHMEM_REF)
     struct GoalStatus {
-      zc::actionlib_msgs::msg::GoalID goal_id;
+      ros2::zc::actionlib_msgs::msg::GoalID goal_id;
 
       uint8 status;
 
@@ -34,6 +33,4 @@ module actionlib_msgs {
       char text[255 + 1];
     };
   };
-};
-};
-};
+}; }; };

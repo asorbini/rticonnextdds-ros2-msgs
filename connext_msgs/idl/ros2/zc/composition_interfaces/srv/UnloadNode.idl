@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module zc {
-module composition_interfaces {
+module ros2 { module zc { module composition_interfaces {
   module srv {
     
 
@@ -25,6 +24,4 @@ module composition_interfaces {
       char error_message[255 + 1];
     };
   };
-};
-};
-};
+}; }; };

@@ -11,8 +11,7 @@
 #include "ros2/xcdr2/rcl_interfaces/msg/Parameter.idl"
 #endif  // rcl_interfaces_msg_Parameter_idl
 
-module ros2 { module xcdr2 {
-module rcl_interfaces {
+module ros2 { module xcdr2 { module rcl_interfaces {
   module msg {
     
 
@@ -23,7 +22,7 @@ module rcl_interfaces {
     struct ParameterEvent {
       
 
-      xcdr2::builtin_interfaces::msg::Time stamp;
+      ros2::xcdr2::builtin_interfaces::msg::Time stamp;
 
       
 
@@ -31,17 +30,15 @@ module rcl_interfaces {
 
       
 
-      sequence<xcdr2::rcl_interfaces::msg::Parameter> new_parameters;
+      sequence<ros2::xcdr2::rcl_interfaces::msg::Parameter> new_parameters;
 
       
 
-      sequence<xcdr2::rcl_interfaces::msg::Parameter> changed_parameters;
+      sequence<ros2::xcdr2::rcl_interfaces::msg::Parameter> changed_parameters;
 
       
 
-      sequence<xcdr2::rcl_interfaces::msg::Parameter> deleted_parameters;
+      sequence<ros2::xcdr2::rcl_interfaces::msg::Parameter> deleted_parameters;
     };
   };
-};
-};
-};
+}; }; };

@@ -3,12 +3,11 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module composition_interfaces {
+module ros2 { module flat_zc { module composition_interfaces {
   module srv {
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct UnloadNode_Request {
@@ -16,7 +15,7 @@ module composition_interfaces {
     };
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct UnloadNode_Response {
@@ -24,9 +23,7 @@ module composition_interfaces {
 
       
 
-      char error_message[255 + 1];
+      string<255> error_message;
     };
   };
-};
-};
-};
+}; }; };

@@ -15,46 +15,43 @@
 #include "ros2/flat_zc/test_msgs/msg/Builtins.idl"
 #endif  // test_msgs_msg_Builtins_idl
 
-module ros2 { module flat_zc {
-module test_msgs {
+module ros2 { module flat_zc { module test_msgs {
   module action {
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct NestedMessage_Goal {
-      flat_zc::test_msgs::msg::Builtins nested_field_no_pkg;
+      ros2::flat_zc::test_msgs::msg::Builtins nested_field_no_pkg;
 
-      flat_zc::test_msgs::msg::BasicTypes nested_field;
+      ros2::flat_zc::test_msgs::msg::BasicTypes nested_field;
 
-      flat_zc::builtin_interfaces::msg::Time nested_different_pkg;
+      ros2::flat_zc::builtin_interfaces::msg::Time nested_different_pkg;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct NestedMessage_Result {
       
 
-      flat_zc::test_msgs::msg::Builtins nested_field_no_pkg;
+      ros2::flat_zc::test_msgs::msg::Builtins nested_field_no_pkg;
 
-      flat_zc::test_msgs::msg::BasicTypes nested_field;
+      ros2::flat_zc::test_msgs::msg::BasicTypes nested_field;
 
-      flat_zc::builtin_interfaces::msg::Time nested_different_pkg;
+      ros2::flat_zc::builtin_interfaces::msg::Time nested_different_pkg;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct NestedMessage_Feedback {
       
 
-      flat_zc::test_msgs::msg::Builtins nested_field_no_pkg;
+      ros2::flat_zc::test_msgs::msg::Builtins nested_field_no_pkg;
 
-      flat_zc::test_msgs::msg::BasicTypes nested_field;
+      ros2::flat_zc::test_msgs::msg::BasicTypes nested_field;
 
-      flat_zc::builtin_interfaces::msg::Time nested_different_pkg;
+      ros2::flat_zc::builtin_interfaces::msg::Time nested_different_pkg;
     };
   };
-};
-};
-};
+}; }; };

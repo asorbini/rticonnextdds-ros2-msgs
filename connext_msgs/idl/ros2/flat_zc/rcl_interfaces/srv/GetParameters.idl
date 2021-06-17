@@ -7,8 +7,7 @@
 #include "ros2/flat_zc/rcl_interfaces/msg/ParameterValue.idl"
 #endif  // rcl_interfaces_msg_ParameterValue_idl
 
-module ros2 { module flat_zc {
-module rcl_interfaces {
+module ros2 { module flat_zc { module rcl_interfaces {
   module srv {
     
 
@@ -17,25 +16,23 @@ module rcl_interfaces {
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct GetParameters_Request {
       
 
-      char names[100][255 + 1];
+      sequence<string<255>, 100> names;
     };
     
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct GetParameters_Response {
-      flat_zc::rcl_interfaces::msg::ParameterValue values[100];
+      sequence<ros2::flat_zc::rcl_interfaces::msg::ParameterValue, 100> values;
     };
   };
-};
-};
-};
+}; }; };

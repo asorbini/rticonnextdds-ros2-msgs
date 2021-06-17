@@ -11,19 +11,18 @@
 #include "ros2/zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module zc {
-module visualization_msgs {
+module ros2 { module zc { module visualization_msgs {
   module msg {
     @final
     @transfer_mode(SHMEM_REF)
     struct InteractiveMarkerPose {
       
 
-      zc::std_msgs::msg::Header header;
+      ros2::zc::std_msgs::msg::Header header;
 
       
 
-      zc::geometry_msgs::msg::Pose pose;
+      ros2::zc::geometry_msgs::msg::Pose pose;
 
       
 
@@ -31,6 +30,4 @@ module visualization_msgs {
       char name[255 + 1];
     };
   };
-};
-};
-};
+}; }; };

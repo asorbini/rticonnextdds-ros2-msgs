@@ -15,8 +15,7 @@
 #include "ros2/zc/test_msgs/msg/Defaults.idl"
 #endif  // test_msgs_msg_Defaults_idl
 
-module ros2 { module zc {
-module test_msgs {
+module ros2 { module zc { module test_msgs {
   module srv {
     
     
@@ -31,11 +30,11 @@ module test_msgs {
     
     
     
-    typedef zc::test_msgs::msg::BasicTypes test_msgs__msg__BasicTypes;
+    typedef ros2::zc::test_msgs::msg::BasicTypes test_msgs__msg__BasicTypes;
     typedef test_msgs__msg__BasicTypes test_msgs__msg__BasicTypes__3[3];
-    typedef zc::test_msgs::msg::Constants test_msgs__msg__Constants;
+    typedef ros2::zc::test_msgs::msg::Constants test_msgs__msg__Constants;
     typedef test_msgs__msg__Constants test_msgs__msg__Constants__3[3];
-    typedef zc::test_msgs::msg::Defaults test_msgs__msg__Defaults;
+    typedef ros2::zc::test_msgs::msg::Defaults test_msgs__msg__Defaults;
     typedef test_msgs__msg__Defaults test_msgs__msg__Defaults__3[3];
     @final
     @transfer_mode(SHMEM_REF)
@@ -128,11 +127,11 @@ module test_msgs {
     
     
     
-    typedef zc::test_msgs::msg::BasicTypes test_msgs__msg__BasicTypes;
+    typedef ros2::zc::test_msgs::msg::BasicTypes test_msgs__msg__BasicTypes;
     typedef test_msgs__msg__BasicTypes test_msgs__msg__BasicTypes__3[3];
-    typedef zc::test_msgs::msg::Constants test_msgs__msg__Constants;
+    typedef ros2::zc::test_msgs::msg::Constants test_msgs__msg__Constants;
     typedef test_msgs__msg__Constants test_msgs__msg__Constants__3[3];
-    typedef zc::test_msgs::msg::Defaults test_msgs__msg__Defaults;
+    typedef ros2::zc::test_msgs::msg::Defaults test_msgs__msg__Defaults;
     typedef test_msgs__msg__Defaults test_msgs__msg__Defaults__3[3];
     @final
     @transfer_mode(SHMEM_REF)
@@ -213,6 +212,4 @@ module test_msgs {
       char string_values_default[3][255 + 1];
     };
   };
-};
-};
-};
+}; }; };

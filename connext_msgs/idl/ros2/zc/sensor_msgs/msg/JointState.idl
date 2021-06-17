@@ -7,8 +7,7 @@
 #include "ros2/zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module zc {
-module sensor_msgs {
+module ros2 { module zc { module sensor_msgs {
   module msg {
     
 
@@ -32,7 +31,7 @@ module sensor_msgs {
     @final
     @transfer_mode(SHMEM_REF)
     struct JointState {
-      zc::std_msgs::msg::Header header;
+      ros2::zc::std_msgs::msg::Header header;
 
       char name[100][255 + 1];
 
@@ -43,6 +42,4 @@ module sensor_msgs {
       double effort[100];
     };
   };
-};
-};
-};
+}; }; };

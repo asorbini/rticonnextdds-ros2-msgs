@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module test_msgs {
+module ros2 { module flat_zc { module test_msgs {
   module msg {
     module Constants_Constants {
       const boolean BOOL_CONST = TRUE;
@@ -21,13 +20,11 @@ module test_msgs {
       const int64 INT64_CONST = -40000000;
       const uint64 UINT64_CONST = 50000000;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct Constants {
       uint8 structure_needs_at_least_one_member;
     };
   };
-};
-};
-};
+}; }; };

@@ -11,19 +11,16 @@
 #include "ros2/zc/geometry_msgs/msg/Quaternion.idl"
 #endif  // geometry_msgs_msg_Quaternion_idl
 
-module ros2 { module zc {
-module geometry_msgs {
+module ros2 { module zc { module geometry_msgs {
   module msg {
     
 
     @final
     @transfer_mode(SHMEM_REF)
     struct Pose {
-      zc::geometry_msgs::msg::Point position;
+      ros2::zc::geometry_msgs::msg::Point position;
 
-      zc::geometry_msgs::msg::Quaternion orientation;
+      ros2::zc::geometry_msgs::msg::Quaternion orientation;
     };
   };
-};
-};
-};
+}; }; };

@@ -7,15 +7,14 @@
 #include "ros2/flat/std_msgs/msg/String.idl"
 #endif  // std_msgs_msg_String_idl
 
-module ros2 { module flat {
-module map_msgs {
+module ros2 { module flat { module map_msgs {
   module srv {
     
 
     @final
     @language_binding(FLAT_DATA)
     struct SaveMap_Request {
-      flat::std_msgs::msg::String filename;
+      ros2::flat::std_msgs::msg::String filename;
     };
     @final
     @language_binding(FLAT_DATA)
@@ -23,6 +22,4 @@ module map_msgs {
       uint8 structure_needs_at_least_one_member;
     };
   };
-};
-};
-};
+}; }; };

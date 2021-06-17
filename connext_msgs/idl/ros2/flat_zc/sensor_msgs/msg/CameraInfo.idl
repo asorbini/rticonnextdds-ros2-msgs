@@ -11,8 +11,7 @@
 #include "ros2/flat_zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module flat_zc {
-module sensor_msgs {
+module ros2 { module flat_zc { module sensor_msgs {
   module msg {
     
     
@@ -40,7 +39,7 @@ module sensor_msgs {
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct CameraInfo {
@@ -55,7 +54,7 @@ module sensor_msgs {
 
 
 
-      flat_zc::std_msgs::msg::Header header;
+      ros2::flat_zc::std_msgs::msg::Header header;
 
       
 
@@ -81,12 +80,12 @@ module sensor_msgs {
 
 
 
-      char distortion_model[255 + 1];
+      string<255> distortion_model;
 
       
 
 
-      double d[100];
+      sequence<double, 100> d;
 
       
 
@@ -160,9 +159,7 @@ module sensor_msgs {
 
 
 
-      flat_zc::sensor_msgs::msg::RegionOfInterest roi;
+      ros2::flat_zc::sensor_msgs::msg::RegionOfInterest roi;
     };
   };
-};
-};
-};
+}; }; };

@@ -7,8 +7,7 @@
 #include "ros2/xcdr2/rcl_interfaces/msg/ParameterDescriptor.idl"
 #endif  // rcl_interfaces_msg_ParameterDescriptor_idl
 
-module ros2 { module xcdr2 {
-module rcl_interfaces {
+module ros2 { module xcdr2 { module rcl_interfaces {
   module msg {
     
 
@@ -17,13 +16,11 @@ module rcl_interfaces {
     @final
     @allowed_data_representation(XCDR2)
     struct ParameterEventDescriptors {
-      sequence<xcdr2::rcl_interfaces::msg::ParameterDescriptor> new_parameters;
+      sequence<ros2::xcdr2::rcl_interfaces::msg::ParameterDescriptor> new_parameters;
 
-      sequence<xcdr2::rcl_interfaces::msg::ParameterDescriptor> changed_parameters;
+      sequence<ros2::xcdr2::rcl_interfaces::msg::ParameterDescriptor> changed_parameters;
 
-      sequence<xcdr2::rcl_interfaces::msg::ParameterDescriptor> deleted_parameters;
+      sequence<ros2::xcdr2::rcl_interfaces::msg::ParameterDescriptor> deleted_parameters;
     };
   };
-};
-};
-};
+}; }; };

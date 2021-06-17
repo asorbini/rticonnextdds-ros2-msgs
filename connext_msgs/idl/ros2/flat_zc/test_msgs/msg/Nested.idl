@@ -7,16 +7,13 @@
 #include "ros2/flat_zc/test_msgs/msg/BasicTypes.idl"
 #endif  // test_msgs_msg_BasicTypes_idl
 
-module ros2 { module flat_zc {
-module test_msgs {
+module ros2 { module flat_zc { module test_msgs {
   module msg {
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct Nested {
-      flat_zc::test_msgs::msg::BasicTypes basic_types_value;
+      ros2::flat_zc::test_msgs::msg::BasicTypes basic_types_value;
     };
   };
-};
-};
-};
+}; }; };

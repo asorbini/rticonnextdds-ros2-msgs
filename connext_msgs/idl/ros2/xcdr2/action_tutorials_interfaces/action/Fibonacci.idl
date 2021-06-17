@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module xcdr2 {
-module action_tutorials_interfaces {
+module ros2 { module xcdr2 { module action_tutorials_interfaces {
   module action {
     @final
     @allowed_data_representation(XCDR2)
@@ -22,6 +21,4 @@ module action_tutorials_interfaces {
       sequence<int32> partial_sequence;
     };
   };
-};
-};
-};
+}; }; };

@@ -11,17 +11,14 @@
 #include "ros2/flat/rmw_dds_common/msg/NodeEntitiesInfo.idl"
 #endif  // rmw_dds_common_msg_NodeEntitiesInfo_idl
 
-module ros2 { module flat {
-module rmw_dds_common {
+module ros2 { module flat { module rmw_dds_common {
   module msg {
     @final
     @language_binding(FLAT_DATA)
     struct ParticipantEntitiesInfo {
-      flat::rmw_dds_common::msg::Gid gid;
+      ros2::flat::rmw_dds_common::msg::Gid gid;
 
-      flat::rmw_dds_common::msg::NodeEntitiesInfo node_entities_info_seq[100];
+      ros2::flat::rmw_dds_common::msg::NodeEntitiesInfo node_entities_info_seq[100];
     };
   };
-};
-};
-};
+}; }; };

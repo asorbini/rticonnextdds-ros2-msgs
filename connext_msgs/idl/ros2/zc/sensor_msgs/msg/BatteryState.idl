@@ -7,8 +7,7 @@
 #include "ros2/zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module zc {
-module sensor_msgs {
+module ros2 { module zc { module sensor_msgs {
   module msg {
     module BatteryState_Constants {
       const uint8 POWER_SUPPLY_STATUS_UNKNOWN = 0;
@@ -36,7 +35,7 @@ module sensor_msgs {
     @final
     @transfer_mode(SHMEM_REF)
     struct BatteryState {
-      zc::std_msgs::msg::Header header;
+      ros2::zc::std_msgs::msg::Header header;
 
       
 
@@ -101,6 +100,4 @@ module sensor_msgs {
       char serial_number[255 + 1];
     };
   };
-};
-};
-};
+}; }; };

@@ -7,18 +7,15 @@
 #include "ros2/flat_zc/geometry_msgs/msg/Point32.idl"
 #endif  // geometry_msgs_msg_Point32_idl
 
-module ros2 { module flat_zc {
-module geometry_msgs {
+module ros2 { module flat_zc { module geometry_msgs {
   module msg {
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct Polygon {
-      flat_zc::geometry_msgs::msg::Point32 points[100];
+      sequence<ros2::flat_zc::geometry_msgs::msg::Point32, 100> points;
     };
   };
-};
-};
-};
+}; }; };

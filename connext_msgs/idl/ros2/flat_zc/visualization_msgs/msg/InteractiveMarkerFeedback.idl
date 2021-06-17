@@ -15,8 +15,7 @@
 #include "ros2/flat_zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module flat_zc {
-module visualization_msgs {
+module ros2 { module flat_zc { module visualization_msgs {
   module msg {
     module InteractiveMarkerFeedback_Constants {
       const uint8 KEEP_ALIVE = 0;
@@ -28,30 +27,30 @@ module visualization_msgs {
     };
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct InteractiveMarkerFeedback {
-      flat_zc::std_msgs::msg::Header header;
+      ros2::flat_zc::std_msgs::msg::Header header;
 
       
 
-      char client_id[255 + 1];
+      string<255> client_id;
 
       
 
 
 
-      char marker_name[255 + 1];
+      string<255> marker_name;
 
-      char control_name[255 + 1];
+      string<255> control_name;
 
       uint8 event_type;
 
       
 
 
-      flat_zc::geometry_msgs::msg::Pose pose;
+      ros2::flat_zc::geometry_msgs::msg::Pose pose;
 
       
 
@@ -63,11 +62,9 @@ module visualization_msgs {
 
 
 
-      flat_zc::geometry_msgs::msg::Point mouse_point;
+      ros2::flat_zc::geometry_msgs::msg::Point mouse_point;
 
       boolean mouse_point_valid;
     };
   };
-};
-};
-};
+}; }; };

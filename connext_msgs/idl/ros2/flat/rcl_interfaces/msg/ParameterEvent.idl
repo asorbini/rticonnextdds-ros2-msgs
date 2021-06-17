@@ -11,8 +11,7 @@
 #include "ros2/flat/rcl_interfaces/msg/Parameter.idl"
 #endif  // rcl_interfaces_msg_Parameter_idl
 
-module ros2 { module flat {
-module rcl_interfaces {
+module ros2 { module flat { module rcl_interfaces {
   module msg {
     
 
@@ -23,7 +22,7 @@ module rcl_interfaces {
     struct ParameterEvent {
       
 
-      flat::builtin_interfaces::msg::Time stamp;
+      ros2::flat::builtin_interfaces::msg::Time stamp;
 
       
 
@@ -31,17 +30,15 @@ module rcl_interfaces {
 
       
 
-      flat::rcl_interfaces::msg::Parameter new_parameters[100];
+      ros2::flat::rcl_interfaces::msg::Parameter new_parameters[100];
 
       
 
-      flat::rcl_interfaces::msg::Parameter changed_parameters[100];
+      ros2::flat::rcl_interfaces::msg::Parameter changed_parameters[100];
 
       
 
-      flat::rcl_interfaces::msg::Parameter deleted_parameters[100];
+      ros2::flat::rcl_interfaces::msg::Parameter deleted_parameters[100];
     };
   };
-};
-};
-};
+}; }; };

@@ -11,8 +11,7 @@
 #include "ros2/zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module zc {
-module sensor_msgs {
+module ros2 { module zc { module sensor_msgs {
   module msg {
     
 
@@ -28,7 +27,7 @@ module sensor_msgs {
     struct PointCloud2 {
       
 
-      zc::std_msgs::msg::Header header;
+      ros2::zc::std_msgs::msg::Header header;
 
       
 
@@ -39,7 +38,7 @@ module sensor_msgs {
 
       
 
-      zc::sensor_msgs::msg::PointField fields[100];
+      ros2::zc::sensor_msgs::msg::PointField fields[8];
 
       
 
@@ -55,13 +54,11 @@ module sensor_msgs {
 
       
 
-      uint8 data[100];
+      uint8 data[12582912];
 
       
 
       boolean is_dense;
     };
   };
-};
-};
-};
+}; }; };

@@ -7,14 +7,13 @@
 #include "ros2/flat_zc/builtin_interfaces/msg/Duration.idl"
 #endif  // builtin_interfaces_msg_Duration_idl
 
-module ros2 { module flat_zc {
-module trajectory_msgs {
+module ros2 { module flat_zc { module trajectory_msgs {
   module msg {
     
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct JointTrajectoryPoint {
@@ -22,31 +21,29 @@ module trajectory_msgs {
 
 
 
-      double positions[100];
+      sequence<double, 100> positions;
 
       
 
 
 
-      double velocities[100];
+      sequence<double, 100> velocities;
 
       
 
 
 
-      double accelerations[100];
+      sequence<double, 100> accelerations;
 
       
 
 
 
-      double effort[100];
+      sequence<double, 100> effort;
 
       
 
-      flat_zc::builtin_interfaces::msg::Duration time_from_start;
+      ros2::flat_zc::builtin_interfaces::msg::Duration time_from_start;
     };
   };
-};
-};
-};
+}; }; };

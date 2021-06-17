@@ -7,8 +7,7 @@
 #include "ros2/flat/lifecycle_msgs/msg/State.idl"
 #endif  // lifecycle_msgs_msg_State_idl
 
-module ros2 { module flat {
-module lifecycle_msgs {
+module ros2 { module flat { module lifecycle_msgs {
   module srv {
     @final
     @language_binding(FLAT_DATA)
@@ -20,9 +19,7 @@ module lifecycle_msgs {
     @final
     @language_binding(FLAT_DATA)
     struct GetAvailableStates_Response {
-      flat::lifecycle_msgs::msg::State available_states[100];
+      ros2::flat::lifecycle_msgs::msg::State available_states[100];
     };
   };
-};
-};
-};
+}; }; };

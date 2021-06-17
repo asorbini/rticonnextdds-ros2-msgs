@@ -7,8 +7,7 @@
 #include "ros2/flat_zc/builtin_interfaces/msg/Time.idl"
 #endif  // builtin_interfaces_msg_Time_idl
 
-module ros2 { module flat_zc {
-module rcl_interfaces {
+module ros2 { module flat_zc { module rcl_interfaces {
   module msg {
     module Log_Constants {
       const octet DEBUG = 10;
@@ -30,7 +29,7 @@ module rcl_interfaces {
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct Log {
@@ -39,7 +38,7 @@ module rcl_interfaces {
 
 
 
-      flat_zc::builtin_interfaces::msg::Time stamp;
+      ros2::flat_zc::builtin_interfaces::msg::Time stamp;
 
       
 
@@ -47,25 +46,23 @@ module rcl_interfaces {
 
       
 
-      char name[255 + 1];
+      string<255> name;
 
       
 
-      char msg[255 + 1];
+      string<255> msg;
 
       
 
-      char file[255 + 1];
+      string<255> file;
 
       
 
-      char function[255 + 1];
+      string<255> function;
 
       
 
       uint32 line;
     };
   };
-};
-};
-};
+}; }; };

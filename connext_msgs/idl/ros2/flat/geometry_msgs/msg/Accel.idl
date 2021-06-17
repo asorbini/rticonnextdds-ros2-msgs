@@ -7,19 +7,16 @@
 #include "ros2/flat/geometry_msgs/msg/Vector3.idl"
 #endif  // geometry_msgs_msg_Vector3_idl
 
-module ros2 { module flat {
-module geometry_msgs {
+module ros2 { module flat { module geometry_msgs {
   module msg {
     
 
     @final
     @language_binding(FLAT_DATA)
     struct Accel {
-      flat::geometry_msgs::msg::Vector3 linear;
+      ros2::flat::geometry_msgs::msg::Vector3 linear;
 
-      flat::geometry_msgs::msg::Vector3 angular;
+      ros2::flat::geometry_msgs::msg::Vector3 angular;
     };
   };
-};
-};
-};
+}; }; };

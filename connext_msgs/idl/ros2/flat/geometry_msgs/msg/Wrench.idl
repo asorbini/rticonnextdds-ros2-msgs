@@ -7,19 +7,16 @@
 #include "ros2/flat/geometry_msgs/msg/Vector3.idl"
 #endif  // geometry_msgs_msg_Vector3_idl
 
-module ros2 { module flat {
-module geometry_msgs {
+module ros2 { module flat { module geometry_msgs {
   module msg {
     
 
     @final
     @language_binding(FLAT_DATA)
     struct Wrench {
-      flat::geometry_msgs::msg::Vector3 force;
+      ros2::flat::geometry_msgs::msg::Vector3 force;
 
-      flat::geometry_msgs::msg::Vector3 torque;
+      ros2::flat::geometry_msgs::msg::Vector3 torque;
     };
   };
-};
-};
-};
+}; }; };

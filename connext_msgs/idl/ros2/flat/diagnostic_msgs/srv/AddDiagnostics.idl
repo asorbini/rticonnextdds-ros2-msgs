@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat {
-module diagnostic_msgs {
+module ros2 { module flat { module diagnostic_msgs {
   module srv {
     
 
@@ -43,6 +42,4 @@ module diagnostic_msgs {
       char message[255 + 1];
     };
   };
-};
-};
-};
+}; }; };

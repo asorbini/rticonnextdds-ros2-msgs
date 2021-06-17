@@ -3,15 +3,14 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module diagnostic_msgs {
+module ros2 { module flat_zc { module diagnostic_msgs {
   module srv {
     
 
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct AddDiagnostics_Request {
@@ -27,9 +26,9 @@ module diagnostic_msgs {
 
 
 
-      char load_namespace[255 + 1];
+      string<255> load_namespace;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct AddDiagnostics_Response {
@@ -42,9 +41,7 @@ module diagnostic_msgs {
 
       
 
-      char message[255 + 1];
+      string<255> message;
     };
   };
-};
-};
-};
+}; }; };

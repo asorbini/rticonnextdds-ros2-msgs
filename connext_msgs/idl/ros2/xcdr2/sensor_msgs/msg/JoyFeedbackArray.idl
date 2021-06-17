@@ -7,17 +7,14 @@
 #include "ros2/xcdr2/sensor_msgs/msg/JoyFeedback.idl"
 #endif  // sensor_msgs_msg_JoyFeedback_idl
 
-module ros2 { module xcdr2 {
-module sensor_msgs {
+module ros2 { module xcdr2 { module sensor_msgs {
   module msg {
     
 
     @final
     @allowed_data_representation(XCDR2)
     struct JoyFeedbackArray {
-      sequence<xcdr2::sensor_msgs::msg::JoyFeedback> array;
+      sequence<ros2::xcdr2::sensor_msgs::msg::JoyFeedback> array;
     };
   };
-};
-};
-};
+}; }; };

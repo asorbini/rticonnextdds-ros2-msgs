@@ -7,8 +7,7 @@
 #include "ros2/xcdr2/rcl_interfaces/msg/ParameterValue.idl"
 #endif  // rcl_interfaces_msg_ParameterValue_idl
 
-module ros2 { module xcdr2 {
-module rcl_interfaces {
+module ros2 { module xcdr2 { module rcl_interfaces {
   module msg {
     
 
@@ -23,9 +22,7 @@ module rcl_interfaces {
       
 
 
-      xcdr2::rcl_interfaces::msg::ParameterValue value;
+      ros2::xcdr2::rcl_interfaces::msg::ParameterValue value;
     };
   };
-};
-};
-};
+}; }; };

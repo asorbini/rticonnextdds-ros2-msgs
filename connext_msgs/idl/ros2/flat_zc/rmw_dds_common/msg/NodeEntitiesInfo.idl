@@ -7,22 +7,19 @@
 #include "ros2/flat_zc/rmw_dds_common/msg/Gid.idl"
 #endif  // rmw_dds_common_msg_Gid_idl
 
-module ros2 { module flat_zc {
-module rmw_dds_common {
+module ros2 { module flat_zc { module rmw_dds_common {
   module msg {
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct NodeEntitiesInfo {
-      char node_namespace[256 + 1];
+      string<256> node_namespace;
 
-      char node_name[256 + 1];
+      string<256> node_name;
 
-      flat_zc::rmw_dds_common::msg::Gid reader_gid_seq[100];
+      sequence<ros2::flat_zc::rmw_dds_common::msg::Gid, 100> reader_gid_seq;
 
-      flat_zc::rmw_dds_common::msg::Gid writer_gid_seq[100];
+      sequence<ros2::flat_zc::rmw_dds_common::msg::Gid, 100> writer_gid_seq;
     };
   };
-};
-};
-};
+}; }; };

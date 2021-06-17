@@ -11,18 +11,15 @@
 #include "ros2/flat_zc/rmw_dds_common/msg/NodeEntitiesInfo.idl"
 #endif  // rmw_dds_common_msg_NodeEntitiesInfo_idl
 
-module ros2 { module flat_zc {
-module rmw_dds_common {
+module ros2 { module flat_zc { module rmw_dds_common {
   module msg {
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct ParticipantEntitiesInfo {
-      flat_zc::rmw_dds_common::msg::Gid gid;
+      ros2::flat_zc::rmw_dds_common::msg::Gid gid;
 
-      flat_zc::rmw_dds_common::msg::NodeEntitiesInfo node_entities_info_seq[100];
+      sequence<ros2::flat_zc::rmw_dds_common::msg::NodeEntitiesInfo, 100> node_entities_info_seq;
     };
   };
-};
-};
-};
+}; }; };

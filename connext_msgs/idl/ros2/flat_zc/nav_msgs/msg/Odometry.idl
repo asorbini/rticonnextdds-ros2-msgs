@@ -15,34 +15,31 @@
 #include "ros2/flat_zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module flat_zc {
-module nav_msgs {
+module ros2 { module flat_zc { module nav_msgs {
   module msg {
     
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct Odometry {
       
 
-      flat_zc::std_msgs::msg::Header header;
+      ros2::flat_zc::std_msgs::msg::Header header;
 
       
 
-      char child_frame_id[255 + 1];
+      string<255> child_frame_id;
 
       
 
-      flat_zc::geometry_msgs::msg::PoseWithCovariance pose;
+      ros2::flat_zc::geometry_msgs::msg::PoseWithCovariance pose;
 
       
 
-      flat_zc::geometry_msgs::msg::TwistWithCovariance twist;
+      ros2::flat_zc::geometry_msgs::msg::TwistWithCovariance twist;
     };
   };
-};
-};
-};
+}; }; };

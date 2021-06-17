@@ -15,8 +15,7 @@
 #include "ros2/zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module zc {
-module sensor_msgs {
+module ros2 { module zc { module sensor_msgs {
   module msg {
     
 
@@ -28,20 +27,18 @@ module sensor_msgs {
 
 
 
-      zc::std_msgs::msg::Header header;
+      ros2::zc::std_msgs::msg::Header header;
 
       
 
 
-      zc::geometry_msgs::msg::Point32 points[100];
+      ros2::zc::geometry_msgs::msg::Point32 points[100];
 
       
 
 
 
-      zc::sensor_msgs::msg::ChannelFloat32 channels[100];
+      ros2::zc::sensor_msgs::msg::ChannelFloat32 channels[100];
     };
   };
-};
-};
-};
+}; }; };

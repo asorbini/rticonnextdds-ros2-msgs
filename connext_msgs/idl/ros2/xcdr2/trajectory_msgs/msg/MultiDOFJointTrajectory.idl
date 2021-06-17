@@ -11,15 +11,14 @@
 #include "ros2/xcdr2/trajectory_msgs/msg/MultiDOFJointTrajectoryPoint.idl"
 #endif  // trajectory_msgs_msg_MultiDOFJointTrajectoryPoint_idl
 
-module ros2 { module xcdr2 {
-module trajectory_msgs {
+module ros2 { module xcdr2 { module trajectory_msgs {
   module msg {
     
 
     @final
     @allowed_data_representation(XCDR2)
     struct MultiDOFJointTrajectory {
-      xcdr2::std_msgs::msg::Header header;
+      ros2::xcdr2::std_msgs::msg::Header header;
 
       
 
@@ -28,9 +27,7 @@ module trajectory_msgs {
 
       sequence<string> joint_names;
 
-      sequence<xcdr2::trajectory_msgs::msg::MultiDOFJointTrajectoryPoint> points;
+      sequence<ros2::xcdr2::trajectory_msgs::msg::MultiDOFJointTrajectoryPoint> points;
     };
   };
-};
-};
-};
+}; }; };

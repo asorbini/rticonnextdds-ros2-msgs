@@ -7,10 +7,9 @@
 #include "ros2/flat_zc/lifecycle_msgs/msg/State.idl"
 #endif  // lifecycle_msgs_msg_State_idl
 
-module ros2 { module flat_zc {
-module lifecycle_msgs {
+module ros2 { module flat_zc { module lifecycle_msgs {
   module srv {
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct GetState_Request {
@@ -18,13 +17,11 @@ module lifecycle_msgs {
     };
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct GetState_Response {
-      flat_zc::lifecycle_msgs::msg::State current_state;
+      ros2::flat_zc::lifecycle_msgs::msg::State current_state;
     };
   };
-};
-};
-};
+}; }; };

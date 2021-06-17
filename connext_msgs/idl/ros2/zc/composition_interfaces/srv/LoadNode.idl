@@ -7,8 +7,7 @@
 #include "ros2/zc/rcl_interfaces/msg/Parameter.idl"
 #endif  // rcl_interfaces_msg_Parameter_idl
 
-module ros2 { module zc {
-module composition_interfaces {
+module ros2 { module zc { module composition_interfaces {
   module srv {
     
 
@@ -46,11 +45,11 @@ module composition_interfaces {
 
       
 
-      zc::rcl_interfaces::msg::Parameter parameters[100];
+      ros2::zc::rcl_interfaces::msg::Parameter parameters[100];
 
       
 
-      zc::rcl_interfaces::msg::Parameter extra_arguments[100];
+      ros2::zc::rcl_interfaces::msg::Parameter extra_arguments[100];
     };
     
 
@@ -72,6 +71,4 @@ module composition_interfaces {
       uint64 unique_id;
     };
   };
-};
-};
-};
+}; }; };

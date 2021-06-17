@@ -11,8 +11,7 @@
 #include "ros2/flat_zc/statistics_msgs/msg/StatisticDataPoint.idl"
 #endif  // statistics_msgs_msg_StatisticDataPoint_idl
 
-module ros2 { module flat_zc {
-module statistics_msgs {
+module ros2 { module flat_zc { module statistics_msgs {
   module msg {
     
 
@@ -27,35 +26,33 @@ module statistics_msgs {
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct MetricsMessage {
       
 
-      char measurement_source_name[255 + 1];
+      string<255> measurement_source_name;
 
       
 
-      char metrics_source[255 + 1];
+      string<255> metrics_source;
 
       
 
-      char unit[255 + 1];
+      string<255> unit;
 
       
 
-      flat_zc::builtin_interfaces::msg::Time window_start;
+      ros2::flat_zc::builtin_interfaces::msg::Time window_start;
 
       
 
-      flat_zc::builtin_interfaces::msg::Time window_stop;
+      ros2::flat_zc::builtin_interfaces::msg::Time window_stop;
 
       
 
-      flat_zc::statistics_msgs::msg::StatisticDataPoint statistics[100];
+      sequence<ros2::flat_zc::statistics_msgs::msg::StatisticDataPoint, 100> statistics;
     };
   };
-};
-};
-};
+}; }; };

@@ -15,8 +15,7 @@
 #include "ros2/xcdr2/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module xcdr2 {
-module sensor_msgs {
+module ros2 { module xcdr2 { module sensor_msgs {
   module msg {
     
     
@@ -36,27 +35,25 @@ module sensor_msgs {
     @final
     @allowed_data_representation(XCDR2)
     struct Imu {
-      xcdr2::std_msgs::msg::Header header;
+      ros2::xcdr2::std_msgs::msg::Header header;
 
-      xcdr2::geometry_msgs::msg::Quaternion orientation;
+      ros2::xcdr2::geometry_msgs::msg::Quaternion orientation;
 
       
 
       double orientation_covariance[9];
 
-      xcdr2::geometry_msgs::msg::Vector3 angular_velocity;
+      ros2::xcdr2::geometry_msgs::msg::Vector3 angular_velocity;
 
       
 
       double angular_velocity_covariance[9];
 
-      xcdr2::geometry_msgs::msg::Vector3 linear_acceleration;
+      ros2::xcdr2::geometry_msgs::msg::Vector3 linear_acceleration;
 
       
 
       double linear_acceleration_covariance[9];
     };
   };
-};
-};
-};
+}; }; };

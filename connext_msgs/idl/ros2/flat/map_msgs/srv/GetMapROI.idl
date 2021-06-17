@@ -7,8 +7,7 @@
 #include "ros2/flat/nav_msgs/msg/OccupancyGrid.idl"
 #endif  // nav_msgs_msg_OccupancyGrid_idl
 
-module ros2 { module flat {
-module map_msgs {
+module ros2 { module flat { module map_msgs {
   module srv {
     @final
     @language_binding(FLAT_DATA)
@@ -24,9 +23,7 @@ module map_msgs {
     @final
     @language_binding(FLAT_DATA)
     struct GetMapROI_Response {
-      flat::nav_msgs::msg::OccupancyGrid sub_map;
+      ros2::flat::nav_msgs::msg::OccupancyGrid sub_map;
     };
   };
-};
-};
-};
+}; }; };

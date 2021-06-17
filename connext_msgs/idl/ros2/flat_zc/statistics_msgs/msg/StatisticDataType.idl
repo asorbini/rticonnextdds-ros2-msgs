@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module statistics_msgs {
+module ros2 { module flat_zc { module statistics_msgs {
   module msg {
     module StatisticDataType_Constants {
       const uint8 STATISTICS_DATA_TYPE_UNINITIALIZED = 0;
@@ -23,13 +22,11 @@ module statistics_msgs {
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct StatisticDataType {
       uint8 structure_needs_at_least_one_member;
     };
   };
-};
-};
-};
+}; }; };

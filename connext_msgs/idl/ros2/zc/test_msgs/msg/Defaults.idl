@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module zc {
-module test_msgs {
+module ros2 { module zc { module test_msgs {
   module msg {
     @final
     @transfer_mode(SHMEM_REF)
@@ -49,6 +48,4 @@ module test_msgs {
       uint64 uint64_value;
     };
   };
-};
-};
-};
+}; }; };

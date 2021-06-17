@@ -15,26 +15,23 @@
 #include "ros2/flat_zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module flat_zc {
-module pcl_msgs {
+module ros2 { module flat_zc { module pcl_msgs {
   module msg {
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct PolygonMesh {
-      flat_zc::std_msgs::msg::Header header;
+      ros2::flat_zc::std_msgs::msg::Header header;
 
       
 
-      flat_zc::sensor_msgs::msg::PointCloud2 cloud;
+      ros2::flat_zc::sensor_msgs::msg::PointCloud2 cloud;
 
       
 
-      flat_zc::pcl_msgs::msg::Vertices polygons[100];
+      sequence<ros2::flat_zc::pcl_msgs::msg::Vertices, 100> polygons;
     };
   };
-};
-};
-};
+}; }; };

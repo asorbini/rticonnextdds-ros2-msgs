@@ -7,15 +7,12 @@
 #include "ros2/flat/visualization_msgs/msg/Marker.idl"
 #endif  // visualization_msgs_msg_Marker_idl
 
-module ros2 { module flat {
-module visualization_msgs {
+module ros2 { module flat { module visualization_msgs {
   module msg {
     @final
     @language_binding(FLAT_DATA)
     struct MarkerArray {
-      flat::visualization_msgs::msg::Marker markers[100];
+      ros2::flat::visualization_msgs::msg::Marker markers[100];
     };
   };
-};
-};
-};
+}; }; };

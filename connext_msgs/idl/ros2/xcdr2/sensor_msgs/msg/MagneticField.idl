@@ -11,8 +11,7 @@
 #include "ros2/xcdr2/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module xcdr2 {
-module sensor_msgs {
+module ros2 { module xcdr2 { module sensor_msgs {
   module msg {
     
     
@@ -32,14 +31,14 @@ module sensor_msgs {
 
 
 
-      xcdr2::std_msgs::msg::Header header;
+      ros2::xcdr2::std_msgs::msg::Header header;
 
       
 
 
 
 
-      xcdr2::geometry_msgs::msg::Vector3 magnetic_field;
+      ros2::xcdr2::geometry_msgs::msg::Vector3 magnetic_field;
 
       
 
@@ -47,6 +46,4 @@ module sensor_msgs {
       double magnetic_field_covariance[9];
     };
   };
-};
-};
-};
+}; }; };

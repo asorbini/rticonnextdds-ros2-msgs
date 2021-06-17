@@ -19,8 +19,7 @@
 #include "ros2/xcdr2/tf2_msgs/msg/TF2Error.idl"
 #endif  // tf2_msgs_msg_TF2Error_idl
 
-module ros2 { module xcdr2 {
-module tf2_msgs {
+module ros2 { module xcdr2 { module tf2_msgs {
   module action {
     
 
@@ -31,13 +30,13 @@ module tf2_msgs {
 
       string source_frame;
 
-      xcdr2::builtin_interfaces::msg::Time source_time;
+      ros2::xcdr2::builtin_interfaces::msg::Time source_time;
 
-      xcdr2::builtin_interfaces::msg::Duration timeout;
+      ros2::xcdr2::builtin_interfaces::msg::Duration timeout;
 
       
 
-      xcdr2::builtin_interfaces::msg::Time target_time;
+      ros2::xcdr2::builtin_interfaces::msg::Time target_time;
 
       string fixed_frame;
 
@@ -48,9 +47,9 @@ module tf2_msgs {
     @final
     @allowed_data_representation(XCDR2)
     struct LookupTransform_Result {
-      xcdr2::geometry_msgs::msg::TransformStamped transform;
+      ros2::xcdr2::geometry_msgs::msg::TransformStamped transform;
 
-      xcdr2::tf2_msgs::msg::TF2Error error;
+      ros2::xcdr2::tf2_msgs::msg::TF2Error error;
     };
     @final
     @allowed_data_representation(XCDR2)
@@ -58,6 +57,4 @@ module tf2_msgs {
       uint8 structure_needs_at_least_one_member;
     };
   };
-};
-};
-};
+}; }; };

@@ -3,20 +3,19 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module example_interfaces {
+module ros2 { module flat_zc { module example_interfaces {
   module msg {
     
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct MultiArrayDimension {
       
 
-      char label[255 + 1];
+      string<255> label;
 
       
 
@@ -27,6 +26,4 @@ module example_interfaces {
       uint32 stride;
     };
   };
-};
-};
-};
+}; }; };

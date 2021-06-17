@@ -19,8 +19,7 @@
 #include "ros2/zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module zc {
-module visualization_msgs {
+module ros2 { module zc { module visualization_msgs {
   module msg {
     module ImageMarker_Constants {
       const int32 CIRCLE = 0;
@@ -34,7 +33,7 @@ module visualization_msgs {
     @final
     @transfer_mode(SHMEM_REF)
     struct ImageMarker {
-      zc::std_msgs::msg::Header header;
+      ros2::zc::std_msgs::msg::Header header;
 
       
 
@@ -54,7 +53,7 @@ module visualization_msgs {
 
       
 
-      zc::geometry_msgs::msg::Point position;
+      ros2::zc::geometry_msgs::msg::Point position;
 
       
 
@@ -62,7 +61,7 @@ module visualization_msgs {
 
       
 
-      zc::std_msgs::msg::ColorRGBA outline_color;
+      ros2::zc::std_msgs::msg::ColorRGBA outline_color;
 
       
 
@@ -71,22 +70,20 @@ module visualization_msgs {
       
 
       
-      zc::std_msgs::msg::ColorRGBA fill_color;
+      ros2::zc::std_msgs::msg::ColorRGBA fill_color;
 
       
 
 
-      zc::builtin_interfaces::msg::Duration lifetime;
+      ros2::zc::builtin_interfaces::msg::Duration lifetime;
 
       
 
-      zc::geometry_msgs::msg::Point points[100];
+      ros2::zc::geometry_msgs::msg::Point points[100];
 
       
 
-      zc::std_msgs::msg::ColorRGBA outline_colors[100];
+      ros2::zc::std_msgs::msg::ColorRGBA outline_colors[100];
     };
   };
-};
-};
-};
+}; }; };

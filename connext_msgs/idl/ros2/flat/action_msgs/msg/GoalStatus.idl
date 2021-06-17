@@ -7,8 +7,7 @@
 #include "ros2/flat/action_msgs/msg/GoalInfo.idl"
 #endif  // action_msgs_msg_GoalInfo_idl
 
-module ros2 { module flat {
-module action_msgs {
+module ros2 { module flat { module action_msgs {
   module msg {
     module GoalStatus_Constants {
       const int8 STATUS_UNKNOWN = 0;
@@ -29,13 +28,11 @@ module action_msgs {
     struct GoalStatus {
       
 
-      flat::action_msgs::msg::GoalInfo goal_info;
+      ros2::flat::action_msgs::msg::GoalInfo goal_info;
 
       
 
       int8 status;
     };
   };
-};
-};
-};
+}; }; };

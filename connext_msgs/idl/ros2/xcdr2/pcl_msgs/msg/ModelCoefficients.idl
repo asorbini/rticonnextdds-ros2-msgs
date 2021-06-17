@@ -7,17 +7,14 @@
 #include "ros2/xcdr2/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module xcdr2 {
-module pcl_msgs {
+module ros2 { module xcdr2 { module pcl_msgs {
   module msg {
     @final
     @allowed_data_representation(XCDR2)
     struct ModelCoefficients {
-      xcdr2::std_msgs::msg::Header header;
+      ros2::xcdr2::std_msgs::msg::Header header;
 
       sequence<float> values;
     };
   };
-};
-};
-};
+}; }; };

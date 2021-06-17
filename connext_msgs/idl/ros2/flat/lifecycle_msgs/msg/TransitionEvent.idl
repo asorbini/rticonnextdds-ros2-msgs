@@ -11,8 +11,7 @@
 #include "ros2/flat/lifecycle_msgs/msg/Transition.idl"
 #endif  // lifecycle_msgs_msg_Transition_idl
 
-module ros2 { module flat {
-module lifecycle_msgs {
+module ros2 { module flat { module lifecycle_msgs {
   module msg {
     
 
@@ -23,17 +22,15 @@ module lifecycle_msgs {
 
       
 
-      flat::lifecycle_msgs::msg::Transition transition;
+      ros2::flat::lifecycle_msgs::msg::Transition transition;
 
       
 
-      flat::lifecycle_msgs::msg::State start_state;
+      ros2::flat::lifecycle_msgs::msg::State start_state;
 
       
 
-      flat::lifecycle_msgs::msg::State goal_state;
+      ros2::flat::lifecycle_msgs::msg::State goal_state;
     };
   };
-};
-};
-};
+}; }; };

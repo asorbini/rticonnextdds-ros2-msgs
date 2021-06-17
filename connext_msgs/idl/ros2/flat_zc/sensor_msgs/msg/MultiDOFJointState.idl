@@ -19,8 +19,7 @@
 #include "ros2/flat_zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module flat_zc {
-module sensor_msgs {
+module ros2 { module flat_zc { module sensor_msgs {
   module msg {
     
 
@@ -42,21 +41,19 @@ module sensor_msgs {
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct MultiDOFJointState {
-      flat_zc::std_msgs::msg::Header header;
+      ros2::flat_zc::std_msgs::msg::Header header;
 
-      char joint_names[100][255 + 1];
+      sequence<string<255>, 100> joint_names;
 
-      flat_zc::geometry_msgs::msg::Transform transforms[100];
+      sequence<ros2::flat_zc::geometry_msgs::msg::Transform, 100> transforms;
 
-      flat_zc::geometry_msgs::msg::Twist twist[100];
+      sequence<ros2::flat_zc::geometry_msgs::msg::Twist, 100> twist;
 
-      flat_zc::geometry_msgs::msg::Wrench wrench[100];
+      sequence<ros2::flat_zc::geometry_msgs::msg::Wrench, 100> wrench;
     };
   };
-};
-};
-};
+}; }; };

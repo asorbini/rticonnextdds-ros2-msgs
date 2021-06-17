@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module zc {
-module turtlesim {
+module ros2 { module zc { module turtlesim {
   module msg {
     @final
     @transfer_mode(SHMEM_REF)
@@ -16,6 +15,4 @@ module turtlesim {
       uint8 b;
     };
   };
-};
-};
-};
+}; }; };

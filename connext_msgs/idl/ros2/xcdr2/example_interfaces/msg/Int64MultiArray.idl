@@ -7,8 +7,7 @@
 #include "ros2/xcdr2/example_interfaces/msg/MultiArrayLayout.idl"
 #endif  // example_interfaces_msg_MultiArrayLayout_idl
 
-module ros2 { module xcdr2 {
-module example_interfaces {
+module ros2 { module xcdr2 { module example_interfaces {
   module msg {
     
 
@@ -21,13 +20,11 @@ module example_interfaces {
 
 
 
-      xcdr2::example_interfaces::msg::MultiArrayLayout layout;
+      ros2::xcdr2::example_interfaces::msg::MultiArrayLayout layout;
 
       
 
       sequence<int64> data;
     };
   };
-};
-};
-};
+}; }; };

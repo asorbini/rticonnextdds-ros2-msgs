@@ -7,8 +7,7 @@
 #include "ros2/flat/lifecycle_msgs/msg/Transition.idl"
 #endif  // lifecycle_msgs_msg_Transition_idl
 
-module ros2 { module flat {
-module lifecycle_msgs {
+module ros2 { module flat { module lifecycle_msgs {
   module srv {
     
 
@@ -17,7 +16,7 @@ module lifecycle_msgs {
     @final
     @language_binding(FLAT_DATA)
     struct ChangeState_Request {
-      flat::lifecycle_msgs::msg::Transition transition;
+      ros2::flat::lifecycle_msgs::msg::Transition transition;
     };
     @final
     @language_binding(FLAT_DATA)
@@ -27,6 +26,4 @@ module lifecycle_msgs {
       boolean success;
     };
   };
-};
-};
-};
+}; }; };

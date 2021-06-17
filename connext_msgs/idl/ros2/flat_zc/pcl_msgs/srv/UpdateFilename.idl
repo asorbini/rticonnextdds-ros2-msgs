@@ -3,22 +3,19 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module pcl_msgs {
+module ros2 { module flat_zc { module pcl_msgs {
   module srv {
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct UpdateFilename_Request {
-      char filename[255 + 1];
+      string<255> filename;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct UpdateFilename_Response {
       boolean success;
     };
   };
-};
-};
-};
+}; }; };

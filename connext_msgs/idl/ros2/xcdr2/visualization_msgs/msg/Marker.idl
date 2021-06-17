@@ -27,8 +27,7 @@
 #include "ros2/xcdr2/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module xcdr2 {
-module visualization_msgs {
+module ros2 { module xcdr2 { module visualization_msgs {
   module msg {
     module Marker_Constants {
       const int32 ARROW = 0;
@@ -59,7 +58,7 @@ module visualization_msgs {
     struct Marker {
       
 
-      xcdr2::std_msgs::msg::Header header;
+      ros2::xcdr2::std_msgs::msg::Header header;
 
       
 
@@ -84,21 +83,21 @@ module visualization_msgs {
 
       
 
-      xcdr2::geometry_msgs::msg::Pose pose;
+      ros2::xcdr2::geometry_msgs::msg::Pose pose;
 
       
 
-      xcdr2::geometry_msgs::msg::Vector3 scale;
+      ros2::xcdr2::geometry_msgs::msg::Vector3 scale;
 
       
 
       
-      xcdr2::std_msgs::msg::ColorRGBA color;
+      ros2::xcdr2::std_msgs::msg::ColorRGBA color;
 
       
 
 
-      xcdr2::builtin_interfaces::msg::Duration lifetime;
+      ros2::xcdr2::builtin_interfaces::msg::Duration lifetime;
 
       
 
@@ -106,13 +105,13 @@ module visualization_msgs {
 
       
 
-      sequence<xcdr2::geometry_msgs::msg::Point> points;
+      sequence<ros2::xcdr2::geometry_msgs::msg::Point> points;
 
       
 
 
 
-      sequence<xcdr2::std_msgs::msg::ColorRGBA> colors;
+      sequence<ros2::xcdr2::std_msgs::msg::ColorRGBA> colors;
 
       
 
@@ -125,6 +124,4 @@ module visualization_msgs {
       boolean mesh_use_embedded_materials;
     };
   };
-};
-};
-};
+}; }; };

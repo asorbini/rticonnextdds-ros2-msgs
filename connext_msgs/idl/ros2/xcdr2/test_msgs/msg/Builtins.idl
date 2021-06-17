@@ -11,17 +11,14 @@
 #include "ros2/xcdr2/builtin_interfaces/msg/Time.idl"
 #endif  // builtin_interfaces_msg_Time_idl
 
-module ros2 { module xcdr2 {
-module test_msgs {
+module ros2 { module xcdr2 { module test_msgs {
   module msg {
     @final
     @allowed_data_representation(XCDR2)
     struct Builtins {
-      xcdr2::builtin_interfaces::msg::Duration duration_value;
+      ros2::xcdr2::builtin_interfaces::msg::Duration duration_value;
 
-      xcdr2::builtin_interfaces::msg::Time time_value;
+      ros2::xcdr2::builtin_interfaces::msg::Time time_value;
     };
   };
-};
-};
-};
+}; }; };

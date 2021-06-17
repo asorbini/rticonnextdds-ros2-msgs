@@ -7,13 +7,12 @@
 #include "ros2/zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module zc {
-module map_msgs {
+module ros2 { module zc { module map_msgs {
   module msg {
     @final
     @transfer_mode(SHMEM_REF)
     struct OccupancyGridUpdate {
-      zc::std_msgs::msg::Header header;
+      ros2::zc::std_msgs::msg::Header header;
 
       int32 x;
 
@@ -26,6 +25,4 @@ module map_msgs {
       int8 data[100];
     };
   };
-};
-};
-};
+}; }; };

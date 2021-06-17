@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module visualization_msgs {
+module ros2 { module flat_zc { module visualization_msgs {
   module msg {
     module MenuEntry_Constants {
       const uint8 FEEDBACK = 0;
@@ -42,7 +41,7 @@ module visualization_msgs {
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct MenuEntry {
@@ -58,15 +57,13 @@ module visualization_msgs {
 
       
 
-      char title[255 + 1];
+      string<255> title;
 
       
 
-      char command[255 + 1];
+      string<255> command;
 
       uint8 command_type;
     };
   };
-};
-};
-};
+}; }; };

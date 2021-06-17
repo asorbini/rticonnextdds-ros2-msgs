@@ -15,8 +15,7 @@
 #include "ros2/flat/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module flat {
-module nav_msgs {
+module ros2 { module flat { module nav_msgs {
   module msg {
     
 
@@ -27,7 +26,7 @@ module nav_msgs {
     struct Odometry {
       
 
-      flat::std_msgs::msg::Header header;
+      ros2::flat::std_msgs::msg::Header header;
 
       
 
@@ -35,13 +34,11 @@ module nav_msgs {
 
       
 
-      flat::geometry_msgs::msg::PoseWithCovariance pose;
+      ros2::flat::geometry_msgs::msg::PoseWithCovariance pose;
 
       
 
-      flat::geometry_msgs::msg::TwistWithCovariance twist;
+      ros2::flat::geometry_msgs::msg::TwistWithCovariance twist;
     };
   };
-};
-};
-};
+}; }; };

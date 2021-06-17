@@ -7,19 +7,16 @@
 #include "ros2/xcdr2/geometry_msgs/msg/Vector3.idl"
 #endif  // geometry_msgs_msg_Vector3_idl
 
-module ros2 { module xcdr2 {
-module geometry_msgs {
+module ros2 { module xcdr2 { module geometry_msgs {
   module msg {
     
 
     @final
     @allowed_data_representation(XCDR2)
     struct Accel {
-      xcdr2::geometry_msgs::msg::Vector3 linear;
+      ros2::xcdr2::geometry_msgs::msg::Vector3 linear;
 
-      xcdr2::geometry_msgs::msg::Vector3 angular;
+      ros2::xcdr2::geometry_msgs::msg::Vector3 angular;
     };
   };
-};
-};
-};
+}; }; };

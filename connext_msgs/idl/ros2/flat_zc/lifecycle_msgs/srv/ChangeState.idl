@@ -7,20 +7,19 @@
 #include "ros2/flat_zc/lifecycle_msgs/msg/Transition.idl"
 #endif  // lifecycle_msgs_msg_Transition_idl
 
-module ros2 { module flat_zc {
-module lifecycle_msgs {
+module ros2 { module flat_zc { module lifecycle_msgs {
   module srv {
     
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct ChangeState_Request {
-      flat_zc::lifecycle_msgs::msg::Transition transition;
+      ros2::flat_zc::lifecycle_msgs::msg::Transition transition;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct ChangeState_Response {
@@ -29,6 +28,4 @@ module lifecycle_msgs {
       boolean success;
     };
   };
-};
-};
-};
+}; }; };

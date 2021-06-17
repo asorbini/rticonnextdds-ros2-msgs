@@ -19,8 +19,7 @@
 #include "ros2/flat_zc/visualization_msgs/msg/MenuEntry.idl"
 #endif  // visualization_msgs_msg_MenuEntry_idl
 
-module ros2 { module flat_zc {
-module visualization_msgs {
+module ros2 { module flat_zc { module visualization_msgs {
   module msg {
     
 
@@ -29,24 +28,24 @@ module visualization_msgs {
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct InteractiveMarker {
-      flat_zc::std_msgs::msg::Header header;
+      ros2::flat_zc::std_msgs::msg::Header header;
 
       
 
-      flat_zc::geometry_msgs::msg::Pose pose;
+      ros2::flat_zc::geometry_msgs::msg::Pose pose;
 
       
 
 
-      char name[255 + 1];
+      string<255> name;
 
       
 
-      char description[255 + 1];
+      string<255> description;
 
       
 
@@ -54,13 +53,11 @@ module visualization_msgs {
 
       
 
-      flat_zc::visualization_msgs::msg::MenuEntry menu_entries[100];
+      sequence<ros2::flat_zc::visualization_msgs::msg::MenuEntry, 100> menu_entries;
 
       
 
-      flat_zc::visualization_msgs::msg::InteractiveMarkerControl controls[100];
+      sequence<ros2::flat_zc::visualization_msgs::msg::InteractiveMarkerControl, 100> controls;
     };
   };
-};
-};
-};
+}; }; };

@@ -11,8 +11,7 @@
 #include "ros2/flat/rcl_interfaces/msg/SetParametersResult.idl"
 #endif  // rcl_interfaces_msg_SetParametersResult_idl
 
-module ros2 { module flat {
-module rcl_interfaces {
+module ros2 { module flat { module rcl_interfaces {
   module srv {
     
 
@@ -21,16 +20,14 @@ module rcl_interfaces {
     @final
     @language_binding(FLAT_DATA)
     struct SetParametersAtomically_Request {
-      flat::rcl_interfaces::msg::Parameter parameters[100];
+      ros2::flat::rcl_interfaces::msg::Parameter parameters[100];
     };
     
 
     @final
     @language_binding(FLAT_DATA)
     struct SetParametersAtomically_Response {
-      flat::rcl_interfaces::msg::SetParametersResult result;
+      ros2::flat::rcl_interfaces::msg::SetParametersResult result;
     };
   };
-};
-};
-};
+}; }; };

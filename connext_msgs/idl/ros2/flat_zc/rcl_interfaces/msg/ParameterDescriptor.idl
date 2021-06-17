@@ -11,18 +11,17 @@
 #include "ros2/flat_zc/rcl_interfaces/msg/IntegerRange.idl"
 #endif  // rcl_interfaces_msg_IntegerRange_idl
 
-module ros2 { module flat_zc {
-module rcl_interfaces {
+module ros2 { module flat_zc { module rcl_interfaces {
   module msg {
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct ParameterDescriptor {
       
 
-      char name[255 + 1];
+      string<255> name;
 
       
 
@@ -30,7 +29,7 @@ module rcl_interfaces {
 
       
 
-      char description[255 + 1];
+      string<255> description;
 
       
 
@@ -39,7 +38,7 @@ module rcl_interfaces {
 
 
 
-      char additional_constraints[255 + 1];
+      string<255> additional_constraints;
 
       
 
@@ -57,13 +56,11 @@ module rcl_interfaces {
 
 
 
-      flat_zc::rcl_interfaces::msg::FloatingPointRange floating_point_range[ 1];
+      sequence<ros2::flat_zc::rcl_interfaces::msg::FloatingPointRange, 1> floating_point_range;
 
       
 
-      flat_zc::rcl_interfaces::msg::IntegerRange integer_range[ 1];
+      sequence<ros2::flat_zc::rcl_interfaces::msg::IntegerRange, 1> integer_range;
     };
   };
-};
-};
-};
+}; }; };

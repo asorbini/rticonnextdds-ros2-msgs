@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat {
-module geometry_msgs {
+module ros2 { module flat { module geometry_msgs {
   module msg {
     
 
@@ -24,6 +23,4 @@ module geometry_msgs {
       float z;
     };
   };
-};
-};
-};
+}; }; };

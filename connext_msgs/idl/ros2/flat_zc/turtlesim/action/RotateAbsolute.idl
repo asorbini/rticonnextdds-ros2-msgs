@@ -3,18 +3,17 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module turtlesim {
+module ros2 { module flat_zc { module turtlesim {
   module action {
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct RotateAbsolute_Goal {
       float theta;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct RotateAbsolute_Result {
@@ -22,7 +21,7 @@ module turtlesim {
 
       float delta;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct RotateAbsolute_Feedback {
@@ -31,6 +30,4 @@ module turtlesim {
       float remaining;
     };
   };
-};
-};
-};
+}; }; };

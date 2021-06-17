@@ -7,10 +7,9 @@
 #include "ros2/flat_zc/sensor_msgs/msg/PointCloud2.idl"
 #endif  // sensor_msgs_msg_PointCloud2_idl
 
-module ros2 { module flat_zc {
-module map_msgs {
+module ros2 { module flat_zc { module map_msgs {
   module srv {
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct GetPointMapROI_Request {
@@ -36,13 +35,11 @@ module map_msgs {
 
       double l_z;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct GetPointMapROI_Response {
-      flat_zc::sensor_msgs::msg::PointCloud2 sub_map;
+      ros2::flat_zc::sensor_msgs::msg::PointCloud2 sub_map;
     };
   };
-};
-};
-};
+}; }; };

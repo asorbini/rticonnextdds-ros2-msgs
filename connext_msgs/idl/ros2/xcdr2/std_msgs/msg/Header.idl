@@ -7,8 +7,7 @@
 #include "ros2/xcdr2/builtin_interfaces/msg/Time.idl"
 #endif  // builtin_interfaces_msg_Time_idl
 
-module ros2 { module xcdr2 {
-module std_msgs {
+module ros2 { module xcdr2 { module std_msgs {
   module msg {
     
 
@@ -19,13 +18,11 @@ module std_msgs {
     struct Header {
       
 
-      xcdr2::builtin_interfaces::msg::Time stamp;
+      ros2::xcdr2::builtin_interfaces::msg::Time stamp;
 
       
 
       string frame_id;
     };
   };
-};
-};
-};
+}; }; };

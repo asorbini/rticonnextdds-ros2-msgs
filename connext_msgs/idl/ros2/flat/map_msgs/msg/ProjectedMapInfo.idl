@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat {
-module map_msgs {
+module ros2 { module flat { module map_msgs {
   module msg {
     @final
     @language_binding(FLAT_DATA)
@@ -24,6 +23,4 @@ module map_msgs {
       double max_z;
     };
   };
-};
-};
-};
+}; }; };

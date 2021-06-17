@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module shape_msgs {
+module ros2 { module flat_zc { module shape_msgs {
   module msg {
     module SolidPrimitive_Constants {
       const uint8 BOX = 1;
@@ -23,7 +22,7 @@ module shape_msgs {
     
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct SolidPrimitive {
@@ -34,9 +33,7 @@ module shape_msgs {
       
 
 
-      double dimensions[ 3];
+      sequence<double, 3> dimensions;
     };
   };
-};
-};
-};
+}; }; };

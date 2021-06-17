@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module xcdr2 {
-module logging_demo {
+module ros2 { module xcdr2 { module logging_demo {
   module srv {
     @final
     @allowed_data_representation(XCDR2)
@@ -19,6 +18,4 @@ module logging_demo {
       boolean success;
     };
   };
-};
-};
-};
+}; }; };

@@ -11,8 +11,7 @@
 #include "ros2/flat/statistics_msgs/msg/StatisticDataPoint.idl"
 #endif  // statistics_msgs_msg_StatisticDataPoint_idl
 
-module ros2 { module flat {
-module statistics_msgs {
+module ros2 { module flat { module statistics_msgs {
   module msg {
     
 
@@ -44,17 +43,15 @@ module statistics_msgs {
 
       
 
-      flat::builtin_interfaces::msg::Time window_start;
+      ros2::flat::builtin_interfaces::msg::Time window_start;
 
       
 
-      flat::builtin_interfaces::msg::Time window_stop;
+      ros2::flat::builtin_interfaces::msg::Time window_stop;
 
       
 
-      flat::statistics_msgs::msg::StatisticDataPoint statistics[100];
+      ros2::flat::statistics_msgs::msg::StatisticDataPoint statistics[100];
     };
   };
-};
-};
-};
+}; }; };

@@ -11,19 +11,16 @@
 #include "ros2/flat/geometry_msgs/msg/Quaternion.idl"
 #endif  // geometry_msgs_msg_Quaternion_idl
 
-module ros2 { module flat {
-module geometry_msgs {
+module ros2 { module flat { module geometry_msgs {
   module msg {
     
 
     @final
     @language_binding(FLAT_DATA)
     struct Pose {
-      flat::geometry_msgs::msg::Point position;
+      ros2::flat::geometry_msgs::msg::Point position;
 
-      flat::geometry_msgs::msg::Quaternion orientation;
+      ros2::flat::geometry_msgs::msg::Quaternion orientation;
     };
   };
-};
-};
-};
+}; }; };

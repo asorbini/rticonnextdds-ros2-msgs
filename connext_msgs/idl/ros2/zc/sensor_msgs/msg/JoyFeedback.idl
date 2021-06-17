@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module zc {
-module sensor_msgs {
+module ros2 { module zc { module sensor_msgs {
   module msg {
     module JoyFeedback_Constants {
       const uint8 TYPE_LED = 0;
@@ -29,6 +28,4 @@ module sensor_msgs {
       float intensity;
     };
   };
-};
-};
-};
+}; }; };

@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module xcdr2 {
-module shape_msgs {
+module ros2 { module xcdr2 { module shape_msgs {
   module msg {
     module SolidPrimitive_Constants {
       const uint8 BOX = 1;
@@ -36,6 +35,4 @@ module shape_msgs {
       sequence<double, 3> dimensions;
     };
   };
-};
-};
-};
+}; }; };

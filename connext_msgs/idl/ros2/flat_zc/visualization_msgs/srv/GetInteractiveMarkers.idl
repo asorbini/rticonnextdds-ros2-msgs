@@ -7,10 +7,9 @@
 #include "ros2/flat_zc/visualization_msgs/msg/InteractiveMarker.idl"
 #endif  // visualization_msgs_msg_InteractiveMarker_idl
 
-module ros2 { module flat_zc {
-module visualization_msgs {
+module ros2 { module flat_zc { module visualization_msgs {
   module srv {
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct GetInteractiveMarkers_Request {
@@ -21,7 +20,7 @@ module visualization_msgs {
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct GetInteractiveMarkers_Response {
@@ -29,9 +28,7 @@ module visualization_msgs {
 
       
 
-      flat_zc::visualization_msgs::msg::InteractiveMarker markers[100];
+      sequence<ros2::flat_zc::visualization_msgs::msg::InteractiveMarker, 100> markers;
     };
   };
-};
-};
-};
+}; }; };

@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module xcdr2 {
-module rcl_interfaces {
+module ros2 { module xcdr2 { module rcl_interfaces {
   module msg {
     
 
@@ -42,6 +41,4 @@ module rcl_interfaces {
       double step;
     };
   };
-};
-};
-};
+}; }; };

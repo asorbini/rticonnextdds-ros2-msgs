@@ -3,12 +3,11 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module rcl_interfaces {
+module ros2 { module flat_zc { module rcl_interfaces {
   module msg {
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct FloatingPointRange {
@@ -43,6 +42,4 @@ module rcl_interfaces {
       double step;
     };
   };
-};
-};
-};
+}; }; };

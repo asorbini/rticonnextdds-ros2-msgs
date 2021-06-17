@@ -3,24 +3,21 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module logging_demo {
+module ros2 { module flat_zc { module logging_demo {
   module srv {
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct ConfigLogger_Request {
-      char logger_name[255 + 1];
+      string<255> logger_name;
 
-      char level[255 + 1];
+      string<255> level;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct ConfigLogger_Response {
       boolean success;
     };
   };
-};
-};
-};
+}; }; };

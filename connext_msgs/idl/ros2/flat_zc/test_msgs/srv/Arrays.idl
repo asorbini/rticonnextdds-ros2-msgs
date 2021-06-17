@@ -15,8 +15,7 @@
 #include "ros2/flat_zc/test_msgs/msg/Defaults.idl"
 #endif  // test_msgs_msg_Defaults_idl
 
-module ros2 { module flat_zc {
-module test_msgs {
+module ros2 { module flat_zc { module test_msgs {
   module srv {
     
     
@@ -31,13 +30,13 @@ module test_msgs {
     
     
     
-    typedef flat_zc::test_msgs::msg::BasicTypes test_msgs__msg__BasicTypes;
+    typedef ros2::flat_zc::test_msgs::msg::BasicTypes test_msgs__msg__BasicTypes;
     typedef test_msgs__msg__BasicTypes test_msgs__msg__BasicTypes__3[3];
-    typedef flat_zc::test_msgs::msg::Constants test_msgs__msg__Constants;
+    typedef ros2::flat_zc::test_msgs::msg::Constants test_msgs__msg__Constants;
     typedef test_msgs__msg__Constants test_msgs__msg__Constants__3[3];
-    typedef flat_zc::test_msgs::msg::Defaults test_msgs__msg__Defaults;
+    typedef ros2::flat_zc::test_msgs::msg::Defaults test_msgs__msg__Defaults;
     typedef test_msgs__msg__Defaults test_msgs__msg__Defaults__3[3];
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct Arrays_Request {
@@ -67,7 +66,7 @@ module test_msgs {
 
       uint64 uint64_values[3];
 
-      char string_values[3][255 + 1];
+      string<255> string_values[3];
 
       test_msgs__msg__BasicTypes__3 basic_types_values;
 
@@ -114,7 +113,8 @@ module test_msgs {
       @default (value="(0, 1, 18446744073709551615)")
       uint64 uint64_values_default[3];
 
-      char string_values_default[3][255 + 1];
+      @default (value="('', 'max value', 'min value')")
+      string<255> string_values_default[3];
     };
     
     
@@ -129,13 +129,13 @@ module test_msgs {
     
     
     
-    typedef flat_zc::test_msgs::msg::BasicTypes test_msgs__msg__BasicTypes;
+    typedef ros2::flat_zc::test_msgs::msg::BasicTypes test_msgs__msg__BasicTypes;
     typedef test_msgs__msg__BasicTypes test_msgs__msg__BasicTypes__3[3];
-    typedef flat_zc::test_msgs::msg::Constants test_msgs__msg__Constants;
+    typedef ros2::flat_zc::test_msgs::msg::Constants test_msgs__msg__Constants;
     typedef test_msgs__msg__Constants test_msgs__msg__Constants__3[3];
-    typedef flat_zc::test_msgs::msg::Defaults test_msgs__msg__Defaults;
+    typedef ros2::flat_zc::test_msgs::msg::Defaults test_msgs__msg__Defaults;
     typedef test_msgs__msg__Defaults test_msgs__msg__Defaults__3[3];
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct Arrays_Response {
@@ -165,7 +165,7 @@ module test_msgs {
 
       uint64 uint64_values[3];
 
-      char string_values[3][255 + 1];
+      string<255> string_values[3];
 
       test_msgs__msg__BasicTypes__3 basic_types_values;
 
@@ -212,9 +212,8 @@ module test_msgs {
       @default (value="(0, 1, 18446744073709551615)")
       uint64 uint64_values_default[3];
 
-      char string_values_default[3][255 + 1];
+      @default (value="('', 'max value', 'min value')")
+      string<255> string_values_default[3];
     };
   };
-};
-};
-};
+}; }; };

@@ -3,10 +3,9 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module std_srvs {
+module ros2 { module flat_zc { module std_srvs {
   module srv {
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct SetBool_Request {
@@ -14,7 +13,7 @@ module std_srvs {
 
       boolean data;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct SetBool_Response {
@@ -24,9 +23,7 @@ module std_srvs {
 
       
 
-      char message[255 + 1];
+      string<255> message;
     };
   };
-};
-};
-};
+}; }; };

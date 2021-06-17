@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat {
-module test_msgs {
+module ros2 { module flat { module test_msgs {
   module msg {
     @final
     @language_binding(FLAT_DATA)
@@ -12,6 +11,4 @@ module test_msgs {
       uint8 structure_needs_at_least_one_member;
     };
   };
-};
-};
-};
+}; }; };

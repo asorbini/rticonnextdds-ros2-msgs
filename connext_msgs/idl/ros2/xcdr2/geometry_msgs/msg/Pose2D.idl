@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module xcdr2 {
-module geometry_msgs {
+module ros2 { module xcdr2 { module geometry_msgs {
   module msg {
     
 
@@ -22,6 +21,4 @@ module geometry_msgs {
       double theta;
     };
   };
-};
-};
-};
+}; }; };

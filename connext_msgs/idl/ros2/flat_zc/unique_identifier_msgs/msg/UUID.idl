@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module unique_identifier_msgs {
+module ros2 { module flat_zc { module unique_identifier_msgs {
   module msg {
     
     
@@ -12,13 +11,11 @@ module unique_identifier_msgs {
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct UUID {
       uint8 uuid[16];
     };
   };
-};
-};
-};
+}; }; };

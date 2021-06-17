@@ -3,22 +3,19 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module turtlesim {
+module ros2 { module flat_zc { module turtlesim {
   module srv {
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct Kill_Request {
-      char name[255 + 1];
+      string<255> name;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct Kill_Response {
       uint8 structure_needs_at_least_one_member;
     };
   };
-};
-};
-};
+}; }; };

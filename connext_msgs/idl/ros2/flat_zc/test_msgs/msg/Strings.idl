@@ -3,41 +3,48 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module test_msgs {
+module ros2 { module flat_zc { module test_msgs {
   module msg {
     module Strings_Constants {
-
+      const string<255> STRING_CONST = "Hello world!";
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct Strings {
-      char string_value[255 + 1];
+      string<255> string_value;
 
-      char string_value_default1[255 + 1];
+      @default (value="Hello world!")
+      string<255> string_value_default1;
 
-      char string_value_default2[255 + 1];
+      @default (value="Hello'world!")
+      string<255> string_value_default2;
 
-      char string_value_default3[255 + 1];
+      @default (value="Hello\"world!")
+      string<255> string_value_default3;
 
-      char string_value_default4[255 + 1];
+      @default (value="Hello'world!")
+      string<255> string_value_default4;
 
-      char string_value_default5[255 + 1];
+      @default (value="Hello\"world!")
+      string<255> string_value_default5;
 
-      char bounded_string_value[22 + 1];
+      string<22> bounded_string_value;
 
-      char bounded_string_value_default1[22 + 1];
+      @default (value="Hello world!")
+      string<22> bounded_string_value_default1;
 
-      char bounded_string_value_default2[22 + 1];
+      @default (value="Hello'world!")
+      string<22> bounded_string_value_default2;
 
-      char bounded_string_value_default3[22 + 1];
+      @default (value="Hello\"world!")
+      string<22> bounded_string_value_default3;
 
-      char bounded_string_value_default4[22 + 1];
+      @default (value="Hello'world!")
+      string<22> bounded_string_value_default4;
 
-      char bounded_string_value_default5[22 + 1];
+      @default (value="Hello\"world!")
+      string<22> bounded_string_value_default5;
     };
   };
-};
-};
-};
+}; }; };

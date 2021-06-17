@@ -11,17 +11,14 @@
 #include "ros2/zc/builtin_interfaces/msg/Time.idl"
 #endif  // builtin_interfaces_msg_Time_idl
 
-module ros2 { module zc {
-module test_msgs {
+module ros2 { module zc { module test_msgs {
   module msg {
     @final
     @transfer_mode(SHMEM_REF)
     struct Builtins {
-      zc::builtin_interfaces::msg::Duration duration_value;
+      ros2::zc::builtin_interfaces::msg::Duration duration_value;
 
-      zc::builtin_interfaces::msg::Time time_value;
+      ros2::zc::builtin_interfaces::msg::Time time_value;
     };
   };
-};
-};
-};
+}; }; };

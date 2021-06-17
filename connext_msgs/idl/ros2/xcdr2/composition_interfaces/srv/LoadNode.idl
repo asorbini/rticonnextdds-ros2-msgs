@@ -7,8 +7,7 @@
 #include "ros2/xcdr2/rcl_interfaces/msg/Parameter.idl"
 #endif  // rcl_interfaces_msg_Parameter_idl
 
-module ros2 { module xcdr2 {
-module composition_interfaces {
+module ros2 { module xcdr2 { module composition_interfaces {
   module srv {
     
 
@@ -46,11 +45,11 @@ module composition_interfaces {
 
       
 
-      sequence<xcdr2::rcl_interfaces::msg::Parameter> parameters;
+      sequence<ros2::xcdr2::rcl_interfaces::msg::Parameter> parameters;
 
       
 
-      sequence<xcdr2::rcl_interfaces::msg::Parameter> extra_arguments;
+      sequence<ros2::xcdr2::rcl_interfaces::msg::Parameter> extra_arguments;
     };
     
 
@@ -72,6 +71,4 @@ module composition_interfaces {
       uint64 unique_id;
     };
   };
-};
-};
-};
+}; }; };

@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat {
-module visualization_msgs {
+module ros2 { module flat { module visualization_msgs {
   module msg {
     module MenuEntry_Constants {
       const uint8 FEEDBACK = 0;
@@ -66,6 +65,4 @@ module visualization_msgs {
       uint8 command_type;
     };
   };
-};
-};
-};
+}; }; };

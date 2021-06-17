@@ -7,8 +7,7 @@
 #include "ros2/zc/nav_msgs/msg/OccupancyGrid.idl"
 #endif  // nav_msgs_msg_OccupancyGrid_idl
 
-module ros2 { module zc {
-module nav_msgs {
+module ros2 { module zc { module nav_msgs {
   module srv {
     
 
@@ -22,9 +21,7 @@ module nav_msgs {
     @final
     @transfer_mode(SHMEM_REF)
     struct GetMap_Response {
-      zc::nav_msgs::msg::OccupancyGrid map;
+      ros2::zc::nav_msgs::msg::OccupancyGrid map;
     };
   };
-};
-};
-};
+}; }; };

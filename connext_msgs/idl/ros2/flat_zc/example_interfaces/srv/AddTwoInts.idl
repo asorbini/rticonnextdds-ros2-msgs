@@ -3,10 +3,9 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module example_interfaces {
+module ros2 { module flat_zc { module example_interfaces {
   module srv {
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct AddTwoInts_Request {
@@ -14,13 +13,11 @@ module example_interfaces {
 
       int64 b;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct AddTwoInts_Response {
       int64 sum;
     };
   };
-};
-};
-};
+}; }; };

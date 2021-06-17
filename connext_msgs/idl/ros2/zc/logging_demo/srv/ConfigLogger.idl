@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module zc {
-module logging_demo {
+module ros2 { module zc { module logging_demo {
   module srv {
     @final
     @transfer_mode(SHMEM_REF)
@@ -19,6 +18,4 @@ module logging_demo {
       boolean success;
     };
   };
-};
-};
-};
+}; }; };

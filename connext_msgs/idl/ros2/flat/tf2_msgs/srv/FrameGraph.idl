@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat {
-module tf2_msgs {
+module ros2 { module flat { module tf2_msgs {
   module srv {
     @final
     @language_binding(FLAT_DATA)
@@ -17,6 +16,4 @@ module tf2_msgs {
       char frame_yaml[255 + 1];
     };
   };
-};
-};
-};
+}; }; };

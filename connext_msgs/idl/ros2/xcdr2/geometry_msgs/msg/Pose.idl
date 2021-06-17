@@ -11,19 +11,16 @@
 #include "ros2/xcdr2/geometry_msgs/msg/Quaternion.idl"
 #endif  // geometry_msgs_msg_Quaternion_idl
 
-module ros2 { module xcdr2 {
-module geometry_msgs {
+module ros2 { module xcdr2 { module geometry_msgs {
   module msg {
     
 
     @final
     @allowed_data_representation(XCDR2)
     struct Pose {
-      xcdr2::geometry_msgs::msg::Point position;
+      ros2::xcdr2::geometry_msgs::msg::Point position;
 
-      xcdr2::geometry_msgs::msg::Quaternion orientation;
+      ros2::xcdr2::geometry_msgs::msg::Quaternion orientation;
     };
   };
-};
-};
-};
+}; }; };

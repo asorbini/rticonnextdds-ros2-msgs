@@ -7,10 +7,9 @@
 #include "ros2/flat_zc/nav_msgs/msg/OccupancyGrid.idl"
 #endif  // nav_msgs_msg_OccupancyGrid_idl
 
-module ros2 { module flat_zc {
-module map_msgs {
+module ros2 { module flat_zc { module map_msgs {
   module srv {
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct GetMapROI_Request {
@@ -22,13 +21,11 @@ module map_msgs {
 
       double l_y;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct GetMapROI_Response {
-      flat_zc::nav_msgs::msg::OccupancyGrid sub_map;
+      ros2::flat_zc::nav_msgs::msg::OccupancyGrid sub_map;
     };
   };
-};
-};
-};
+}; }; };

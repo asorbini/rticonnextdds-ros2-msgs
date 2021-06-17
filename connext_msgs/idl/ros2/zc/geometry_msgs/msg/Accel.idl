@@ -7,19 +7,16 @@
 #include "ros2/zc/geometry_msgs/msg/Vector3.idl"
 #endif  // geometry_msgs_msg_Vector3_idl
 
-module ros2 { module zc {
-module geometry_msgs {
+module ros2 { module zc { module geometry_msgs {
   module msg {
     
 
     @final
     @transfer_mode(SHMEM_REF)
     struct Accel {
-      zc::geometry_msgs::msg::Vector3 linear;
+      ros2::zc::geometry_msgs::msg::Vector3 linear;
 
-      zc::geometry_msgs::msg::Vector3 angular;
+      ros2::zc::geometry_msgs::msg::Vector3 angular;
     };
   };
-};
-};
-};
+}; }; };

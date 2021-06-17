@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module statistics_msgs {
+module ros2 { module flat_zc { module statistics_msgs {
   module msg {
     
 
@@ -23,7 +22,7 @@ module statistics_msgs {
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct StatisticDataPoint {
@@ -37,6 +36,4 @@ module statistics_msgs {
       double data;
     };
   };
-};
-};
-};
+}; }; };

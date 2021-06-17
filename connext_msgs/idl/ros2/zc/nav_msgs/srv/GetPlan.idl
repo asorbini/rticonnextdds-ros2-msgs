@@ -11,8 +11,7 @@
 #include "ros2/zc/nav_msgs/msg/Path.idl"
 #endif  // nav_msgs_msg_Path_idl
 
-module ros2 { module zc {
-module nav_msgs {
+module ros2 { module zc { module nav_msgs {
   module srv {
     
 
@@ -21,11 +20,11 @@ module nav_msgs {
     struct GetPlan_Request {
       
 
-      zc::geometry_msgs::msg::PoseStamped start;
+      ros2::zc::geometry_msgs::msg::PoseStamped start;
 
       
 
-      zc::geometry_msgs::msg::PoseStamped goal;
+      ros2::zc::geometry_msgs::msg::PoseStamped goal;
 
       
 
@@ -37,9 +36,7 @@ module nav_msgs {
     @final
     @transfer_mode(SHMEM_REF)
     struct GetPlan_Response {
-      zc::nav_msgs::msg::Path plan;
+      ros2::zc::nav_msgs::msg::Path plan;
     };
   };
-};
-};
-};
+}; }; };

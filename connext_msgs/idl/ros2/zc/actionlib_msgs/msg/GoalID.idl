@@ -7,8 +7,7 @@
 #include "ros2/zc/builtin_interfaces/msg/Time.idl"
 #endif  // builtin_interfaces_msg_Time_idl
 
-module ros2 { module zc {
-module actionlib_msgs {
+module ros2 { module zc { module actionlib_msgs {
   module msg {
     @final
     @transfer_mode(SHMEM_REF)
@@ -17,7 +16,7 @@ module actionlib_msgs {
 
 
 
-      zc::builtin_interfaces::msg::Time stamp;
+      ros2::zc::builtin_interfaces::msg::Time stamp;
 
       
 
@@ -26,6 +25,4 @@ module actionlib_msgs {
       char id[255 + 1];
     };
   };
-};
-};
-};
+}; }; };

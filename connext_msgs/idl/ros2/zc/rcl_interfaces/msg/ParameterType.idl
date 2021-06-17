@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module zc {
-module rcl_interfaces {
+module ros2 { module zc { module rcl_interfaces {
   module msg {
     module ParameterType_Constants {
       const uint8 PARAMETER_NOT_SET = 0;
@@ -26,6 +25,4 @@ module rcl_interfaces {
       uint8 structure_needs_at_least_one_member;
     };
   };
-};
-};
-};
+}; }; };

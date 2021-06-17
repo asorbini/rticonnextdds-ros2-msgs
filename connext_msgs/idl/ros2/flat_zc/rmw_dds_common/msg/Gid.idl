@@ -3,17 +3,14 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module rmw_dds_common {
+module ros2 { module flat_zc { module rmw_dds_common {
   module msg {
     
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct Gid {
       uint8 data[24];
     };
   };
-};
-};
-};
+}; }; };

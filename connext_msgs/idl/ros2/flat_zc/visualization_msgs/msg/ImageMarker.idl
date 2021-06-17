@@ -19,8 +19,7 @@
 #include "ros2/flat_zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module flat_zc {
-module visualization_msgs {
+module ros2 { module flat_zc { module visualization_msgs {
   module msg {
     module ImageMarker_Constants {
       const int32 CIRCLE = 0;
@@ -31,15 +30,15 @@ module visualization_msgs {
       const int32 ADD = 0;
       const int32 REMOVE = 1;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct ImageMarker {
-      flat_zc::std_msgs::msg::Header header;
+      ros2::flat_zc::std_msgs::msg::Header header;
 
       
 
-      char ns[255 + 1];
+      string<255> ns;
 
       
 
@@ -55,7 +54,7 @@ module visualization_msgs {
 
       
 
-      flat_zc::geometry_msgs::msg::Point position;
+      ros2::flat_zc::geometry_msgs::msg::Point position;
 
       
 
@@ -63,7 +62,7 @@ module visualization_msgs {
 
       
 
-      flat_zc::std_msgs::msg::ColorRGBA outline_color;
+      ros2::flat_zc::std_msgs::msg::ColorRGBA outline_color;
 
       
 
@@ -72,22 +71,20 @@ module visualization_msgs {
       
 
       
-      flat_zc::std_msgs::msg::ColorRGBA fill_color;
+      ros2::flat_zc::std_msgs::msg::ColorRGBA fill_color;
 
       
 
 
-      flat_zc::builtin_interfaces::msg::Duration lifetime;
+      ros2::flat_zc::builtin_interfaces::msg::Duration lifetime;
 
       
 
-      flat_zc::geometry_msgs::msg::Point points[100];
+      sequence<ros2::flat_zc::geometry_msgs::msg::Point, 100> points;
 
       
 
-      flat_zc::std_msgs::msg::ColorRGBA outline_colors[100];
+      sequence<ros2::flat_zc::std_msgs::msg::ColorRGBA, 100> outline_colors;
     };
   };
-};
-};
-};
+}; }; };

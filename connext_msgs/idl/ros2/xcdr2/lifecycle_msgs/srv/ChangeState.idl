@@ -7,8 +7,7 @@
 #include "ros2/xcdr2/lifecycle_msgs/msg/Transition.idl"
 #endif  // lifecycle_msgs_msg_Transition_idl
 
-module ros2 { module xcdr2 {
-module lifecycle_msgs {
+module ros2 { module xcdr2 { module lifecycle_msgs {
   module srv {
     
 
@@ -17,7 +16,7 @@ module lifecycle_msgs {
     @final
     @allowed_data_representation(XCDR2)
     struct ChangeState_Request {
-      xcdr2::lifecycle_msgs::msg::Transition transition;
+      ros2::xcdr2::lifecycle_msgs::msg::Transition transition;
     };
     @final
     @allowed_data_representation(XCDR2)
@@ -27,6 +26,4 @@ module lifecycle_msgs {
       boolean success;
     };
   };
-};
-};
-};
+}; }; };

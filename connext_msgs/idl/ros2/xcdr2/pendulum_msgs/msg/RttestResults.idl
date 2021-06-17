@@ -15,17 +15,16 @@
 #include "ros2/xcdr2/pendulum_msgs/msg/JointState.idl"
 #endif  // pendulum_msgs_msg_JointState_idl
 
-module ros2 { module xcdr2 {
-module pendulum_msgs {
+module ros2 { module xcdr2 { module pendulum_msgs {
   module msg {
     @final
     @allowed_data_representation(XCDR2)
     struct RttestResults {
-      xcdr2::builtin_interfaces::msg::Time stamp;
+      ros2::xcdr2::builtin_interfaces::msg::Time stamp;
 
-      xcdr2::pendulum_msgs::msg::JointCommand command;
+      ros2::xcdr2::pendulum_msgs::msg::JointCommand command;
 
-      xcdr2::pendulum_msgs::msg::JointState state;
+      ros2::xcdr2::pendulum_msgs::msg::JointState state;
 
       uint64 cur_latency;
 
@@ -40,6 +39,4 @@ module pendulum_msgs {
       uint64 major_pagefaults;
     };
   };
-};
-};
-};
+}; }; };

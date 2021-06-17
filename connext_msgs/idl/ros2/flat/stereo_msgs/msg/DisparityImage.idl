@@ -15,8 +15,7 @@
 #include "ros2/flat/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module flat {
-module stereo_msgs {
+module ros2 { module flat { module stereo_msgs {
   module msg {
     
 
@@ -24,13 +23,13 @@ module stereo_msgs {
     @final
     @language_binding(FLAT_DATA)
     struct DisparityImage {
-      flat::std_msgs::msg::Header header;
+      ros2::flat::std_msgs::msg::Header header;
 
       
 
 
 
-      flat::sensor_msgs::msg::Image image;
+      ros2::flat::sensor_msgs::msg::Image image;
 
       
 
@@ -43,7 +42,7 @@ module stereo_msgs {
 
       
 
-      flat::sensor_msgs::msg::RegionOfInterest valid_window;
+      ros2::flat::sensor_msgs::msg::RegionOfInterest valid_window;
 
       
 
@@ -63,6 +62,4 @@ module stereo_msgs {
       float delta_d;
     };
   };
-};
-};
-};
+}; }; };

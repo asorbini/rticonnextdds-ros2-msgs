@@ -11,19 +11,16 @@
 #include "ros2/xcdr2/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module xcdr2 {
-module geometry_msgs {
+module ros2 { module xcdr2 { module geometry_msgs {
   module msg {
     
 
     @final
     @allowed_data_representation(XCDR2)
     struct PointStamped {
-      xcdr2::std_msgs::msg::Header header;
+      ros2::xcdr2::std_msgs::msg::Header header;
 
-      xcdr2::geometry_msgs::msg::Point point;
+      ros2::xcdr2::geometry_msgs::msg::Point point;
     };
   };
-};
-};
-};
+}; }; };

@@ -7,13 +7,12 @@
 #include "ros2/flat/map_msgs/msg/ProjectedMapInfo.idl"
 #endif  // map_msgs_msg_ProjectedMapInfo_idl
 
-module ros2 { module flat {
-module map_msgs {
+module ros2 { module flat { module map_msgs {
   module srv {
     @final
     @language_binding(FLAT_DATA)
     struct ProjectedMapsInfo_Request {
-      flat::map_msgs::msg::ProjectedMapInfo projected_maps_info[100];
+      ros2::flat::map_msgs::msg::ProjectedMapInfo projected_maps_info[100];
     };
     @final
     @language_binding(FLAT_DATA)
@@ -21,6 +20,4 @@ module map_msgs {
       uint8 structure_needs_at_least_one_member;
     };
   };
-};
-};
-};
+}; }; };

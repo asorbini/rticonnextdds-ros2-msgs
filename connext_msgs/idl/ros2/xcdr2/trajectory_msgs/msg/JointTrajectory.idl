@@ -11,8 +11,7 @@
 #include "ros2/xcdr2/trajectory_msgs/msg/JointTrajectoryPoint.idl"
 #endif  // trajectory_msgs_msg_JointTrajectoryPoint_idl
 
-module ros2 { module xcdr2 {
-module trajectory_msgs {
+module ros2 { module xcdr2 { module trajectory_msgs {
   module msg {
     
 
@@ -20,7 +19,7 @@ module trajectory_msgs {
     @final
     @allowed_data_representation(XCDR2)
     struct JointTrajectory {
-      xcdr2::std_msgs::msg::Header header;
+      ros2::xcdr2::std_msgs::msg::Header header;
 
       
 
@@ -30,9 +29,7 @@ module trajectory_msgs {
       
 
 
-      sequence<xcdr2::trajectory_msgs::msg::JointTrajectoryPoint> points;
+      sequence<ros2::xcdr2::trajectory_msgs::msg::JointTrajectoryPoint> points;
     };
   };
-};
-};
-};
+}; }; };

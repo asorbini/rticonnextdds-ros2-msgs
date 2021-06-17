@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module lifecycle_msgs {
+module ros2 { module flat_zc { module lifecycle_msgs {
   module msg {
     module State_Constants {
       const uint8 PRIMARY_STATE_UNKNOWN = 0;
@@ -22,7 +21,7 @@ module lifecycle_msgs {
     
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct State {
@@ -32,9 +31,7 @@ module lifecycle_msgs {
 
       
 
-      char label[255 + 1];
+      string<255> label;
     };
   };
-};
-};
-};
+}; }; };

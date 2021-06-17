@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module zc {
-module composition_interfaces {
+module ros2 { module zc { module composition_interfaces {
   module srv {
     @final
     @transfer_mode(SHMEM_REF)
@@ -23,6 +22,4 @@ module composition_interfaces {
       uint64 unique_ids[100];
     };
   };
-};
-};
-};
+}; }; };

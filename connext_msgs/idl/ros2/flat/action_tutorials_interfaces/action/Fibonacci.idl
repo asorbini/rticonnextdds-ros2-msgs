@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat {
-module action_tutorials_interfaces {
+module ros2 { module flat { module action_tutorials_interfaces {
   module action {
     @final
     @language_binding(FLAT_DATA)
@@ -22,6 +21,4 @@ module action_tutorials_interfaces {
       int32 partial_sequence[100];
     };
   };
-};
-};
-};
+}; }; };

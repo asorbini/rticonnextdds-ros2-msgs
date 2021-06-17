@@ -7,8 +7,7 @@
 #include "ros2/xcdr2/sensor_msgs/msg/PointCloud2.idl"
 #endif  // sensor_msgs_msg_PointCloud2_idl
 
-module ros2 { module xcdr2 {
-module map_msgs {
+module ros2 { module xcdr2 { module map_msgs {
   module srv {
     @final
     @allowed_data_representation(XCDR2)
@@ -38,9 +37,7 @@ module map_msgs {
     @final
     @allowed_data_representation(XCDR2)
     struct GetPointMapROI_Response {
-      xcdr2::sensor_msgs::msg::PointCloud2 sub_map;
+      ros2::xcdr2::sensor_msgs::msg::PointCloud2 sub_map;
     };
   };
-};
-};
-};
+}; }; };

@@ -7,14 +7,13 @@
 #include "ros2/flat_zc/example_interfaces/msg/MultiArrayLayout.idl"
 #endif  // example_interfaces_msg_MultiArrayLayout_idl
 
-module ros2 { module flat_zc {
-module example_interfaces {
+module ros2 { module flat_zc { module example_interfaces {
   module msg {
     
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct UInt16MultiArray {
@@ -22,13 +21,11 @@ module example_interfaces {
 
 
 
-      flat_zc::example_interfaces::msg::MultiArrayLayout layout;
+      ros2::flat_zc::example_interfaces::msg::MultiArrayLayout layout;
 
       
 
-      uint16 data[100];
+      sequence<uint16, 100> data;
     };
   };
-};
-};
-};
+}; }; };

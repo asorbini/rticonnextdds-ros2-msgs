@@ -7,15 +7,14 @@
 #include "ros2/flat_zc/std_msgs/msg/MultiArrayLayout.idl"
 #endif  // std_msgs_msg_MultiArrayLayout_idl
 
-module ros2 { module flat_zc {
-module std_msgs {
+module ros2 { module flat_zc { module std_msgs {
   module msg {
     
 
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct UInt16MultiArray {
@@ -23,13 +22,11 @@ module std_msgs {
 
 
 
-      flat_zc::std_msgs::msg::MultiArrayLayout layout;
+      ros2::flat_zc::std_msgs::msg::MultiArrayLayout layout;
 
       
 
-      uint16 data[100];
+      sequence<uint16, 100> data;
     };
   };
-};
-};
-};
+}; }; };

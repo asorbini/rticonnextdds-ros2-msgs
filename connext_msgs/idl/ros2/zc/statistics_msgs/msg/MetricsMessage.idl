@@ -11,8 +11,7 @@
 #include "ros2/zc/statistics_msgs/msg/StatisticDataPoint.idl"
 #endif  // statistics_msgs_msg_StatisticDataPoint_idl
 
-module ros2 { module zc {
-module statistics_msgs {
+module ros2 { module zc { module statistics_msgs {
   module msg {
     
 
@@ -44,17 +43,15 @@ module statistics_msgs {
 
       
 
-      zc::builtin_interfaces::msg::Time window_start;
+      ros2::zc::builtin_interfaces::msg::Time window_start;
 
       
 
-      zc::builtin_interfaces::msg::Time window_stop;
+      ros2::zc::builtin_interfaces::msg::Time window_stop;
 
       
 
-      zc::statistics_msgs::msg::StatisticDataPoint statistics[100];
+      ros2::zc::statistics_msgs::msg::StatisticDataPoint statistics[100];
     };
   };
-};
-};
-};
+}; }; };

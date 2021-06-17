@@ -7,18 +7,15 @@
 #include "ros2/flat_zc/action_msgs/msg/GoalStatus.idl"
 #endif  // action_msgs_msg_GoalStatus_idl
 
-module ros2 { module flat_zc {
-module action_msgs {
+module ros2 { module flat_zc { module action_msgs {
   module msg {
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct GoalStatusArray {
-      flat_zc::action_msgs::msg::GoalStatus status_list[100];
+      sequence<ros2::flat_zc::action_msgs::msg::GoalStatus, 100> status_list;
     };
   };
-};
-};
-};
+}; }; };

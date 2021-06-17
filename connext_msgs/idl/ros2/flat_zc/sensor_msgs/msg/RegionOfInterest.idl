@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module sensor_msgs {
+module ros2 { module flat_zc { module sensor_msgs {
   module msg {
     
 
@@ -13,7 +12,7 @@ module sensor_msgs {
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct RegionOfInterest {
@@ -43,6 +42,4 @@ module sensor_msgs {
       boolean do_rectify;
     };
   };
-};
-};
-};
+}; }; };

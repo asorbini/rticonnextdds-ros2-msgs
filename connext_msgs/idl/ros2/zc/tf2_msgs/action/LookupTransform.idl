@@ -19,8 +19,7 @@
 #include "ros2/zc/tf2_msgs/msg/TF2Error.idl"
 #endif  // tf2_msgs_msg_TF2Error_idl
 
-module ros2 { module zc {
-module tf2_msgs {
+module ros2 { module zc { module tf2_msgs {
   module action {
     
 
@@ -31,13 +30,13 @@ module tf2_msgs {
 
       char source_frame[255 + 1];
 
-      zc::builtin_interfaces::msg::Time source_time;
+      ros2::zc::builtin_interfaces::msg::Time source_time;
 
-      zc::builtin_interfaces::msg::Duration timeout;
+      ros2::zc::builtin_interfaces::msg::Duration timeout;
 
       
 
-      zc::builtin_interfaces::msg::Time target_time;
+      ros2::zc::builtin_interfaces::msg::Time target_time;
 
       char fixed_frame[255 + 1];
 
@@ -48,9 +47,9 @@ module tf2_msgs {
     @final
     @transfer_mode(SHMEM_REF)
     struct LookupTransform_Result {
-      zc::geometry_msgs::msg::TransformStamped transform;
+      ros2::zc::geometry_msgs::msg::TransformStamped transform;
 
-      zc::tf2_msgs::msg::TF2Error error;
+      ros2::zc::tf2_msgs::msg::TF2Error error;
     };
     @final
     @transfer_mode(SHMEM_REF)
@@ -58,6 +57,4 @@ module tf2_msgs {
       uint8 structure_needs_at_least_one_member;
     };
   };
-};
-};
-};
+}; }; };

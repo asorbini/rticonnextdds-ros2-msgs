@@ -7,26 +7,23 @@
 #include "ros2/flat_zc/diagnostic_msgs/msg/DiagnosticStatus.idl"
 #endif  // diagnostic_msgs_msg_DiagnosticStatus_idl
 
-module ros2 { module flat_zc {
-module diagnostic_msgs {
+module ros2 { module flat_zc { module diagnostic_msgs {
   module srv {
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct SelfTest_Request {
       uint8 structure_needs_at_least_one_member;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct SelfTest_Response {
-      char id[255 + 1];
+      string<255> id;
 
       octet passed;
 
-      flat_zc::diagnostic_msgs::msg::DiagnosticStatus status[100];
+      sequence<ros2::flat_zc::diagnostic_msgs::msg::DiagnosticStatus, 100> status;
     };
   };
-};
-};
-};
+}; }; };

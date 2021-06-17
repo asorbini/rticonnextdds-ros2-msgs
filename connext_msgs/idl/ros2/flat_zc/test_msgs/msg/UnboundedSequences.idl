@@ -15,95 +15,93 @@
 #include "ros2/flat_zc/test_msgs/msg/Defaults.idl"
 #endif  // test_msgs_msg_Defaults_idl
 
-module ros2 { module flat_zc {
-module test_msgs {
+module ros2 { module flat_zc { module test_msgs {
   module msg {
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct UnboundedSequences {
-      boolean bool_values[100];
+      sequence<boolean, 100> bool_values;
 
-      octet byte_values[100];
+      sequence<octet, 100> byte_values;
 
-      uint8 char_values[100];
+      sequence<uint8, 100> char_values;
 
-      float float32_values[100];
+      sequence<float, 100> float32_values;
 
-      double float64_values[100];
+      sequence<double, 100> float64_values;
 
-      int8 int8_values[100];
+      sequence<int8, 100> int8_values;
 
-      uint8 uint8_values[100];
+      sequence<uint8, 100> uint8_values;
 
-      int16 int16_values[100];
+      sequence<int16, 100> int16_values;
 
-      uint16 uint16_values[100];
+      sequence<uint16, 100> uint16_values;
 
-      int32 int32_values[100];
+      sequence<int32, 100> int32_values;
 
-      uint32 uint32_values[100];
+      sequence<uint32, 100> uint32_values;
 
-      int64 int64_values[100];
+      sequence<int64, 100> int64_values;
 
-      uint64 uint64_values[100];
+      sequence<uint64, 100> uint64_values;
 
-      char string_values[100][255 + 1];
+      sequence<string<255>, 100> string_values;
 
-      flat_zc::test_msgs::msg::BasicTypes basic_types_values[100];
+      sequence<ros2::flat_zc::test_msgs::msg::BasicTypes, 100> basic_types_values;
 
-      flat_zc::test_msgs::msg::Constants constants_values[100];
+      sequence<ros2::flat_zc::test_msgs::msg::Constants, 100> constants_values;
 
-      flat_zc::test_msgs::msg::Defaults defaults_values[100];
+      sequence<ros2::flat_zc::test_msgs::msg::Defaults, 100> defaults_values;
 
       @default (value="(False, True, False)")
-      boolean bool_values_default[100];
+      sequence<boolean, 100> bool_values_default;
 
       @default (value="(0, 1, 255)")
-      octet byte_values_default[100];
+      sequence<octet, 100> byte_values_default;
 
       @default (value="(0, 1, 127)")
-      uint8 char_values_default[100];
+      sequence<uint8, 100> char_values_default;
 
       @default (value="(1.125, 0.0, -1.125)")
-      float float32_values_default[100];
+      sequence<float, 100> float32_values_default;
 
       @default (value="(3.1415, 0.0, -3.1415)")
-      double float64_values_default[100];
+      sequence<double, 100> float64_values_default;
 
       @default (value="(0, 127, -128)")
-      int8 int8_values_default[100];
+      sequence<int8, 100> int8_values_default;
 
       @default (value="(0, 1, 255)")
-      uint8 uint8_values_default[100];
+      sequence<uint8, 100> uint8_values_default;
 
       @default (value="(0, 32767, -32768)")
-      int16 int16_values_default[100];
+      sequence<int16, 100> int16_values_default;
 
       @default (value="(0, 1, 65535)")
-      uint16 uint16_values_default[100];
+      sequence<uint16, 100> uint16_values_default;
 
       @default (value="(0, 2147483647, -2147483648)")
-      int32 int32_values_default[100];
+      sequence<int32, 100> int32_values_default;
 
       @default (value="(0, 1, 4294967295)")
-      uint32 uint32_values_default[100];
+      sequence<uint32, 100> uint32_values_default;
 
       @default (value="(0, 9223372036854775807, -9223372036854775808)")
-      int64 int64_values_default[100];
+      sequence<int64, 100> int64_values_default;
 
       @default (value="(0, 1, 18446744073709551615)")
-      uint64 uint64_values_default[100];
+      sequence<uint64, 100> uint64_values_default;
 
-      char string_values_default[100][255 + 1];
+      @default (value="('', 'max value', 'min value')")
+      sequence<string<255>, 100> string_values_default;
 
       
 
       int32 alignment_check;
     };
   };
-};
-};
-};
+}; }; };

@@ -7,17 +7,14 @@
 #include "ros2/flat/sensor_msgs/msg/JoyFeedback.idl"
 #endif  // sensor_msgs_msg_JoyFeedback_idl
 
-module ros2 { module flat {
-module sensor_msgs {
+module ros2 { module flat { module sensor_msgs {
   module msg {
     
 
     @final
     @language_binding(FLAT_DATA)
     struct JoyFeedbackArray {
-      flat::sensor_msgs::msg::JoyFeedback array[100];
+      ros2::flat::sensor_msgs::msg::JoyFeedback array[100];
     };
   };
-};
-};
-};
+}; }; };

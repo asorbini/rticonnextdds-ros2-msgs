@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat {
-module std_msgs {
+module ros2 { module flat { module std_msgs {
   module msg {
     
 
@@ -27,6 +26,4 @@ module std_msgs {
       uint32 stride;
     };
   };
-};
-};
-};
+}; }; };

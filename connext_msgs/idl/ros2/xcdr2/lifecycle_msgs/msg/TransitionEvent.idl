@@ -11,8 +11,7 @@
 #include "ros2/xcdr2/lifecycle_msgs/msg/Transition.idl"
 #endif  // lifecycle_msgs_msg_Transition_idl
 
-module ros2 { module xcdr2 {
-module lifecycle_msgs {
+module ros2 { module xcdr2 { module lifecycle_msgs {
   module msg {
     
 
@@ -23,17 +22,15 @@ module lifecycle_msgs {
 
       
 
-      xcdr2::lifecycle_msgs::msg::Transition transition;
+      ros2::xcdr2::lifecycle_msgs::msg::Transition transition;
 
       
 
-      xcdr2::lifecycle_msgs::msg::State start_state;
+      ros2::xcdr2::lifecycle_msgs::msg::State start_state;
 
       
 
-      xcdr2::lifecycle_msgs::msg::State goal_state;
+      ros2::xcdr2::lifecycle_msgs::msg::State goal_state;
     };
   };
-};
-};
-};
+}; }; };

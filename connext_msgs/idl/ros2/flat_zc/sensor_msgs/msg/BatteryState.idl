@@ -7,8 +7,7 @@
 #include "ros2/flat_zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module flat_zc {
-module sensor_msgs {
+module ros2 { module flat_zc { module sensor_msgs {
   module msg {
     module BatteryState_Constants {
       const uint8 POWER_SUPPLY_STATUS_UNKNOWN = 0;
@@ -33,11 +32,11 @@ module sensor_msgs {
       const uint8 POWER_SUPPLY_TECHNOLOGY_NICD = 5;
       const uint8 POWER_SUPPLY_TECHNOLOGY_LIMN = 6;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct BatteryState {
-      flat_zc::std_msgs::msg::Header header;
+      ros2::flat_zc::std_msgs::msg::Header header;
 
       
 
@@ -86,22 +85,20 @@ module sensor_msgs {
       
 
 
-      float cell_voltage[100];
+      sequence<float, 100> cell_voltage;
 
       
 
 
-      float cell_temperature[100];
+      sequence<float, 100> cell_temperature;
 
       
 
-      char location[255 + 1];
+      string<255> location;
 
       
 
-      char serial_number[255 + 1];
+      string<255> serial_number;
     };
   };
-};
-};
-};
+}; }; };

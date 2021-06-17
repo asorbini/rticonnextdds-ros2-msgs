@@ -7,17 +7,14 @@
 #include "ros2/zc/sensor_msgs/msg/JoyFeedback.idl"
 #endif  // sensor_msgs_msg_JoyFeedback_idl
 
-module ros2 { module zc {
-module sensor_msgs {
+module ros2 { module zc { module sensor_msgs {
   module msg {
     
 
     @final
     @transfer_mode(SHMEM_REF)
     struct JoyFeedbackArray {
-      zc::sensor_msgs::msg::JoyFeedback array[100];
+      ros2::zc::sensor_msgs::msg::JoyFeedback array[100];
     };
   };
-};
-};
-};
+}; }; };

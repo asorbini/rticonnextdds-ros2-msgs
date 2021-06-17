@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat {
-module test_msgs {
+module ros2 { module flat { module test_msgs {
   module msg {
     module Strings_Constants {
 
@@ -37,6 +36,4 @@ module test_msgs {
       char bounded_string_value_default5[22 + 1];
     };
   };
-};
-};
-};
+}; }; };

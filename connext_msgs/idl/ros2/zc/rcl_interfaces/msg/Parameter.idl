@@ -7,8 +7,7 @@
 #include "ros2/zc/rcl_interfaces/msg/ParameterValue.idl"
 #endif  // rcl_interfaces_msg_ParameterValue_idl
 
-module ros2 { module zc {
-module rcl_interfaces {
+module ros2 { module zc { module rcl_interfaces {
   module msg {
     
 
@@ -23,9 +22,7 @@ module rcl_interfaces {
       
 
 
-      zc::rcl_interfaces::msg::ParameterValue value;
+      ros2::zc::rcl_interfaces::msg::ParameterValue value;
     };
   };
-};
-};
-};
+}; }; };

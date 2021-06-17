@@ -7,17 +7,14 @@
 #include "ros2/flat/action_msgs/msg/GoalStatus.idl"
 #endif  // action_msgs_msg_GoalStatus_idl
 
-module ros2 { module flat {
-module action_msgs {
+module ros2 { module flat { module action_msgs {
   module msg {
     
 
     @final
     @language_binding(FLAT_DATA)
     struct GoalStatusArray {
-      flat::action_msgs::msg::GoalStatus status_list[100];
+      ros2::flat::action_msgs::msg::GoalStatus status_list[100];
     };
   };
-};
-};
-};
+}; }; };

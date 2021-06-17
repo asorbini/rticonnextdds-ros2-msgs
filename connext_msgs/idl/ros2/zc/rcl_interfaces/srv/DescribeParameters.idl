@@ -7,8 +7,7 @@
 #include "ros2/zc/rcl_interfaces/msg/ParameterDescriptor.idl"
 #endif  // rcl_interfaces_msg_ParameterDescriptor_idl
 
-module ros2 { module zc {
-module rcl_interfaces {
+module ros2 { module zc { module rcl_interfaces {
   module srv {
     
 
@@ -24,9 +23,7 @@ module rcl_interfaces {
     @final
     @transfer_mode(SHMEM_REF)
     struct DescribeParameters_Response {
-      zc::rcl_interfaces::msg::ParameterDescriptor descriptors[100];
+      ros2::zc::rcl_interfaces::msg::ParameterDescriptor descriptors[100];
     };
   };
-};
-};
-};
+}; }; };

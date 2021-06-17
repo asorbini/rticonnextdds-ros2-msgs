@@ -7,17 +7,16 @@
 #include "ros2/flat_zc/geometry_msgs/msg/Accel.idl"
 #endif  // geometry_msgs_msg_Accel_idl
 
-module ros2 { module flat_zc {
-module geometry_msgs {
+module ros2 { module flat_zc { module geometry_msgs {
   module msg {
     
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct AccelWithCovariance {
-      flat_zc::geometry_msgs::msg::Accel accel;
+      ros2::flat_zc::geometry_msgs::msg::Accel accel;
 
       
 
@@ -27,6 +26,4 @@ module geometry_msgs {
       double covariance[36];
     };
   };
-};
-};
-};
+}; }; };

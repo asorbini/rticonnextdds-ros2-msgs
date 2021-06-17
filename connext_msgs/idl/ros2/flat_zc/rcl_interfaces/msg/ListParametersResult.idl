@@ -3,23 +3,20 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module rcl_interfaces {
+module ros2 { module flat_zc { module rcl_interfaces {
   module msg {
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct ListParametersResult {
-      char names[100][255 + 1];
+      sequence<string<255>, 100> names;
 
       
 
 
-      char prefixes[100][255 + 1];
+      sequence<string<255>, 100> prefixes;
     };
   };
-};
-};
-};
+}; }; };

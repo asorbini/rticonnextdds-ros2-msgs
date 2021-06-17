@@ -11,8 +11,7 @@
 #include "ros2/flat/shape_msgs/msg/MeshTriangle.idl"
 #endif  // shape_msgs_msg_MeshTriangle_idl
 
-module ros2 { module flat {
-module shape_msgs {
+module ros2 { module flat { module shape_msgs {
   module msg {
     
 
@@ -21,13 +20,11 @@ module shape_msgs {
     struct Mesh {
       
 
-      flat::shape_msgs::msg::MeshTriangle triangles[100];
+      ros2::flat::shape_msgs::msg::MeshTriangle triangles[100];
 
       
 
-      flat::geometry_msgs::msg::Point vertices[100];
+      ros2::flat::geometry_msgs::msg::Point vertices[100];
     };
   };
-};
-};
-};
+}; }; };

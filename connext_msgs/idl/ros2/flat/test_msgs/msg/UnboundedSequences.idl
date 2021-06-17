@@ -15,8 +15,7 @@
 #include "ros2/flat/test_msgs/msg/Defaults.idl"
 #endif  // test_msgs_msg_Defaults_idl
 
-module ros2 { module flat {
-module test_msgs {
+module ros2 { module flat { module test_msgs {
   module msg {
     
 
@@ -51,11 +50,11 @@ module test_msgs {
 
       char string_values[100][255 + 1];
 
-      flat::test_msgs::msg::BasicTypes basic_types_values[100];
+      ros2::flat::test_msgs::msg::BasicTypes basic_types_values[100];
 
-      flat::test_msgs::msg::Constants constants_values[100];
+      ros2::flat::test_msgs::msg::Constants constants_values[100];
 
-      flat::test_msgs::msg::Defaults defaults_values[100];
+      ros2::flat::test_msgs::msg::Defaults defaults_values[100];
 
       @default (value="(False, True, False)")
       boolean bool_values_default[100];
@@ -103,6 +102,4 @@ module test_msgs {
       int32 alignment_check;
     };
   };
-};
-};
-};
+}; }; };

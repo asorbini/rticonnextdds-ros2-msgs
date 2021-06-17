@@ -19,48 +19,45 @@
 #include "ros2/flat_zc/tf2_msgs/msg/TF2Error.idl"
 #endif  // tf2_msgs_msg_TF2Error_idl
 
-module ros2 { module flat_zc {
-module tf2_msgs {
+module ros2 { module flat_zc { module tf2_msgs {
   module action {
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct LookupTransform_Goal {
-      char target_frame[255 + 1];
+      string<255> target_frame;
 
-      char source_frame[255 + 1];
+      string<255> source_frame;
 
-      flat_zc::builtin_interfaces::msg::Time source_time;
+      ros2::flat_zc::builtin_interfaces::msg::Time source_time;
 
-      flat_zc::builtin_interfaces::msg::Duration timeout;
+      ros2::flat_zc::builtin_interfaces::msg::Duration timeout;
 
       
 
-      flat_zc::builtin_interfaces::msg::Time target_time;
+      ros2::flat_zc::builtin_interfaces::msg::Time target_time;
 
-      char fixed_frame[255 + 1];
+      string<255> fixed_frame;
 
       
 
       boolean advanced;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct LookupTransform_Result {
-      flat_zc::geometry_msgs::msg::TransformStamped transform;
+      ros2::flat_zc::geometry_msgs::msg::TransformStamped transform;
 
-      flat_zc::tf2_msgs::msg::TF2Error error;
+      ros2::flat_zc::tf2_msgs::msg::TF2Error error;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct LookupTransform_Feedback {
       uint8 structure_needs_at_least_one_member;
     };
   };
-};
-};
-};
+}; }; };

@@ -19,8 +19,7 @@
 #include "ros2/xcdr2/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module xcdr2 {
-module visualization_msgs {
+module ros2 { module xcdr2 { module visualization_msgs {
   module msg {
     module ImageMarker_Constants {
       const int32 CIRCLE = 0;
@@ -34,7 +33,7 @@ module visualization_msgs {
     @final
     @allowed_data_representation(XCDR2)
     struct ImageMarker {
-      xcdr2::std_msgs::msg::Header header;
+      ros2::xcdr2::std_msgs::msg::Header header;
 
       
 
@@ -54,7 +53,7 @@ module visualization_msgs {
 
       
 
-      xcdr2::geometry_msgs::msg::Point position;
+      ros2::xcdr2::geometry_msgs::msg::Point position;
 
       
 
@@ -62,7 +61,7 @@ module visualization_msgs {
 
       
 
-      xcdr2::std_msgs::msg::ColorRGBA outline_color;
+      ros2::xcdr2::std_msgs::msg::ColorRGBA outline_color;
 
       
 
@@ -71,22 +70,20 @@ module visualization_msgs {
       
 
       
-      xcdr2::std_msgs::msg::ColorRGBA fill_color;
+      ros2::xcdr2::std_msgs::msg::ColorRGBA fill_color;
 
       
 
 
-      xcdr2::builtin_interfaces::msg::Duration lifetime;
+      ros2::xcdr2::builtin_interfaces::msg::Duration lifetime;
 
       
 
-      sequence<xcdr2::geometry_msgs::msg::Point> points;
+      sequence<ros2::xcdr2::geometry_msgs::msg::Point> points;
 
       
 
-      sequence<xcdr2::std_msgs::msg::ColorRGBA> outline_colors;
+      sequence<ros2::xcdr2::std_msgs::msg::ColorRGBA> outline_colors;
     };
   };
-};
-};
-};
+}; }; };

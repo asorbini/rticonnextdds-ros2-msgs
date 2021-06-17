@@ -7,8 +7,7 @@
 #include "ros2/flat/sensor_msgs/msg/CameraInfo.idl"
 #endif  // sensor_msgs_msg_CameraInfo_idl
 
-module ros2 { module flat {
-module sensor_msgs {
+module ros2 { module flat { module sensor_msgs {
   module srv {
     
 
@@ -23,7 +22,7 @@ module sensor_msgs {
     struct SetCameraInfo_Request {
       
 
-      flat::sensor_msgs::msg::CameraInfo camera_info;
+      ros2::flat::sensor_msgs::msg::CameraInfo camera_info;
     };
     @final
     @language_binding(FLAT_DATA)
@@ -37,6 +36,4 @@ module sensor_msgs {
       char status_message[255 + 1];
     };
   };
-};
-};
-};
+}; }; };

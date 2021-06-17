@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat {
-module tf2_msgs {
+module ros2 { module flat { module tf2_msgs {
   module msg {
     module TF2Error_Constants {
       const uint8 NO_ERROR = 0;
@@ -23,6 +22,4 @@ module tf2_msgs {
       char error_string[255 + 1];
     };
   };
-};
-};
-};
+}; }; };

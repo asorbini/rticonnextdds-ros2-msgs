@@ -7,8 +7,7 @@
 #include "ros2/flat/sensor_msgs/msg/PointCloud2.idl"
 #endif  // sensor_msgs_msg_PointCloud2_idl
 
-module ros2 { module flat {
-module map_msgs {
+module ros2 { module flat { module map_msgs {
   module srv {
     @final
     @language_binding(FLAT_DATA)
@@ -38,9 +37,7 @@ module map_msgs {
     @final
     @language_binding(FLAT_DATA)
     struct GetPointMapROI_Response {
-      flat::sensor_msgs::msg::PointCloud2 sub_map;
+      ros2::flat::sensor_msgs::msg::PointCloud2 sub_map;
     };
   };
-};
-};
-};
+}; }; };

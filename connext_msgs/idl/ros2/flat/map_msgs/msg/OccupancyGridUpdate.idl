@@ -7,13 +7,12 @@
 #include "ros2/flat/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module flat {
-module map_msgs {
+module ros2 { module flat { module map_msgs {
   module msg {
     @final
     @language_binding(FLAT_DATA)
     struct OccupancyGridUpdate {
-      flat::std_msgs::msg::Header header;
+      ros2::flat::std_msgs::msg::Header header;
 
       int32 x;
 
@@ -26,6 +25,4 @@ module map_msgs {
       int8 data[100];
     };
   };
-};
-};
-};
+}; }; };

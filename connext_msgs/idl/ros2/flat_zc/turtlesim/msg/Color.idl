@@ -3,10 +3,9 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module turtlesim {
+module ros2 { module flat_zc { module turtlesim {
   module msg {
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct Color {
@@ -17,6 +16,4 @@ module turtlesim {
       uint8 b;
     };
   };
-};
-};
-};
+}; }; };

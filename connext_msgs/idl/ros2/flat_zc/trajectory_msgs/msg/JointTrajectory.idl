@@ -11,29 +11,26 @@
 #include "ros2/flat_zc/trajectory_msgs/msg/JointTrajectoryPoint.idl"
 #endif  // trajectory_msgs_msg_JointTrajectoryPoint_idl
 
-module ros2 { module flat_zc {
-module trajectory_msgs {
+module ros2 { module flat_zc { module trajectory_msgs {
   module msg {
     
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct JointTrajectory {
-      flat_zc::std_msgs::msg::Header header;
+      ros2::flat_zc::std_msgs::msg::Header header;
 
       
 
 
-      char joint_names[100][255 + 1];
+      sequence<string<255>, 100> joint_names;
 
       
 
 
-      flat_zc::trajectory_msgs::msg::JointTrajectoryPoint points[100];
+      sequence<ros2::flat_zc::trajectory_msgs::msg::JointTrajectoryPoint, 100> points;
     };
   };
-};
-};
-};
+}; }; };

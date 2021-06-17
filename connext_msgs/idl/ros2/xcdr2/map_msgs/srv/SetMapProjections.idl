@@ -7,8 +7,7 @@
 #include "ros2/xcdr2/map_msgs/msg/ProjectedMapInfo.idl"
 #endif  // map_msgs_msg_ProjectedMapInfo_idl
 
-module ros2 { module xcdr2 {
-module map_msgs {
+module ros2 { module xcdr2 { module map_msgs {
   module srv {
     @final
     @allowed_data_representation(XCDR2)
@@ -18,9 +17,7 @@ module map_msgs {
     @final
     @allowed_data_representation(XCDR2)
     struct SetMapProjections_Response {
-      sequence<xcdr2::map_msgs::msg::ProjectedMapInfo> projected_maps_info;
+      sequence<ros2::xcdr2::map_msgs::msg::ProjectedMapInfo> projected_maps_info;
     };
   };
-};
-};
-};
+}; }; };

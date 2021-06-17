@@ -7,8 +7,7 @@
 #include "ros2/flat_zc/actionlib_msgs/msg/GoalID.idl"
 #endif  // actionlib_msgs_msg_GoalID_idl
 
-module ros2 { module flat_zc {
-module actionlib_msgs {
+module ros2 { module flat_zc { module actionlib_msgs {
   module msg {
     module GoalStatus_Constants {
       const uint8 PENDING = 0;
@@ -22,19 +21,17 @@ module actionlib_msgs {
       const uint8 RECALLED = 8;
       const uint8 LOST = 9;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct GoalStatus {
-      flat_zc::actionlib_msgs::msg::GoalID goal_id;
+      ros2::flat_zc::actionlib_msgs::msg::GoalID goal_id;
 
       uint8 status;
 
       
 
-      char text[255 + 1];
+      string<255> text;
     };
   };
-};
-};
-};
+}; }; };

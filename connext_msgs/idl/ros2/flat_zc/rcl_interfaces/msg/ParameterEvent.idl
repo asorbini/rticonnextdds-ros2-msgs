@@ -11,38 +11,35 @@
 #include "ros2/flat_zc/rcl_interfaces/msg/Parameter.idl"
 #endif  // rcl_interfaces_msg_Parameter_idl
 
-module ros2 { module flat_zc {
-module rcl_interfaces {
+module ros2 { module flat_zc { module rcl_interfaces {
   module msg {
     
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct ParameterEvent {
       
 
-      flat_zc::builtin_interfaces::msg::Time stamp;
+      ros2::flat_zc::builtin_interfaces::msg::Time stamp;
 
       
 
-      char node[255 + 1];
+      string<255> node;
 
       
 
-      flat_zc::rcl_interfaces::msg::Parameter new_parameters[100];
+      sequence<ros2::flat_zc::rcl_interfaces::msg::Parameter, 100> new_parameters;
 
       
 
-      flat_zc::rcl_interfaces::msg::Parameter changed_parameters[100];
+      sequence<ros2::flat_zc::rcl_interfaces::msg::Parameter, 100> changed_parameters;
 
       
 
-      flat_zc::rcl_interfaces::msg::Parameter deleted_parameters[100];
+      sequence<ros2::flat_zc::rcl_interfaces::msg::Parameter, 100> deleted_parameters;
     };
   };
-};
-};
-};
+}; }; };

@@ -7,17 +7,14 @@
 #include "ros2/zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module zc {
-module pcl_msgs {
+module ros2 { module zc { module pcl_msgs {
   module msg {
     @final
     @transfer_mode(SHMEM_REF)
     struct ModelCoefficients {
-      zc::std_msgs::msg::Header header;
+      ros2::zc::std_msgs::msg::Header header;
 
       float values[100];
     };
   };
-};
-};
-};
+}; }; };

@@ -15,30 +15,27 @@
 #include "ros2/flat_zc/geometry_msgs/msg/Twist.idl"
 #endif  // geometry_msgs_msg_Twist_idl
 
-module ros2 { module flat_zc {
-module trajectory_msgs {
+module ros2 { module flat_zc { module trajectory_msgs {
   module msg {
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct MultiDOFJointTrajectoryPoint {
-      flat_zc::geometry_msgs::msg::Transform transforms[100];
+      sequence<ros2::flat_zc::geometry_msgs::msg::Transform, 100> transforms;
 
       
 
-      flat_zc::geometry_msgs::msg::Twist velocities[100];
+      sequence<ros2::flat_zc::geometry_msgs::msg::Twist, 100> velocities;
 
       
 
-      flat_zc::geometry_msgs::msg::Twist accelerations[100];
+      sequence<ros2::flat_zc::geometry_msgs::msg::Twist, 100> accelerations;
 
       
 
-      flat_zc::builtin_interfaces::msg::Duration time_from_start;
+      ros2::flat_zc::builtin_interfaces::msg::Duration time_from_start;
     };
   };
-};
-};
-};
+}; }; };

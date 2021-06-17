@@ -15,43 +15,40 @@
 #include "ros2/zc/test_msgs/msg/Builtins.idl"
 #endif  // test_msgs_msg_Builtins_idl
 
-module ros2 { module zc {
-module test_msgs {
+module ros2 { module zc { module test_msgs {
   module action {
     
 
     @final
     @transfer_mode(SHMEM_REF)
     struct NestedMessage_Goal {
-      zc::test_msgs::msg::Builtins nested_field_no_pkg;
+      ros2::zc::test_msgs::msg::Builtins nested_field_no_pkg;
 
-      zc::test_msgs::msg::BasicTypes nested_field;
+      ros2::zc::test_msgs::msg::BasicTypes nested_field;
 
-      zc::builtin_interfaces::msg::Time nested_different_pkg;
+      ros2::zc::builtin_interfaces::msg::Time nested_different_pkg;
     };
     @final
     @transfer_mode(SHMEM_REF)
     struct NestedMessage_Result {
       
 
-      zc::test_msgs::msg::Builtins nested_field_no_pkg;
+      ros2::zc::test_msgs::msg::Builtins nested_field_no_pkg;
 
-      zc::test_msgs::msg::BasicTypes nested_field;
+      ros2::zc::test_msgs::msg::BasicTypes nested_field;
 
-      zc::builtin_interfaces::msg::Time nested_different_pkg;
+      ros2::zc::builtin_interfaces::msg::Time nested_different_pkg;
     };
     @final
     @transfer_mode(SHMEM_REF)
     struct NestedMessage_Feedback {
       
 
-      zc::test_msgs::msg::Builtins nested_field_no_pkg;
+      ros2::zc::test_msgs::msg::Builtins nested_field_no_pkg;
 
-      zc::test_msgs::msg::BasicTypes nested_field;
+      ros2::zc::test_msgs::msg::BasicTypes nested_field;
 
-      zc::builtin_interfaces::msg::Time nested_different_pkg;
+      ros2::zc::builtin_interfaces::msg::Time nested_different_pkg;
     };
   };
-};
-};
-};
+}; }; };

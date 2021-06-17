@@ -3,33 +3,33 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module test_msgs {
+module ros2 { module flat_zc { module test_msgs {
   module msg {
     
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct WStrings {
-      wchar wstring_value[255 + 1];
+      wstring<255> wstring_value;
 
-      wchar wstring_value_default1[255 + 1];
+      @default (value="Hello world!")
+      wstring<255> wstring_value_default1;
 
-      wchar wstring_value_default2[255 + 1];
+      @default (value="Hellö wörld!")
+      wstring<255> wstring_value_default2;
 
-      wchar wstring_value_default3[255 + 1];
+      @default (value="ハローワールド")
+      wstring<255> wstring_value_default3;
 
       
 
 
 
-      wchar array_of_wstrings[3][255 + 1];
+      wstring<255> array_of_wstrings[3];
 
-      wchar bounded_sequence_of_wstrings[100][255 + 1];
+      sequence<wstring<255>, 3> bounded_sequence_of_wstrings;
 
-      wchar unbounded_sequence_of_wstrings[100][255 + 1];
+      sequence<wstring<255>, 100> unbounded_sequence_of_wstrings;
     };
   };
-};
-};
-};
+}; }; };

@@ -11,21 +11,18 @@
 #include "ros2/xcdr2/unique_identifier_msgs/msg/UUID.idl"
 #endif  // unique_identifier_msgs_msg_UUID_idl
 
-module ros2 { module xcdr2 {
-module action_msgs {
+module ros2 { module xcdr2 { module action_msgs {
   module msg {
     
 
     @final
     @allowed_data_representation(XCDR2)
     struct GoalInfo {
-      xcdr2::unique_identifier_msgs::msg::UUID goal_id;
+      ros2::xcdr2::unique_identifier_msgs::msg::UUID goal_id;
 
       
 
-      xcdr2::builtin_interfaces::msg::Time stamp;
+      ros2::xcdr2::builtin_interfaces::msg::Time stamp;
     };
   };
-};
-};
-};
+}; }; };

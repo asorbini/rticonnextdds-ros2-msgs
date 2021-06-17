@@ -7,8 +7,7 @@
 #include "ros2/xcdr2/rcl_interfaces/msg/ListParametersResult.idl"
 #endif  // rcl_interfaces_msg_ListParametersResult_idl
 
-module ros2 { module xcdr2 {
-module rcl_interfaces {
+module ros2 { module xcdr2 { module rcl_interfaces {
   module srv {
     module ListParameters_Request_Constants {
       const uint64 DEPTH_RECURSIVE = 0;
@@ -33,9 +32,7 @@ module rcl_interfaces {
     @final
     @allowed_data_representation(XCDR2)
     struct ListParameters_Response {
-      xcdr2::rcl_interfaces::msg::ListParametersResult result;
+      ros2::xcdr2::rcl_interfaces::msg::ListParametersResult result;
     };
   };
-};
-};
-};
+}; }; };

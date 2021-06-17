@@ -7,15 +7,12 @@
 #include "ros2/zc/geometry_msgs/msg/TransformStamped.idl"
 #endif  // geometry_msgs_msg_TransformStamped_idl
 
-module ros2 { module zc {
-module tf2_msgs {
+module ros2 { module zc { module tf2_msgs {
   module msg {
     @final
     @transfer_mode(SHMEM_REF)
     struct TFMessage {
-      zc::geometry_msgs::msg::TransformStamped transforms[100];
+      ros2::zc::geometry_msgs::msg::TransformStamped transforms[100];
     };
   };
-};
-};
-};
+}; }; };

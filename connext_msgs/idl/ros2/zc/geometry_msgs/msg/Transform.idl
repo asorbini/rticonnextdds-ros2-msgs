@@ -11,19 +11,16 @@
 #include "ros2/zc/geometry_msgs/msg/Vector3.idl"
 #endif  // geometry_msgs_msg_Vector3_idl
 
-module ros2 { module zc {
-module geometry_msgs {
+module ros2 { module zc { module geometry_msgs {
   module msg {
     
 
     @final
     @transfer_mode(SHMEM_REF)
     struct Transform {
-      zc::geometry_msgs::msg::Vector3 translation;
+      ros2::zc::geometry_msgs::msg::Vector3 translation;
 
-      zc::geometry_msgs::msg::Quaternion rotation;
+      ros2::zc::geometry_msgs::msg::Quaternion rotation;
     };
   };
-};
-};
-};
+}; }; };

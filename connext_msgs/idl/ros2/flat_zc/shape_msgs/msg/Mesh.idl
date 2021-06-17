@@ -11,24 +11,21 @@
 #include "ros2/flat_zc/shape_msgs/msg/MeshTriangle.idl"
 #endif  // shape_msgs_msg_MeshTriangle_idl
 
-module ros2 { module flat_zc {
-module shape_msgs {
+module ros2 { module flat_zc { module shape_msgs {
   module msg {
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct Mesh {
       
 
-      flat_zc::shape_msgs::msg::MeshTriangle triangles[100];
+      sequence<ros2::flat_zc::shape_msgs::msg::MeshTriangle, 100> triangles;
 
       
 
-      flat_zc::geometry_msgs::msg::Point vertices[100];
+      sequence<ros2::flat_zc::geometry_msgs::msg::Point, 100> vertices;
     };
   };
-};
-};
-};
+}; }; };

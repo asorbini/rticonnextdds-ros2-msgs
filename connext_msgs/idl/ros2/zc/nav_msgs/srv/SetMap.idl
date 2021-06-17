@@ -11,8 +11,7 @@
 #include "ros2/zc/nav_msgs/msg/OccupancyGrid.idl"
 #endif  // nav_msgs_msg_OccupancyGrid_idl
 
-module ros2 { module zc {
-module nav_msgs {
+module ros2 { module zc { module nav_msgs {
   module srv {
     
 
@@ -21,11 +20,11 @@ module nav_msgs {
     struct SetMap_Request {
       
 
-      zc::nav_msgs::msg::OccupancyGrid map;
+      ros2::zc::nav_msgs::msg::OccupancyGrid map;
 
       
 
-      zc::geometry_msgs::msg::PoseWithCovarianceStamped initial_pose;
+      ros2::zc::geometry_msgs::msg::PoseWithCovarianceStamped initial_pose;
     };
     @final
     @transfer_mode(SHMEM_REF)
@@ -35,6 +34,4 @@ module nav_msgs {
       boolean success;
     };
   };
-};
-};
-};
+}; }; };

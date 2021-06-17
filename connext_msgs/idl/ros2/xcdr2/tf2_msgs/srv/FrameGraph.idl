@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module xcdr2 {
-module tf2_msgs {
+module ros2 { module xcdr2 { module tf2_msgs {
   module srv {
     @final
     @allowed_data_representation(XCDR2)
@@ -17,6 +16,4 @@ module tf2_msgs {
       string frame_yaml;
     };
   };
-};
-};
-};
+}; }; };

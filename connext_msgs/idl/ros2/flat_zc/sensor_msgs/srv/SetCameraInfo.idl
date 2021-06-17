@@ -7,8 +7,7 @@
 #include "ros2/flat_zc/sensor_msgs/msg/CameraInfo.idl"
 #endif  // sensor_msgs_msg_CameraInfo_idl
 
-module ros2 { module flat_zc {
-module sensor_msgs {
+module ros2 { module flat_zc { module sensor_msgs {
   module srv {
     
 
@@ -18,15 +17,15 @@ module sensor_msgs {
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct SetCameraInfo_Request {
       
 
-      flat_zc::sensor_msgs::msg::CameraInfo camera_info;
+      ros2::flat_zc::sensor_msgs::msg::CameraInfo camera_info;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct SetCameraInfo_Response {
@@ -36,9 +35,7 @@ module sensor_msgs {
 
       
 
-      char status_message[255 + 1];
+      string<255> status_message;
     };
   };
-};
-};
-};
+}; }; };

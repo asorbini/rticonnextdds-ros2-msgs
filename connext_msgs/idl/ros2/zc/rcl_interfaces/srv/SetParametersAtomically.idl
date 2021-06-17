@@ -11,8 +11,7 @@
 #include "ros2/zc/rcl_interfaces/msg/SetParametersResult.idl"
 #endif  // rcl_interfaces_msg_SetParametersResult_idl
 
-module ros2 { module zc {
-module rcl_interfaces {
+module ros2 { module zc { module rcl_interfaces {
   module srv {
     
 
@@ -21,16 +20,14 @@ module rcl_interfaces {
     @final
     @transfer_mode(SHMEM_REF)
     struct SetParametersAtomically_Request {
-      zc::rcl_interfaces::msg::Parameter parameters[100];
+      ros2::zc::rcl_interfaces::msg::Parameter parameters[100];
     };
     
 
     @final
     @transfer_mode(SHMEM_REF)
     struct SetParametersAtomically_Response {
-      zc::rcl_interfaces::msg::SetParametersResult result;
+      ros2::zc::rcl_interfaces::msg::SetParametersResult result;
     };
   };
-};
-};
-};
+}; }; };

@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat {
-module rmw_dds_common {
+module ros2 { module flat { module rmw_dds_common {
   module msg {
     
     @final
@@ -13,6 +12,4 @@ module rmw_dds_common {
       uint8 data[24];
     };
   };
-};
-};
-};
+}; }; };

@@ -11,8 +11,7 @@
 #include "ros2/zc/rcl_interfaces/msg/IntegerRange.idl"
 #endif  // rcl_interfaces_msg_IntegerRange_idl
 
-module ros2 { module zc {
-module rcl_interfaces {
+module ros2 { module zc { module rcl_interfaces {
   module msg {
     
 
@@ -56,13 +55,11 @@ module rcl_interfaces {
 
 
 
-      zc::rcl_interfaces::msg::FloatingPointRange floating_point_range[ 1];
+      ros2::zc::rcl_interfaces::msg::FloatingPointRange floating_point_range[ 1];
 
       
 
-      zc::rcl_interfaces::msg::IntegerRange integer_range[ 1];
+      ros2::zc::rcl_interfaces::msg::IntegerRange integer_range[ 1];
     };
   };
-};
-};
-};
+}; }; };

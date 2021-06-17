@@ -7,8 +7,7 @@
 #include "ros2/zc/sensor_msgs/msg/PointCloud2.idl"
 #endif  // sensor_msgs_msg_PointCloud2_idl
 
-module ros2 { module zc {
-module map_msgs {
+module ros2 { module zc { module map_msgs {
   module srv {
     
 
@@ -20,9 +19,7 @@ module map_msgs {
     @final
     @transfer_mode(SHMEM_REF)
     struct GetPointMap_Response {
-      zc::sensor_msgs::msg::PointCloud2 map;
+      ros2::zc::sensor_msgs::msg::PointCloud2 map;
     };
   };
-};
-};
-};
+}; }; };

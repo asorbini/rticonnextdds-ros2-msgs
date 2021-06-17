@@ -11,8 +11,7 @@
 #include "ros2/zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module zc {
-module sensor_msgs {
+module ros2 { module zc { module sensor_msgs {
   module msg {
     
     
@@ -54,7 +53,7 @@ module sensor_msgs {
 
 
 
-      zc::std_msgs::msg::Header header;
+      ros2::zc::std_msgs::msg::Header header;
 
       
 
@@ -159,9 +158,7 @@ module sensor_msgs {
 
 
 
-      zc::sensor_msgs::msg::RegionOfInterest roi;
+      ros2::zc::sensor_msgs::msg::RegionOfInterest roi;
     };
   };
-};
-};
-};
+}; }; };

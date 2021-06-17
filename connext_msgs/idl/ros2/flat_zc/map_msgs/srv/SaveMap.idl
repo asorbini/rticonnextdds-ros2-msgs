@@ -7,24 +7,21 @@
 #include "ros2/flat_zc/std_msgs/msg/String.idl"
 #endif  // std_msgs_msg_String_idl
 
-module ros2 { module flat_zc {
-module map_msgs {
+module ros2 { module flat_zc { module map_msgs {
   module srv {
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct SaveMap_Request {
-      flat_zc::std_msgs::msg::String filename;
+      ros2::flat_zc::std_msgs::msg::String filename;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct SaveMap_Response {
       uint8 structure_needs_at_least_one_member;
     };
   };
-};
-};
-};
+}; }; };

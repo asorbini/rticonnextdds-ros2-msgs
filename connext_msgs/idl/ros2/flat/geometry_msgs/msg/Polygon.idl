@@ -7,17 +7,14 @@
 #include "ros2/flat/geometry_msgs/msg/Point32.idl"
 #endif  // geometry_msgs_msg_Point32_idl
 
-module ros2 { module flat {
-module geometry_msgs {
+module ros2 { module flat { module geometry_msgs {
   module msg {
     
 
     @final
     @language_binding(FLAT_DATA)
     struct Polygon {
-      flat::geometry_msgs::msg::Point32 points[100];
+      ros2::flat::geometry_msgs::msg::Point32 points[100];
     };
   };
-};
-};
-};
+}; }; };

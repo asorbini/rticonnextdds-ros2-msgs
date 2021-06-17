@@ -7,8 +7,7 @@
 #include "ros2/zc/sensor_msgs/msg/CameraInfo.idl"
 #endif  // sensor_msgs_msg_CameraInfo_idl
 
-module ros2 { module zc {
-module sensor_msgs {
+module ros2 { module zc { module sensor_msgs {
   module srv {
     
 
@@ -23,7 +22,7 @@ module sensor_msgs {
     struct SetCameraInfo_Request {
       
 
-      zc::sensor_msgs::msg::CameraInfo camera_info;
+      ros2::zc::sensor_msgs::msg::CameraInfo camera_info;
     };
     @final
     @transfer_mode(SHMEM_REF)
@@ -37,6 +36,4 @@ module sensor_msgs {
       char status_message[255 + 1];
     };
   };
-};
-};
-};
+}; }; };

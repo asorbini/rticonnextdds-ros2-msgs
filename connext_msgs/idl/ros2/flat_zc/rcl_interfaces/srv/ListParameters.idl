@@ -7,21 +7,20 @@
 #include "ros2/flat_zc/rcl_interfaces/msg/ListParametersResult.idl"
 #endif  // rcl_interfaces_msg_ListParametersResult_idl
 
-module ros2 { module flat_zc {
-module rcl_interfaces {
+module ros2 { module flat_zc { module rcl_interfaces {
   module srv {
     module ListParameters_Request_Constants {
       const uint64 DEPTH_RECURSIVE = 0;
     };
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct ListParameters_Request {
       
 
-      char prefixes[100][255 + 1];
+      sequence<string<255>, 100> prefixes;
 
       
 
@@ -31,13 +30,11 @@ module rcl_interfaces {
     };
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct ListParameters_Response {
-      flat_zc::rcl_interfaces::msg::ListParametersResult result;
+      ros2::flat_zc::rcl_interfaces::msg::ListParametersResult result;
     };
   };
-};
-};
-};
+}; }; };

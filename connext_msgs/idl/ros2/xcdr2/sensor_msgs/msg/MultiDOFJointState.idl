@@ -19,8 +19,7 @@
 #include "ros2/xcdr2/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module xcdr2 {
-module sensor_msgs {
+module ros2 { module xcdr2 { module sensor_msgs {
   module msg {
     
 
@@ -45,17 +44,15 @@ module sensor_msgs {
     @final
     @allowed_data_representation(XCDR2)
     struct MultiDOFJointState {
-      xcdr2::std_msgs::msg::Header header;
+      ros2::xcdr2::std_msgs::msg::Header header;
 
       sequence<string> joint_names;
 
-      sequence<xcdr2::geometry_msgs::msg::Transform> transforms;
+      sequence<ros2::xcdr2::geometry_msgs::msg::Transform> transforms;
 
-      sequence<xcdr2::geometry_msgs::msg::Twist> twist;
+      sequence<ros2::xcdr2::geometry_msgs::msg::Twist> twist;
 
-      sequence<xcdr2::geometry_msgs::msg::Wrench> wrench;
+      sequence<ros2::xcdr2::geometry_msgs::msg::Wrench> wrench;
     };
   };
-};
-};
-};
+}; }; };

@@ -7,8 +7,7 @@
 #include "ros2/zc/lifecycle_msgs/msg/Transition.idl"
 #endif  // lifecycle_msgs_msg_Transition_idl
 
-module ros2 { module zc {
-module lifecycle_msgs {
+module ros2 { module zc { module lifecycle_msgs {
   module srv {
     
 
@@ -17,7 +16,7 @@ module lifecycle_msgs {
     @final
     @transfer_mode(SHMEM_REF)
     struct ChangeState_Request {
-      zc::lifecycle_msgs::msg::Transition transition;
+      ros2::zc::lifecycle_msgs::msg::Transition transition;
     };
     @final
     @transfer_mode(SHMEM_REF)
@@ -27,6 +26,4 @@ module lifecycle_msgs {
       boolean success;
     };
   };
-};
-};
-};
+}; }; };

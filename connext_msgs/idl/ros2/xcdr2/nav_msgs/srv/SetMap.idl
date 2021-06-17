@@ -11,8 +11,7 @@
 #include "ros2/xcdr2/nav_msgs/msg/OccupancyGrid.idl"
 #endif  // nav_msgs_msg_OccupancyGrid_idl
 
-module ros2 { module xcdr2 {
-module nav_msgs {
+module ros2 { module xcdr2 { module nav_msgs {
   module srv {
     
 
@@ -21,11 +20,11 @@ module nav_msgs {
     struct SetMap_Request {
       
 
-      xcdr2::nav_msgs::msg::OccupancyGrid map;
+      ros2::xcdr2::nav_msgs::msg::OccupancyGrid map;
 
       
 
-      xcdr2::geometry_msgs::msg::PoseWithCovarianceStamped initial_pose;
+      ros2::xcdr2::geometry_msgs::msg::PoseWithCovarianceStamped initial_pose;
     };
     @final
     @allowed_data_representation(XCDR2)
@@ -35,6 +34,4 @@ module nav_msgs {
       boolean success;
     };
   };
-};
-};
-};
+}; }; };

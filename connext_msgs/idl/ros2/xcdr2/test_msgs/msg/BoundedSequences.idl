@@ -15,8 +15,7 @@
 #include "ros2/xcdr2/test_msgs/msg/Defaults.idl"
 #endif  // test_msgs_msg_Defaults_idl
 
-module ros2 { module xcdr2 {
-module test_msgs {
+module ros2 { module xcdr2 { module test_msgs {
   module msg {
     
 
@@ -51,11 +50,11 @@ module test_msgs {
 
       sequence<string, 3> string_values;
 
-      sequence<xcdr2::test_msgs::msg::BasicTypes, 3> basic_types_values;
+      sequence<ros2::xcdr2::test_msgs::msg::BasicTypes, 3> basic_types_values;
 
-      sequence<xcdr2::test_msgs::msg::Constants, 3> constants_values;
+      sequence<ros2::xcdr2::test_msgs::msg::Constants, 3> constants_values;
 
-      sequence<xcdr2::test_msgs::msg::Defaults, 3> defaults_values;
+      sequence<ros2::xcdr2::test_msgs::msg::Defaults, 3> defaults_values;
 
       @default (value="(False, True, False)")
       sequence<boolean, 3> bool_values_default;
@@ -104,6 +103,4 @@ module test_msgs {
       int32 alignment_check;
     };
   };
-};
-};
-};
+}; }; };

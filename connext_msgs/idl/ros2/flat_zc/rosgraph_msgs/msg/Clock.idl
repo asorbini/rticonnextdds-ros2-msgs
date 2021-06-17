@@ -7,20 +7,17 @@
 #include "ros2/flat_zc/builtin_interfaces/msg/Time.idl"
 #endif  // builtin_interfaces_msg_Time_idl
 
-module ros2 { module flat_zc {
-module rosgraph_msgs {
+module ros2 { module flat_zc { module rosgraph_msgs {
   module msg {
     
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct Clock {
-      flat_zc::builtin_interfaces::msg::Time clock;
+      ros2::flat_zc::builtin_interfaces::msg::Time clock;
     };
   };
-};
-};
-};
+}; }; };

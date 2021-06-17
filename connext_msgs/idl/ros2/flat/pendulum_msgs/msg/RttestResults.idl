@@ -15,17 +15,16 @@
 #include "ros2/flat/pendulum_msgs/msg/JointState.idl"
 #endif  // pendulum_msgs_msg_JointState_idl
 
-module ros2 { module flat {
-module pendulum_msgs {
+module ros2 { module flat { module pendulum_msgs {
   module msg {
     @final
     @language_binding(FLAT_DATA)
     struct RttestResults {
-      flat::builtin_interfaces::msg::Time stamp;
+      ros2::flat::builtin_interfaces::msg::Time stamp;
 
-      flat::pendulum_msgs::msg::JointCommand command;
+      ros2::flat::pendulum_msgs::msg::JointCommand command;
 
-      flat::pendulum_msgs::msg::JointState state;
+      ros2::flat::pendulum_msgs::msg::JointState state;
 
       uint64 cur_latency;
 
@@ -40,6 +39,4 @@ module pendulum_msgs {
       uint64 major_pagefaults;
     };
   };
-};
-};
-};
+}; }; };

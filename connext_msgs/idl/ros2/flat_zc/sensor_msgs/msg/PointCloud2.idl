@@ -11,8 +11,7 @@
 #include "ros2/flat_zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module flat_zc {
-module sensor_msgs {
+module ros2 { module flat_zc { module sensor_msgs {
   module msg {
     
 
@@ -23,13 +22,13 @@ module sensor_msgs {
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct PointCloud2 {
       
 
-      flat_zc::std_msgs::msg::Header header;
+      ros2::flat_zc::std_msgs::msg::Header header;
 
       
 
@@ -40,7 +39,7 @@ module sensor_msgs {
 
       
 
-      flat_zc::sensor_msgs::msg::PointField fields[100];
+      sequence<ros2::flat_zc::sensor_msgs::msg::PointField, 8> fields;
 
       
 
@@ -56,13 +55,11 @@ module sensor_msgs {
 
       
 
-      uint8 data[100];
+      sequence<uint8, 12582912> data;
 
       
 
       boolean is_dense;
     };
   };
-};
-};
-};
+}; }; };

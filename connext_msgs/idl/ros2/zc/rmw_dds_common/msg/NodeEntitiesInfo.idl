@@ -7,8 +7,7 @@
 #include "ros2/zc/rmw_dds_common/msg/Gid.idl"
 #endif  // rmw_dds_common_msg_Gid_idl
 
-module ros2 { module zc {
-module rmw_dds_common {
+module ros2 { module zc { module rmw_dds_common {
   module msg {
     @final
     @transfer_mode(SHMEM_REF)
@@ -17,11 +16,9 @@ module rmw_dds_common {
 
       char node_name[256 + 1];
 
-      zc::rmw_dds_common::msg::Gid reader_gid_seq[100];
+      ros2::zc::rmw_dds_common::msg::Gid reader_gid_seq[100];
 
-      zc::rmw_dds_common::msg::Gid writer_gid_seq[100];
+      ros2::zc::rmw_dds_common::msg::Gid writer_gid_seq[100];
     };
   };
-};
-};
-};
+}; }; };

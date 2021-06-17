@@ -11,21 +11,20 @@
 #include "ros2/flat_zc/visualization_msgs/msg/InteractiveMarkerPose.idl"
 #endif  // visualization_msgs_msg_InteractiveMarkerPose_idl
 
-module ros2 { module flat_zc {
-module visualization_msgs {
+module ros2 { module flat_zc { module visualization_msgs {
   module msg {
     module InteractiveMarkerUpdate_Constants {
       const uint8 KEEP_ALIVE = 0;
       const uint8 UPDATE = 1;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct InteractiveMarkerUpdate {
       
 
 
-      char server_id[255 + 1];
+      string<255> server_id;
 
       
 
@@ -38,17 +37,15 @@ module visualization_msgs {
 
 
 
-      flat_zc::visualization_msgs::msg::InteractiveMarker markers[100];
+      sequence<ros2::flat_zc::visualization_msgs::msg::InteractiveMarker, 100> markers;
 
       
 
-      flat_zc::visualization_msgs::msg::InteractiveMarkerPose poses[100];
+      sequence<ros2::flat_zc::visualization_msgs::msg::InteractiveMarkerPose, 100> poses;
 
       
 
-      char erases[100][255 + 1];
+      sequence<string<255>, 100> erases;
     };
   };
-};
-};
-};
+}; }; };

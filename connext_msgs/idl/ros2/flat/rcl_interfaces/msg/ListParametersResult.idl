@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat {
-module rcl_interfaces {
+module ros2 { module flat { module rcl_interfaces {
   module msg {
     
 
@@ -19,6 +18,4 @@ module rcl_interfaces {
       char prefixes[100][255 + 1];
     };
   };
-};
-};
-};
+}; }; };

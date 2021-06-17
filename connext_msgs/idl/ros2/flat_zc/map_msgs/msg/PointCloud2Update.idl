@@ -11,26 +11,23 @@
 #include "ros2/flat_zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module flat_zc {
-module map_msgs {
+module ros2 { module flat_zc { module map_msgs {
   module msg {
     module PointCloud2Update_Constants {
       const uint32 ADD = 0;
       const uint32 DELETE = 1;
     };
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct PointCloud2Update {
-      flat_zc::std_msgs::msg::Header header;
+      ros2::flat_zc::std_msgs::msg::Header header;
 
       
 
       uint32 type;
 
-      flat_zc::sensor_msgs::msg::PointCloud2 points;
+      ros2::flat_zc::sensor_msgs::msg::PointCloud2 points;
     };
   };
-};
-};
-};
+}; }; };

@@ -11,8 +11,7 @@
 #include "ros2/zc/trajectory_msgs/msg/JointTrajectoryPoint.idl"
 #endif  // trajectory_msgs_msg_JointTrajectoryPoint_idl
 
-module ros2 { module zc {
-module trajectory_msgs {
+module ros2 { module zc { module trajectory_msgs {
   module msg {
     
 
@@ -20,7 +19,7 @@ module trajectory_msgs {
     @final
     @transfer_mode(SHMEM_REF)
     struct JointTrajectory {
-      zc::std_msgs::msg::Header header;
+      ros2::zc::std_msgs::msg::Header header;
 
       
 
@@ -30,9 +29,7 @@ module trajectory_msgs {
       
 
 
-      zc::trajectory_msgs::msg::JointTrajectoryPoint points[100];
+      ros2::zc::trajectory_msgs::msg::JointTrajectoryPoint points[100];
     };
   };
-};
-};
-};
+}; }; };

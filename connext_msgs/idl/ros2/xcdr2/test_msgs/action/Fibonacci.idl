@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module xcdr2 {
-module test_msgs {
+module ros2 { module xcdr2 { module test_msgs {
   module action {
     
 
@@ -28,6 +27,4 @@ module test_msgs {
       sequence<int32> sequence;
     };
   };
-};
-};
-};
+}; }; };

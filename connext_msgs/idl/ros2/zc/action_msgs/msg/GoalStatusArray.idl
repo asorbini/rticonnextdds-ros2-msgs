@@ -7,17 +7,14 @@
 #include "ros2/zc/action_msgs/msg/GoalStatus.idl"
 #endif  // action_msgs_msg_GoalStatus_idl
 
-module ros2 { module zc {
-module action_msgs {
+module ros2 { module zc { module action_msgs {
   module msg {
     
 
     @final
     @transfer_mode(SHMEM_REF)
     struct GoalStatusArray {
-      zc::action_msgs::msg::GoalStatus status_list[100];
+      ros2::zc::action_msgs::msg::GoalStatus status_list[100];
     };
   };
-};
-};
-};
+}; }; };

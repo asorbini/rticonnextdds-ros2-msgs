@@ -11,8 +11,7 @@
 #include "ros2/flat/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module flat {
-module diagnostic_msgs {
+module ros2 { module flat { module diagnostic_msgs {
   module msg {
     
 
@@ -21,13 +20,11 @@ module diagnostic_msgs {
     struct DiagnosticArray {
       
 
-      flat::std_msgs::msg::Header header;
+      ros2::flat::std_msgs::msg::Header header;
 
       
 
-      flat::diagnostic_msgs::msg::DiagnosticStatus status[100];
+      ros2::flat::diagnostic_msgs::msg::DiagnosticStatus status[100];
     };
   };
-};
-};
-};
+}; }; };

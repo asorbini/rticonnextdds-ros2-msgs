@@ -7,28 +7,25 @@
 #include "ros2/flat_zc/rcl_interfaces/msg/ParameterDescriptor.idl"
 #endif  // rcl_interfaces_msg_ParameterDescriptor_idl
 
-module ros2 { module flat_zc {
-module rcl_interfaces {
+module ros2 { module flat_zc { module rcl_interfaces {
   module srv {
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct DescribeParameters_Request {
-      char names[100][255 + 1];
+      sequence<string<255>, 100> names;
     };
     
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct DescribeParameters_Response {
-      flat_zc::rcl_interfaces::msg::ParameterDescriptor descriptors[100];
+      sequence<ros2::flat_zc::rcl_interfaces::msg::ParameterDescriptor, 100> descriptors;
     };
   };
-};
-};
-};
+}; }; };

@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module sensor_msgs {
+module ros2 { module flat_zc { module sensor_msgs {
   module msg {
     
 
@@ -23,21 +22,19 @@ module sensor_msgs {
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct ChannelFloat32 {
       
 
 
-      char name[255 + 1];
+      string<255> name;
 
       
 
 
-      float values[100];
+      sequence<float, 100> values;
     };
   };
-};
-};
-};
+}; }; };

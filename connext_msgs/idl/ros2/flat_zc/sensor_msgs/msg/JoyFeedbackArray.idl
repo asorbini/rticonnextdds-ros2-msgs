@@ -7,18 +7,15 @@
 #include "ros2/flat_zc/sensor_msgs/msg/JoyFeedback.idl"
 #endif  // sensor_msgs_msg_JoyFeedback_idl
 
-module ros2 { module flat_zc {
-module sensor_msgs {
+module ros2 { module flat_zc { module sensor_msgs {
   module msg {
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct JoyFeedbackArray {
-      flat_zc::sensor_msgs::msg::JoyFeedback array[100];
+      sequence<ros2::flat_zc::sensor_msgs::msg::JoyFeedback, 100> array;
     };
   };
-};
-};
-};
+}; }; };

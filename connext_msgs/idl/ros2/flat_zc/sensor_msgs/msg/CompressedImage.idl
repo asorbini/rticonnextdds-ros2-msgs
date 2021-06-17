@@ -7,12 +7,11 @@
 #include "ros2/flat_zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module flat_zc {
-module sensor_msgs {
+module ros2 { module flat_zc { module sensor_msgs {
   module msg {
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct CompressedImage {
@@ -23,19 +22,17 @@ module sensor_msgs {
 
 
 
-      flat_zc::std_msgs::msg::Header header;
+      ros2::flat_zc::std_msgs::msg::Header header;
 
       
 
 
 
-      char format[255 + 1];
+      string<255> format;
 
       
 
-      uint8 data[100];
+      sequence<uint8, 100> data;
     };
   };
-};
-};
-};
+}; }; };

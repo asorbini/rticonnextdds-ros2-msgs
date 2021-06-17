@@ -7,19 +7,16 @@
 #include "ros2/zc/nav_msgs/msg/OccupancyGrid.idl"
 #endif  // nav_msgs_msg_OccupancyGrid_idl
 
-module ros2 { module zc {
-module map_msgs {
+module ros2 { module zc { module map_msgs {
   module msg {
     @final
     @transfer_mode(SHMEM_REF)
     struct ProjectedMap {
-      zc::nav_msgs::msg::OccupancyGrid map;
+      ros2::zc::nav_msgs::msg::OccupancyGrid map;
 
       double min_z;
 
       double max_z;
     };
   };
-};
-};
-};
+}; }; };

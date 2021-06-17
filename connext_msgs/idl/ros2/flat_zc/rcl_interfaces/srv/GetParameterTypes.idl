@@ -3,30 +3,27 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module rcl_interfaces {
+module ros2 { module flat_zc { module rcl_interfaces {
   module srv {
     
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct GetParameterTypes_Request {
-      char names[100][255 + 1];
+      sequence<string<255>, 100> names;
     };
     
 
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct GetParameterTypes_Response {
-      uint8 types[100];
+      sequence<uint8, 100> types;
     };
   };
-};
-};
-};
+}; }; };

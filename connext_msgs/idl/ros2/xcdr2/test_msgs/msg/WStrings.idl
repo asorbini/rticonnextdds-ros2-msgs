@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module xcdr2 {
-module test_msgs {
+module ros2 { module xcdr2 { module test_msgs {
   module msg {
     
     @final
@@ -32,6 +31,4 @@ module test_msgs {
       sequence<wstring> unbounded_sequence_of_wstrings;
     };
   };
-};
-};
-};
+}; }; };

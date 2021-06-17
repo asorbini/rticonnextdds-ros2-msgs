@@ -7,8 +7,7 @@
 #include "ros2/xcdr2/geometry_msgs/msg/Twist.idl"
 #endif  // geometry_msgs_msg_Twist_idl
 
-module ros2 { module xcdr2 {
-module geometry_msgs {
+module ros2 { module xcdr2 { module geometry_msgs {
   module msg {
     
     
@@ -16,7 +15,7 @@ module geometry_msgs {
     @final
     @allowed_data_representation(XCDR2)
     struct TwistWithCovariance {
-      xcdr2::geometry_msgs::msg::Twist twist;
+      ros2::xcdr2::geometry_msgs::msg::Twist twist;
 
       
 
@@ -26,6 +25,4 @@ module geometry_msgs {
       double covariance[36];
     };
   };
-};
-};
-};
+}; }; };

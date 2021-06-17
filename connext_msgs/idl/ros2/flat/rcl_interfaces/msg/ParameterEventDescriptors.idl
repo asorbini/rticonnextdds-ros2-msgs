@@ -7,8 +7,7 @@
 #include "ros2/flat/rcl_interfaces/msg/ParameterDescriptor.idl"
 #endif  // rcl_interfaces_msg_ParameterDescriptor_idl
 
-module ros2 { module flat {
-module rcl_interfaces {
+module ros2 { module flat { module rcl_interfaces {
   module msg {
     
 
@@ -17,13 +16,11 @@ module rcl_interfaces {
     @final
     @language_binding(FLAT_DATA)
     struct ParameterEventDescriptors {
-      flat::rcl_interfaces::msg::ParameterDescriptor new_parameters[100];
+      ros2::flat::rcl_interfaces::msg::ParameterDescriptor new_parameters[100];
 
-      flat::rcl_interfaces::msg::ParameterDescriptor changed_parameters[100];
+      ros2::flat::rcl_interfaces::msg::ParameterDescriptor changed_parameters[100];
 
-      flat::rcl_interfaces::msg::ParameterDescriptor deleted_parameters[100];
+      ros2::flat::rcl_interfaces::msg::ParameterDescriptor deleted_parameters[100];
     };
   };
-};
-};
-};
+}; }; };

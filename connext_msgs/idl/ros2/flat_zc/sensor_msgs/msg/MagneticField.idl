@@ -11,8 +11,7 @@
 #include "ros2/flat_zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module flat_zc {
-module sensor_msgs {
+module ros2 { module flat_zc { module sensor_msgs {
   module msg {
     
     
@@ -24,7 +23,7 @@ module sensor_msgs {
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct MagneticField {
@@ -33,14 +32,14 @@ module sensor_msgs {
 
 
 
-      flat_zc::std_msgs::msg::Header header;
+      ros2::flat_zc::std_msgs::msg::Header header;
 
       
 
 
 
 
-      flat_zc::geometry_msgs::msg::Vector3 magnetic_field;
+      ros2::flat_zc::geometry_msgs::msg::Vector3 magnetic_field;
 
       
 
@@ -48,6 +47,4 @@ module sensor_msgs {
       double magnetic_field_covariance[9];
     };
   };
-};
-};
-};
+}; }; };

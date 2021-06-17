@@ -7,15 +7,12 @@
 #include "ros2/xcdr2/visualization_msgs/msg/Marker.idl"
 #endif  // visualization_msgs_msg_Marker_idl
 
-module ros2 { module xcdr2 {
-module visualization_msgs {
+module ros2 { module xcdr2 { module visualization_msgs {
   module msg {
     @final
     @allowed_data_representation(XCDR2)
     struct MarkerArray {
-      sequence<xcdr2::visualization_msgs::msg::Marker> markers;
+      sequence<ros2::xcdr2::visualization_msgs::msg::Marker> markers;
     };
   };
-};
-};
-};
+}; }; };

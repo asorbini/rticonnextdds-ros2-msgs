@@ -7,15 +7,14 @@
 #include "ros2/flat_zc/std_msgs/msg/MultiArrayDimension.idl"
 #endif  // std_msgs_msg_MultiArrayDimension_idl
 
-module ros2 { module flat_zc {
-module std_msgs {
+module ros2 { module flat_zc { module std_msgs {
   module msg {
     
 
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct MultiArrayLayout {
@@ -44,13 +43,11 @@ module std_msgs {
 
 
 
-      flat_zc::std_msgs::msg::MultiArrayDimension dim[100];
+      sequence<ros2::flat_zc::std_msgs::msg::MultiArrayDimension, 100> dim;
 
       
 
       uint32 data_offset;
     };
   };
-};
-};
-};
+}; }; };

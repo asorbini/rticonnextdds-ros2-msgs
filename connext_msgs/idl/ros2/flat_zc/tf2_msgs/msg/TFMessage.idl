@@ -7,16 +7,13 @@
 #include "ros2/flat_zc/geometry_msgs/msg/TransformStamped.idl"
 #endif  // geometry_msgs_msg_TransformStamped_idl
 
-module ros2 { module flat_zc {
-module tf2_msgs {
+module ros2 { module flat_zc { module tf2_msgs {
   module msg {
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct TFMessage {
-      flat_zc::geometry_msgs::msg::TransformStamped transforms[100];
+      sequence<ros2::flat_zc::geometry_msgs::msg::TransformStamped, 100> transforms;
     };
   };
-};
-};
-};
+}; }; };

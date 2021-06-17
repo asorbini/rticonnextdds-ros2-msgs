@@ -7,8 +7,7 @@
 #include "ros2/xcdr2/builtin_interfaces/msg/Time.idl"
 #endif  // builtin_interfaces_msg_Time_idl
 
-module ros2 { module xcdr2 {
-module actionlib_msgs {
+module ros2 { module xcdr2 { module actionlib_msgs {
   module msg {
     @final
     @allowed_data_representation(XCDR2)
@@ -17,7 +16,7 @@ module actionlib_msgs {
 
 
 
-      xcdr2::builtin_interfaces::msg::Time stamp;
+      ros2::xcdr2::builtin_interfaces::msg::Time stamp;
 
       
 
@@ -26,6 +25,4 @@ module actionlib_msgs {
       string id;
     };
   };
-};
-};
-};
+}; }; };

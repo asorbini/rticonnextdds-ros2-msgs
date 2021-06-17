@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module zc {
-module pcl_msgs {
+module ros2 { module zc { module pcl_msgs {
   module msg {
     
 
@@ -14,6 +13,4 @@ module pcl_msgs {
       uint32 vertices[100];
     };
   };
-};
-};
-};
+}; }; };

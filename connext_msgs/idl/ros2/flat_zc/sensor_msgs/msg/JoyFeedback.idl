@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module sensor_msgs {
+module ros2 { module flat_zc { module sensor_msgs {
   module msg {
     module JoyFeedback_Constants {
       const uint8 TYPE_LED = 0;
@@ -13,7 +12,7 @@ module sensor_msgs {
     };
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct JoyFeedback {
@@ -30,6 +29,4 @@ module sensor_msgs {
       float intensity;
     };
   };
-};
-};
-};
+}; }; };

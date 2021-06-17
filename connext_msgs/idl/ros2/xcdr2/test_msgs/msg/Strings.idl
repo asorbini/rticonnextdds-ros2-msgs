@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module xcdr2 {
-module test_msgs {
+module ros2 { module xcdr2 { module test_msgs {
   module msg {
     module Strings_Constants {
       const string STRING_CONST = "Hello world!";
@@ -47,6 +46,4 @@ module test_msgs {
       string<22> bounded_string_value_default5;
     };
   };
-};
-};
-};
+}; }; };

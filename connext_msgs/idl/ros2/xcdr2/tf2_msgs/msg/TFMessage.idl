@@ -7,15 +7,12 @@
 #include "ros2/xcdr2/geometry_msgs/msg/TransformStamped.idl"
 #endif  // geometry_msgs_msg_TransformStamped_idl
 
-module ros2 { module xcdr2 {
-module tf2_msgs {
+module ros2 { module xcdr2 { module tf2_msgs {
   module msg {
     @final
     @allowed_data_representation(XCDR2)
     struct TFMessage {
-      sequence<xcdr2::geometry_msgs::msg::TransformStamped> transforms;
+      sequence<ros2::xcdr2::geometry_msgs::msg::TransformStamped> transforms;
     };
   };
-};
-};
-};
+}; }; };

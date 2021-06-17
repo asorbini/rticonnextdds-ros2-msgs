@@ -3,15 +3,14 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module rcl_interfaces {
+module ros2 { module flat_zc { module rcl_interfaces {
   module msg {
     
 
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct ParameterValue {
@@ -36,29 +35,27 @@ module rcl_interfaces {
 
       
 
-      char string_value[255 + 1];
+      string<255> string_value;
 
       
 
-      octet byte_array_value[100];
+      sequence<octet, 100> byte_array_value;
 
       
 
-      boolean bool_array_value[100];
+      sequence<boolean, 100> bool_array_value;
 
       
 
-      int64 integer_array_value[100];
+      sequence<int64, 100> integer_array_value;
 
       
 
-      double double_array_value[100];
+      sequence<double, 100> double_array_value;
 
       
 
-      char string_array_value[100][255 + 1];
+      sequence<string<255>, 100> string_array_value;
     };
   };
-};
-};
-};
+}; }; };

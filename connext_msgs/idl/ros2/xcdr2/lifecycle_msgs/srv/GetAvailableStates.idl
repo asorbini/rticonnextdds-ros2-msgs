@@ -7,8 +7,7 @@
 #include "ros2/xcdr2/lifecycle_msgs/msg/State.idl"
 #endif  // lifecycle_msgs_msg_State_idl
 
-module ros2 { module xcdr2 {
-module lifecycle_msgs {
+module ros2 { module xcdr2 { module lifecycle_msgs {
   module srv {
     @final
     @allowed_data_representation(XCDR2)
@@ -20,9 +19,7 @@ module lifecycle_msgs {
     @final
     @allowed_data_representation(XCDR2)
     struct GetAvailableStates_Response {
-      sequence<xcdr2::lifecycle_msgs::msg::State> available_states;
+      sequence<ros2::xcdr2::lifecycle_msgs::msg::State> available_states;
     };
   };
-};
-};
-};
+}; }; };

@@ -7,8 +7,7 @@
 #include "ros2/flat/geometry_msgs/msg/Pose.idl"
 #endif  // geometry_msgs_msg_Pose_idl
 
-module ros2 { module flat {
-module geometry_msgs {
+module ros2 { module flat { module geometry_msgs {
   module msg {
     
     
@@ -16,7 +15,7 @@ module geometry_msgs {
     @final
     @language_binding(FLAT_DATA)
     struct PoseWithCovariance {
-      flat::geometry_msgs::msg::Pose pose;
+      ros2::flat::geometry_msgs::msg::Pose pose;
 
       
 
@@ -26,6 +25,4 @@ module geometry_msgs {
       double covariance[36];
     };
   };
-};
-};
-};
+}; }; };

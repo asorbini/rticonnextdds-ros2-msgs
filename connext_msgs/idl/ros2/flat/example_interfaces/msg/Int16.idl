@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat {
-module example_interfaces {
+module ros2 { module flat { module example_interfaces {
   module msg {
     
 
@@ -17,6 +16,4 @@ module example_interfaces {
       int16 data;
     };
   };
-};
-};
-};
+}; }; };

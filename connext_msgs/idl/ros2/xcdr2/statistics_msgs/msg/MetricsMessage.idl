@@ -11,8 +11,7 @@
 #include "ros2/xcdr2/statistics_msgs/msg/StatisticDataPoint.idl"
 #endif  // statistics_msgs_msg_StatisticDataPoint_idl
 
-module ros2 { module xcdr2 {
-module statistics_msgs {
+module ros2 { module xcdr2 { module statistics_msgs {
   module msg {
     
 
@@ -44,17 +43,15 @@ module statistics_msgs {
 
       
 
-      xcdr2::builtin_interfaces::msg::Time window_start;
+      ros2::xcdr2::builtin_interfaces::msg::Time window_start;
 
       
 
-      xcdr2::builtin_interfaces::msg::Time window_stop;
+      ros2::xcdr2::builtin_interfaces::msg::Time window_stop;
 
       
 
-      sequence<xcdr2::statistics_msgs::msg::StatisticDataPoint> statistics;
+      sequence<ros2::xcdr2::statistics_msgs::msg::StatisticDataPoint> statistics;
     };
   };
-};
-};
-};
+}; }; };

@@ -7,8 +7,7 @@
 #include "ros2/flat_zc/diagnostic_msgs/msg/KeyValue.idl"
 #endif  // diagnostic_msgs_msg_KeyValue_idl
 
-module ros2 { module flat_zc {
-module diagnostic_msgs {
+module ros2 { module flat_zc { module diagnostic_msgs {
   module msg {
     module DiagnosticStatus_Constants {
       const octet OK = 0;
@@ -18,7 +17,7 @@ module diagnostic_msgs {
     };
     
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct DiagnosticStatus {
@@ -28,21 +27,19 @@ module diagnostic_msgs {
 
       
 
-      char name[255 + 1];
+      string<255> name;
 
       
 
-      char message[255 + 1];
+      string<255> message;
 
       
 
-      char hardware_id[255 + 1];
+      string<255> hardware_id;
 
       
 
-      flat_zc::diagnostic_msgs::msg::KeyValue values[100];
+      sequence<ros2::flat_zc::diagnostic_msgs::msg::KeyValue, 100> values;
     };
   };
-};
-};
-};
+}; }; };

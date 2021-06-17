@@ -7,8 +7,7 @@
 #include "ros2/flat/action_msgs/msg/GoalInfo.idl"
 #endif  // action_msgs_msg_GoalInfo_idl
 
-module ros2 { module flat {
-module action_msgs {
+module ros2 { module flat { module action_msgs {
   module srv {
     
 
@@ -25,7 +24,7 @@ module action_msgs {
     struct CancelGoal_Request {
       
 
-      flat::action_msgs::msg::GoalInfo goal_info;
+      ros2::flat::action_msgs::msg::GoalInfo goal_info;
     };
     module CancelGoal_Response_Constants {
       const int8 ERROR_NONE = 0;
@@ -46,9 +45,7 @@ module action_msgs {
 
       
 
-      flat::action_msgs::msg::GoalInfo goals_canceling[100];
+      ros2::flat::action_msgs::msg::GoalInfo goals_canceling[100];
     };
   };
-};
-};
-};
+}; }; };

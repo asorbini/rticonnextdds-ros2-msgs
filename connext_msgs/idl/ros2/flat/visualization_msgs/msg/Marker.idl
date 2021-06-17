@@ -27,8 +27,7 @@
 #include "ros2/flat/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module flat {
-module visualization_msgs {
+module ros2 { module flat { module visualization_msgs {
   module msg {
     module Marker_Constants {
       const int32 ARROW = 0;
@@ -59,7 +58,7 @@ module visualization_msgs {
     struct Marker {
       
 
-      flat::std_msgs::msg::Header header;
+      ros2::flat::std_msgs::msg::Header header;
 
       
 
@@ -84,21 +83,21 @@ module visualization_msgs {
 
       
 
-      flat::geometry_msgs::msg::Pose pose;
+      ros2::flat::geometry_msgs::msg::Pose pose;
 
       
 
-      flat::geometry_msgs::msg::Vector3 scale;
+      ros2::flat::geometry_msgs::msg::Vector3 scale;
 
       
 
       
-      flat::std_msgs::msg::ColorRGBA color;
+      ros2::flat::std_msgs::msg::ColorRGBA color;
 
       
 
 
-      flat::builtin_interfaces::msg::Duration lifetime;
+      ros2::flat::builtin_interfaces::msg::Duration lifetime;
 
       
 
@@ -106,13 +105,13 @@ module visualization_msgs {
 
       
 
-      flat::geometry_msgs::msg::Point points[100];
+      ros2::flat::geometry_msgs::msg::Point points[100];
 
       
 
 
 
-      flat::std_msgs::msg::ColorRGBA colors[100];
+      ros2::flat::std_msgs::msg::ColorRGBA colors[100];
 
       
 
@@ -125,6 +124,4 @@ module visualization_msgs {
       boolean mesh_use_embedded_materials;
     };
   };
-};
-};
-};
+}; }; };

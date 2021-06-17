@@ -7,8 +7,7 @@
 #include "ros2/flat_zc/std_msgs/msg/Header.idl"
 #endif  // std_msgs_msg_Header_idl
 
-module ros2 { module flat_zc {
-module sensor_msgs {
+module ros2 { module flat_zc { module sensor_msgs {
   module msg {
     
 
@@ -29,21 +28,19 @@ module sensor_msgs {
 
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct JointState {
-      flat_zc::std_msgs::msg::Header header;
+      ros2::flat_zc::std_msgs::msg::Header header;
 
-      char name[100][255 + 1];
+      sequence<string<255>, 100> name;
 
-      double position[100];
+      sequence<double, 100> position;
 
-      double velocity[100];
+      sequence<double, 100> velocity;
 
-      double effort[100];
+      sequence<double, 100> effort;
     };
   };
-};
-};
-};
+}; }; };

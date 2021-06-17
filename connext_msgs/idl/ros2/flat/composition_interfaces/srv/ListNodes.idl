@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat {
-module composition_interfaces {
+module ros2 { module flat { module composition_interfaces {
   module srv {
     @final
     @language_binding(FLAT_DATA)
@@ -23,6 +22,4 @@ module composition_interfaces {
       uint64 unique_ids[100];
     };
   };
-};
-};
-};
+}; }; };

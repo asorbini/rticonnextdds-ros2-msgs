@@ -7,8 +7,7 @@
 #include "ros2/zc/diagnostic_msgs/msg/KeyValue.idl"
 #endif  // diagnostic_msgs_msg_KeyValue_idl
 
-module ros2 { module zc {
-module diagnostic_msgs {
+module ros2 { module zc { module diagnostic_msgs {
   module msg {
     module DiagnosticStatus_Constants {
       const octet OK = 0;
@@ -39,9 +38,7 @@ module diagnostic_msgs {
 
       
 
-      zc::diagnostic_msgs::msg::KeyValue values[100];
+      ros2::zc::diagnostic_msgs::msg::KeyValue values[100];
     };
   };
-};
-};
-};
+}; }; };

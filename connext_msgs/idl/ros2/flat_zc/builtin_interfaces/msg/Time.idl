@@ -3,13 +3,12 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module builtin_interfaces {
+module ros2 { module flat_zc { module builtin_interfaces {
   module msg {
     
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct Time {
@@ -22,6 +21,4 @@ module builtin_interfaces {
       uint32 nanosec;
     };
   };
-};
-};
-};
+}; }; };

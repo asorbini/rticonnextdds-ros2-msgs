@@ -11,25 +11,22 @@
 #include "ros2/zc/lifecycle_msgs/msg/Transition.idl"
 #endif  // lifecycle_msgs_msg_Transition_idl
 
-module ros2 { module zc {
-module lifecycle_msgs {
+module ros2 { module zc { module lifecycle_msgs {
   module msg {
     
 
     @final
     @transfer_mode(SHMEM_REF)
     struct TransitionDescription {
-      zc::lifecycle_msgs::msg::Transition transition;
+      ros2::zc::lifecycle_msgs::msg::Transition transition;
 
       
 
-      zc::lifecycle_msgs::msg::State start_state;
+      ros2::zc::lifecycle_msgs::msg::State start_state;
 
       
 
-      zc::lifecycle_msgs::msg::State goal_state;
+      ros2::zc::lifecycle_msgs::msg::State goal_state;
     };
   };
-};
-};
-};
+}; }; };

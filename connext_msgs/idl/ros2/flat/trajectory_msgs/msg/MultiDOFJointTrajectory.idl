@@ -11,15 +11,14 @@
 #include "ros2/flat/trajectory_msgs/msg/MultiDOFJointTrajectoryPoint.idl"
 #endif  // trajectory_msgs_msg_MultiDOFJointTrajectoryPoint_idl
 
-module ros2 { module flat {
-module trajectory_msgs {
+module ros2 { module flat { module trajectory_msgs {
   module msg {
     
 
     @final
     @language_binding(FLAT_DATA)
     struct MultiDOFJointTrajectory {
-      flat::std_msgs::msg::Header header;
+      ros2::flat::std_msgs::msg::Header header;
 
       
 
@@ -28,9 +27,7 @@ module trajectory_msgs {
 
       char joint_names[100][255 + 1];
 
-      flat::trajectory_msgs::msg::MultiDOFJointTrajectoryPoint points[100];
+      ros2::flat::trajectory_msgs::msg::MultiDOFJointTrajectoryPoint points[100];
     };
   };
-};
-};
-};
+}; }; };

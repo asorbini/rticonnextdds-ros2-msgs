@@ -3,8 +3,7 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat {
-module builtin_interfaces {
+module ros2 { module flat { module builtin_interfaces {
   module msg {
     
 
@@ -21,6 +20,4 @@ module builtin_interfaces {
       uint32 nanosec;
     };
   };
-};
-};
-};
+}; }; };

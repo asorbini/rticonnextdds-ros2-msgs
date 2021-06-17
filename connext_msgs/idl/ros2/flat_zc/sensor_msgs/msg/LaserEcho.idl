@@ -3,22 +3,19 @@
 // generated code does not contain a copyright notice
 
 
-module ros2 { module flat_zc {
-module sensor_msgs {
+module ros2 { module flat_zc { module sensor_msgs {
   module msg {
     
 
 
-    @final
+    @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)
     struct LaserEcho {
       
 
 
-      float echoes[100];
+      sequence<float, 100> echoes;
     };
   };
-};
-};
-};
+}; }; };
