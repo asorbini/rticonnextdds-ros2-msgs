@@ -181,7 +181,7 @@ lifecycle_msgs               shape_msgs      visualization_msgs
 ```
 
 The list of included message packages can be restricted by specifying variable
-`MESSAGE_PACKAGES`, e.g. `-DMESSAGE_PACKAGES="std_msgs;builtin_interfaces"`, in
+`MESSAGE_INCLUDE_PACKAGES`, e.g. `-DMESSAGE_INCLUDE_PACKAGES="std_msgs;builtin_interfaces"`, in
 which case only messages from the specified packages will be included.
 
 You can further customize the list of messages included in the generated
@@ -243,7 +243,7 @@ for strings and sequences:
 |`MESSAGE_EXCLUDE_REGEX`|`""` (no message)|Regex to match messages that should be excluded from the build|
 |`MESSAGE_INCLUDE`|Empty list (all messages)|List of messages to be included in the build|
 |`MESSAGE_INCLUDE_REGEX`|`""` (all messages)|Regex to match messages that should be included in the build|
-|`MESSAGE_PACKAGES`|Empty list (all packages)|List of packages to be included in the build|
+|`MESSAGE_INCLUDE_PACKAGES`|Empty list (all packages)|List of packages to be included in the build|
 |`MESSAGE_VARIANT_ALL`|`OFF`|Generate all possible type variants|
 |`MESSAGE_VARIANT_FLAT`|`OFF`|Generate Flat-Data variants|
 |`MESSAGE_VARIANT_FLAT_ZC`|`OFF`|Generate Flat-Data/Zero-Copy variants|

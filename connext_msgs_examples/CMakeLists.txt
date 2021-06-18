@@ -22,7 +22,7 @@ find_package(connext_msgs REQUIRED)
 set(lib_sources)
 set(linked_libs RTIConnextDDS::cpp2_api)
 set(need_metp false)
-if("${connext_msgs_TYPES}" MATCHES ";std_msgs/msg/String;")
+if("${connext_msgs_TYPES}" MATCHES ";ros2/std/std_msgs/msg/String;")
   list(APPEND lib_sources
     src/talker.cpp
     src/listener.cpp)

@@ -27,6 +27,8 @@ defaults()
   : ${ROS_DISTRO:=rolling}
   : ${ROS_DIR:=/opt/ros/${ROS_DISTRO}}
   : ${IDL_DIR:=./idl}
+  : ${IDL_IMPORT_DIR:=${IDL_DIR}/import}
+  : ${IDL_STD_DIR:=${IDL_DIR}/ros2/std}
   : ${IDL_SH_DIR:=${SH_DIR}/idl}
   : ${ARRAY_MAX_LEN:=100}
   : ${IDL_STRING_MAX_LEN:=255}
@@ -54,112 +56,9 @@ help()
   printf "\n"
 }
 
-defaults
-
-if [ $# -gt 0 ]; then
-  help
-  exit 0
-fi
-
-printf -- "-- deleting IDL directories...\n"
-rm -rf ${IDL_DIR} \
-       ${IDL_FLAT_DIR} \
-       ${IDL_FLAT_ZC_DIR} \
-       ${IDL_ZC_DIR} \
-       ${IDL_2_DIR}
-
-printf -- "-- copying ROS 2 %s IDL files from %s\n" \
-  "${ROS_DISTRO}" \
-  "${ROS_DIR}"
-for idl in $(find ${ROS_DIR} \
-  -name "*.idl" ! -path "*/dds_connext/*"); do
-  # -name "*.idl" -path "*/msg/*" ! -path "*/dds_connext/*"); do
-  idl_rel="${idl#${ROS_DIR}/share/}"
-  p="${IDL_DIR}/$(dirname ${idl_rel})"
-  [ -d "${p}" ] || mkdir -p ${p}
-  rsync -a ${idl} ${p}
-  printf -- "---- ${idl_rel}\n"
-done
-
 ################################################################################
-# The IDL files use typedef's for all primitive arrays. This causes conflicts
-# because of multiple definitions when all translation units are linked into
-# a single library.
-# Since the arrays can be expressed without typedef, we try to get rid of this
-# idiom with a simple (aka brute force) search&replace.
-# Use variable ARRAY_MAX_LEN to specify the maximum length that will be searched
-# for (default: 100).
-# 
-# The script will get rid of all lines that match:
-#
-#   typedef <type> <type>__<size>[<size>];
-#
-# And transform lines that used the typedefs:
-#
-#   <type>__<size>  <identifier>;  ==>  <type> <identifier>[<size>];
-# 
+# Helper functions to manipulate IDL files
 ################################################################################
-printf -- "-- replacing primitive array typedefs up to [%d]\n" "${ARRAY_MAX_LEN}"
-for t in \
-    uint8 \
-    uint16 \
-    uint32 \
-    uint64 \
-    int8 \
-    int16 \
-    int32 \
-    int64 \
-    float \
-    double \
-    boolean \
-    octet \
-    string \
-    wstring; do
-  for f in $(grep -rEH "typedef ${t} ${t}__[1-9][0-9]*\[[1-9][0-9]*];" ${IDL_DIR} | cut -d: -f1); do
-    for i in $(seq 0 ${ARRAY_MAX_LEN}); do
-      if grep -qE "typedef ${t} ${t}__${i}\[${i}\];" ${f}; then
-        printf -- "---- rm typedef [%s/%s] %s\n" "${t}" "${i}" "${f}"
-        sed -i -r -e "s/typedef ${t} ${t}__${i}\[${i}\];//g" ${f}
-        sed -i -r -e "s/${t}__${i} ([a-zA-Z0-9_]+);/${t} \1[${i}];/g" ${f}
-      fi
-    done
-  done
-done
-
-################################################################################
-# Process each file for some more substitution/removals
-################################################################################
-for f in $(find ${IDL_DIR} -mindepth 1 -name "*\.idl"); do
-  printf -- "-- processing: %s\n" "${f}"
-
-  # Add header guards to every include
-  for inc_line in $(grep -E '^#include "' ${f} | cut -d\" -f2 | sort | uniq); do
-    inc_guard=$(echo ${inc_line} | tr '/' '_' | tr '.' '_')
-
-    sed -i -r -e \
-      "s:^(#include \"${inc_line}\")$:#ifndef ${inc_guard}\n#define ${inc_guard}\n\1\n#endif  // ${inc_guard}:g" \
-      "${f}"
-  done
-
-  # Remove comments and other unsupported annotations
-  sed -i -r -e 's:@verbatim[ ]*\(language="comment", text=$::g' \
-            -e 's:^[ ]+".*$::g' \
-            -e 's:@unit[ ]*\(.*$::g' \
-            ${f}
-done
-
-################################################################################
-# Fix some issues with annotation bugs (currently disabled)
-################################################################################
-# sed -r -i -e "s:@default \(value=-50\):@default (value=50):" \
-#   "${IDL_DIR}/test_msgs/msg/Defaults.idl"
-
-################################################################################
-# Helper function to generate alternative versions of the IDLs
-################################################################################
-# List of type packages (used to drive some processing operations)
-idl_pkgs=$(ls ${IDL_DIR})
-
 _idl_annotate_structs() {
   local f="${1}" \
         annotations="${2}"
@@ -167,6 +66,28 @@ _idl_annotate_structs() {
   sed -i -r \
       -e "s:([ ]*)(struct [A-Za-z].*)$:\1${annotations}\n\1\2:" \
       ${f}
+}
+
+_idl_add_namespace_prefix() {
+  local f="${1}"
+  shift
+  local ns_prefix="$(
+    for m in $@; do
+      printf "%s" "${m}::"
+    done
+  )"
+  local inc_prefix="$(
+    for m in $@; do
+      printf "%s" "${m}/"
+    done
+  )"
+
+  for p in ${IDL_PKGS}; do
+    sed -i -r \
+      -e "s/${p}::/${ns_prefix}${p}::/g" \
+      -e "s:#include \"${p}/:#include \"${inc_prefix}${p}/:g" \
+      ${f}
+  done
 }
 
 _idl_wrap_in_modules() {
@@ -186,6 +107,9 @@ _idl_wrap_in_modules() {
       -e "s:^(module [^{]+\{)$:${modules}\1:" \
       -e "s:^\};$:};${modules_close}:" \
       ${f}
+  
+  # Add prefix to all namespace references and #include's.
+  _idl_add_namespace_prefix "${f}" ros2 ${ns}
 }
 
 _idl_check_requires_mutable() {
@@ -279,45 +203,27 @@ _idl_convert_unbounded_to_bounded() {
       ${f}
 }
 
-_idl_add_namespace_prefix() {
-  local f="${1}"
-  shift
-  local ns_prefix="$(
-    for m in $@; do
-      printf "%s" "${m}::"
-    done
-  )"
-  local inc_prefix="$(
-    for m in $@; do
-      printf "%s" "${m}/"
-    done
-  )"
 
-  for p in ${idl_pkgs}; do
-    sed -i -r \
-      -e "s/${p}::/${ns_prefix}${p}::/g" \
-      -e "s:#include \"${p}/:#include \"${inc_prefix}${p}/:g" \
-      ${f}
-  done
-}
-
+################################################################################
+# Helper function to generate alternative versions of the IDLs
+################################################################################
 gen_alt_idl()
 {
   local ns="${1}" \
         dst_dir="${2}" \
         annotations="${3}"
 
-  rm -rf ${IDL_DIR}/.tmp-idl
-  mkdir -p ${IDL_DIR}/.tmp-idl
+  rm -rf ${IDL_IMPORT_DIR}/.tmp-idl
+  mkdir -p ${IDL_IMPORT_DIR}/.tmp-idl
 
   (
-    cd ${IDL_DIR}
-    cp -a ${idl_pkgs} .tmp-idl/
+    cd ${IDL_IMPORT_DIR}
+    cp -a ${IDL_PKGS} .tmp-idl/
   )
 
   mkdir -p ${dst_dir}/
-  mv ${IDL_DIR}/.tmp-idl/* ${dst_dir}/
-  rm -r ${IDL_DIR}/.tmp-idl
+  mv ${IDL_IMPORT_DIR}/.tmp-idl/* ${dst_dir}/
+  rm -r ${IDL_IMPORT_DIR}/.tmp-idl
 
   for f in $(find ${dst_dir} -name "*\.idl"); do
     # Check if there is a custom preprocessing script for the file.
@@ -379,11 +285,119 @@ gen_alt_idl()
       _idl_convert_unbounded_to_bounded "${f}" \
         "${IDL_SEQUENCE_MAX_LEN}" "${IDL_STRING_MAX_LEN}"
     fi
-
-    # Add prefix to all namespace references and #include's.
-    _idl_add_namespace_prefix "${f}" ros2 ${ns}
   done
 }
+
+################################################################################
+# Begin script
+################################################################################
+# Load defaults
+defaults
+
+if [ $# -gt 0 ]; then
+  help
+  exit 0
+fi
+
+printf -- "-- deleting IDL directory...\n"
+rm -rf ${IDL_DIR}
+
+printf -- "-- copying ROS 2 %s IDL files from %s\n" \
+  "${ROS_DISTRO}" \
+  "${ROS_DIR}"
+for idl in $(find ${ROS_DIR} \
+  -name "*.idl" ! -path "*/dds_connext/*"); do
+  # -name "*.idl" -path "*/msg/*" ! -path "*/dds_connext/*"); do
+  idl_rel="${idl#${ROS_DIR}/share/}"
+  p="${IDL_IMPORT_DIR}/$(dirname ${idl_rel})"
+  [ -d "${p}" ] || mkdir -p ${p}
+  rsync -a ${idl} ${p}
+  # printf -- "---- ${idl_rel}\n"
+done
+
+################################################################################
+# The IDL files use typedef's for all primitive arrays. This causes conflicts
+# because of multiple definitions when all translation units are linked into
+# a single library.
+# Since the arrays can be expressed without typedef, we try to get rid of this
+# idiom with a simple (aka brute force) search&replace.
+# Use variable ARRAY_MAX_LEN to specify the maximum length that will be searched
+# for (default: 100).
+# 
+# The script will get rid of all lines that match:
+#
+#   typedef <type> <type>__<size>[<size>];
+#
+# And transform lines that used the typedefs:
+#
+#   <type>__<size>  <identifier>;  ==>  <type> <identifier>[<size>];
+# 
+################################################################################
+printf -- "-- replacing primitive array typedefs up to [%d]\n" "${ARRAY_MAX_LEN}"
+for t in \
+    uint8 \
+    uint16 \
+    uint32 \
+    uint64 \
+    int8 \
+    int16 \
+    int32 \
+    int64 \
+    float \
+    double \
+    boolean \
+    octet \
+    string \
+    wstring; do
+  for f in $(grep -rEH "typedef ${t} ${t}__[1-9][0-9]*\[[1-9][0-9]*];" ${IDL_IMPORT_DIR} | cut -d: -f1); do
+    for i in $(seq 0 ${ARRAY_MAX_LEN}); do
+      if grep -qE "typedef ${t} ${t}__${i}\[${i}\];" ${f}; then
+        # printf -- "---- rm typedef [%s/%s] %s\n" "${t}" "${i}" "${f}"
+        sed -i -r -e "s/typedef ${t} ${t}__${i}\[${i}\];//g" ${f}
+        sed -i -r -e "s/${t}__${i} ([a-zA-Z0-9_]+);/${t} \1[${i}];/g" ${f}
+      fi
+    done
+  done
+done
+
+################################################################################
+# Process each file for some more substitutions/removals
+################################################################################
+for f in $(find ${IDL_IMPORT_DIR} -mindepth 1 -name "*\.idl"); do
+  # printf -- "-- processing: %s\n" "${f}"
+
+  # Add header guards to every include
+  for inc_line in $(grep -E '^#include "' ${f} | cut -d\" -f2 | sort | uniq); do
+    inc_guard=$(echo ${inc_line} | tr '/' '_' | tr '.' '_')
+
+    sed -i -r -e \
+      "s:^(#include \"${inc_line}\")$:#ifndef ${inc_guard}\n#define ${inc_guard}\n\1\n#endif  // ${inc_guard}:g" \
+      "${f}"
+  done
+
+  # Remove comments and other unsupported annotations
+  sed -i -r -e 's:@verbatim[ ]*\(language="comment", text=$::g' \
+            -e 's:^[ ]+".*$::g' \
+            -e 's:@unit[ ]*\(.*$::g' \
+            ${f}
+done
+
+################################################################################
+# Fix some issues with annotation bugs (currently disabled)
+################################################################################
+# sed -r -i -e "s:@default \(value=-50\):@default (value=50):" \
+#   "${IDL_IMPORT_DIR}/test_msgs/msg/Defaults.idl"
+
+# List of type packages (used to drive some processing operations)
+IDL_PKGS=$(ls ${IDL_IMPORT_DIR})
+
+################################################################################
+# Generate "std" versions
+################################################################################
+printf -- "-- generating standard data types...\n"
+gen_alt_idl std "${IDL_DIR}/ros2/std" \
+  ""
+
 ################################################################################
 # Generate "flat-data" versions
 ################################################################################
@@ -411,3 +425,9 @@ gen_alt_idl zc "${IDL_DIR}/ros2/zc" \
 printf -- "-- generating xcdr2 types...\n"
 gen_alt_idl xcdr2 "${IDL_DIR}/ros2/xcdr2" \
   "@allowed_data_representation(XCDR2)"
+
+################################################################################
+# Delete imported files
+################################################################################
+printf -- "-- deleting imported files: ${IDL_IMPORT_DIR}\n"
+rm -r "${IDL_IMPORT_DIR}"

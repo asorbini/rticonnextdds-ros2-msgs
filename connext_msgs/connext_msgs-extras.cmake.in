@@ -8,7 +8,7 @@
 # not be liable for any incidental or consequential damages arising out of the
 # use or inability to use the software.
 
-# generated from connext_msgs/connext_msgs-extras.cmake.in
+# generated from `@PROJECT_NAME@/`@PROJECT_NAME@-extras.cmake.in
 
 ################################################################################
 # Load dependencies
@@ -22,11 +22,18 @@ find_package(connext_node_helpers REQUIRED)
 # `@PROJECT_NAME@_DIR` is `<pkg-install>/share/cmake`
 get_filename_component(@PROJECT_NAME@_SHARE_DIR "${@PROJECT_NAME@_DIR}" DIRECTORY)
 
-set(@PROJECT_NAME@_VARIANT_ALL      @MESSAGE_VARIANT_ALL@)
-set(@PROJECT_NAME@_VARIANT_FLAT     @MESSAGE_VARIANT_FLAT@)
-set(@PROJECT_NAME@_VARIANT_FLAT_ZC  @MESSAGE_VARIANT_FLAT_ZC@)
-set(@PROJECT_NAME@_VARIANT_ZC       @MESSAGE_VARIANT_ZC@)
-set(@PROJECT_NAME@_VARIANT_XCDR2    @MESSAGE_VARIANT_XCDR2@)
-set(@PROJECT_NAME@_TYPES            @MESSAGE_TYPES@)
+# List of types included in the generated library and whether the
+# library was generated or not.
+set(@PROJECT_NAME@_NO_LIBRARY       @CONNEXT_MSGS_NO_LIBRARY@)
+set(@PROJECT_NAME@_TYPES            @CONNEXT_MSGS_TYPES@)
 
-message(STATUS "@PROJECT_NAME@_TYPES = ${@PROJECT_NAME@_TYPES}")
+# Directory where IDL files are exported.
+set(@PROJECT_NAME@_IDL_DIR "${@PROJECT_NAME@_SHARE_DIR}/idl")
+
+# List of "broken" messages
+set(@PROJECT_NAME@_BROKEN            @MESSAGE_BROKEN@)
+
+# Load helper functions to let users generate their own
+# type support libraries.
+include("${@PROJECT_NAME@_DIR}/connext_msgs_filter_idl_files.cmake")
+include("${@PROJECT_NAME@_DIR}/connext_msgs_generate_library.cmake")

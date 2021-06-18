@@ -49,10 +49,14 @@ set(LIB_NAME    "${PROJECT_NAME}")
 if(NOT MESSAGE_STANDALONE)
   # Since we're building with ROS, load `connext_node_helpers` as a dependency.
   find_package(connext_node_helpers REQUIRED)
+
+  # Also export dependencies through ament
+  ament_export_dependencies(connext_node_helpers)
 else()
   # If we are not building as a ROS 2 package, then we expect the helpers
   # repository to be specified via CONNEXT_ROS2_HELPERS_DIR.
-  # If unspecified, we resort to looking for a clone in the current source dir.
+  # If unspecified, we resort to looking for a clone in the parent of the
+  # current source dir.
   if(NOT DEFINED CONNEXT_NODE_HELPERS_DIR)
     get_filename_component(CONNEXT_NODE_HELPERS_DIR
       "${CMAKE_CURRENT_SOURCE_DIR}/../rticonnextdds-ros2-helpers/connext_node_helpers"
@@ -66,29 +70,48 @@ else()
   endif()
 endif()
 
-set(MESSAGE_BROKEN
-  test_msgs/msg/Arrays
-  test_msgs/msg/BoundedSequences
-  test_msgs/msg/MultiNested
-  test_msgs/msg/UnboundedSequences
-  test_msgs/msg/Defaults
-  test_msgs/srv/Arrays
-  action_tutorials_interfaces/action/Fibonacci
-  example_interfaces/action/Fibonacci
-  test_msgs/action/Fibonacci)
 
-foreach(alt flat flat_zc zc xcdr2)
-  foreach(msg ${MESSAGE_BROKEN})
+set(MESSAGE_VARIANTS_DIR    "${CMAKE_CURRENT_SOURCE_DIR}/idl/ros2"
+  CACHE INTERNAL "Directory where alternative IDL versions are stored.")
+
+set(MESSAGE_VARIANTS
+  std
+  zc
+  flat
+  flat_zc
+  xcdr2
+  CACHE INTERNAL "List of alternative IDL versions generated for each ROS 2 type"
+)
+
+# Build a list of types which currently don't compile with rtiddsgen.
+set(MESSAGE_BROKEN)
+
+# Disable "broken" messages in every variant
+foreach(alt ${MESSAGE_VARIANTS})
+  foreach(msg
+      test_msgs/msg/Arrays
+      test_msgs/msg/BoundedSequences
+      test_msgs/msg/MultiNested
+      test_msgs/msg/UnboundedSequences
+      test_msgs/msg/Defaults
+      test_msgs/srv/Arrays
+      action_tutorials_interfaces/action/Fibonacci
+      example_interfaces/action/Fibonacci
+      test_msgs/action/Fibonacci)
     list(APPEND MESSAGE_BROKEN "ros2/${alt}/${msg}")
   endforeach()
 endforeach()
-
-foreach(alt flat flat_zc zc xcdr2)
+  
+# Disable these "string-heavy" types for variants which convert
+# strings to char arrays.
+foreach(alt flat zc)
   foreach(msg test_msgs/msg/Strings)
     list(APPEND MESSAGE_BROKEN "ros2/${alt}/${msg}")
   endforeach()
 endforeach()
 
+# Disable these types for flat data
+# (TODO asorbini: why? would they work at least with flat_zc and @mutable?)
 foreach(alt flat flat_zc)
   foreach(msg
     visualization_msgs/msg/InteractiveMarkerInit
@@ -101,7 +124,7 @@ endforeach()
 set(MESSAGE_BROKEN ${MESSAGE_BROKEN}
   CACHE INTERNAL "List of messages which cannot be compiled with rtiddsgen")
 
-set(MESSAGE_PACKAGES  ${MESSAGE_PACKAGES}
+set(MESSAGE_INCLUDE_PACKAGES  ${MESSAGE_INCLUDE_PACKAGES}
   CACHE INTERNAL "List of packages to include in the library (all if empty)")
 
 set(MESSAGE_INCLUDE  ${MESSAGE_INCLUDE}
@@ -119,43 +142,9 @@ set(MESSAGE_EXCLUDE_REGEX  ${MESSAGE_EXCLUDE_REGEX}
 if(NOT DEFINED MESSAGE_VARIANT_ALL)
   set(MESSAGE_VARIANT_ALL OFF)
 endif()
-if(NOT DEFINED MESSAGE_VARIANT_FLAT)
-  set(MESSAGE_VARIANT_FLAT ${MESSAGE_VARIANT_ALL})
-endif()
-if(NOT DEFINED MESSAGE_VARIANT_FLAT_ZC)
-  set(MESSAGE_VARIANT_FLAT_ZC ${MESSAGE_VARIANT_ALL})
-endif()
-if(NOT DEFINED MESSAGE_VARIANT_ZC)
-  set(MESSAGE_VARIANT_ZC ${MESSAGE_VARIANT_ALL})
-endif()
-if(NOT DEFINED MESSAGE_VARIANT_XCDR2)
-  set(MESSAGE_VARIANT_XCDR2 ${MESSAGE_VARIANT_ALL})
-endif()
-if(NOT DEFINED MESSAGE_VARIANT_FLAT_MUT)
-  set(MESSAGE_VARIANT_FLAT_MUT ${MESSAGE_VARIANT_ALL})
-endif()
-if(NOT DEFINED MESSAGE_VARIANT_FLAT_ZC_MUT)
-  set(MESSAGE_VARIANT_FLAT_ZC_MUT ${MESSAGE_VARIANT_ALL})
-endif()
-if(NOT DEFINED MESSAGE_VARIANT_ZC_MUT)
-  set(MESSAGE_VARIANT_ZC_MUT ${MESSAGE_VARIANT_ALL})
-endif()
-if(NOT DEFINED MESSAGE_VARIANT_XCDR2_MUT)
-  set(MESSAGE_VARIANT_XCDR2_MUT ${MESSAGE_VARIANT_ALL})
-endif()
-set(MESSAGE_VARIANT_ALL    ${MESSAGE_VARIANT_ALL}
-  CACHE BOOL "Whether to build the all available variants")
-set(MESSAGE_VARIANT_FLAT    ${MESSAGE_VARIANT_FLAT}
-  CACHE BOOL "Whether to build the flat data variants")
-set(MESSAGE_VARIANT_FLAT_ZC    ${MESSAGE_VARIANT_FLAT_ZC}
-  CACHE BOOL "Whether to build the flat data/zero copy variants")
-set(MESSAGE_VARIANT_ZC    ${MESSAGE_VARIANT_ZC}
-  CACHE BOOL "Whether to build the zero copy variants")
-set(MESSAGE_VARIANT_XCDR2    ${MESSAGE_VARIANT_XCDR2}
-  CACHE BOOL "Whether to build the xcdr2 variants")
 
-if(MESSAGE_PACKAGES)
-  message(STATUS "Included packages: ${MESSAGE_PACKAGES}")
+if(MESSAGE_INCLUDE_PACKAGES)
+  message(STATUS "Included packages: ${MESSAGE_INCLUDE_PACKAGES}")
 else()
   message(STATUS "Included packages: all")
 endif()
@@ -190,128 +179,78 @@ else()
   message(STATUS "Broken packages: none")
 endif()
 
-file(GLOB_RECURSE idl_files_zc "${CMAKE_CURRENT_SOURCE_DIR}/idl/zc/*.idl")
-file(GLOB_RECURSE idl_files_flat_zc "${CMAKE_CURRENT_SOURCE_DIR}/idl/flat_zc/*.idl")
-file(GLOB_RECURSE idl_files_flat "${CMAKE_CURRENT_SOURCE_DIR}/idl/flat/*.idl")
-file(GLOB_RECURSE idl_files_xcdr2 "${CMAKE_CURRENT_SOURCE_DIR}/idl/xcdr2/*.idl")
+set(CONNEXT_MSGS_NO_LIBRARY ${CONNEXT_MSGS_NO_LIBRARY}
+  CACHE INTERNAL "Skip building a library with Connext type supports")
 
-file(GLOB_RECURSE idl_files_zc_mut "${CMAKE_CURRENT_SOURCE_DIR}/idl/zc_mut/*.idl")
-file(GLOB_RECURSE idl_files_flat_zc_mut "${CMAKE_CURRENT_SOURCE_DIR}/idl/flat_zc_mut/*.idl")
-file(GLOB_RECURSE idl_files_flat_mut "${CMAKE_CURRENT_SOURCE_DIR}/idl/flat_mut/*.idl")
-file(GLOB_RECURSE idl_files_xcdr2_mut "${CMAKE_CURRENT_SOURCE_DIR}/idl/xcdr2_mut/*.idl")
+if(NOT CONNEXT_MSGS_NO_LIBRARY)
+  set(ENABLED_VARIANTS)
+  foreach(_variant ${MESSAGE_VARIANTS})
+    if(NOT DEFINED MESSAGE_VARIANT_${_VARIANT})
+      set(MESSAGE_VARIANT_${_VARIANT} ${MESSAGE_VARIANT_ALL})
+    endif()
+    set(MESSAGE_VARIANT_${_VARIANT}    ${MESSAGE_VARIANT_${_VARIANT}}
+      CACHE BOOL "Whether to build message variant: ${_variant}")
+    if(MESSAGE_VARIANT_${_VARIANT})
+      list(APPEND ENABLED_VARIANTS "${_variant}")
+    endif()
+  endforeach()
 
-file(GLOB_RECURSE idl_files "${CMAKE_CURRENT_SOURCE_DIR}/idl/*.idl")
-if(NOT MESSAGE_VARIANT_FLAT AND idl_files_flat)
-  list(REMOVE_ITEM idl_files ${idl_files_flat})
-endif()
-if(NOT MESSAGE_VARIANT_FLAT_ZC AND idl_files_flat_zc)
-  list(REMOVE_ITEM idl_files ${idl_files_flat_zc})
-endif()
-if(NOT MESSAGE_VARIANT_ZC AND idl_files_zc)
-  list(REMOVE_ITEM idl_files ${idl_files_zc})
-endif()
-if(NOT MESSAGE_VARIANT_XCDR2 AND idl_files_xcdr2)
-  list(REMOVE_ITEM idl_files ${idl_files_xcdr2})
-endif()
-if(NOT MESSAGE_VARIANT_FLAT_MUT AND idl_files_flat_mut)
-  list(REMOVE_ITEM idl_files ${idl_files_flat_mut})
-endif()
-if(NOT MESSAGE_VARIANT_FLAT_ZC_MUT AND idl_files_flat_zc_mut)
-  list(REMOVE_ITEM idl_files ${idl_files_flat_zc_mut})
-endif()
-if(NOT MESSAGE_VARIANT_ZC_MUT AND idl_files_zc_mut)
-  list(REMOVE_ITEM idl_files ${idl_files_zc_mut})
-endif()
-if(NOT MESSAGE_VARIANT_XCDR2_MUT AND idl_files_xcdr2_mut)
-  list(REMOVE_ITEM idl_files ${idl_files_xcdr2_mut})
-endif()
+  # Load CMake helper functions
+  include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/connext_msgs_filter_idl_files.cmake")
 
-set(idl_input)
-foreach(f ${idl_files})
-  string(REGEX REPLACE "^${CMAKE_CURRENT_SOURCE_DIR}/idl/" "" idl_rel "${f}")
-  get_filename_component(idl_pkg_msg "${idl_rel}" DIRECTORY)
-  if(idl_pkg_msg MATCHES "/msg$")
-    string(REGEX REPLACE "/msg$" "" idl_pkg "${idl_pkg_msg}")
-  elseif(idl_pkg_msg MATCHES "/srv$")
-    string(REGEX REPLACE "/srv$" "" idl_pkg "${idl_pkg_msg}")
-  elseif(idl_pkg_msg MATCHES "/action$")
-    string(REGEX REPLACE "/action$" "" idl_pkg "${idl_pkg_msg}")
+  # 
+
+  connext_msgs_filter_idl_files(ENABLED_IDLS
+    WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/idl"
+    VARIANTS ${ENABLED_VARIANTS}
+    BROKEN ${MESSAGE_BROKEN}
+    EXCLUDE ${MESSAGE_EXCLUDE}
+    EXCLUDE_REGEX ${MESSAGE_EXCLUDE_REGEX}
+    INCLUDE ${MESSAGE_INCLUDE}
+    INCLUDE_REGEX ${MESSAGE_INCLUDE_REGEX}
+    INCLUDE_PACKAGES ${MESSAGE_INCLUDE_PACKAGES}
+  )
+
+  connext_generate_typesupport_library(${LIB_NAME}
+    IDLS ${ENABLED_IDLS}
+    INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/idl"
+    ZEROCOPY
+    SERVER
+    WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/idl"
+    EXPORT_TYPES_LIST CONNEXT_MSGS_TYPES
+  )
+
+  if(NOT MESSAGE_STANDALONE)
+    ament_export_libraries(${PROJECT_NAME})
+    ament_export_targets(idl_${PROJECT_NAME})
+
+    if(BUILD_TESTING)
+      find_package(ament_lint_auto REQUIRED)
+      ament_lint_auto_find_test_dependencies()
+    endif()
   else()
-    message(STATUS "neither msg nor srv nor action: ${f}")
+    install(EXPORT idl_${PROJECT_NAME}
+      FILE connext_msgs.cmake
+      NAMESPACE connext_msgs::
+      DESTINATION cmake)
   endif()
-  get_filename_component(idl_name_ext "${idl_rel}" NAME)
-  string(REGEX REPLACE "[.]idl$" "" idl_name "${idl_name_ext}")
+endif()
 
-  list(FIND MESSAGE_BROKEN "${idl_pkg_msg}/${idl_name}" idl_skip)
-  if(idl_skip GREATER_EQUAL 0)
-    message(STATUS "unsupported: ${idl_pkg_msg}/${idl_name}")
-    continue()
-  endif()
+# Install the IDL directory so that users may generate their own type supports
+install(
+  DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/idl/ros2"
+  DESTINATION "share/${PROJECT_NAME}/idl"
+)
 
-  list(FIND MESSAGE_EXCLUDE "${idl_pkg_msg}/${idl_name}" idl_skip)
-  if(idl_skip GREATER_EQUAL 0)
-    message(STATUS "excluded: ${idl_pkg_msg}/${idl_name}")
-    continue()
-  endif()
-
-  if(MESSAGE_EXCLUDE_REGEX)
-    if("${idl_pkg_msg}/${idl_name}" MATCHES MESSAGE_EXCLUDE_REGEX)
-      message(STATUS "excluded: ${idl_pkg_msg}/${idl_name}")
-      continue()
-    endif()
-  endif()
-
-  if(MESSAGE_INCLUDE)
-    list(FIND MESSAGE_INCLUDE "${idl_pkg_msg}/${idl_name}" idl_skip)
-    if(idl_skip LESS 0)
-      message(STATUS "not included: ${idl_pkg_msg}/${idl_name}")
-      continue()
-    endif()
-  endif()
-
-  if(MESSAGE_INCLUDE_REGEX)
-    if(NOT "${idl_pkg_msg}/${idl_name}" MATCHES "${MESSAGE_INCLUDE_REGEX}")
-      message(STATUS "not included (regex): ${idl_pkg_msg}/${idl_name}")
-      continue()
-    endif()
-  endif()
-
-  if(MESSAGE_PACKAGES)
-    list(FIND MESSAGE_PACKAGES "${idl_pkg}" idl_skip)
-    if(idl_skip LESS 0)
-      message(STATUS "package disabled: ${idl_pkg_msg}/${idl_name}")
-      continue()
-    endif()
-  endif()
-
-  list(APPEND idl_input "${f}@${idl_pkg_msg}")
-endforeach()
-
-connext_generate_typesupport_library(${LIB_NAME}
-  IDLS ${idl_input}
-  INCLUDES ${CMAKE_CURRENT_SOURCE_DIR}/idl
-  ZEROCOPY
-  SERVER
-  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/idl
-  EXPORT_TYPES_LIST MESSAGE_TYPES
-  # Avoid adding each file's directory to the include path,
-  # since we don't need it and it might end up generating
-  # too long a command line which can't be parsed by `rtiddsgen`.
-  NO_DEFAULT_INCLUDES)
+# Install the CMake helper functions
+install(
+  FILES
+    cmake/connext_msgs_filter_idl_files.cmake
+    cmake/connext_msgs_generate_library.cmake
+  DESTINATION
+    share/${PROJECT_NAME}/cmake
+)
 
 if(NOT MESSAGE_STANDALONE)
-  ament_export_libraries(${PROJECT_NAME})
-  ament_export_targets(idl_${PROJECT_NAME})
-
-  if(BUILD_TESTING)
-    find_package(ament_lint_auto REQUIRED)
-    ament_lint_auto_find_test_dependencies()
-  endif()
-
   ament_package(CONFIG_EXTRAS_POST "${PROJECT_NAME}-extras.cmake.in")
-else()
-  install(EXPORT idl_${PROJECT_NAME}
-    FILE connext_msgs.cmake
-    NAMESPACE connext_msgs::
-    DESTINATION cmake)
 endif()
