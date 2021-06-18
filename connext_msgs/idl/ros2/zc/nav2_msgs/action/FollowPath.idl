@@ -1,0 +1,42 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from nav2_msgs/action/FollowPath.action
+// generated code does not contain a copyright notice
+
+#ifndef nav_msgs_msg_Path_idl
+#define nav_msgs_msg_Path_idl
+#include "ros2/zc/nav_msgs/msg/Path.idl"
+#endif  // nav_msgs_msg_Path_idl
+#ifndef std_msgs_msg_Empty_idl
+#define std_msgs_msg_Empty_idl
+#include "ros2/zc/std_msgs/msg/Empty.idl"
+#endif  // std_msgs_msg_Empty_idl
+
+module ros2 { module zc { module nav2_msgs {
+  module action {
+    
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct FollowPath_Goal {
+      ros2::zc::nav_msgs::msg::Path path;
+
+      char controller_id[255 + 1];
+    };
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct FollowPath_Result {
+      
+
+      ros2::zc::std_msgs::msg::Empty result;
+    };
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct FollowPath_Feedback {
+      
+
+      float distance_to_goal;
+
+      float speed;
+    };
+  };
+}; }; };

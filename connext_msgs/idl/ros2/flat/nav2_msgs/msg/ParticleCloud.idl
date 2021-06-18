@@ -1,0 +1,28 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from nav2_msgs/msg/ParticleCloud.msg
+// generated code does not contain a copyright notice
+
+#ifndef nav2_msgs_msg_Particle_idl
+#define nav2_msgs_msg_Particle_idl
+#include "ros2/flat/nav2_msgs/msg/Particle.idl"
+#endif  // nav2_msgs_msg_Particle_idl
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
+#include "ros2/flat/std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
+
+module ros2 { module flat { module nav2_msgs {
+  module msg {
+    
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct ParticleCloud {
+      ros2::flat::std_msgs::msg::Header header;
+
+      
+
+      ros2::flat::nav2_msgs::msg::Particle particles[100];
+    };
+  };
+}; }; };

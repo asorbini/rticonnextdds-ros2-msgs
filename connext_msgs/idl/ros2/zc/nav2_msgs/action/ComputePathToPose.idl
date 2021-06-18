@@ -1,0 +1,44 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from nav2_msgs/action/ComputePathToPose.action
+// generated code does not contain a copyright notice
+
+#ifndef builtin_interfaces_msg_Duration_idl
+#define builtin_interfaces_msg_Duration_idl
+#include "ros2/zc/builtin_interfaces/msg/Duration.idl"
+#endif  // builtin_interfaces_msg_Duration_idl
+#ifndef geometry_msgs_msg_PoseStamped_idl
+#define geometry_msgs_msg_PoseStamped_idl
+#include "ros2/zc/geometry_msgs/msg/PoseStamped.idl"
+#endif  // geometry_msgs_msg_PoseStamped_idl
+#ifndef nav_msgs_msg_Path_idl
+#define nav_msgs_msg_Path_idl
+#include "ros2/zc/nav_msgs/msg/Path.idl"
+#endif  // nav_msgs_msg_Path_idl
+
+module ros2 { module zc { module nav2_msgs {
+  module action {
+    
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct ComputePathToPose_Goal {
+      ros2::zc::geometry_msgs::msg::PoseStamped pose;
+
+      char planner_id[255 + 1];
+    };
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct ComputePathToPose_Result {
+      
+
+      ros2::zc::nav_msgs::msg::Path path;
+
+      ros2::zc::builtin_interfaces::msg::Duration planning_time;
+    };
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct ComputePathToPose_Feedback {
+      uint8 structure_needs_at_least_one_member;
+    };
+  };
+}; }; };

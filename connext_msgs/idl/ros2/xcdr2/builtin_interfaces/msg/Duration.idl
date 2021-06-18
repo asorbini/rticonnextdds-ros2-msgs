@@ -8,7 +8,6 @@ module ros2 { module xcdr2 { module builtin_interfaces {
     
 
 
-
     @final
     @allowed_data_representation(XCDR2)
     struct Duration {

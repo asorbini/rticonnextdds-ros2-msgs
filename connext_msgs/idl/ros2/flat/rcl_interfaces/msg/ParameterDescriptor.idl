@@ -46,11 +46,6 @@ module ros2 { module flat { module rcl_interfaces {
 
       
 
-      @default (value=FALSE)
-      boolean dynamic_typing;
-
-      
-
 
 
 

@@ -1,0 +1,31 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from nav2_msgs/srv/GetCostmap.srv
+// generated code does not contain a copyright notice
+
+#ifndef nav2_msgs_msg_Costmap_idl
+#define nav2_msgs_msg_Costmap_idl
+#include "ros2/zc/nav2_msgs/msg/Costmap.idl"
+#endif  // nav2_msgs_msg_Costmap_idl
+#ifndef nav2_msgs_msg_CostmapMetaData_idl
+#define nav2_msgs_msg_CostmapMetaData_idl
+#include "ros2/zc/nav2_msgs/msg/CostmapMetaData.idl"
+#endif  // nav2_msgs_msg_CostmapMetaData_idl
+
+module ros2 { module zc { module nav2_msgs {
+  module srv {
+    
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct GetCostmap_Request {
+      
+
+      ros2::zc::nav2_msgs::msg::CostmapMetaData specs;
+    };
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct GetCostmap_Response {
+      ros2::zc::nav2_msgs::msg::Costmap map;
+    };
+  };
+}; }; };

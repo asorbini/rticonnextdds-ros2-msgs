@@ -1,0 +1,25 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from slam_toolbox/srvs/SaveMap.srv
+// generated code does not contain a copyright notice
+
+#ifndef std_msgs_msg_String_idl
+#define std_msgs_msg_String_idl
+#include "ros2/flat_zc/std_msgs/msg/String.idl"
+#endif  // std_msgs_msg_String_idl
+
+module ros2 { module flat_zc { module slam_toolbox {
+  module srv {
+    @mutable
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct SaveMap_Request {
+      ros2::flat_zc::std_msgs::msg::String name;
+    };
+    @mutable
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct SaveMap_Response {
+      uint8 structure_needs_at_least_one_member;
+    };
+  };
+}; }; };

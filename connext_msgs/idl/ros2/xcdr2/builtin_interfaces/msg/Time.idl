@@ -7,7 +7,6 @@ module ros2 { module xcdr2 { module builtin_interfaces {
   module msg {
     
 
-
     @final
     @allowed_data_representation(XCDR2)
     struct Time {

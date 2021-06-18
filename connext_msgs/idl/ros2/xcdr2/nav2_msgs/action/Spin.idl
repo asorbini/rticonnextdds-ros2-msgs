@@ -1,0 +1,32 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from nav2_msgs/action/Spin.action
+// generated code does not contain a copyright notice
+
+#ifndef builtin_interfaces_msg_Duration_idl
+#define builtin_interfaces_msg_Duration_idl
+#include "ros2/xcdr2/builtin_interfaces/msg/Duration.idl"
+#endif  // builtin_interfaces_msg_Duration_idl
+
+module ros2 { module xcdr2 { module nav2_msgs {
+  module action {
+    
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct Spin_Goal {
+      float target_yaw;
+    };
+    @final
+    @allowed_data_representation(XCDR2)
+    struct Spin_Result {
+      
+
+      ros2::xcdr2::builtin_interfaces::msg::Duration total_elapsed_time;
+    };
+    @final
+    @allowed_data_representation(XCDR2)
+    struct Spin_Feedback {
+      float angular_distance_traveled;
+    };
+  };
+}; }; };

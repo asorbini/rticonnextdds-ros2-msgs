@@ -1,0 +1,37 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from nav2_msgs/action/Wait.action
+// generated code does not contain a copyright notice
+
+#ifndef builtin_interfaces_msg_Duration_idl
+#define builtin_interfaces_msg_Duration_idl
+#include "ros2/flat_zc/builtin_interfaces/msg/Duration.idl"
+#endif  // builtin_interfaces_msg_Duration_idl
+
+module ros2 { module flat_zc { module nav2_msgs {
+  module action {
+    
+
+    @mutable
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct Wait_Goal {
+      ros2::flat_zc::builtin_interfaces::msg::Duration time;
+    };
+    @mutable
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct Wait_Result {
+      
+
+      ros2::flat_zc::builtin_interfaces::msg::Duration total_elapsed_time;
+    };
+    @mutable
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct Wait_Feedback {
+      
+
+      ros2::flat_zc::builtin_interfaces::msg::Duration time_left;
+    };
+  };
+}; }; };

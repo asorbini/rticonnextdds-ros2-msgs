@@ -1,0 +1,35 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from slam_toolbox/srvs/DeserializePoseGraph.srv
+// generated code does not contain a copyright notice
+
+#ifndef geometry_msgs_msg_Pose2D_idl
+#define geometry_msgs_msg_Pose2D_idl
+#include "ros2/flat/geometry_msgs/msg/Pose2D.idl"
+#endif  // geometry_msgs_msg_Pose2D_idl
+
+module ros2 { module flat { module slam_toolbox {
+  module srv {
+    module DeserializePoseGraph_Request_Constants {
+      const int8 UNSET = 0;
+      const int8 START_AT_FIRST_NODE = 1;
+      const int8 START_AT_GIVEN_POSE = 2;
+      const int8 LOCALIZE_AT_POSE = 3;
+    };
+    @final
+    @language_binding(FLAT_DATA)
+    struct DeserializePoseGraph_Request {
+      
+
+      char filename[255 + 1];
+
+      int8 match_type;
+
+      ros2::flat::geometry_msgs::msg::Pose2D initial_pose;
+    };
+    @final
+    @language_binding(FLAT_DATA)
+    struct DeserializePoseGraph_Response {
+      uint8 structure_needs_at_least_one_member;
+    };
+  };
+}; }; };

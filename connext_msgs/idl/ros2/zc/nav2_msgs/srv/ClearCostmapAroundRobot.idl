@@ -1,0 +1,27 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from nav2_msgs/srv/ClearCostmapAroundRobot.srv
+// generated code does not contain a copyright notice
+
+#ifndef std_msgs_msg_Empty_idl
+#define std_msgs_msg_Empty_idl
+#include "ros2/zc/std_msgs/msg/Empty.idl"
+#endif  // std_msgs_msg_Empty_idl
+
+module ros2 { module zc { module nav2_msgs {
+  module srv {
+    
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct ClearCostmapAroundRobot_Request {
+      float window_size_x;
+
+      float window_size_y;
+    };
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct ClearCostmapAroundRobot_Response {
+      ros2::zc::std_msgs::msg::Empty response;
+    };
+  };
+}; }; };

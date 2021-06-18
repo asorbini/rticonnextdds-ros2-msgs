@@ -1,0 +1,21 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from slam_toolbox/srvs/ClearQueue.srv
+// generated code does not contain a copyright notice
+
+
+module ros2 { module flat_zc { module slam_toolbox {
+  module srv {
+    @mutable
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct ClearQueue_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    @mutable
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct ClearQueue_Response {
+      boolean status;
+    };
+  };
+}; }; };

@@ -1,0 +1,38 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from nav2_msgs/action/BackUp.action
+// generated code does not contain a copyright notice
+
+#ifndef builtin_interfaces_msg_Duration_idl
+#define builtin_interfaces_msg_Duration_idl
+#include "ros2/flat/builtin_interfaces/msg/Duration.idl"
+#endif  // builtin_interfaces_msg_Duration_idl
+#ifndef geometry_msgs_msg_Point_idl
+#define geometry_msgs_msg_Point_idl
+#include "ros2/flat/geometry_msgs/msg/Point.idl"
+#endif  // geometry_msgs_msg_Point_idl
+
+module ros2 { module flat { module nav2_msgs {
+  module action {
+    
+
+    @final
+    @language_binding(FLAT_DATA)
+    struct BackUp_Goal {
+      ros2::flat::geometry_msgs::msg::Point target;
+
+      float speed;
+    };
+    @final
+    @language_binding(FLAT_DATA)
+    struct BackUp_Result {
+      
+
+      ros2::flat::builtin_interfaces::msg::Duration total_elapsed_time;
+    };
+    @final
+    @language_binding(FLAT_DATA)
+    struct BackUp_Feedback {
+      float distance_traveled;
+    };
+  };
+}; }; };

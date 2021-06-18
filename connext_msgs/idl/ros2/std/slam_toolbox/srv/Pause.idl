@@ -1,0 +1,21 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from slam_toolbox/srvs/Pause.srv
+// generated code does not contain a copyright notice
+
+
+module ros2 { module std { module slam_toolbox {
+  module srv {
+    
+
+    @final
+    
+    struct Pause_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    @final
+    
+    struct Pause_Response {
+      boolean status;
+    };
+  };
+}; }; };

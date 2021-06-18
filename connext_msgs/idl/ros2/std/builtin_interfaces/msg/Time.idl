@@ -7,7 +7,6 @@ module ros2 { module std { module builtin_interfaces {
   module msg {
     
 
-
     @final
     
     struct Time {

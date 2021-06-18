@@ -7,7 +7,6 @@ module ros2 { module flat_zc { module builtin_interfaces {
   module msg {
     
 
-
     @mutable
     @transfer_mode(SHMEM_REF)
     @language_binding(FLAT_DATA)

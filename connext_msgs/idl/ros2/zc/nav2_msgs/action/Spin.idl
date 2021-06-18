@@ -1,0 +1,32 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from nav2_msgs/action/Spin.action
+// generated code does not contain a copyright notice
+
+#ifndef builtin_interfaces_msg_Duration_idl
+#define builtin_interfaces_msg_Duration_idl
+#include "ros2/zc/builtin_interfaces/msg/Duration.idl"
+#endif  // builtin_interfaces_msg_Duration_idl
+
+module ros2 { module zc { module nav2_msgs {
+  module action {
+    
+
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct Spin_Goal {
+      float target_yaw;
+    };
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct Spin_Result {
+      
+
+      ros2::zc::builtin_interfaces::msg::Duration total_elapsed_time;
+    };
+    @final
+    @transfer_mode(SHMEM_REF)
+    struct Spin_Feedback {
+      float angular_distance_traveled;
+    };
+  };
+}; }; };

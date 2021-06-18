@@ -1,0 +1,37 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from nav2_msgs/action/FollowWaypoints.action
+// generated code does not contain a copyright notice
+
+#ifndef geometry_msgs_msg_PoseStamped_idl
+#define geometry_msgs_msg_PoseStamped_idl
+#include "ros2/flat_zc/geometry_msgs/msg/PoseStamped.idl"
+#endif  // geometry_msgs_msg_PoseStamped_idl
+
+module ros2 { module flat_zc { module nav2_msgs {
+  module action {
+    
+
+    @mutable
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct FollowWaypoints_Goal {
+      sequence<ros2::flat_zc::geometry_msgs::msg::PoseStamped, 100> poses;
+    };
+    @mutable
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct FollowWaypoints_Result {
+      
+
+      sequence<int32, 100> missed_waypoints;
+    };
+    @mutable
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct FollowWaypoints_Feedback {
+      
+
+      uint32 current_waypoint;
+    };
+  };
+}; }; };

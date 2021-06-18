@@ -7,7 +7,6 @@ module ros2 { module zc { module builtin_interfaces {
   module msg {
     
 
-
     @final
     @transfer_mode(SHMEM_REF)
     struct Time {

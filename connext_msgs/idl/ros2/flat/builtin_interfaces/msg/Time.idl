@@ -7,7 +7,6 @@ module ros2 { module flat { module builtin_interfaces {
   module msg {
     
 
-
     @final
     @language_binding(FLAT_DATA)
     struct Time {

@@ -1,20 +1,20 @@
 // generated from rosidl_adapter/resource/srv.idl.em
-// with input from nav_msgs/srv/LoadMap.srv
+// with input from nav2_msgs/srv/LoadMap.srv
 // generated code does not contain a copyright notice
 
 #ifndef nav_msgs_msg_OccupancyGrid_idl
 #define nav_msgs_msg_OccupancyGrid_idl
-#include "ros2/zc/nav_msgs/msg/OccupancyGrid.idl"
+#include "ros2/flat/nav_msgs/msg/OccupancyGrid.idl"
 #endif  // nav_msgs_msg_OccupancyGrid_idl
 
-module ros2 { module zc { module nav_msgs {
+module ros2 { module flat { module nav2_msgs {
   module srv {
     
 
 
 
     @final
-    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
     struct LoadMap_Request {
       char map_url[255 + 1];
     };
@@ -28,11 +28,11 @@ module ros2 { module zc { module nav_msgs {
     
 
     @final
-    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
     struct LoadMap_Response {
       
 
-      ros2::zc::nav_msgs::msg::OccupancyGrid map;
+      ros2::flat::nav_msgs::msg::OccupancyGrid map;
 
       uint8 result;
     };

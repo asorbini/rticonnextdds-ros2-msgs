@@ -1,0 +1,25 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from nav2_msgs/srv/ClearEntireCostmap.srv
+// generated code does not contain a copyright notice
+
+#ifndef std_msgs_msg_Empty_idl
+#define std_msgs_msg_Empty_idl
+#include "ros2/xcdr2/std_msgs/msg/Empty.idl"
+#endif  // std_msgs_msg_Empty_idl
+
+module ros2 { module xcdr2 { module nav2_msgs {
+  module srv {
+    
+
+    @final
+    @allowed_data_representation(XCDR2)
+    struct ClearEntireCostmap_Request {
+      ros2::xcdr2::std_msgs::msg::Empty request;
+    };
+    @final
+    @allowed_data_representation(XCDR2)
+    struct ClearEntireCostmap_Response {
+      ros2::xcdr2::std_msgs::msg::Empty response;
+    };
+  };
+}; }; };

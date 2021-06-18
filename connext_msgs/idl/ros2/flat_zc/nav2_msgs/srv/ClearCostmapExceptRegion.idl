@@ -1,0 +1,27 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from nav2_msgs/srv/ClearCostmapExceptRegion.srv
+// generated code does not contain a copyright notice
+
+#ifndef std_msgs_msg_Empty_idl
+#define std_msgs_msg_Empty_idl
+#include "ros2/flat_zc/std_msgs/msg/Empty.idl"
+#endif  // std_msgs_msg_Empty_idl
+
+module ros2 { module flat_zc { module nav2_msgs {
+  module srv {
+    
+
+    @mutable
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct ClearCostmapExceptRegion_Request {
+      float reset_distance;
+    };
+    @mutable
+    @transfer_mode(SHMEM_REF)
+    @language_binding(FLAT_DATA)
+    struct ClearCostmapExceptRegion_Response {
+      ros2::flat_zc::std_msgs::msg::Empty response;
+    };
+  };
+}; }; };
