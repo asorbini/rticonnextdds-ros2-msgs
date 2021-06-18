@@ -121,6 +121,8 @@ foreach(alt flat flat_zc)
   endforeach()
 endforeach()
 
+list(REMOVE_DUPLICATES MESSAGE_BROKEN)
+
 set(MESSAGE_BROKEN ${MESSAGE_BROKEN}
   CACHE INTERNAL "List of messages which cannot be compiled with rtiddsgen")
 
@@ -141,6 +143,13 @@ set(MESSAGE_EXCLUDE_REGEX  ${MESSAGE_EXCLUDE_REGEX}
 
 if(NOT DEFINED MESSAGE_VARIANT_ALL)
   set(MESSAGE_VARIANT_ALL OFF)
+endif()
+if(NOT DEFINED MESSAGE_VARIANT_BASIC)
+  if(CONNEXT_MSGS_NO_LIBRARY)
+    set(MESSAGE_VARIANT_BASIC OFF)
+  else()
+    set(MESSAGE_VARIANT_BASIC ON)
+  endif()
 endif()
 
 if(MESSAGE_INCLUDE_PACKAGES)
