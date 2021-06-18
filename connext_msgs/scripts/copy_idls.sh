@@ -24,7 +24,7 @@ defaults()
 {
   : ${SH:=$(basename ${0})}
   : ${SH_DIR:=$(cd $(dirname "${0}") && pwd)}
-  : ${ROS_DISTRO:=rolling}
+  : ${ROS_DISTRO:=foxy}
   : ${ROS_DIR:=/opt/ros/${ROS_DISTRO}}
   : ${IDL_DIR:=./idl}
   : ${IDL_IMPORT_DIR:=${IDL_DIR}/import}
