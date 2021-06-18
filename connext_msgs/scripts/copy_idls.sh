@@ -28,7 +28,7 @@ defaults()
   : ${ROS_DIR:=/opt/ros/${ROS_DISTRO}}
   : ${IDL_DIR:=./idl}
   : ${IDL_IMPORT_DIR:=${IDL_DIR}/import}
-  : ${IDL_STD_DIR:=${IDL_DIR}/ros2/std}
+  : ${IDL_BASIC_DIR:=${IDL_DIR}/ros2/basic}
   : ${IDL_SH_DIR:=${SH_DIR}/idl}
   : ${ARRAY_MAX_LEN:=100}
   : ${IDL_STRING_MAX_LEN:=255}
@@ -392,10 +392,10 @@ done
 IDL_PKGS=$(ls ${IDL_IMPORT_DIR})
 
 ################################################################################
-# Generate "std" versions
+# Generate "basic" versions
 ################################################################################
 printf -- "-- generating standard data types...\n"
-gen_alt_idl std "${IDL_DIR}/ros2/std" \
+gen_alt_idl basic "${IDL_DIR}/ros2/basic" \
   ""
 
 ################################################################################
