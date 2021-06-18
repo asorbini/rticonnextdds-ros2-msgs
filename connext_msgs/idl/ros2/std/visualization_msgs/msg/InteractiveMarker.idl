@@ -1,0 +1,62 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from visualization_msgs/msg/InteractiveMarker.msg
+// generated code does not contain a copyright notice
+
+#ifndef geometry_msgs_msg_Pose_idl
+#define geometry_msgs_msg_Pose_idl
+#include "ros2/std/geometry_msgs/msg/Pose.idl"
+#endif  // geometry_msgs_msg_Pose_idl
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
+#include "ros2/std/std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
+#ifndef visualization_msgs_msg_InteractiveMarkerControl_idl
+#define visualization_msgs_msg_InteractiveMarkerControl_idl
+#include "ros2/std/visualization_msgs/msg/InteractiveMarkerControl.idl"
+#endif  // visualization_msgs_msg_InteractiveMarkerControl_idl
+#ifndef visualization_msgs_msg_MenuEntry_idl
+#define visualization_msgs_msg_MenuEntry_idl
+#include "ros2/std/visualization_msgs/msg/MenuEntry.idl"
+#endif  // visualization_msgs_msg_MenuEntry_idl
+
+module ros2 { module std { module visualization_msgs {
+  module msg {
+    
+
+
+
+
+
+
+    @final
+    
+    struct InteractiveMarker {
+      ros2::std::std_msgs::msg::Header header;
+
+      
+
+      ros2::std::geometry_msgs::msg::Pose pose;
+
+      
+
+
+      string name;
+
+      
+
+      string description;
+
+      
+
+      float scale;
+
+      
+
+      sequence<ros2::std::visualization_msgs::msg::MenuEntry> menu_entries;
+
+      
+
+      sequence<ros2::std::visualization_msgs::msg::InteractiveMarkerControl> controls;
+    };
+  };
+}; }; };

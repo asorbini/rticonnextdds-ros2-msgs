@@ -1,0 +1,32 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from lifecycle_msgs/msg/TransitionDescription.msg
+// generated code does not contain a copyright notice
+
+#ifndef lifecycle_msgs_msg_State_idl
+#define lifecycle_msgs_msg_State_idl
+#include "ros2/std/lifecycle_msgs/msg/State.idl"
+#endif  // lifecycle_msgs_msg_State_idl
+#ifndef lifecycle_msgs_msg_Transition_idl
+#define lifecycle_msgs_msg_Transition_idl
+#include "ros2/std/lifecycle_msgs/msg/Transition.idl"
+#endif  // lifecycle_msgs_msg_Transition_idl
+
+module ros2 { module std { module lifecycle_msgs {
+  module msg {
+    
+
+    @final
+    
+    struct TransitionDescription {
+      ros2::std::lifecycle_msgs::msg::Transition transition;
+
+      
+
+      ros2::std::lifecycle_msgs::msg::State start_state;
+
+      
+
+      ros2::std::lifecycle_msgs::msg::State goal_state;
+    };
+  };
+}; }; };

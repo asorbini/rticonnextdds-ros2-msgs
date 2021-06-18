@@ -1,0 +1,54 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from test_msgs/action/NestedMessage.action
+// generated code does not contain a copyright notice
+
+#ifndef builtin_interfaces_msg_Time_idl
+#define builtin_interfaces_msg_Time_idl
+#include "ros2/std/builtin_interfaces/msg/Time.idl"
+#endif  // builtin_interfaces_msg_Time_idl
+#ifndef test_msgs_msg_BasicTypes_idl
+#define test_msgs_msg_BasicTypes_idl
+#include "ros2/std/test_msgs/msg/BasicTypes.idl"
+#endif  // test_msgs_msg_BasicTypes_idl
+#ifndef test_msgs_msg_Builtins_idl
+#define test_msgs_msg_Builtins_idl
+#include "ros2/std/test_msgs/msg/Builtins.idl"
+#endif  // test_msgs_msg_Builtins_idl
+
+module ros2 { module std { module test_msgs {
+  module action {
+    
+
+    @final
+    
+    struct NestedMessage_Goal {
+      ros2::std::test_msgs::msg::Builtins nested_field_no_pkg;
+
+      ros2::std::test_msgs::msg::BasicTypes nested_field;
+
+      ros2::std::builtin_interfaces::msg::Time nested_different_pkg;
+    };
+    @final
+    
+    struct NestedMessage_Result {
+      
+
+      ros2::std::test_msgs::msg::Builtins nested_field_no_pkg;
+
+      ros2::std::test_msgs::msg::BasicTypes nested_field;
+
+      ros2::std::builtin_interfaces::msg::Time nested_different_pkg;
+    };
+    @final
+    
+    struct NestedMessage_Feedback {
+      
+
+      ros2::std::test_msgs::msg::Builtins nested_field_no_pkg;
+
+      ros2::std::test_msgs::msg::BasicTypes nested_field;
+
+      ros2::std::builtin_interfaces::msg::Time nested_different_pkg;
+    };
+  };
+}; }; };

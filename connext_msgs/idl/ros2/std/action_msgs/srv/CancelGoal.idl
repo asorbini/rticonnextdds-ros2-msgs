@@ -1,0 +1,51 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from action_msgs/srv/CancelGoal.srv
+// generated code does not contain a copyright notice
+
+#ifndef action_msgs_msg_GoalInfo_idl
+#define action_msgs_msg_GoalInfo_idl
+#include "ros2/std/action_msgs/msg/GoalInfo.idl"
+#endif  // action_msgs_msg_GoalInfo_idl
+
+module ros2 { module std { module action_msgs {
+  module srv {
+    
+
+
+
+
+
+
+
+
+
+    @final
+    
+    struct CancelGoal_Request {
+      
+
+      ros2::std::action_msgs::msg::GoalInfo goal_info;
+    };
+    module CancelGoal_Response_Constants {
+      const int8 ERROR_NONE = 0;
+      const int8 ERROR_REJECTED = 1;
+      const int8 ERROR_UNKNOWN_GOAL_ID = 2;
+      const int8 ERROR_GOAL_TERMINATED = 3;
+    };
+    
+
+
+
+    @final
+    
+    struct CancelGoal_Response {
+      
+
+      int8 return_code;
+
+      
+
+      sequence<ros2::std::action_msgs::msg::GoalInfo> goals_canceling;
+    };
+  };
+}; }; };

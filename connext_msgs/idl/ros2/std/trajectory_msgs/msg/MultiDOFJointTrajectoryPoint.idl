@@ -1,0 +1,40 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from trajectory_msgs/msg/MultiDOFJointTrajectoryPoint.msg
+// generated code does not contain a copyright notice
+
+#ifndef builtin_interfaces_msg_Duration_idl
+#define builtin_interfaces_msg_Duration_idl
+#include "ros2/std/builtin_interfaces/msg/Duration.idl"
+#endif  // builtin_interfaces_msg_Duration_idl
+#ifndef geometry_msgs_msg_Transform_idl
+#define geometry_msgs_msg_Transform_idl
+#include "ros2/std/geometry_msgs/msg/Transform.idl"
+#endif  // geometry_msgs_msg_Transform_idl
+#ifndef geometry_msgs_msg_Twist_idl
+#define geometry_msgs_msg_Twist_idl
+#include "ros2/std/geometry_msgs/msg/Twist.idl"
+#endif  // geometry_msgs_msg_Twist_idl
+
+module ros2 { module std { module trajectory_msgs {
+  module msg {
+    
+
+    @final
+    
+    struct MultiDOFJointTrajectoryPoint {
+      sequence<ros2::std::geometry_msgs::msg::Transform> transforms;
+
+      
+
+      sequence<ros2::std::geometry_msgs::msg::Twist> velocities;
+
+      
+
+      sequence<ros2::std::geometry_msgs::msg::Twist> accelerations;
+
+      
+
+      ros2::std::builtin_interfaces::msg::Duration time_from_start;
+    };
+  };
+}; }; };

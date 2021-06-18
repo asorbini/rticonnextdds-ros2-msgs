@@ -1,0 +1,65 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from stereo_msgs/msg/DisparityImage.msg
+// generated code does not contain a copyright notice
+
+#ifndef sensor_msgs_msg_Image_idl
+#define sensor_msgs_msg_Image_idl
+#include "ros2/std/sensor_msgs/msg/Image.idl"
+#endif  // sensor_msgs_msg_Image_idl
+#ifndef sensor_msgs_msg_RegionOfInterest_idl
+#define sensor_msgs_msg_RegionOfInterest_idl
+#include "ros2/std/sensor_msgs/msg/RegionOfInterest.idl"
+#endif  // sensor_msgs_msg_RegionOfInterest_idl
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
+#include "ros2/std/std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
+
+module ros2 { module std { module stereo_msgs {
+  module msg {
+    
+
+
+    @final
+    
+    struct DisparityImage {
+      ros2::std::std_msgs::msg::Header header;
+
+      
+
+
+
+      ros2::std::sensor_msgs::msg::Image image;
+
+      
+
+
+      float f;
+
+      
+
+      float t;
+
+      
+
+      ros2::std::sensor_msgs::msg::RegionOfInterest valid_window;
+
+      
+
+
+
+
+
+
+
+      float min_disparity;
+
+      float max_disparity;
+
+      
+
+
+      float delta_d;
+    };
+  };
+}; }; };

@@ -1,0 +1,39 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from sensor_msgs/msg/ChannelFloat32.msg
+// generated code does not contain a copyright notice
+
+
+module ros2 { module std { module sensor_msgs {
+  module msg {
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @final
+    
+    struct ChannelFloat32 {
+      
+
+
+      string name;
+
+      
+
+
+      sequence<float> values;
+    };
+  };
+}; }; };

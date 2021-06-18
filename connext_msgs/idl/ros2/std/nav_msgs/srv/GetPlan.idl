@@ -1,0 +1,42 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from nav_msgs/srv/GetPlan.srv
+// generated code does not contain a copyright notice
+
+#ifndef geometry_msgs_msg_PoseStamped_idl
+#define geometry_msgs_msg_PoseStamped_idl
+#include "ros2/std/geometry_msgs/msg/PoseStamped.idl"
+#endif  // geometry_msgs_msg_PoseStamped_idl
+#ifndef nav_msgs_msg_Path_idl
+#define nav_msgs_msg_Path_idl
+#include "ros2/std/nav_msgs/msg/Path.idl"
+#endif  // nav_msgs_msg_Path_idl
+
+module ros2 { module std { module nav_msgs {
+  module srv {
+    
+
+    @final
+    
+    struct GetPlan_Request {
+      
+
+      ros2::std::geometry_msgs::msg::PoseStamped start;
+
+      
+
+      ros2::std::geometry_msgs::msg::PoseStamped goal;
+
+      
+
+
+      float tolerance;
+    };
+    
+
+    @final
+    
+    struct GetPlan_Response {
+      ros2::std::nav_msgs::msg::Path plan;
+    };
+  };
+}; }; };

@@ -1,0 +1,28 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from actionlib_msgs/msg/GoalID.msg
+// generated code does not contain a copyright notice
+
+#ifndef builtin_interfaces_msg_Time_idl
+#define builtin_interfaces_msg_Time_idl
+#include "ros2/std/builtin_interfaces/msg/Time.idl"
+#endif  // builtin_interfaces_msg_Time_idl
+
+module ros2 { module std { module actionlib_msgs {
+  module msg {
+    @final
+    
+    struct GoalID {
+      
+
+
+
+      ros2::std::builtin_interfaces::msg::Time stamp;
+
+      
+
+
+
+      string id;
+    };
+  };
+}; }; };

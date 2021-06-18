@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from std_msgs/msg/UInt32.msg
+// generated code does not contain a copyright notice
+
+
+module ros2 { module std { module std_msgs {
+  module msg {
+    
+
+
+
+
+    @final
+    
+    struct UInt32 {
+      uint32 data;
+    };
+  };
+}; }; };

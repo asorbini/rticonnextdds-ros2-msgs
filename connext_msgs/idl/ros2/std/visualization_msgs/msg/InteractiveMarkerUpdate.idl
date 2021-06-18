@@ -1,0 +1,50 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from visualization_msgs/msg/InteractiveMarkerUpdate.msg
+// generated code does not contain a copyright notice
+
+#ifndef visualization_msgs_msg_InteractiveMarker_idl
+#define visualization_msgs_msg_InteractiveMarker_idl
+#include "ros2/std/visualization_msgs/msg/InteractiveMarker.idl"
+#endif  // visualization_msgs_msg_InteractiveMarker_idl
+#ifndef visualization_msgs_msg_InteractiveMarkerPose_idl
+#define visualization_msgs_msg_InteractiveMarkerPose_idl
+#include "ros2/std/visualization_msgs/msg/InteractiveMarkerPose.idl"
+#endif  // visualization_msgs_msg_InteractiveMarkerPose_idl
+
+module ros2 { module std { module visualization_msgs {
+  module msg {
+    module InteractiveMarkerUpdate_Constants {
+      const uint8 KEEP_ALIVE = 0;
+      const uint8 UPDATE = 1;
+    };
+    @final
+    
+    struct InteractiveMarkerUpdate {
+      
+
+
+      string server_id;
+
+      
+
+
+      uint64 seq_num;
+
+      uint8 type;
+
+      
+
+
+
+      sequence<ros2::std::visualization_msgs::msg::InteractiveMarker> markers;
+
+      
+
+      sequence<ros2::std::visualization_msgs::msg::InteractiveMarkerPose> poses;
+
+      
+
+      sequence<string> erases;
+    };
+  };
+}; }; };

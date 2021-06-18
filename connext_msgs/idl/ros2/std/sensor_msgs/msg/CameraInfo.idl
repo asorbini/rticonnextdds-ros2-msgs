@@ -1,0 +1,164 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from sensor_msgs/msg/CameraInfo.msg
+// generated code does not contain a copyright notice
+
+#ifndef sensor_msgs_msg_RegionOfInterest_idl
+#define sensor_msgs_msg_RegionOfInterest_idl
+#include "ros2/std/sensor_msgs/msg/RegionOfInterest.idl"
+#endif  // sensor_msgs_msg_RegionOfInterest_idl
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
+#include "ros2/std/std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
+
+module ros2 { module std { module sensor_msgs {
+  module msg {
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @final
+    
+    struct CameraInfo {
+      
+
+
+
+
+
+
+
+
+
+
+      ros2::std::std_msgs::msg::Header header;
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      uint32 height;
+
+      uint32 width;
+
+      
+
+
+
+      string distortion_model;
+
+      
+
+
+      sequence<double> d;
+
+      
+
+
+
+
+
+
+
+
+      double k[9];
+
+      
+
+
+
+
+
+      double r[9];
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      double p[12];
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+      uint32 binning_x;
+
+      uint32 binning_y;
+
+      
+
+
+
+
+
+
+      ros2::std::sensor_msgs::msg::RegionOfInterest roi;
+    };
+  };
+}; }; };
