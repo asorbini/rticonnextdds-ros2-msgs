@@ -75,7 +75,7 @@ set(MESSAGE_VARIANTS_DIR    "${CMAKE_CURRENT_SOURCE_DIR}/idl/ros2"
   CACHE INTERNAL "Directory where alternative IDL versions are stored.")
 
 set(MESSAGE_VARIANTS
-  std
+  basic
   zc
   flat
   flat_zc
