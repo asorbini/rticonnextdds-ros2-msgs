@@ -10,7 +10,7 @@
 
 function(connext_msgs_generate_library libname)
   cmake_parse_arguments(_args
-    "" # boolean arguments
+    "INSTALL_IDLS" # boolean arguments
     "" # single value arguments
     "BROKEN;EXCLUDE;EXCLUDE_REGEX;INCLUDE;INCLUDE_REGEX;INCLUDE_PACKAGES;VARIANTS" # multi-value arguments
     ${ARGN} # current function arguments
@@ -33,5 +33,16 @@ function(connext_msgs_generate_library libname)
     WORKING_DIRECTORY "${connext_msgs_IDL_DIR}"
     ZEROCOPY
     SERVER
+    EXPORT_TYPES_LIST _library_idls
   )
+
+  if(_args_INSTALL_IDLS)
+    foreach(_idl IN LISTS _library_idls)
+      get_filename_component(_idl_dir "${_idl}" DIRECTORY)
+      set(_idl_file "${connext_msgs_IDL_DIR}/${_idl}.idl")
+      set(_idl_install "share/${PROJECT_NAME}/idl/${_idl_dir}")
+      install(FILES "${_idl_file}"
+        DESTINATION "${_idl_install}")
+    endforeach()
+  endif()
 endfunction()

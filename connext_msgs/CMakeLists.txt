@@ -191,35 +191,34 @@ endif()
 set(CONNEXT_MSGS_NO_LIBRARY ${CONNEXT_MSGS_NO_LIBRARY}
   CACHE INTERNAL "Skip building a library with Connext type supports")
 
-if(NOT CONNEXT_MSGS_NO_LIBRARY)
-  set(ENABLED_VARIANTS)
-  foreach(_variant ${MESSAGE_VARIANTS})
-    if(NOT DEFINED MESSAGE_VARIANT_${_VARIANT})
-      set(MESSAGE_VARIANT_${_VARIANT} ${MESSAGE_VARIANT_ALL})
-    endif()
-    set(MESSAGE_VARIANT_${_VARIANT}    ${MESSAGE_VARIANT_${_VARIANT}}
-      CACHE BOOL "Whether to build message variant: ${_variant}")
-    if(MESSAGE_VARIANT_${_VARIANT})
-      list(APPEND ENABLED_VARIANTS "${_variant}")
-    endif()
-  endforeach()
+set(ENABLED_VARIANTS)
+foreach(_variant ${MESSAGE_VARIANTS})
+  string(TOUPPER "${_variant}" _VARIANT)
+  if(NOT DEFINED MESSAGE_VARIANT_${_VARIANT})
+    set(MESSAGE_VARIANT_${_VARIANT} ${MESSAGE_VARIANT_ALL})
+  endif()
+  set(MESSAGE_VARIANT_${_VARIANT}    ${MESSAGE_VARIANT_${_VARIANT}}
+    CACHE BOOL "Whether to build message variant: ${_variant}")
+  if(MESSAGE_VARIANT_${_VARIANT})
+    list(APPEND ENABLED_VARIANTS "${_variant}")
+  endif()
+endforeach()
 
-  # Load CMake helper functions
-  include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/connext_msgs_filter_idl_files.cmake")
+# Load CMake helper functions
+include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/connext_msgs_filter_idl_files.cmake")
 
-  # 
+connext_msgs_filter_idl_files(ENABLED_IDLS
+  WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/idl"
+  VARIANTS ${ENABLED_VARIANTS}
+  BROKEN ${MESSAGE_BROKEN}
+  EXCLUDE ${MESSAGE_EXCLUDE}
+  EXCLUDE_REGEX ${MESSAGE_EXCLUDE_REGEX}
+  INCLUDE ${MESSAGE_INCLUDE}
+  INCLUDE_REGEX ${MESSAGE_INCLUDE_REGEX}
+  INCLUDE_PACKAGES ${MESSAGE_INCLUDE_PACKAGES}
+)
 
-  connext_msgs_filter_idl_files(ENABLED_IDLS
-    WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/idl"
-    VARIANTS ${ENABLED_VARIANTS}
-    BROKEN ${MESSAGE_BROKEN}
-    EXCLUDE ${MESSAGE_EXCLUDE}
-    EXCLUDE_REGEX ${MESSAGE_EXCLUDE_REGEX}
-    INCLUDE ${MESSAGE_INCLUDE}
-    INCLUDE_REGEX ${MESSAGE_INCLUDE_REGEX}
-    INCLUDE_PACKAGES ${MESSAGE_INCLUDE_PACKAGES}
-  )
-
+if(ENABLED_IDLS)
   connext_generate_typesupport_library(${LIB_NAME}
     IDLS ${ENABLED_IDLS}
     INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/idl"
@@ -243,6 +242,8 @@ if(NOT CONNEXT_MSGS_NO_LIBRARY)
       NAMESPACE connext_msgs::
       DESTINATION cmake)
   endif()
+else()
+  message(STATUS "${PROJECT_NAME} library DISABLED")
 endif()
 
 # Install the IDL directory so that users may generate their own type supports
