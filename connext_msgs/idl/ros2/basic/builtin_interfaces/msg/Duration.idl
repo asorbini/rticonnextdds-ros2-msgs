@@ -1,0 +1,23 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from builtin_interfaces/msg/Duration.msg
+// generated code does not contain a copyright notice
+
+
+module ros2 { module basic { module builtin_interfaces {
+  module msg {
+    
+
+
+    @final
+    
+    struct Duration {
+      
+
+      int32 sec;
+
+      
+
+      uint32 nanosec;
+    };
+  };
+}; }; };

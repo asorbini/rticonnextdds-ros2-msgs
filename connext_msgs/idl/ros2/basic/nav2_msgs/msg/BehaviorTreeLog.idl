@@ -1,0 +1,26 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from nav2_msgs/msg/BehaviorTreeLog.msg
+// generated code does not contain a copyright notice
+
+#ifndef builtin_interfaces_msg_Time_idl
+#define builtin_interfaces_msg_Time_idl
+#include "ros2/basic/builtin_interfaces/msg/Time.idl"
+#endif  // builtin_interfaces_msg_Time_idl
+#ifndef nav2_msgs_msg_BehaviorTreeStatusChange_idl
+#define nav2_msgs_msg_BehaviorTreeStatusChange_idl
+#include "ros2/basic/nav2_msgs/msg/BehaviorTreeStatusChange.idl"
+#endif  // nav2_msgs_msg_BehaviorTreeStatusChange_idl
+
+module ros2 { module basic { module nav2_msgs {
+  module msg {
+    @final
+    
+    struct BehaviorTreeLog {
+      
+
+      ros2::basic::builtin_interfaces::msg::Time timestamp;
+
+      sequence<ros2::basic::nav2_msgs::msg::BehaviorTreeStatusChange> event_log;
+    };
+  };
+}; }; };

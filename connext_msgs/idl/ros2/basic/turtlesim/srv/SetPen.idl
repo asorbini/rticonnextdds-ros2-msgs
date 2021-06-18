@@ -1,0 +1,27 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from turtlesim/srv/SetPen.srv
+// generated code does not contain a copyright notice
+
+
+module ros2 { module basic { module turtlesim {
+  module srv {
+    @final
+    
+    struct SetPen_Request {
+      uint8 r;
+
+      uint8 g;
+
+      uint8 b;
+
+      uint8 width;
+
+      uint8 off;
+    };
+    @final
+    
+    struct SetPen_Response {
+      uint8 structure_needs_at_least_one_member;
+    };
+  };
+}; }; };

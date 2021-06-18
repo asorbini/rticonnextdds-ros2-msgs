@@ -1,0 +1,40 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from nav2_msgs/srv/SaveMap.srv
+// generated code does not contain a copyright notice
+
+
+module ros2 { module basic { module nav2_msgs {
+  module srv {
+    
+
+
+
+    @final
+    
+    struct SaveMap_Request {
+      string map_topic;
+
+      string map_url;
+
+      
+
+      string image_format;
+
+      
+
+      string map_mode;
+
+      
+
+      
+      float free_thresh;
+
+      float occupied_thresh;
+    };
+    @final
+    
+    struct SaveMap_Response {
+      boolean result;
+    };
+  };
+}; }; };

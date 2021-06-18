@@ -1,0 +1,48 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from nav2_msgs/action/NavigateToPose.action
+// generated code does not contain a copyright notice
+
+#ifndef builtin_interfaces_msg_Duration_idl
+#define builtin_interfaces_msg_Duration_idl
+#include "ros2/basic/builtin_interfaces/msg/Duration.idl"
+#endif  // builtin_interfaces_msg_Duration_idl
+#ifndef geometry_msgs_msg_PoseStamped_idl
+#define geometry_msgs_msg_PoseStamped_idl
+#include "ros2/basic/geometry_msgs/msg/PoseStamped.idl"
+#endif  // geometry_msgs_msg_PoseStamped_idl
+#ifndef std_msgs_msg_Empty_idl
+#define std_msgs_msg_Empty_idl
+#include "ros2/basic/std_msgs/msg/Empty.idl"
+#endif  // std_msgs_msg_Empty_idl
+
+module ros2 { module basic { module nav2_msgs {
+  module action {
+    
+
+    @final
+    
+    struct NavigateToPose_Goal {
+      ros2::basic::geometry_msgs::msg::PoseStamped pose;
+
+      string behavior_tree;
+    };
+    @final
+    
+    struct NavigateToPose_Result {
+      
+
+      ros2::basic::std_msgs::msg::Empty result;
+    };
+    @final
+    
+    struct NavigateToPose_Feedback {
+      ros2::basic::geometry_msgs::msg::PoseStamped current_pose;
+
+      ros2::basic::builtin_interfaces::msg::Duration navigation_time;
+
+      int16 number_of_recoveries;
+
+      float distance_remaining;
+    };
+  };
+}; }; };

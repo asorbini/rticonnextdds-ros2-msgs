@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from example_interfaces/msg/Char.msg
+// generated code does not contain a copyright notice
+
+
+module ros2 { module basic { module example_interfaces {
+  module msg {
+    
+
+
+
+
+    @final
+    
+    struct Char {
+      uint8 data;
+    };
+  };
+}; }; };

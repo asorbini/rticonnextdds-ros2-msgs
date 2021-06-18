@@ -1,0 +1,32 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from nav2_msgs/msg/Costmap.msg
+// generated code does not contain a copyright notice
+
+#ifndef nav2_msgs_msg_CostmapMetaData_idl
+#define nav2_msgs_msg_CostmapMetaData_idl
+#include "ros2/basic/nav2_msgs/msg/CostmapMetaData.idl"
+#endif  // nav2_msgs_msg_CostmapMetaData_idl
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
+#include "ros2/basic/std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
+
+module ros2 { module basic { module nav2_msgs {
+  module msg {
+    
+
+    @final
+    
+    struct Costmap {
+      ros2::basic::std_msgs::msg::Header header;
+
+      
+
+      ros2::basic::nav2_msgs::msg::CostmapMetaData metadata;
+
+      
+
+      sequence<uint8> data;
+    };
+  };
+}; }; };

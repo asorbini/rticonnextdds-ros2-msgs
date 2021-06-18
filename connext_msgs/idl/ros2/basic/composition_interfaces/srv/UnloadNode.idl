@@ -1,0 +1,27 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from composition_interfaces/srv/UnloadNode.srv
+// generated code does not contain a copyright notice
+
+
+module ros2 { module basic { module composition_interfaces {
+  module srv {
+    
+
+    @final
+    
+    struct UnloadNode_Request {
+      uint64 unique_id;
+    };
+    
+
+    @final
+    
+    struct UnloadNode_Response {
+      boolean success;
+
+      
+
+      string error_message;
+    };
+  };
+}; }; };

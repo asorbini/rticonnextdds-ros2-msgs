@@ -1,0 +1,25 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from std_srvs/srv/Trigger.srv
+// generated code does not contain a copyright notice
+
+
+module ros2 { module basic { module std_srvs {
+  module srv {
+    @final
+    
+    struct Trigger_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    @final
+    
+    struct Trigger_Response {
+      
+
+      boolean success;
+
+      
+
+      string message;
+    };
+  };
+}; }; };
