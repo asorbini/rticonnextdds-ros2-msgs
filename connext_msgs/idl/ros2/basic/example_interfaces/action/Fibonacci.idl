@@ -1,0 +1,30 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from example_interfaces/action/Fibonacci.action
+// generated code does not contain a copyright notice
+
+
+module ros2 { module basic { module example_interfaces {
+  module action {
+    
+
+    @final
+    
+    struct Fibonacci_Goal {
+      int32 order;
+    };
+    @final
+    
+    struct Fibonacci_Result {
+      
+
+      sequence<int32> sequence;
+    };
+    @final
+    
+    struct Fibonacci_Feedback {
+      
+
+      sequence<int32> sequence;
+    };
+  };
+}; }; };

@@ -1,0 +1,43 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from sensor_msgs/msg/Illuminance.msg
+// generated code does not contain a copyright notice
+
+#ifndef std_msgs_msg_Header_idl
+#define std_msgs_msg_Header_idl
+#include "ros2/basic/std_msgs/msg/Header.idl"
+#endif  // std_msgs_msg_Header_idl
+
+module ros2 { module basic { module sensor_msgs {
+  module msg {
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @final
+    
+    struct Illuminance {
+      
+
+
+      ros2::basic::std_msgs::msg::Header header;
+
+      
+
+      double illuminance;
+
+      
+
+      double variance;
+    };
+  };
+}; }; };

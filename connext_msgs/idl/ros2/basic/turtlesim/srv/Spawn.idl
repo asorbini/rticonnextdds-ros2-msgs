@@ -1,0 +1,27 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from turtlesim/srv/Spawn.srv
+// generated code does not contain a copyright notice
+
+
+module ros2 { module basic { module turtlesim {
+  module srv {
+    @final
+    
+    struct Spawn_Request {
+      float x;
+
+      float y;
+
+      float theta;
+
+      
+
+      string name;
+    };
+    @final
+    
+    struct Spawn_Response {
+      string name;
+    };
+  };
+}; }; };

@@ -1,0 +1,26 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from rcl_interfaces/msg/ParameterEventDescriptors.msg
+// generated code does not contain a copyright notice
+
+#ifndef rcl_interfaces_msg_ParameterDescriptor_idl
+#define rcl_interfaces_msg_ParameterDescriptor_idl
+#include "ros2/basic/rcl_interfaces/msg/ParameterDescriptor.idl"
+#endif  // rcl_interfaces_msg_ParameterDescriptor_idl
+
+module ros2 { module basic { module rcl_interfaces {
+  module msg {
+    
+
+
+
+    @final
+    
+    struct ParameterEventDescriptors {
+      sequence<ros2::basic::rcl_interfaces::msg::ParameterDescriptor> new_parameters;
+
+      sequence<ros2::basic::rcl_interfaces::msg::ParameterDescriptor> changed_parameters;
+
+      sequence<ros2::basic::rcl_interfaces::msg::ParameterDescriptor> deleted_parameters;
+    };
+  };
+}; }; };

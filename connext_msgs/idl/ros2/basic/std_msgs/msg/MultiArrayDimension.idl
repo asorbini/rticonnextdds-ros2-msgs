@@ -1,0 +1,29 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from std_msgs/msg/MultiArrayDimension.msg
+// generated code does not contain a copyright notice
+
+
+module ros2 { module basic { module std_msgs {
+  module msg {
+    
+
+
+
+
+    @final
+    
+    struct MultiArrayDimension {
+      
+
+      string label;
+
+      
+
+      uint32 size;
+
+      
+
+      uint32 stride;
+    };
+  };
+}; }; };

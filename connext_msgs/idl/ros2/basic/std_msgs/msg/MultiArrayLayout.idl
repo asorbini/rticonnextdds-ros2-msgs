@@ -1,0 +1,52 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from std_msgs/msg/MultiArrayLayout.msg
+// generated code does not contain a copyright notice
+
+#ifndef std_msgs_msg_MultiArrayDimension_idl
+#define std_msgs_msg_MultiArrayDimension_idl
+#include "ros2/basic/std_msgs/msg/MultiArrayDimension.idl"
+#endif  // std_msgs_msg_MultiArrayDimension_idl
+
+module ros2 { module basic { module std_msgs {
+  module msg {
+    
+
+
+
+
+    @final
+    
+    struct MultiArrayLayout {
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      sequence<ros2::basic::std_msgs::msg::MultiArrayDimension> dim;
+
+      
+
+      uint32 data_offset;
+    };
+  };
+}; }; };

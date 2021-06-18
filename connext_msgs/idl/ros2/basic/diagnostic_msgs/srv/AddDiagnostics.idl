@@ -1,0 +1,45 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from diagnostic_msgs/srv/AddDiagnostics.srv
+// generated code does not contain a copyright notice
+
+
+module ros2 { module basic { module diagnostic_msgs {
+  module srv {
+    
+
+
+
+
+    @final
+    
+    struct AddDiagnostics_Request {
+      
+
+
+
+
+
+
+
+
+
+
+
+      string load_namespace;
+    };
+    @final
+    
+    struct AddDiagnostics_Response {
+      
+
+
+
+
+      boolean success;
+
+      
+
+      string message;
+    };
+  };
+}; }; };

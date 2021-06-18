@@ -1,0 +1,28 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from geometry_msgs/msg/AccelWithCovariance.msg
+// generated code does not contain a copyright notice
+
+#ifndef geometry_msgs_msg_Accel_idl
+#define geometry_msgs_msg_Accel_idl
+#include "ros2/basic/geometry_msgs/msg/Accel.idl"
+#endif  // geometry_msgs_msg_Accel_idl
+
+module ros2 { module basic { module geometry_msgs {
+  module msg {
+    
+    
+
+    @final
+    
+    struct AccelWithCovariance {
+      ros2::basic::geometry_msgs::msg::Accel accel;
+
+      
+
+
+
+
+      double covariance[36];
+    };
+  };
+}; }; };

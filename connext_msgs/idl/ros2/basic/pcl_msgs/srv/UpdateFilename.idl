@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from pcl_msgs/srv/UpdateFilename.srv
+// generated code does not contain a copyright notice
+
+
+module ros2 { module basic { module pcl_msgs {
+  module srv {
+    @final
+    
+    struct UpdateFilename_Request {
+      string filename;
+    };
+    @final
+    
+    struct UpdateFilename_Response {
+      boolean success;
+    };
+  };
+}; }; };
